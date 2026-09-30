@@ -153,6 +153,14 @@ def run(
         }
     prompt["Instructions"] |= get_impl_guideline_from_agent(agent)
 
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import research_plan_guideline
+        introduction = "You are MLEvolve. Use only search-only branch evidence to select the next causal Connectome experiment."
+        prompt["Instructions"] = {
+            "Response format": "Give a concise hypothesis and one Python code block containing exactly one complete literal CANDIDATE or EXPERIMENT assignment.",
+            **get_impl_guideline_from_agent(agent),
+            **research_plan_guideline(),
+        }
     instructions = "\n# Instructions\n\n"
     instructions += compile_prompt_to_md(prompt["Instructions"], 2)
 
@@ -164,11 +172,20 @@ def run(
         "I'll synthesize these diverse insights and create a completely new solution "
         "that combines the best ideas in an innovative way."
     )
+    if getattr(agent.cfg, "connectome_mode", False):
+        assistant_prefix = (
+            "I will compare the search-only branch evidence and fixed error atlas, "
+            "identify a specific remaining error, and choose a testable hypothesis. "
+            "I may refine a known approach or branch to a different one."
+        )
 
     user_prompt = (
         f"\n# Task description\n{prompt['Task description']}\n\n"
         f"# Branch Experiences\n{prompt['Branch Experiences']}\n\n{instructions}"
     )
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import planner_history_section
+        user_prompt += planner_history_section(agent)
     prompt_complete = build_chat_prompt_for_model(agent.acfg.code.model, introduction, user_prompt, assistant_prefix)
 
     plan, code = plan_and_code_query(agent, prompt_complete)

@@ -18,4 +18,11 @@ graphify-out/
 wnn_connectome_starterpack/data/
 wnn_connectome_starterpack/baseline/*.onnx
 wnn_connectome_starterpack/baseline/*.zip
+competition_engineering/downloads/
+competition_engineering/assets/
+competition_engineering/cache/
+competition_engineering/checkpoints/
+competition_engineering/environment/miopen_db/
+competition_engineering/environment/miopen_cache/
+competition_engineering/submissions/**/*.npz
 

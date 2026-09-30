@@ -66,10 +66,11 @@ def save_best_solution(agent, result_node, submission_file_path) -> None:
         best_solution_dir.mkdir(exist_ok=True, parents=True)
         best_submission_dir.mkdir(exist_ok=True, parents=True)
 
-        shutil.copy(
-            submission_file_path,
-            best_submission_dir / "submission.csv",
-        )
+        if not agent.cfg.connectome_mode:
+            shutil.copy(
+                submission_file_path,
+                best_submission_dir / "submission.csv",
+            )
 
         with open(best_solution_dir / "solution.py", "w") as f:
             f.write(result_node.code)

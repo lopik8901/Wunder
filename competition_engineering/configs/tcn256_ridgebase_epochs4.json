@@ -1,0 +1,11 @@
+{
+  "train": "competition_engineering/cache/gru_train_pilot",
+  "tune": "competition_engineering/cache/gru_tune",
+  "output": "competition_engineering/checkpoints/tcn256_ridgebase_epochs4",
+  "gru_solution": "competition_engineering/assets/wnn_connectome_starterpack/baseline/solution.py",
+  "base_ridge": "competition_engineering/checkpoints/ridge256_v1/ridge.npz",
+  "base_scale": [0.75, 0.75],
+  "base_bias": [-0.1, -0.1],
+  "epochs": 4,
+  "amp": false
+}

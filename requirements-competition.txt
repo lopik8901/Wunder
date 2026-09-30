@@ -1,0 +1,14 @@
+# Core competition engineering dependencies. Exact installed versions are
+# recorded in competition_engineering/environment/requirements-lock.txt.
+numpy
+pandas
+scipy
+pyarrow
+onnx
+onnxruntime
+scikit-learn
+pytest
+psutil
+tqdm
+pyyaml
+python-dotenv

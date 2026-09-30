@@ -9,6 +9,14 @@ def get_impl_guideline_from_agent(agent):
     """Build implementation guideline from agent config."""
     tot_time_remaining = agent.acfg.time_limit - (time.time() - agent.start_time)
     exec_timeout = int(min(agent.cfg.exec.timeout, tot_time_remaining))
+    if getattr(agent.cfg, "connectome_mode", False):
+        return {"Implementation guideline": [
+            f"Time remaining: {_format_time(tot_time_remaining)}; attempts remaining: {agent.acfg.steps - agent.current_step}.",
+            "Return one complete literal CANDIDATE or EXPERIMENT assignment. The supervisor parses it as data; do not include executable search, scoring, file, or submission commands.",
+            "The supervisor alone trains and computes official WP on the fixed search split. Read only search-safe feedback from prior attempts.",
+            "For generated candidates, respect the documented NPZ keys and DataPoint fields. Keep inference causal, reset state between sequences, and return None on warm-up rows.",
+            "Training and callback source imports are restricted by the validator; candidate processes have no network or protected evaluation mount.",
+        ]}
     return get_impl_guideline(
         tot_time_remaining=tot_time_remaining,
         steps_remaining=agent.acfg.steps - agent.current_step,

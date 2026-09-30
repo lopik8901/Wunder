@@ -1,0 +1,12 @@
+{
+  "train": "competition_engineering/cache/gru_train_scale_phase2",
+  "tune": "competition_engineering/cache/gru_tune",
+  "output": "competition_engineering/checkpoints/mlevolve_seed_gpu1024_v1",
+  "gru_solution": "competition_engineering/assets/wnn_connectome_starterpack/baseline/solution.py",
+  "base_ridge": "competition_engineering/checkpoints/ridge1024_targetwise_v1/ridge.npz",
+  "base_scale": [0.75, 0.75],
+  "base_bias": [-0.1, -0.1],
+  "target_mode": "clipped",
+  "epochs": 1,
+  "amp": false
+}

@@ -460,6 +460,10 @@ def run(agent, node: SearchNode, exec_result: ExecutionResult) -> SearchNode:
 
             if not node.is_buggy and not agent.cfg.connectome_mode:
                 _validate_format_with_retry(agent, node)
+            elif not node.is_buggy and agent.cfg.connectome_mode:
+                # Connectome has a structured metric and runner-side validation,
+                # rather than a Kaggle CSV submission to validate here.
+                node.is_valid = True
 
             if node.is_buggy:
                 node.metric = WorstMetricValue()

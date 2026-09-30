@@ -22,11 +22,11 @@ def setup_logging(cfg: Any) -> logging.Logger:
     logger = logging.getLogger("MLEvolve")
     cfg.log_dir.mkdir(parents=True, exist_ok=True)
 
-    file_handler = logging.FileHandler(cfg.log_dir / "MLEvolve.log")
+    file_handler = logging.FileHandler(cfg.log_dir / "MLEvolve.log", encoding="utf-8")
     file_handler.setFormatter(logging.Formatter(log_format))
     file_handler.addFilter(VerboseFilter())
 
-    verbose_file_handler = logging.FileHandler(cfg.log_dir / "MLEvolve.verbose.log")
+    verbose_file_handler = logging.FileHandler(cfg.log_dir / "MLEvolve.verbose.log", encoding="utf-8")
     verbose_file_handler.setFormatter(logging.Formatter(log_format))
 
     console_handler = logging.StreamHandler(sys.stdout)

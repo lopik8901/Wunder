@@ -81,6 +81,14 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
         "1. A brief implementation outline (2-3 sentences) explaining the bugfix\n"
         "2. A single markdown code block containing the COMPLETE executable solution with the bugfix applied\n\n"
     )
+    connectome_mode = bool(getattr(agent.cfg, "connectome_mode", False))
+    if connectome_mode:
+        full_code_requirement = (
+            "\nReturn one complete Python code block containing exactly one literal "
+            "CANDIDATE or EXPERIMENT assignment. Preserve the chosen ML hypothesis "
+            "while repairing the reported interface or validation failure. "
+            "Do not return SEARCH/REPLACE markers in full-rewrite mode."
+        )
 
     bug_description = "Your previous solution encountered an issue — it either failed during execution, did not generate the required output files, or produced output in an incorrect format"
 
@@ -91,6 +99,12 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
         "\n\n"
         "Remember: The code will be executed in a fresh Python environment. It must be 100% self-contained."
     )
+    if connectome_mode:
+        introduction_base = (
+            "You are MLEvolve repairing a bounded Connectome candidate. "
+            "Read the supervisor's safe failure feedback, retain the candidate's "
+            "research intent where feasible, and return a valid literal specification."
+        )
 
     introduction = introduction_base
 
@@ -109,10 +123,16 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
         ],
     }
     prompt["Instructions"] |= get_impl_guideline_from_agent(agent)
-    prompt["Instructions"] |= ROBUSTNESS_GENERALIZATION_STRATEGY
-
-    internet_clarification = get_internet_clarification(getattr(agent.cfg, "pretrain_model_dir", ""))
-    prompt["Instructions"]["Implementation guideline"].extend(internet_clarification)
+    if connectome_mode:
+        prompt["Instructions"]["Candidate repair"] = [
+            "Use the exact documented callback field names and train NPZ keys.",
+            "A static, training, validation, or resource failure is not a search score.",
+            "The supervisor alone handles search evaluation; no protected evaluation or submission is available.",
+        ]
+    else:
+        prompt["Instructions"] |= ROBUSTNESS_GENERALIZATION_STRATEGY
+        internet_clarification = get_internet_clarification(getattr(agent.cfg, "pretrain_model_dir", ""))
+        prompt["Instructions"]["Implementation guideline"].extend(internet_clarification)
 
     debug_memory_guidance = ""
     if agent.global_memory and len(agent.global_memory.records) > 0:

@@ -68,6 +68,8 @@ def select(agent, node: SearchNode):
                 return node
             next_node = _best_child(node)
             if next_node.id == node.id:
+                if agent.is_root(node) and getattr(agent.cfg, "connectome_mode", False):
+                    raise RuntimeError("scored root has no selectable child after draft slots filled")
                 # All children locked (e.g. root drafts all locked); cannot descend, return current node
                 logger.info(f"[select] \u2192 node {node.id} (method=forced_return, all children locked)")
                 return node

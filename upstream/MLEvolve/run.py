@@ -1,9 +1,11 @@
 import atexit
+import os
 import logging
 import sys
 import shutil
 import time
 import threading
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from engine.agent_search import AgentSearch as Agent
 from engine.executor import Interpreter
@@ -20,7 +22,8 @@ import torch
 
 
 def run():
-    cfg = load_cfg()
+    config_path = os.environ.get("MLEVOLVE_CONFIG_PATH")
+    cfg = load_cfg(Path(config_path)) if config_path else load_cfg()
     if cfg.torch_hub_dir:
         torch.hub.set_dir(cfg.torch_hub_dir)
     set_global_seed(cfg.agent.seed)
@@ -51,10 +54,20 @@ def run():
         cfg=cfg,
         journal=journal,
     )
+    if cfg.connectome_mode:
+        from connectome.mlevolve_incumbent import seed_incumbent
+        seed_incumbent(agent, journal)
+        save_run(cfg, journal)
 
-    interpreter = Interpreter(
-        cfg.workspace_dir, **OmegaConf.to_container(cfg.exec), cfg=cfg  # type: ignore
-    )
+    if cfg.connectome_mode:
+        from connectome.mlevolve_bounded import BoundedInterpreter
+        interpreter = BoundedInterpreter(cfg)
+        interpreter.agent = agent
+        agent.connectome_search_history_provider = interpreter.planning_history
+    else:
+        interpreter = Interpreter(
+            cfg.workspace_dir, **OmegaConf.to_container(cfg.exec), cfg=cfg  # type: ignore
+        )
 
     global_step = len(journal)
     status = Status("[green]Generating code...")
@@ -72,7 +85,10 @@ def run():
         if node:
             logger.info(f"[step_task] Processing node: {node.id}")
         else:
-            logger.info(f"[step_task] Processing virtual root node.")
+            if cfg.connectome_mode:
+                logger.info("[step_task] Selecting the next parent from the scored search tree.")
+            else:
+                logger.info(f"[step_task] Processing virtual root node.")
         return agent.step(exec_callback=exec_callback, node=node)
 
     max_workers = interpreter.max_parallel_run
@@ -160,7 +176,12 @@ def run():
                             logger.info(journal_to_string_tree(journal))
 
                     if completed + len(futures) < total_steps:
-                        futures.add(executor.submit(step_task, cur_node))
+                        if cfg.connectome_mode:
+                            from connectome.mlevolve_history import next_parent_for_followup
+                            next_parent = next_parent_for_followup(True, cur_node)
+                        else:
+                            next_parent = cur_node
+                        futures.add(executor.submit(step_task, next_parent))
                         logger.info(f"📤 Submitted next task based on node {cur_node.id if cur_node else 'None'}")
                     logger.info(f"📊 Progress: {completed}/{total_steps} steps completed, {len(futures)} tasks running")
         except KeyboardInterrupt:

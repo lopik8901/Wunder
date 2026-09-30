@@ -1,0 +1,9 @@
+{
+  "kind": "ridge",
+  "train": "competition_engineering/cache/gru_train_scale_phase2",
+  "tune": "competition_engineering/cache/gru_tune",
+  "output": "competition_engineering/checkpoints/ridge1024_clipped_v1",
+  "base_scale": [0.75, 0.75],
+  "base_bias": [-0.1, -0.1],
+  "target_mode": "clipped"
+}

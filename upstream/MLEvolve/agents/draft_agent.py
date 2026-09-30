@@ -154,6 +154,21 @@ def run(agent, init_solution_path: Optional[str] = None) -> SearchNode:
     prompt["Instructions"] |= get_prompt_environment()
     prompt["Instructions"] |= ROBUSTNESS_GENERALIZATION_STRATEGY
 
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import research_plan_guideline
+        introduction = ("You are MLEvolve, the Connectome experiment and hypothesis selector. "
+                        "Use search-only evidence to choose a causal hypothesis and the execution mechanism that best tests it.")
+        prompt["Instructions"] = {
+            "Response format": "Give a concise hypothesis and then one Python code block containing exactly one literal CANDIDATE or EXPERIMENT assignment. The supervisor handles execution and scoring.",
+            **get_impl_guideline_from_agent(agent),
+            **research_plan_guideline(),
+            "Research scope": [
+                "Choose the architecture and training approach yourself. CANDIDATE and EXPERIMENT are both first-class mechanisms; choose by hypothesis and available compute.",
+                "Use prior search-only outcomes and failures to justify the next candidate.",
+                "Do not request protected evaluation or a submission during search.",
+            ],
+        }
+
     instructions = f"\n# Instructions\n\n"
     instructions += compile_prompt_to_md(prompt["Instructions"], 2)
 
@@ -162,6 +177,9 @@ def run(agent, init_solution_path: Optional[str] = None) -> SearchNode:
         memory_section = f"\n# Memory\nBelow is a record of previous solution attempts and their outcomes:\n {prompt['Memory']}\n"
 
     user_prompt = f"\n# Task description\n{prompt['Task description']}{memory_section}\n{instructions}"
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import planner_history_section
+        user_prompt += planner_history_section(agent)
     assistant_prefix = f"Let me approach this systematically.\nFirst, I'll examine the dataset:\n{agent.data_preview}"
     prompt_complete = build_chat_prompt_for_model(
         agent.acfg.code.model, introduction, user_prompt, assistant_prefix

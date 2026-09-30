@@ -117,6 +117,9 @@ class AgentSearch:
             return str(prompt_complete)
 
     def update_data_preview(self):
+        if getattr(self.cfg, "connectome_mode", False):
+            self.data_preview = "The task description contains the complete bounded candidate interface. Data files and protected observations are available only to the supervisor."
+            return
         base_preview = data_preview.generate(self.cfg.workspace_dir)
         submission_format_warning = """
 
@@ -145,6 +148,8 @@ class AgentSearch:
             try:
                 if self.is_root(parent_node):
                     if parent_node.reached_child_limit(scfg=self.scfg):
+                        if not getattr(self.acfg, "use_aggregation", True):
+                            raise RuntimeError("root draft slots are full; select a completed child")
                         logger.info("🎯 Regular draft limit reached, triggering multi-branch aggregation (conditions already checked in select())")
                         result_node = aggregation_agent.run(self, mode="node", parent_node=parent_node)
                         if result_node:
@@ -225,6 +230,11 @@ class AgentSearch:
                         parent_node.is_debug_success = True
 
                     _root = evaluation.check_improvement(self, result_node, parent_node)
+                    # A draft lock covers execution only. A successful draft
+                    # must become selectable as a parent even when evaluation
+                    # does not backpropagate (the common early-search case).
+                    if result_node.stage in ("draft", "fusion_draft"):
+                        result_node.lock = False
                     with self.journal_lock:
                         if self.best_node and result_node.metric.maximize and self.best_node.metric.maximize != result_node.metric.maximize:
                             logger.warning(

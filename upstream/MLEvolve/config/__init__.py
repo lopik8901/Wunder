@@ -157,6 +157,7 @@ class Config(Hashable):
     coldstart: ColdstartConfig
 
     use_grading_server: bool = True
+    generated_enabled: bool = False
     init_solution: InitSolutionConfig = field(default_factory=InitSolutionConfig)
 
 

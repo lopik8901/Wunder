@@ -224,6 +224,20 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
     if not agent.acfg.use_diff_mode:
         prompt["Instructions"] |= prompt_resp_fmt()
 
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import research_plan_guideline
+        introduction = ("You are MLEvolve, the Connectome research selector. Use search-only evidence to choose "
+                        "whether to refine the parent or branch to a different causal hypothesis. "
+                        "Choose the execution mechanism that best tests that hypothesis.")
+        prompt["Instructions"] = {
+            "Response format": "Give a concise research hypothesis and one Python code block containing exactly one complete literal CANDIDATE or EXPERIMENT assignment.",
+            **get_impl_guideline_from_agent(agent),
+            **research_plan_guideline(),
+            "Research scope": ["The parent is a scored comparison, not an architecture requirement. Refine it or test a different hypothesis, using CANDIDATE or EXPERIMENT as appropriate.",
+                               "You choose the model and training approach; the supervisor alone validates and scores it on the fixed search split.",
+                               "Do not request protected evaluation, network access, or a submission."],
+        }
+
     instructions = "\n# Instructions\n\n"
     instructions += compile_prompt_to_md(prompt["Instructions"], 2)
 
@@ -232,7 +246,15 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
         memory_section = f"\n# Memory\nBelow is a record of previous improvement attempts and their outcomes:\n {prompt['Memory']}\n"
 
     user_prompt = f"\n# Task description\n{prompt['Task description']}{memory_section}\n{instructions}"
-    assistant_prefix = f"Let me approach this systematically.\nFirst, I'll review the dataset:\n{agent.data_preview}\nThe current solution uses the following code:\n{prompt['Previous solution']['Code']}\nIts output was:\n{output}\nBuilding on this, I'll develop an improved approach."
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import planner_history_section
+        user_prompt += planner_history_section(agent)
+        assistant_prefix = (f"The selected parent is a comparison reference:\n{prompt['Previous solution']['Code']}\n"
+                            f"Its search-only feedback was:\n{output}\n"
+                            "I will compare refining this parent with testing a different hypothesis, "
+                            "then choose the experiment mechanism that best answers the research question.")
+    else:
+        assistant_prefix = f"Let me approach this systematically.\nFirst, I'll review the dataset:\n{agent.data_preview}\nThe current solution uses the following code:\n{prompt['Previous solution']['Code']}\nIts output was:\n{output}\nBuilding on this, I'll develop an improved approach."
     prompt_complete = build_chat_prompt_for_model(agent.acfg.code.model, introduction, user_prompt, assistant_prefix)
 
     parent_node.add_expected_child_count()

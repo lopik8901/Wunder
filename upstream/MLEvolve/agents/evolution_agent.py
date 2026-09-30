@@ -190,6 +190,19 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
     if not agent.acfg.use_diff_mode:
         prompt["Instructions"] |= prompt_resp_fmt()
 
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import research_plan_guideline
+        introduction = "You are MLEvolve, the Connectome research selector. Use the full search-only history to decide whether to refine this parent or branch to a different causal hypothesis."
+        prompt["Instructions"] = {
+            "Response format": "Give a concise hypothesis and one Python code block containing exactly one complete literal CANDIDATE or EXPERIMENT assignment.",
+            **get_impl_guideline_from_agent(agent),
+            **research_plan_guideline(),
+            "Research scope": ["The selected parent is a comparison reference, not an architecture requirement. Branch to a different hypothesis or refine it based on evidence.",
+                               "CANDIDATE and EXPERIMENT are equal-status execution mechanisms; choose whichever best tests your hypothesis.",
+                               "Implementation failure is evidence about execution, not proof the ML hypothesis is poor.",
+                               "The supervisor alone validates and scores candidates on the fixed search split."],
+        }
+
     instructions = "\n# Instructions\n\n"
     instructions += compile_prompt_to_md(prompt["Instructions"], 2)
 
@@ -198,6 +211,9 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
         memory_section = f"\n# Memory\nBelow is a record of previous improvement attempts and their outcomes:\n {prompt['Memory']}\n"
 
     user_prompt = f"\n# Task description\n{prompt['Task description']}{memory_section}{prompt['Branch Evolution History']}\n\n{instructions}"
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import planner_history_section
+        user_prompt += planner_history_section(agent)
     assistant_prefix = f"Let me approach this systematically.\nFirst, I'll review the dataset:\n{agent.data_preview}\nThe current solution uses the following code:\n{prompt['Previous solution']['Code']}\nIts output was:\n{output}\nBuilding on this and my evolution trajectory, I'll develop an improved approach."
     prompt_complete = build_chat_prompt_for_model(agent.acfg.code.model, introduction, user_prompt, assistant_prefix)
 

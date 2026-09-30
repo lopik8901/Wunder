@@ -130,10 +130,21 @@ def fuse_two_nodes(agent, source_node: SearchNode, target_node: SearchNode) -> S
     if not agent.acfg.use_diff_mode:
         prompt["Instructions"] |= prompt_resp_fmt()
 
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import research_plan_guideline
+        introduction = "You are MLEvolve. Choose whether and how to combine search-only evidence from causal Connectome candidates."
+        prompt["Instructions"] = {
+            "Response format": "Give a concise hypothesis and one Python code block containing exactly one complete literal CANDIDATE or EXPERIMENT assignment.",
+            **get_impl_guideline_from_agent(agent),
+            **research_plan_guideline(),
+        }
     instructions = "\n# Instructions\n\n"
     instructions += compile_prompt_to_md(prompt["Instructions"], 2)
 
     user_prompt = f"\n# Task description\n{prompt['Task description']}\n\n# Reference Solution\n{prompt['Reference Solution']}\n\n{instructions}"
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import planner_history_section
+        user_prompt += planner_history_section(agent)
     assistant_prefix = f"Let me approach this systematically.\nFirst, I'll review the dataset:\n{agent.data_preview}\nMy current solution:\nPlan: {prompt['Current Solution']['Plan']}\nCode: {prompt['Current Solution']['Code']}\nPerformance: {prompt['Current Solution']['Performance']}\nAnalysis: {prompt['Current Solution']['Analysis']}\nI'll now analyze the reference solution and selectively incorporate its best ideas."
     prompt_complete = build_chat_prompt_for_model(agent.acfg.code.model, introduction, user_prompt, assistant_prefix)
 
@@ -272,10 +283,21 @@ def _fuse_with_multiple_references(
     if not agent.acfg.use_diff_mode:
         prompt["Instructions"] |= prompt_resp_fmt()
 
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import research_plan_guideline
+        introduction = "You are MLEvolve. Choose whether and how to combine search-only evidence from causal Connectome candidates."
+        prompt["Instructions"] = {
+            "Response format": "Give a concise hypothesis and one Python code block containing exactly one complete literal CANDIDATE or EXPERIMENT assignment.",
+            **get_impl_guideline_from_agent(agent),
+            **research_plan_guideline(),
+        }
     instructions = "\n# Instructions\n\n"
     instructions += compile_prompt_to_md(prompt["Instructions"], 2)
 
     user_prompt = f"\n# Task description\n{prompt['Task description']}\n\n# Reference Solutions\n{prompt['Reference Solutions']}\n\n{instructions}"
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.mlevolve_history import planner_history_section
+        user_prompt += planner_history_section(agent)
     assistant_prefix = f"Let me approach this systematically.\nFirst, I'll review the dataset:\n{agent.data_preview}\nMy current solution:\nPlan: {prompt['Current Solution']['Plan']}\nCode: {prompt['Current Solution']['Code']}\nPerformance: {prompt['Current Solution']['Performance']}\nAnalysis: {prompt['Current Solution']['Analysis']}\nI'll now analyze the reference solutions and selectively incorporate the best ideas."
     prompt_complete = build_chat_prompt_for_model(agent.acfg.code.model, introduction, user_prompt, assistant_prefix)
 

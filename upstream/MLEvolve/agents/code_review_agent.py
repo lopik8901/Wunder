@@ -1,5 +1,6 @@
 """Code Review Agent: LLM-based code review and fix for node code."""
 
+import ast
 import logging
 import time
 from typing import cast
@@ -8,6 +9,7 @@ from llm import FunctionSpec, query
 from engine.search_node import SearchNode
 from agents.prompts.validation_template_prompts import get_code_review_prompt
 from agents.prompts import get_internet_clarification
+from utils.response import wrap_code
 
 from agents.coder.diff_coder import SearchReplacePatcher
 
@@ -60,6 +62,55 @@ CODE_REVIEW_SPEC = FunctionSpec(
 )
 
 
+def _valid_connectome_revision(original: str, revised: str) -> bool:
+    """A review may repair source, but must retain the literal interface."""
+    try:
+        def assignment_name(source: str) -> str:
+            body = ast.parse(source).body
+            if len(body) != 1 or not isinstance(body[0], ast.Assign):
+                raise ValueError("expected one assignment")
+            targets = body[0].targets
+            if len(targets) != 1 or not isinstance(targets[0], ast.Name):
+                raise ValueError("expected one assignment")
+            return targets[0].id
+
+        name = assignment_name(original)
+        if assignment_name(revised) != name:
+            return False
+        if name == "CANDIDATE":
+            from connectome.mlevolve_generated import parse_candidate
+            parse_candidate(revised)
+        elif name == "EXPERIMENT":
+            from connectome.mlevolve_bounded import parse_spec
+            parse_spec(revised)
+        else:
+            return False
+        return True
+    except (SyntaxError, ValueError, TypeError):
+        return False
+
+
+def apply_review_revision(original: str, revision: str, *, connectome_mode: bool,
+                          use_diff_mode: bool) -> str:
+    """Never pass SEARCH/REPLACE markers to the literal candidate parser."""
+    if "<<<<<<< SEARCH" in revision or "< SEARCH" in revision:
+        try:
+            patched, count = SearchReplacePatcher().apply_patch(revision, original, strict=False)
+            if count and patched and patched != original and (
+                not connectome_mode or _valid_connectome_revision(original, patched)
+            ):
+                return patched.strip()
+        except Exception as error:
+            logger.warning("Code review patch could not be applied: %s", error)
+        return original
+    if use_diff_mode:
+        return original
+    if connectome_mode and not _valid_connectome_revision(original, revision):
+        logger.warning("Code review returned an invalid literal candidate; retaining original")
+        return original
+    return revision.strip()
+
+
 def run(agent, node: SearchNode) -> str:
     logger.debug(f"[review] node {node.id}")
 
@@ -75,6 +126,19 @@ def run(agent, node: SearchNode) -> str:
     else:
         prompt["Instructions"]["⚠️ Internet Access Clarification"] = internet_clarification
 
+    connectome_mode = bool(getattr(agent.cfg, "connectome_mode", False))
+    if connectome_mode:
+        prompt = {
+            "Introduction": "Review the bounded Connectome candidate for critical interface, causality, and leakage defects. Preserve MLEvolve's model choice.",
+            "Task description": agent.task_desc,
+            "Code to review": wrap_code(node.code),
+            "Instructions": {"Review scope": [
+                "The code must be one literal CANDIDATE or EXPERIMENT assignment.",
+                "Return exact SEARCH/REPLACE blocks for corrections, not standalone patch text as candidate code.",
+                "Check the documented DataPoint fields, sequence reset, warm-up, source restrictions, and CPU callback contract.",
+                "The supervisor alone computes search WP. Candidate code cannot access protected evaluation or network resources.",
+            ]},
+        }
     use_diff_for_review = agent.acfg.use_diff_mode
     max_retries = 3
 
@@ -104,34 +168,9 @@ def run(agent, node: SearchNode) -> str:
 
             if needs_revision:
                 if revised_code and revised_code.strip():
-                    if use_diff_for_review and (
-                        "<<<<<<< SEARCH" in revised_code or "< SEARCH" in revised_code
-                        ):
-                        try:
-                            logger.info("Code review returned diff format, applying patch")
-                            patcher = SearchReplacePatcher()
-                            patched_code, count = patcher.apply_patch(
-                                revised_code, node.code, strict=False
-                            )
-                            if count > 0 and patched_code and patched_code != node.code:
-                                logger.info(f"Successfully applied {count} review patch(es)")
-                                return patched_code.strip()
-                            logger.warning(
-                                f"Diff patch failed (count={count}), keeping original code to avoid writing raw diff to runfile"
-                            )
-                            return node.code
-                        except Exception as e:
-                            logger.warning(
-                                f"Failed to apply diff patch in code review: {e}, keeping original code to avoid writing raw diff to runfile"
-                            )
-                            return node.code
-                    else:
-                        # Full code revision (original behavior)
-                        if use_diff_for_review:
-                            return node.code
-                        else:
-                            logger.info("Using revised code from reviewer")
-                            return revised_code.strip()
+                    return apply_review_revision(node.code, revised_code,
+                                                 connectome_mode=connectome_mode,
+                                                 use_diff_mode=use_diff_for_review)
 
                 if attempt < max_retries - 1:
                     logger.warning(f"Code review violation: needs_revision=True but revised_code is empty/None - Will retry ({attempt + 1}/{max_retries})")
