@@ -1,0 +1,36 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Kaiming He",
+    "Xiangyu Zhang",
+    "Shaoqing Ren",
+    "Jian Sun"
+  ],
+  "card_id": "residual_connections",
+  "card_type": "paper",
+  "causality": "A correction must use the causal base prediction and available past/current features only.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "An extra correction model adds CPU inference cost.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Root-to-candidate improvements with a coherent residual left over.",
+  "family": "residual",
+  "incremental_inference": "A correction must use the causal base prediction and available past/current features only.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "The paper studies image classification, not causal regression correction.",
+  "mechanism": "Residual blocks learn adjustments relative to their inputs, easing optimization of deeper networks.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/1512.03385",
+  "tags": [
+    "residual",
+    "causal-adaptation-required"
+  ],
+  "title": "Deep Residual Learning for Image Recognition",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: a strong base model with structured remaining error may admit a bounded correction.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2015
+}
