@@ -1,0 +1,884 @@
+{
+  "schema_version": 1,
+  "required_transfer_archive": {
+    "path": "competition_engineering/handoff_external/connectome_required_artifacts.zip",
+    "bytes": 1915470,
+    "sha256": "d3c0cb76620a80a8df96f05e1c605fdeaee5dde9b9a30beff3d235ce9f24d5bf",
+    "tracked": false,
+    "extract_into": "Repository root; contains only the explicit required artifact allowlist."
+  },
+  "required": [
+    {
+      "path": "competition_engineering/deployment/manual_targetwise_combo_v1/combo.npz",
+      "sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+      "bytes": 11792,
+      "category": "frozen_incumbent",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    },
+    {
+      "path": "competition_engineering/deployment/manual_targetwise_combo_v1/baseline.onnx",
+      "sha256": "321ec67b93f3c5dde2c0901ca4532072dad5f65753c2e6519e93ea3555f6a6fd",
+      "bytes": 770975,
+      "category": "frozen_incumbent",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    },
+    {
+      "path": "competition_engineering/deployment/manual_targetwise_combo_v1/gru.py",
+      "sha256": "d0ef0732fd98cc0a74dc298f5667385c690aab17d73742e6f75f474e808fef2e",
+      "bytes": 2987,
+      "category": "frozen_incumbent",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    },
+    {
+      "path": "competition_engineering/deployment/manual_targetwise_combo_v1/solution.py",
+      "sha256": "9daec2ef7c3cdd01e9089c112f3665556ef6b74bfe5817197474053b86168630",
+      "bytes": 1794,
+      "category": "frozen_incumbent",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    },
+    {
+      "path": "competition_engineering/deployment/manual_targetwise_combo_v1/manifest.json",
+      "sha256": "15b46bd3df4131d8397453478edbdb0b5937b5372e06f97c63dfbe9fa6682d3d",
+      "bytes": 940,
+      "category": "frozen_incumbent",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    },
+    {
+      "path": "competition_engineering/submissions/manual_targetwise_combo_v1.zip",
+      "sha256": "c8acc7153f60b7540c3b988877f30af8a1ec799d87026d09b46a9c3a37521076",
+      "bytes": 727135,
+      "category": "frozen_incumbent",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_weighted_t0/isolated_training/mask_trees.npz",
+      "sha256": "5ba979b008645e72343fd93b355b9417de5769bf5605d3dca9fe67c8e4f698be",
+      "bytes": 548104,
+      "category": "required_local_artifact",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    },
+    {
+      "path": "competition_engineering/runs/alternative_representation_20261003/basis.npz",
+      "sha256": "7cf8a1f7b84587343ddfa0e70b9b8b407b5d71dc617f12f78d50237a72112606",
+      "bytes": 237276,
+      "category": "required_local_artifact",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    },
+    {
+      "path": "competition_engineering/dataset_manifest_phase2.json",
+      "sha256": "580a0a16b1c7d4be841dc1c2ded6fdba84260988ca0052bf77e561cccb4719bd",
+      "bytes": 214718,
+      "category": "required_local_artifact",
+      "tracked": false,
+      "obtain": "Transfer the required-artifacts ZIP; restore exact relative path, verify hash. Do not retrain or substitute."
+    }
+  ],
+  "datasets": [
+    {
+      "path": "competition_engineering/assets/wnn_connectome_starterpack/datasets/train.parquet",
+      "sha256": "4a7756449a4bcf272cf715bb405a2152987041605f6c1cce650243ab2abf4e81",
+      "bytes": 29240219011,
+      "category": "large_dataset",
+      "tracked": false,
+      "obtain": "Obtain the official starter pack through your authorized competition access or copy the exact existing file privately; place under this relative path. No credentials or signed download URLs are stored."
+    },
+    {
+      "path": "competition_engineering/assets/wnn_connectome_starterpack/datasets/valid.parquet",
+      "sha256": "2861ee30914065702626a3ac033d80d0563cdacaea50c667fc828c2eeb418782",
+      "bytes": 5615509128,
+      "category": "protected_dataset",
+      "tracked": false,
+      "obtain": "Obtain the official starter pack through your authorized competition access or copy the exact existing file privately; place under this relative path. No credentials or signed download URLs are stored."
+    },
+    {
+      "path": "competition_engineering/assets/wnn_connectome_starterpack/datasets/valid_mask.parquet",
+      "sha256": "301430165527a6003d44486a8c5051288c31112d327df94fb420e82c018e5251",
+      "bytes": 91972846,
+      "category": "protected_dataset",
+      "tracked": false,
+      "obtain": "Obtain the official starter pack through your authorized competition access or copy the exact existing file privately; place under this relative path. No credentials or signed download URLs are stored."
+    }
+  ],
+  "optional_historical": [
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/causal_population_classifier.npz",
+      "bytes": 6682,
+      "sha256": "2ea8e9f79c5260f2b35e9e868a095edc87d4c5485210b95eaee1e6a2cc4c0f31",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/frozen_latent_extractor.onnx",
+      "bytes": 771105,
+      "sha256": "45e61c6f233e918752c06860e59f6441570a28e456fd1eeaaf7a8bcf1f13f2a4",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/frozen_latent_scaling.npz",
+      "bytes": 4600,
+      "sha256": "daecd30106b388769329a806457bf3483937f70e614e90fbbe60c004e2a378ef",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/checks_pearson_tangent_select_wp/artifacts/fused.onnx",
+      "bytes": 782777,
+      "sha256": "15b8a4e2e53e2a26b01e5e11f419a3e8ef3cba6d8083cc4b62dccf29a8a7cd16",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/checks_pearson_tangent_select_wp/artifacts/model.npz",
+      "bytes": 3892,
+      "sha256": "0754774b380e42848d9f5a68d19803f48381efdf29c24f9919e3409dc7fb9503",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/checks_raw_residual_select_wp/artifacts/fused.onnx",
+      "bytes": 782777,
+      "sha256": "a7e9eae67b60236c89133be53fc19cd9804d6fc7c55a0747e16770f6a51a6d7e",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/checks_raw_residual_select_wp/artifacts/model.npz",
+      "bytes": 3892,
+      "sha256": "a1a3166cefa872ff0fc00545b02561cf3428955282077ed76fe0703c4f99425c",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/current_checks_direct_wp_select_wp/artifacts/fused.onnx",
+      "bytes": 781038,
+      "sha256": "73fd8a0b53a6335276ba457715f8775dcfc2c68ebe48714290adf7224cd072af",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/current_checks_direct_wp_select_wp/artifacts/model.npz",
+      "bytes": 3892,
+      "sha256": "913e62a4fe414f324f053b73e09649fda229bdc8916a060d57f3d0f75d9e27da",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/current_checks_pearson_tangent_select_wp/artifacts/fused.onnx",
+      "bytes": 781038,
+      "sha256": "04fa87037bf667eb88d36598a2c18be32f583007de57052f78d1c84e9234e97f",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/current_checks_pearson_tangent_select_wp/artifacts/model.npz",
+      "bytes": 3892,
+      "sha256": "0754774b380e42848d9f5a68d19803f48381efdf29c24f9919e3409dc7fb9503",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/current_checks_raw_residual_select_wp/artifacts/fused.onnx",
+      "bytes": 781038,
+      "sha256": "228e5a23aaafa8229dd36286dacf104c56a47dfbfbe6bcb728b37afedcc2e1c1",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/current_checks_raw_residual_select_wp/artifacts/model.npz",
+      "bytes": 3892,
+      "sha256": "a1a3166cefa872ff0fc00545b02561cf3428955282077ed76fe0703c4f99425c",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/objective_alignment_20261002/isolated_training/artifacts/models.npz",
+      "bytes": 16882,
+      "sha256": "435c502e1bca3aa37a0a13819455f7021a18e7d547d52609d46f88d131c1c8fe",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/gradient_primitives.npz",
+      "bytes": 8576988,
+      "sha256": "2a7e79d3b71d8c12d657d5e6f56a93f71d6a5795847d0bc3d0004bac04b0e905",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_mask_trees.npz",
+      "bytes": 547830,
+      "sha256": "0306488a899d5b1460413e96817cd5b616fc2d8ccf11d04aeefc7f19789f637e",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_selection_moments.npz",
+      "bytes": 1079850,
+      "sha256": "441de8d604b9f38f79b0bc7a43d9a9156f41423d0ecc9238e08fc5620b3981e1",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/population_mechanism_moments.npz",
+      "bytes": 184836,
+      "sha256": "d65e2699f8aada0f5e941ad5e20d7b69370b1f1a16f0b9ec657dd68efd5eba7c",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/prospective_sequence_stats.npz",
+      "bytes": 901872,
+      "sha256": "e4071ab1130fdf07a0b287ae4295634660337acbec2651e312e23e74841757bd",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/prospective_shortlist.npz",
+      "bytes": 4796,
+      "sha256": "7f7283699e4e9765aa3f8c8233077d32948c1ad3a63d1c7906ce90a93f32c1db",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/search_population_moments.npz",
+      "bytes": 150012,
+      "sha256": "a13849e57d98f0772f6cf666d3d86fb6234a963fd3929f833197bdb48535cfd8",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/training_transport_moments.npz",
+      "bytes": 11502626,
+      "sha256": "cdd578fb8766aa79c967ea3b7e0ebd366758719ada229292df5e9d01cabffd76",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_weighted_t0/checks_nonlinear_weighted_focused/artifacts/fused.onnx",
+      "bytes": 781038,
+      "sha256": "bddfb86aa1ac8f43023e237e86828b2ef420d636dbf1cd9bda490ce4de904888",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_weighted_t0/checks_nonlinear_weighted_focused/artifacts/model.npz",
+      "bytes": 3892,
+      "sha256": "f9a2ba724092027f546d94574c25f561f00f4d7224208c8a4740f0a1fa70bc90",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_weighted_t0/checks_unweighted_focused/artifacts/fused.onnx",
+      "bytes": 781038,
+      "sha256": "f8659af91720853100f36e3a707b8fae962923fb72208ad608de9e98fcbe00c7",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_weighted_t0/checks_unweighted_focused/artifacts/model.npz",
+      "bytes": 3892,
+      "sha256": "43345ffeecf24a4d1ef020fb024dd884095f90111b129a7d0bf27f3860b8c5ae",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_weighted_t0/checks_unweighted_uniform/artifacts/fused.onnx",
+      "bytes": 781038,
+      "sha256": "f57beea2192d60b8ca1330689d7d52449b096c6718a50c12687074bee62c1769",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_weighted_t0/checks_unweighted_uniform/artifacts/model.npz",
+      "bytes": 3892,
+      "sha256": "43345ffeecf24a4d1ef020fb024dd884095f90111b129a7d0bf27f3860b8c5ae",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/reassessment_20261002/nonlinear_weighted_t0/isolated_training/artifacts/models.npz",
+      "bytes": 3254,
+      "sha256": "c19939d7587d26c61d39e3ead2db3ca50be5b13581fa4777810b65ca4e76e8e8",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/weight_moments.npz",
+      "bytes": 1190696,
+      "sha256": "65d2be2f37fc421f17c555f8d577b4db03c6edef0f62191357ef7b75ee2541e1",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/weight_moments_matched.npz",
+      "bytes": 1587528,
+      "sha256": "e2b66a9f0077dee0993ae835310c7f7952b458807d92a6c4d70e0b93e029f053",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/probability_readout/checks_capped_normalized/artifacts/fused.onnx",
+      "bytes": 781038,
+      "sha256": "bae2d3138441295d8a789c356936733edba74879407143ca7ea9b7f90ee6d7df",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/probability_readout/checks_capped_normalized/artifacts/model.npz",
+      "bytes": 2996,
+      "sha256": "4a7d318bb66aabf2391461612a9b378541969678e2a59d1f11f3d33e9ccb972d",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/probability_readout/checks_probability_normalized/artifacts/fused.onnx",
+      "bytes": 781038,
+      "sha256": "c8dae481d973b95319a89d51549cb01cd731a84e8fc7fa199d27760355d96003",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/probability_readout/checks_probability_normalized/artifacts/model.npz",
+      "bytes": 2996,
+      "sha256": "96a2a64a804170afee6b78840e833bb483e2e62e140a12553c43cb273cbb770b",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/probability_readout/isolated_training/artifacts/models.npz",
+      "bytes": 1484,
+      "sha256": "98659c3f30c8d3870a3f916e678b1a6c4a870c87f74380d72261e5ebd79c3da3",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/tree_execution/artifacts/fused.onnx",
+      "bytes": 797641,
+      "sha256": "4e79ac2825dc7e9fef9657fc6810c3437f53dbbed84a66dd05bc336e3aab0a4a",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/tree_training_selection/callback_check/artifacts/fused.onnx",
+      "bytes": 797641,
+      "sha256": "9b7aaabac60185a17fcfd071f5eadb959c82b05cb41fa03d1290ab6cc80f2746",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/root_cause_20261002/tree_training_selection/isolated_selection/artifacts/selection_moments.npz",
+      "bytes": 150016,
+      "sha256": "486213b292cea72ec3bd8846e76054976da6e99dcb818e4cb2ccee86303d171c",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/frozen_extractor.onnx",
+      "bytes": 771105,
+      "sha256": "45e61c6f233e918752c06860e59f6441570a28e456fd1eeaaf7a8bcf1f13f2a4",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/position_moments.npz",
+      "bytes": 1549074,
+      "sha256": "ad3722a4b83378d332d8bf433a0cde01d4ddebb3d987eebde97e8e6bba9964c0",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/consensus_ensemble/check_consensus/artifacts/fused.onnx",
+      "bytes": 799165,
+      "sha256": "8c4ab31a810ed54a4f6c0233d21e065ae646d3470842e9624af489d303b3fb60",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/consensus_ensemble/check_consensus/artifacts/model.npz",
+      "bytes": 7808,
+      "sha256": "5330279f86d68f80afd3d9b290ba7519c9a3e031ba63adcadc0439fd914e3c44",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/consensus_ensemble/check_matched_amplitude/artifacts/fused.onnx",
+      "bytes": 792091,
+      "sha256": "a8c60d32858fa37fc8d67db93d45ddc7f068b35a571592b31ff246b0016619e8",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/consensus_ensemble/check_matched_amplitude/artifacts/model.npz",
+      "bytes": 7808,
+      "sha256": "428d30eac614f7c8079f415d43c88f76c8e0ae9fbf4942639ca33116573dbb19",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/consensus_ensemble/check_mean/artifacts/fused.onnx",
+      "bytes": 792091,
+      "sha256": "64848572ca83e9d1bf95d135928c85bf31c1f2cc4e27a0f491713f105174d9b8",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/consensus_ensemble/check_mean/artifacts/model.npz",
+      "bytes": 7808,
+      "sha256": "5330279f86d68f80afd3d9b290ba7519c9a3e031ba63adcadc0439fd914e3c44",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/check_current_fixed025/artifacts/fused.onnx",
+      "bytes": 784992,
+      "sha256": "c46671e3596b0c92cb2f1964797efbe151aac1df5946d0b71e42df1383059f6d",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/check_current_fixed025/artifacts/model.npz",
+      "bytes": 7808,
+      "sha256": "2fe805a40eda21c1a4c7f2d384c1faa9c25bef8ff55acb5fecef77ef856156ec",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/check_current_selected/artifacts/fused.onnx",
+      "bytes": 784992,
+      "sha256": "a054f4a17d7e757f3dc34a6da3e43f007530cf6f15300c36195df48dc8541a69",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/check_current_selected/artifacts/model.npz",
+      "bytes": 7808,
+      "sha256": "8980ee70eebccaa7687f5eccb465dd3db8eef3cdf7f459f8db06b79fa5bd7855",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/check_latent_fixed025/artifacts/fused.onnx",
+      "bytes": 792091,
+      "sha256": "b6b8bc64d3a2603491d7d33ab75425ab5ac87a2eb18009e44259ae1a6f70fc33",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/check_latent_fixed025/artifacts/model.npz",
+      "bytes": 7808,
+      "sha256": "9f3c9c8dd164de4d28324104efc97f0e6d6dabca19a2d2d50c25fce82cc1d2c8",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/check_latent_selected/artifacts/fused.onnx",
+      "bytes": 792091,
+      "sha256": "af0736c1b45f132a0205de26451e9031a468ec261b58fd37e6d9928ca1e11c91",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/check_latent_selected/artifacts/model.npz",
+      "bytes": 7808,
+      "sha256": "503afcb33f29f3a4dee35f1dd4f07a39d44260e494db8ba84a3160e4b8a50929",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/isolated_training/artifacts/fit_grams.npz",
+      "bytes": 4417710,
+      "sha256": "e3262e44f97888afc0d4cf575bdff81918a0ffcc69ffad430bdd6575aac72867",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/isolated_training/artifacts/models.npz",
+      "bytes": 23922,
+      "sha256": "c567e66c7502858ddbed7d91e4edcb5c90818e86f9b0e688a027e43c620bf04e",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/representation_20261002/replicated_readout/isolated_training/artifacts/selection_moments.npz",
+      "bytes": 592384,
+      "sha256": "909dbc2ff15457d7a96adf452eaac91d7b5c26d5ded8dba80507f7e8c3476653",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/search_moments.npz",
+      "bytes": 30988,
+      "sha256": "2d0593d1125e02bde6374c2bf329542477fe836f824d53751c0870cce9df3fee",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/tanh_replication_moments.npz",
+      "bytes": 246028,
+      "sha256": "ab05dc63f90ac8304120e5a88c5070b195dd66a45ba2d6a158d90e61697103d6",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/check_current/artifacts/fused.onnx",
+      "bytes": 855493,
+      "sha256": "e29360a02d7b86b8b8da4cce80f7ac3684b329ca365ab4decf3af97192361acc",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/check_current/artifacts/model.npz",
+      "bytes": 326296,
+      "sha256": "40b6b686e66e52447198bcd3029d234d67e45bb6a5f20f51b7cc51969b690467",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/check_joint/artifacts/fused.onnx",
+      "bytes": 989624,
+      "sha256": "767da27c665c6fc6866ca4ad2add967b8700b61f17c1f0ba240c23857c1a1887",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/check_joint/artifacts/model.npz",
+      "bytes": 328344,
+      "sha256": "7606ac369428993d106100ee68cbb2584560d8d2fe5ec3c0a381ad1ec1534e5b",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/check_linear/artifacts/fused.onnx",
+      "bytes": 795228,
+      "sha256": "fe22f305e192dd36fecb6614f0e26d4d5ab9e585554cdc3496d9b81ae69c9f0c",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/check_linear/artifacts/model.npz",
+      "bytes": 327320,
+      "sha256": "f768e1364f1cbb1d0b0502008885afb1f1d0b8b32998d50273df3d67e44db4fc",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/check_separable/artifacts/fused.onnx",
+      "bytes": 895307,
+      "sha256": "d4fb7e9ae403268210803925b1d12d547418cb491e27a0646092401e642d8c01",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/check_separable/artifacts/model.npz",
+      "bytes": 328344,
+      "sha256": "350bfdd4894c808508edaaec6ede93cb9e8af5af96822d86bea7b10f6e3e927f",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/learned32/fit/artifacts/models.npz",
+      "bytes": 318232,
+      "sha256": "ef2263f0ef114dc8c440b774ef40c2a63dd3fec1b9342b8694dcfaa9ee4ea316",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/learned32/fit/artifacts/selection_moments.npz",
+      "bytes": 2656492,
+      "sha256": "a109e179391e0eb20a64d522c4ff93166e1d5379a2ad637d5555edba37c75cb2",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/state_innovation/fit/artifacts/models.npz",
+      "bytes": 19696,
+      "sha256": "8dc81d80bb69b79096218380e261513e530275023a1afc629b2d3415e1525c3a",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/state_innovation/fit/artifacts/selection_moments.npz",
+      "bytes": 590092,
+      "sha256": "f00f78faa0697da7ebbcebfc0d556457476c853938b0e83b67e293e0d4f17318",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/state_trees/fit/artifacts/models.npz",
+      "bytes": 95836,
+      "sha256": "7e6a0466fcf38aaed71336bbfb7d96c6b14673676ae58c2511015638c555117e",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/state_trees/fit/artifacts/selection_moments.npz",
+      "bytes": 590334,
+      "sha256": "c8aa4697122614939ef9ae0f97f9d32ac9519c712b759d3c960ee71dae4bd739",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/tanh_fit/artifacts/models.npz",
+      "bytes": 334518,
+      "sha256": "1ce9bb025517ec13b943483896ea9219371da7889757c45c74ea844cc94846f3",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/nonlinear_state_20261003/tanh_fit/artifacts/selection_moments.npz",
+      "bytes": 1179916,
+      "sha256": "b46ee5f10f4b6294f2120a191ad3c6c147ef3df064a1a9876527d0ec28a43ddb",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/sequence_diversity_20261003/normalization.npz",
+      "bytes": 4600,
+      "sha256": "9033659518c11d9f587730488c8407bcbbf7efb7b6a66179ba8b89322b9b7586",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/sequence_diversity_20261003/replication_moments.npz",
+      "bytes": 885004,
+      "sha256": "cefd7e2c4e2a4473de4552284e4cf3d73ac28c1b95278d0e774c098ae9c17bf5",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/sequence_diversity_20261003/balanced_followup/fit/artifacts/models.npz",
+      "bytes": 209838,
+      "sha256": "7b71e3e45a4f6142cc5ad22838cad8d97c13879dcdfdef501acf072912c93c4d",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/sequence_diversity_20261003/balanced_followup/fit/artifacts/selection_moments.npz",
+      "bytes": 2361438,
+      "sha256": "81c36899aa00df4991ab551e0f76e7b38e1d73e1fc9887f6f94f79e299e3bdff",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/sequence_diversity_20261003/fit/artifacts/models.npz",
+      "bytes": 419598,
+      "sha256": "c1a0abd11c87b9ede6daee0cac0352a3dc70331b91bfed2521c9281ab8aed009",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/sequence_diversity_20261003/fit/artifacts/selection_moments.npz",
+      "bytes": 4722838,
+      "sha256": "33872a9f2c53266f382ce0e24857efa8bb13649df374f2680cc426661d755217",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/alternative_representation_20261003/basis.npz",
+      "bytes": 237276,
+      "sha256": "7cf8a1f7b84587343ddfa0e70b9b8b407b5d71dc617f12f78d50237a72112606",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/alternative_representation_20261003/probe_replication_moments.npz",
+      "bytes": 1155846,
+      "sha256": "c9f7546f10a763544b2308d024111b0441577ccf2384039502767a7f65e1feda",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/alternative_representation_20261003/disjoint_readout/fit/artifacts/models.npz",
+      "bytes": 83178,
+      "sha256": "a4e9d00445d2b4655eed7850c6498014532456aae00357a476a5e0e66b12c00b",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/alternative_representation_20261003/learned_causal/fit/artifacts/models.npz",
+      "bytes": 424874,
+      "sha256": "04c5554e8ddad2b68b9025b34026bbb58ddf848f8551ff749cdb6226e598eb24",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/alternative_representation_20261003/orthogonal_memory/fit/artifacts/models.npz",
+      "bytes": 41754,
+      "sha256": "c2d385938ccbffbe2cd273c8e957ef9cec82ebc09546c3b091a227fa282577eb",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/alternative_representation_20261003/probe_fit/artifacts/models.npz",
+      "bytes": 53688,
+      "sha256": "1e5dd060260e5dce9f4624bc0f736d0cf2b30e0c4e5268f0eb2948523c785735",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/alternative_representation_20261003/raw_target/fit/artifacts/models.npz",
+      "bytes": 424810,
+      "sha256": "1636930b7dd9b51275849da9e568fe9b7c6d20be9d5c2cccb43d7537de0e09fb",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/causal_context_20261003/frozen_context_predictor.npz",
+      "bytes": 71638,
+      "sha256": "e643a19d95bb6ba487aa0b873bd265cd7837e0d931862e1e956c69c244e4c657",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/causal_context_20261003/projection.npz",
+      "bytes": 14610,
+      "sha256": "0dd2fe6290ea74b12dea2867367019cb429db1140afe1f13b9f77a3bc080e6be",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/prediction_shape_20261003/book_side/fit_work/artifacts/models.npz",
+      "bytes": 56424,
+      "sha256": "bd5f0b4f75097c2c2c48260df84e5af9f8ac1b8ccadbc4771174e0389de3fee3",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/prediction_shape_20261003/shape_diagnostic_work/artifacts/crossfit_0.npz",
+      "bytes": 1974,
+      "sha256": "6b3592a9735d2d724b046ea0e76beea2e85502d39d79e3369abc1ab0bcec4ff3",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/prediction_shape_20261003/shape_diagnostic_work/artifacts/crossfit_1.npz",
+      "bytes": 1974,
+      "sha256": "a3b911f55a0cf321a378d1e66c6402d5cc0cfd110d1f7d43d758da4fb563c81c",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/prediction_shape_20261003/shape_diagnostic_work/artifacts/moments_0.npz",
+      "bytes": 110860,
+      "sha256": "4047360c98f1286de1e1593e01aa83b7e846d7372da1aa16cc4de7ad57b0efc3",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    },
+    {
+      "path": "competition_engineering/runs/prediction_shape_20261003/shape_diagnostic_work/artifacts/moments_1.npz",
+      "bytes": 110860,
+      "sha256": "8f96cfbc52c053142d35780d55fb2531aa2456aadb62e19871081403ae3a2785",
+      "category": "optional_historical_artifact",
+      "tracked": false,
+      "obtain": "Optional private copy of this exact relative path. Aggregate evidence and source/config/reservation are in Git; exact historical replay needs original artifacts and caches. Do not reexecute on consumed pools as independent evidence."
+    }
+  ],
+  "excluded_local_state": [
+    "Bulk derived row caches; original run directories and logs; mixed supervisor ledger/protected outcomes; virtual environments; GPU caches; credentials. Preserve locally, not in Git."
+  ],
+  "reproducible": "Derived training features/moments can be reconstructed from frozen data identities, saved sources, protocols and original artifacts. This requires computation and separately authorized experiment work; bootstrap performs no reconstruction."
+}

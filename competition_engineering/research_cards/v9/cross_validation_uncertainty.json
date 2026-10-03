@@ -1,0 +1,36 @@
+{
+  "assumptions": "Paper assumptions need separate verification for pooled clipped correlation and dependent rows.",
+  "authors": [
+    "Yoshua Bengio",
+    "Yves Grandvalet"
+  ],
+  "card_id": "cross_validation_uncertainty",
+  "card_type": "paper",
+  "causality": "Curator inference: fixes concern offline selection, not inference state.",
+  "claim_confidence": "moderate",
+  "concise_relevance": "Diagnoses research reliability without changing the official score.",
+  "cpu_deployment": "No added inference cost.",
+  "curator": "Codex, primary-source review",
+  "dependencies": "No paper code imported.",
+  "diagnostic_signatures": "Curator inference: many near-tied candidates on a reused finite search set.",
+  "family": "experimental_methodology",
+  "incremental_inference": "No inference mechanism.",
+  "licensing": "Original curator paraphrase and bibliographic metadata.",
+  "limitations": "The theorem concerns K-fold estimates, not the validity of our sequence bootstrap.",
+  "mechanism": "There is no universally unbiased variance estimator for K-fold cross-validation under all distributions.",
+  "schema_version": 1,
+  "source_locator": "Abstract; theorem and conclusion in primary PDF",
+  "source_url": "https://www.jmlr.org/papers/v5/grandvalet04a.html",
+  "tags": [
+    "selection",
+    "uncertainty",
+    "generalization",
+    "research"
+  ],
+  "title": "No Unbiased Estimator of the Variance of K-Fold Cross-Validation",
+  "training_compute": "Selection and resampling only.",
+  "useful_when": "Curator inference: overlapping-fold score variation is not an independent uncertainty estimate.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2004
+}

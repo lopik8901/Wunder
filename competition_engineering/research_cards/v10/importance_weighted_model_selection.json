@@ -1,0 +1,37 @@
+{
+  "assumptions": "Covariate shift preserves the conditional distribution of outputs given inputs; usable importance ratios are required.",
+  "authors": [
+    "Masashi Sugiyama",
+    "Matthias Krauledat",
+    "Klaus-Robert Mueller"
+  ],
+  "card_id": "importance_weighted_model_selection",
+  "card_type": "paper",
+  "causality": "Curator inference: a scoring proxy can supply offline weights; deployed predictions still use only present and past observations.",
+  "claim_confidence": "moderate",
+  "concise_relevance": "Supports diagnosing the weighting assumption and selection population before further fitting.",
+  "cpu_deployment": "Existing current-row readout; benchmark actual callback.",
+  "curator": "Codex, primary-source review",
+  "dependencies": "NumPy and SciPy for the proposed adaptation; no author code imported.",
+  "diagnostic_signatures": "Curator inference: check exact population moments and fixed-candidate efficacy, not classifier AUC alone.",
+  "family": "distribution_shift",
+  "incremental_inference": "No extra online computation if weights are used only during training.",
+  "licensing": "Original curator paraphrase and bibliographic metadata.",
+  "limitations": "The paper does not establish unbiasedness for a finite-sample ratio statistic such as clipped weighted Pearson, learned proxy probabilities, or adaptively reused data.",
+  "mechanism": "Importance weighting adjusts model-selection risk when input distributions differ and the conditional output law remains unchanged.",
+  "schema_version": 1,
+  "source_locator": "Primary publisher abstract, JMLR8(35):985-1005",
+  "source_url": "https://www.jmlr.org/papers/v8/sugiyama07a.html",
+  "tags": [
+    "selection",
+    "weights",
+    "covariate-shift",
+    "assumptions"
+  ],
+  "title": "Covariate Shift Adaptation by Importance Weighted Cross Validation",
+  "training_compute": "Curator adaptation: matched fixed-penalty readouts with training-side WP selection.",
+  "useful_when": "Curator inference: training-only selection uses a population proxy whose correction rankings disagree with the actual selected population.",
+  "verified_on": "2026-10-02",
+  "version": 2,
+  "year": 2007
+}

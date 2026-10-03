@@ -1,0 +1,17 @@
+{
+  "observation": "Low training/search gradient cosine used as a fit-launch rule without sequence uncertainty.",
+  "competing_explanations": [
+    "Stable distribution/scoring conflict",
+    "High-dimensional gradient noise from only64 sequences",
+    "Residual model near-stationarity"
+  ],
+  "hypothesis": "Point-gradient conflict overstates evidence if within-search gradients are unstable or conflict intervals include both signs.",
+  "support": "Wide cosine intervals or negative split-half agreement; contrast exceeds same-size training subset variation.",
+  "weaken": "Tight directional confidence and stable split-half conflict.",
+  "stratification": "Fixed eight propensity bins, four target-specific prediction bins, three position bins; cross-fitted frozen mask classifier.",
+  "selection_contrast_rule": "Residual MSE selected/unselected ratio99CI upper<0.85 after observable matching motivates deeper selection diagnosis, not automatic weighting.",
+  "draws": 2000,
+  "seed": 20261002,
+  "training_sampling": "Fixed randomized stride5 phase per sequence; no score-driven phase choice",
+  "decision": "No model is fit from these diagnostics; no new incumbent can be declared."
+}

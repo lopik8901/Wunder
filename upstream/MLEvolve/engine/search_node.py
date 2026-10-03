@@ -48,6 +48,7 @@ class SearchNode(DataClassJsonMixin):
     is_buggy: bool = field(default=None, kw_only=True)  # type: ignore
     is_valid: bool = field(default=None, kw_only=True)  # type: ignore
     connectome_metrics: Optional[dict] = field(default=None, kw_only=True)
+    connectome_research_trace: Optional[dict] = field(default=None, kw_only=True)
 
     # ---- search / MCTS ----
     stage: Literal["root", "improve", "debug", "draft", "fusion_draft", "evolution", "fusion"]

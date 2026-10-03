@@ -39,6 +39,14 @@ def _compute_exploration_constant(agent):
 
 def select(agent, node: SearchNode):
     """UCT selection: recurse from node, return node to expand (root lock for drafts)."""
+    def _claim_for_expansion(selected: SearchNode) -> SearchNode:
+        # A draft is locked only when it is the actual work item. Locking it
+        # while merely traversing toward a descendant permanently removes a
+        # completed branch from root selection after enough traversals.
+        if selected.stage in ("draft", "fusion_draft"):
+            selected.lock = True
+        return selected
+
     def _best_child(n: SearchNode) -> SearchNode:
         C = _compute_exploration_constant(agent)
         if agent.is_root(n):
@@ -47,8 +55,6 @@ def select(agent, node: SearchNode):
             if len(filtered_children) > 0:
                 selected_node = max(filtered_children,
                                     key=lambda child: child.uct_value(exploration_constant=C))
-            if selected_node.stage in ["draft", "fusion_draft"]:
-                selected_node.lock = True
             return selected_node
         else:
             return max(n.children, key=lambda child: child.uct_value(exploration_constant=C))
@@ -61,7 +67,7 @@ def select(agent, node: SearchNode):
                 node = _best_child(node)
             else:
                 logger.info(f"[select] → node {node.id} (method=expand)")
-                return node
+                return _claim_for_expansion(node)
         else:
             if agent.is_root(node) and getattr(agent.acfg, "use_aggregation", True) and should_trigger_branch_fusion(agent) and random.random() < agent.acfg.branch_fusion_trigger_prob:
                 logger.info(f"Root node {node.id} is fully expanded for regular drafts, aggregation conditions met (including probability), returning root")

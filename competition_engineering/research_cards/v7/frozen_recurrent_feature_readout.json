@@ -1,0 +1,36 @@
+{
+  "assumptions": "The paper analyzes echo-state networks and their state properties.",
+  "authors": [
+    "Herbert Jaeger"
+  ],
+  "card_id": "frozen_recurrent_feature_readout",
+  "card_type": "paper",
+  "causality": "Curator adaptation: use only the current forward hidden activations; recurrent weights and state updates stay frozen.",
+  "claim_confidence": "limited",
+  "concise_relevance": "A distinct fixed-feature probe, gated on measured objective alignment, rather than new recurrent dynamics.",
+  "cpu_deployment": "Curator adaptation: fuse the readout into the existing rowwise graph and benchmark actual callbacks.",
+  "curator": "Codex, primary full-text mechanism review",
+  "dependencies": "Proposed adaptation uses ONNX/ONNX Runtime and NumPy; no paper implementation is copied.",
+  "diagnostic_signatures": "Curator inference: output/current-feature objective corrections fail; diagnose latent objective gradients before fitting.",
+  "family": "frozen_representation",
+  "incremental_inference": "Curator adaptation: reuse hidden states already computed by the incumbent; no additional recurrent state.",
+  "licensing": "Original curator paraphrase and bibliographic metadata only.",
+  "limitations": "A pretrained GRU is not the paper reservoir. No echo-state theorem or improvement guarantee transfers; exact causal-prefix and state-parity checks are required.",
+  "mechanism": "Output weights are trained as readout functions of fixed recurrent activations using linear regression.",
+  "schema_version": 1,
+  "source_locator": "Corrected2010 technical report; abstract, introduction and Section3, training readout functions",
+  "source_url": "https://www.ai.rug.nl/minds/uploads/EchoStatesTechRep.pdf",
+  "tags": [
+    "objective",
+    "latent",
+    "fixed",
+    "readout",
+    "causal"
+  ],
+  "title": "The echo state approach to analysing and training recurrent neural networks, with an Erratum note",
+  "training_compute": "Curator adaptation: forward the frozen graph on training rows and fit a bounded objective-aware readout.",
+  "useful_when": "Curator inference: existing frozen latent activations may retain task information compressed out of prediction values.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2001
+}

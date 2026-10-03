@@ -1,0 +1,38 @@
+{
+  "assumptions": "Covariate shift keeps the conditional target distribution given inputs unchanged.",
+  "authors": [
+    "Masashi Sugiyama",
+    "Matthias Krauledat",
+    "Klaus-Robert M\u00fcller"
+  ],
+  "card_id": "importance_weighted_model_selection",
+  "card_type": "paper",
+  "causality": "Curator adaptation: training targets are offline only; deployed corrections consume current causal inputs.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Provides a falsifiable next question about selection transfer; adaptation remains conditional on evidence.",
+  "cpu_deployment": "Curator inference: retain bounded current-row operations and benchmark the callback.",
+  "curator": "Codex, primary publisher abstract review",
+  "dependencies": "Proposed task adaptations use NumPy/SciPy; no paper implementation is copied.",
+  "diagnostic_signatures": "Curator inference: objective-aligned fitting improves training yet fails across sequences.",
+  "family": "distribution_shift",
+  "incremental_inference": "Curator adaptation: training objective changes can retain a stateless readout.",
+  "licensing": "Original curator paraphrase and bibliographic metadata only.",
+  "limitations": "Input drift alone does not establish this assumption. The paper does not provide a clipped Pearson guarantee.",
+  "mechanism": "Importance weighting adjusts cross-validation risk when input distributions differ.",
+  "schema_version": 1,
+  "source_locator": "Publisher abstract, JMLR 8(35):985-1005",
+  "source_url": "https://www.jmlr.org/papers/v8/sugiyama07a.html",
+  "tags": [
+    "covariate",
+    "shift",
+    "selection",
+    "distribution",
+    "generalization"
+  ],
+  "title": "Covariate Shift Adaptation by Importance Weighted Cross Validation",
+  "training_compute": "Density-ratio estimation adds statistical and computational uncertainty.",
+  "useful_when": "Curator inference: only after diagnosing input-distribution differences and uncertainty in selection transfer.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2007
+}

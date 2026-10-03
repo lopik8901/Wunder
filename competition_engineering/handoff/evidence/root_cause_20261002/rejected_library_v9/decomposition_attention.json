@@ -1,0 +1,36 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Haixu Wu",
+    "Jiehui Xu",
+    "Jianmin Wang",
+    "Mingsheng Long"
+  ],
+  "card_id": "decomposition_attention",
+  "card_type": "paper",
+  "causality": "Any decomposition window must be trailing and available at callback time.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Decomposition and attention may be costly per row.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Repeated persistence peaks or position-specific periodic structure.",
+  "family": "attention",
+  "incremental_inference": "Any decomposition window must be trailing and available at callback time.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Original long-horizon forecasting setup is not directly deployable here.",
+  "mechanism": "Progressive decomposition and auto-correlation model recurring sub-series patterns.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "attention",
+    "causal-adaptation-required"
+  ],
+  "title": "Autoformer: Decomposition Transformers with Auto-Correlation for Long-Term Series Forecasting",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: consistent multi-lag residual structure may indicate repeated components.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2021
+}

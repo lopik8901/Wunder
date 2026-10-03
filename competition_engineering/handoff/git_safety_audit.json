@@ -1,0 +1,12 @@
+{
+  "scope": "Explicit allowlist of research sources, tests, library revisions and portable metadata",
+  "credentials_or_actual_personal_paths_found": false,
+  "synthetic_redaction_fixture_contains_fake_personal_path": true,
+  "protected_outcomes_exported": false,
+  "bulk_binaries_or_datasets_staged": false,
+  "exact_frozen_bytes_preserved": true,
+  "whitespace_check": "Passed with cr-at-eol for exact frozen CRLF evidence",
+  "excluded": "Original mixed feedback reports/ledgers, bulk run trees, datasets/caches, weights, environments and private transfer bundle remain local",
+  "portable_checkout_regression": "218 passed,7 skipped; optional historical cache integration fixture documented",
+  "bootstrap": "No new experiments; summarize and await user approval"
+}

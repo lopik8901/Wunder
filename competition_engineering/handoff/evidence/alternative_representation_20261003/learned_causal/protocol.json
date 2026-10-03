@@ -1,0 +1,14 @@
+{
+  "observation": "Fixed temporal convolution and fixed polynomial memory probes failed matched GRU contrasts. These probes did not optimize raw-input feature extraction; frozen random projection/mixing may discard task-relevant channels.",
+  "hypothesis": "A learned bounded temporal representation adds reproducible causal correction information beyond an equally sized learned current-only model.",
+  "mechanism": "Learn input112-to32 projection and4 width32 kernel2 tanh layers at dilations1,4,16,64;128 concatenated states and same115-feature linear core feed a two-target linear correction. Current-only control repeats current input at every temporal tap, with identical parameters and optimizer.",
+  "experiment": "512 reserved fit groups,128rows each, same two paired sampling seeds as probes. AdamW lr0.002 decay0.001, batch1024,20 epochs1280updates; mean-one clipped-target absolute-weight residual MSE. Paired init/shuffle seeds20261057 and20261058. No architecture sweep.",
+  "selection": "Same128 development groups500rows; per-target checkpoint5,10,20 and strengths0,.05,.1,.25,.5,1 maximize minimum uniform/probability WP gain. All choices frozen before replication3.",
+  "primary": "temporal_r0. Paired replica1 repeats mechanism, no best-seed choice.",
+  "success": "Both temporal fits have positive gains on both populations; primary probability95 lower>0 and both128-sequence halves positive. Temporal-minus-current proxy positive in each paired fit and average95 lower>0. Primary also beats frozen matched-row GRU readout in probability point score.",
+  "failure": "Failed gate blocks official search; no seed/architecture/epoch tuning against replication.",
+  "replication": "Only reserved replication_3. Block4 remains unused for an independently justified mechanism.",
+  "complementarity": "Direct residual correction is the prospective simple ensemble. Poor-row thresholds fixed at development75th percentile, with paired sequence uncertainty. Report error structure and supervised fitting loss. GRU benchmark uses fewer trainable parameters; temporal-vs-current is the capacity-matched causal contrast.",
+  "causal": "Sparse endpoint graph uses16 required raw past/current taps, zeros both missing inputs and intermediate states. Projection uses no sequence-wide normalization; all fixed input normalization from incumbent.",
+  "deployment": "Learned layers have~12000 parameters; incremental cached convolution can plausibly fit CPU budget, requiring complete callback measurement if qualified."
+}

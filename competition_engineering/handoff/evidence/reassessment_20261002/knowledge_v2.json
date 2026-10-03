@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "version": 2,
+  "evidence": "search-only; adaptive reuse disclosed",
+  "incumbent": {
+    "wp": 0.6588353223316641,
+    "sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+  },
+  "established": [
+    {
+      "lesson": "Use official clipped weighted Pearson for model and hyperparameter selection whenever feasible. Lower residual MSE does not imply higher WP.",
+      "source": "runs/objective_alignment_20261002/final_review.json"
+    },
+    {
+      "lesson": "Point-gradient cosine is unreliable at the current64-sequence search size: median split-half agreement was0.16 for t0 and0.07 for t1. Include sequence uncertainty before rejecting a representation.",
+      "source": "runs/reassessment_20261002/gradient_uncertainty_v2.json"
+    },
+    {
+      "lesson": "Frozen t1 corrections improve all-required-row WP but regress officially scored WP. Their paired population contrasts exclude zero, survive unclipped prediction and within-sequence checks, and remain negative after influential-sequence deletion.",
+      "source": "runs/reassessment_20261002/population_mechanism.json"
+    },
+    {
+      "lesson": "A nonlinear causal mask predictor improved target0 population-gradient transport over the linear predictor under a prospective uncertainty rule. This supports a bounded weighted-readout experiment, not a new incumbent.",
+      "source": "runs/reassessment_20261002/nonlinear_selection_result.json"
+    }
+  ],
+  "weakened": [
+    {
+      "hypothesis": "Objective misalignment alone is the main remaining bottleneck.",
+      "reason": "60 fits in eight suites; objective-aware selection helped, but no convincing replacement."
+    },
+    {
+      "hypothesis": "Low point-gradient alignment establishes a stable causal transfer conflict.",
+      "reason": "Bootstrap intervals span both signs and split-half gradients are unstable."
+    },
+    {
+      "hypothesis": "Clipping or a few outlier sequences explain the t1 population contrast.",
+      "reason": "Contrast survives diagnostic counterfactuals."
+    },
+    {
+      "hypothesis": "The existing linear causal proxy is a sufficient selection substitute.",
+      "reason": "Prospective training masks selected an officially inferior t1 correction; audit intervals included zero."
+    }
+  ],
+  "closed_branches": [
+    "Broad objective-loss/grid tuning",
+    "Previously tested additive EMA and diagonal bilinear temporal tuning"
+  ],
+  "exploratory_only": [
+    {
+      "wp": 0.6590796311188727,
+      "paired99_delta": [
+        -0.0005840183,
+        0.0010744564
+      ],
+      "reason": "Adaptively selected point; interval crosses zero"
+    }
+  ],
+  "reopen_requirement": "New measured evidence and a predeclared falsifiable mechanism."
+}

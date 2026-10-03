@@ -1,0 +1,20 @@
+{
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.11.16 (main, Sep 24 2026, 17:56:40) [Clang 22.1.3 ]",
+  "passed": 86,
+  "skipped": 0,
+  "files": [
+    "test_nonlinear_state_campaign.py",
+    "test_representation_campaign.py",
+    "test_frozen_latent_readout.py",
+    "test_root_cause_campaign.py",
+    "test_reassessment_campaign.py",
+    "test_mlevolve_search_history.py",
+    "test_research_foundation.py",
+    "test_research_retrieval.py",
+    "test_mlevolve_search_boundary.py",
+    "test_campaign_onnx.py",
+    "test_campaign_worker_failure.py"
+  ],
+  "log_sha256": "a292d68cf7cfc449f3778e4911772720b49b1c635744cf7bb9a01b092f04e89d"
+}

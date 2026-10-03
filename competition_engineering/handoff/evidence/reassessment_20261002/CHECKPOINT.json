@@ -1,0 +1,8 @@
+{
+  "status": "closed_no_further_evidence_gated_fit",
+  "incumbent": 0.6588353223316641,
+  "awaiting": [],
+  "report_sha256": "c02ad32835240cc19f3a01318c104dc3181c4366b1991366b8712fe670c1cc9b",
+  "review_sha256": "48e469c07e4b8c1b7e762e107cdc76e76ee02047f72ce6861dc7616e09f28dd3",
+  "ledger_sha256": "0997ed896ed8094d1d8f047437c858de6ff8d1b5693e99aa2410271f34eb6bad"
+}

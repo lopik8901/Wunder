@@ -1,0 +1,13 @@
+{
+  "observation": "Frozen finite-field TCN gains failed paired seed/GRU contrasts; standalone raw-history probes lag GRU. Finite-field random mixing and recurrent compression remain different explanations.",
+  "hypothesis": "A512-row orthogonal polynomial memory of raw projected inputs preserves ordered-history information missing from the GRU readout.",
+  "mechanism": "Order4 Legendre linear dynamical state with exact zero-order-hold discretization,32 shared projected input channels;128 state coefficients. This is a structured fixed SSM feature probe, not a learned S4/Mamba architecture.",
+  "experiment": "Reuse exactly512 fit/128 development groups and paired128-row samplers, frozen input projection, mean-one target-weighted ridge0.1, target-wise WP strength grid. Compare128 SSM with128 independent EMA smoothing coefficients and128 projected GRU features.",
+  "replication": "Reserved replication_2,256 previously unobserved groups; no block1 tuning.",
+  "primary": "ssm_r0; second paired sampler repeats mechanism, no best-seed selection.",
+  "success": "Both SSM fits beat incumbent in both populations. Primary probability95 lower>0 and both128-sequence halves positive. SSM-minus-GRU and SSM-minus-smoothing probability contrasts positive in both fits and average paired95 lower>0.",
+  "failure": "Failed gate blocks official-search access. No window/order tuning on replication.",
+  "complementarity": "Same prospective development75th-percentile poor-row threshold and low-capacity residual ensemble. Standalone raw-feature target ridge is diagnostic.",
+  "source": "research_cards/v13/legendre_memory_unit.json",
+  "causal": "Update with current input only; state zeroed per sequence. No convolution with future rows."
+}

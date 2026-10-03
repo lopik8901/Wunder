@@ -1,0 +1,38 @@
+{
+  "assumptions": "Results concern agnostic classification with labeled source and unlabeled target data.",
+  "authors": [
+    "Shai Ben-David",
+    "Tyler Lu",
+    "Teresa Luu",
+    "David Pal"
+  ],
+  "card_id": "domain_adaptation_identifiability",
+  "card_type": "paper",
+  "causality": "Curator inference: target transport requires a stable relation usable from causal observable inputs.",
+  "claim_confidence": "moderate",
+  "concise_relevance": "Separates high mask-classifier AUC from justified learning weights.",
+  "cpu_deployment": "No incremental cost.",
+  "curator": "Codex, primary-source review",
+  "dependencies": "None.",
+  "diagnostic_signatures": "Curator inference: corrected-population model ranking disagrees with actual selected-population ranking.",
+  "family": "distribution_shift",
+  "incremental_inference": "No proposed inference architecture.",
+  "licensing": "Metadata and original curator paraphrase.",
+  "limitations": "No theorem establishes impossibility for this labeled-search regression task or clipped correlation.",
+  "mechanism": "Classification counterexamples show that input-distribution reweighting alone need not identify successful adaptation.",
+  "schema_version": 1,
+  "source_locator": "Primary abstract and introduction; weighting discussion in PDF",
+  "source_url": "https://proceedings.mlr.press/v9/david10a.html",
+  "tags": [
+    "selection",
+    "transport",
+    "assumptions",
+    "generalization"
+  ],
+  "title": "Impossibility Theorems for Domain Adaptation",
+  "training_compute": "Theory; no implementation imported.",
+  "useful_when": "Curator inference: mask prediction improves without reliable target-objective transport.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2010
+}

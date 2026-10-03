@@ -1,0 +1,12 @@
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.txt text eol=lf
+.gitattributes text eol=lf
+*.yaml text eol=lf
+competition_engineering/handoff/evidence/** -text
+competition_engineering/handoff/reservations/** -text
+competition_engineering/handoff/source_snapshots/** -text
+competition_engineering/search_knowledge.json -text
+competition_engineering/protocols/mask_aware_v1.json -text

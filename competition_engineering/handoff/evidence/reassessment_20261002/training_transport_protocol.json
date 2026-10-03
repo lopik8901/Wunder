@@ -1,0 +1,13 @@
+{
+  "observation": "Nonlinear mask weighting improves within-search t0 gradient representation but its weighted correction did not improve official WP.",
+  "hypothesis": "Within-search mask transport does not imply source-to-search target transport.",
+  "competing_explanations": [
+    "Insufficient effective training sequences after weighting",
+    "Stable source/selected-search conditional conflict",
+    "High-dimensional gradient uncertainty",
+    "Raw loss geometry still misses a transferable weighted direction"
+  ],
+  "tests": "Frozen mask ensemble on1024 training sequences; exact fixed stride40 phase; paired source/weighted gradients and official search gradients; effective sequence mass.",
+  "next_fit_rule": "A new directional fit requires positive99 lower for weighted training-to-official alignment and improvement over uniform training. Scaling requires a clearly identified effective-sample limitation and stable source-side gradient direction.",
+  "decision": "If transport is uncertain, gather a genuinely new causal-information lead rather than tune weights, penalties or loss."
+}

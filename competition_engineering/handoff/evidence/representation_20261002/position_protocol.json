@@ -1,0 +1,12 @@
+{
+  "observation": "Frozen-state fixed025 t1 search gains are positive early/late but negative in the middle; earlier current-row corrections showed a similar pattern.",
+  "competing_explanations": [
+    "Position-dependent model utility",
+    "Official-population effect absent from training",
+    "Sequence noise in a post-inspection slice"
+  ],
+  "experiment": "No fitting. Fixed thirds and strength0.25. Cross-fitted training A evaluated with B coefficients and vice versa; frozen pooled coefficients on replication and official search.",
+  "contrast": "Middle t1 correction WP delta minus pooled outer-rows correction WP delta, with paired sequence99 intervals.",
+  "position_fit_rule": "Proceed only if training-crossfit proxy contrast99 upper<0, replication proxy point<0, and official-search contrast99 upper<0. Otherwise position gating lacks replicated mechanistic support.",
+  "limitations": "This is an adaptive diagnostic, not fresh official evidence. Correlation contrasts condition on the frozen models."
+}

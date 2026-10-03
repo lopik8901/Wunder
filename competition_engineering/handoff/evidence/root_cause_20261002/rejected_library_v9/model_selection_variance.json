@@ -1,0 +1,36 @@
+{
+  "assumptions": "Paper assumptions need separate verification for pooled clipped correlation and dependent rows.",
+  "authors": [
+    "Gavin C. Cawley",
+    "Nicola L. C. Talbot"
+  ],
+  "card_id": "model_selection_variance",
+  "card_type": "paper",
+  "causality": "Curator inference: fixes concern offline selection, not inference state.",
+  "claim_confidence": "moderate",
+  "concise_relevance": "Diagnoses research reliability without changing the official score.",
+  "cpu_deployment": "No added inference cost.",
+  "curator": "Codex, primary-source review",
+  "dependencies": "No paper code imported.",
+  "diagnostic_signatures": "Curator inference: many near-tied candidates on a reused finite search set.",
+  "family": "experimental_methodology",
+  "incremental_inference": "No inference mechanism.",
+  "licensing": "Original curator paraphrase and bibliographic metadata.",
+  "limitations": "Their demonstrations use classification and cross-validation; task-specific correlation behavior must be measured.",
+  "mechanism": "Selection-criterion variance can cause overfitting and optimistic evaluation bias.",
+  "schema_version": 1,
+  "source_locator": "Abstract; introduction; sections4-5",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "selection",
+    "uncertainty",
+    "generalization",
+    "research"
+  ],
+  "title": "On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation",
+  "training_compute": "Selection and resampling only.",
+  "useful_when": "Curator inference: prospective correction-disjoint selection and audit can diagnose the search process.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2010
+}

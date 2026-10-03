@@ -1,0 +1,144 @@
+{
+  "models": {
+    "capped_normalized": {
+      "uniform_selection": [
+        {
+          "strength": 0.0,
+          "wp": 0.47884354218384567
+        },
+        {
+          "strength": 0.05,
+          "wp": 0.4789117045519468
+        },
+        {
+          "strength": 0.1,
+          "wp": 0.47896616134936143
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.47904182994324546
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.4788461073684158
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.47711843047808455
+        }
+      ],
+      "focused_selection": [
+        {
+          "strength": 0.0,
+          "wp": 0.5747829537759966
+        },
+        {
+          "strength": 0.05,
+          "wp": 0.574783897439179
+        },
+        {
+          "strength": 0.1,
+          "wp": 0.574775768965771
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.5746907610935706
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.5743146759103719
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.5726811313917061
+        }
+      ],
+      "focus_training_mean": 1.2082913694765052,
+      "normalized_focus_quantiles": [
+        0.16552298977907162,
+        0.16552298977907162,
+        0.4214588731422772,
+        3.370519690585918,
+        4.13807474447679
+      ]
+    },
+    "probability_normalized": {
+      "uniform_selection": [
+        {
+          "strength": 0.0,
+          "wp": 0.47884354218384567
+        },
+        {
+          "strength": 0.05,
+          "wp": 0.47891377906292637
+        },
+        {
+          "strength": 0.1,
+          "wp": 0.4789694924018447
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.47904385298465874
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.47882590542075987
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.47696536248077714
+        }
+      ],
+      "focused_selection": [
+        {
+          "strength": 0.0,
+          "wp": 0.6011248457097027
+        },
+        {
+          "strength": 0.05,
+          "wp": 0.6011152995040042
+        },
+        {
+          "strength": 0.1,
+          "wp": 0.6010974023087072
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.6009839968941311
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.6005542671421792
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.5988160437010691
+        }
+      ],
+      "focus_training_mean": 0.1147369317704059,
+      "normalized_focus_quantiles": [
+        0.019728939753010155,
+        0.0665847863915056,
+        0.37699993174404073,
+        3.0161754388252566,
+        8.133605444025592
+      ]
+    }
+  },
+  "selections": {
+    "capped_normalized": {
+      "model": "capped_normalized",
+      "strength": 0.05,
+      "wp": 0.574783897439179
+    },
+    "probability_normalized": {
+      "model": "probability_normalized",
+      "strength": 0.0,
+      "wp": 0.6011248457097027
+    }
+  },
+  "fit_rows": 407862,
+  "selection_rows": 102090,
+  "penalty": 1.0,
+  "normalization": "Each fit population has mean-one focus; selection WP scale invariant."
+}

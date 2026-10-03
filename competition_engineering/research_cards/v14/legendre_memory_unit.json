@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Aaron Voelker",
+    "Ivana Kaji\u0107",
+    "Chris Eliasmith"
+  ],
+  "card_id": "legendre_memory_unit",
+  "card_type": "paper",
+  "causality": "Update coefficients with current/past inputs only and clear state at reset.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Curator inference: test ordered history information with a compact stable state update if finite-lag diagnostics justify a longer-window representation.",
+  "cpu_deployment": "State update width sets CPU cost and memory footprint.",
+  "curator": "Codex; primary paper equation and discretization verification",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Residual dependence spanning both short and long fixed lags.",
+  "family": "state_space",
+  "incremental_inference": "Update coefficients with current/past inputs only and clear state at reset.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "A fixed linear memory probe omits the learned nonlinear memory/state coupling of the full LMU. Order and window govern frequency capacity; benchmark results do not establish Connectome gains.",
+  "mechanism": "A structured linear dynamical memory approximates a sliding-window signal with orthogonal polynomial coefficients.",
+  "schema_version": 1,
+  "source_locator": "Section2, equations1-4 and ZOH discretization; section3 benchmark scope",
+  "source_url": "https://papers.nips.cc/paper_files/paper/2019/file/952285b9b7e7a1be5aa7849f32ffff05-Paper.pdf",
+  "tags": [
+    "state_space",
+    "causal-adaptation-required"
+  ],
+  "title": "Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: multi-scale error may call for compact online history summaries.",
+  "verified_on": "2026-10-03",
+  "version": 2,
+  "year": 2019
+}

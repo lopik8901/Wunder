@@ -1,0 +1,9 @@
+{
+  "parent_sha256": "de49a8c1350a5a0ad9da7e0d741fbe2e9897971344c41cbe38e7f9acd3afd734",
+  "manifest_sha256": "4cd585dee20cc001401a1f17b984b4b302757abf409f515adc202e38b8df083c",
+  "count": 27,
+  "added": [
+    "nondecomposable_objective_linearization",
+    "importance_weighted_model_selection"
+  ]
+}

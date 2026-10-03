@@ -1,0 +1,29 @@
+{
+  "supported": [
+    "WP-based selection can reject later checkpoints despite substantially lower training MSE",
+    "Frozen-state linear readouts retain repeatable development signal",
+    "Prospective replication prevents testing failed mechanisms on official search"
+  ],
+  "weakly_supported": [
+    "Random joint tanh features improve uniform development WP over a linear control; proxy increment and official transfer remain unestablished"
+  ],
+  "weakened": [
+    "Fixed smooth interactions resolve transfer",
+    "Learned smooth interactions resolve transfer",
+    "Shallow hidden-state threshold regimes add meaningful incremental signal"
+  ],
+  "abandoned_locally": [
+    "Random-basis width/seed tuning",
+    "Learned-head epoch or strength tuning after failed replication",
+    "Tree depth/strength tuning after failed replication",
+    "Consensus and position gates from earlier campaigns"
+  ],
+  "inadequately_tested": [
+    "Sequence diversity at fixed fitting-row budget",
+    "Changing the frozen representation itself",
+    "Larger or longer-history models with new causal evidence"
+  ],
+  "next_hypothesis": "Does increasing the number of fitting sequences at a fixed sampled-row budget reduce the learned-readout generalization gap? Compare sequence diversity with within-sequence density, retaining an unused prospective replication group.",
+  "next_design": "Hold architecture, optimizer, total sampled rows, selection population and gate fixed; compare1024 sequences×128 rows with2048×64. Previously observed replication groups may enter the larger fit only if a newly reserved disjoint group is used for evaluation. Freeze the assignment before fitting.",
+  "scientific_limit": "Strong training-error reductions with early WP-selected checkpoints motivate the diversity test; they do not prove sequence overfitting is the unique root cause."
+}

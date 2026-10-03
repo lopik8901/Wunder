@@ -1,0 +1,40 @@
+{
+  "assumptions": "Paper assumptions need separate verification for pooled clipped correlation and dependent rows.",
+  "authors": [
+    "Cynthia Dwork",
+    "Vitaly Feldman",
+    "Moritz Hardt",
+    "Toniann Pitassi",
+    "Omer Reingold",
+    "Aaron Roth"
+  ],
+  "card_id": "adaptive_analysis_validity",
+  "card_type": "paper",
+  "causality": "Curator inference: fixes concern offline selection, not inference state.",
+  "claim_confidence": "moderate",
+  "concise_relevance": "Diagnoses research reliability without changing the official score.",
+  "cpu_deployment": "No added inference cost.",
+  "curator": "Codex, primary-source review",
+  "dependencies": "No paper code imported.",
+  "diagnostic_signatures": "Curator inference: many near-tied candidates on a reused finite search set.",
+  "family": "experimental_methodology",
+  "incremental_inference": "No inference mechanism.",
+  "licensing": "Original curator paraphrase and bibliographic metadata.",
+  "limitations": "No privacy-based query mechanism is implemented here; ordinary bootstrap intervals inherit no adaptive guarantee.",
+  "mechanism": "Coordinated privacy-based perturbation can control error for adaptively chosen expectation queries.",
+  "schema_version": 1,
+  "source_locator": "Primary abstract, preprint v3; original preprint2014",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "selection",
+    "uncertainty",
+    "generalization",
+    "research"
+  ],
+  "title": "Preserving Statistical Validity in Adaptive Data Analysis",
+  "training_compute": "Selection and resampling only.",
+  "useful_when": "Curator inference: repartitioning already-exposed search data does not restore independence.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2014
+}

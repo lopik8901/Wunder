@@ -1,0 +1,6 @@
+{
+  "train.py": "1310c324abaa34c245fe7fbdcd7239344b77c336c5761fab051aefebf06af714",
+  "artifacts/models.npz": "1ce9bb025517ec13b943483896ea9219371da7889757c45c74ea844cc94846f3",
+  "artifacts/training.json": "b8c2e1096fcc84e2612e7ee811e3e358762f665bf2d7ea73134a522e22e41c68",
+  "artifacts/selection_moments.npz": "b46ee5f10f4b6294f2120a191ad3c6c147ef3df064a1a9876527d0ec28a43ddb"
+}

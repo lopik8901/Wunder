@@ -186,7 +186,12 @@ def run(agent, init_solution_path: Optional[str] = None) -> SearchNode:
     )
     agent.virtual_root.add_expected_child_count()
 
-    if agent.use_stepwise_generation:
+    research_trace = None
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.research_planning import plan_with_research
+        plan, code, prompt_complete, research_trace = plan_with_research(
+            agent, prompt_complete, agent.virtual_root.id, "draft", plan_and_code_query)
+    elif agent.use_stepwise_generation:
         plan, code = stepwise_plan_and_code_query(
             agent_instance=agent,
             prompt_base=prompt,
@@ -199,7 +204,7 @@ def run(agent, init_solution_path: Optional[str] = None) -> SearchNode:
     else:
         plan, code = plan_and_code_query(agent, prompt_complete)
     new_node = SearchNode(plan=plan, code=code, parent=agent.virtual_root, stage="draft",
-                        local_best_node=agent.virtual_root)
+                        local_best_node=agent.virtual_root, connectome_research_trace=research_trace)
     register_node(agent, new_node, prompt_complete, new_branch=True)
 
     logger.info(f"[draft] → node {new_node.id} (branch={new_node.branch_id})")

@@ -1,0 +1,77 @@
+{
+  "full_rows": 20378624,
+  "full_training_wp": [
+    0.4594036540999882,
+    0.4644479529078277
+  ],
+  "phase_comparisons": [
+    {
+      "offset": 0,
+      "rows": 509952,
+      "wp": [
+        0.46062958560230066,
+        0.4635325789201443
+      ],
+      "cosine_to_full": [
+        0.9847271691737997,
+        0.9867321105804955
+      ],
+      "relative_gradient_error": [
+        0.17415490053576607,
+        0.16235979408487614
+      ]
+    },
+    {
+      "offset": 10,
+      "rows": 509952,
+      "wp": [
+        0.4593896526699984,
+        0.4636118151344862
+      ],
+      "cosine_to_full": [
+        0.9859955870272216,
+        0.9869864792290853
+      ],
+      "relative_gradient_error": [
+        0.16708774989769473,
+        0.16327966628518695
+      ]
+    },
+    {
+      "offset": 20,
+      "rows": 509952,
+      "wp": [
+        0.45871265357651575,
+        0.4655859954707081
+      ],
+      "cosine_to_full": [
+        0.9823309857303,
+        0.9843687898724334
+      ],
+      "relative_gradient_error": [
+        0.18828279434737089,
+        0.17703542606128078
+      ]
+    },
+    {
+      "offset": 30,
+      "rows": 508928,
+      "wp": [
+        0.45817233871662155,
+        0.46477576317024016
+      ],
+      "cosine_to_full": [
+        0.9761423942592884,
+        0.9862171246812306
+      ],
+      "relative_gradient_error": [
+        0.23114653193756823,
+        0.18168174060542544
+      ]
+    }
+  ],
+  "eligible_targets_for_full_moment_replication": [
+    0
+  ],
+  "decision": "Replicate exact training moments only for eligible targets; otherwise abandon row thinning as a material explanation."
+}

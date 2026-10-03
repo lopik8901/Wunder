@@ -1,0 +1,36 @@
+{
+  "assumptions": "Curator adaptation: estimate all objective moments from training rows, and test the fitted direction on fixed search evidence.",
+  "authors": [
+    "Jerome H. Friedman"
+  ],
+  "card_id": "functional_gradient_fitting",
+  "card_type": "paper",
+  "causality": "Curator adaptation: objective gradients may use training targets, but the deployed correction receives only causal input state.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Tests an objective mismatch diagnosed before retrieval, rather than assuming a larger architecture is needed.",
+  "cpu_deployment": "Curator inference: changing the fitting target need not increase callback cost; benchmark the exported model.",
+  "curator": "Codex, primary publisher abstract review",
+  "dependencies": "Proposed adaptation uses NumPy; no paper implementation is copied.",
+  "diagnostic_signatures": "Curator inference: clipped predictions and non-unit covariance-to-prediction-variance slopes motivate checking the objective gradient.",
+  "family": "objective",
+  "incremental_inference": "Curator inference: one fitted linear readout adds no target-dependent online state.",
+  "licensing": "Original curator paraphrase and bibliographic metadata only.",
+  "limitations": "The paper does not validate this task, clipped weighted Pearson, or the proposed single ridge gradient step. The pooled objective is nonseparable and its derivative must be independently checked.",
+  "mechanism": "Stagewise additive function estimation is connected to steepest descent in function space and generalized beyond least-squares fitting.",
+  "schema_version": 1,
+  "source_locator": "Publisher abstract, Annals of Statistics 29(5), 1189-1232",
+  "source_url": "https://doi.org/10.1214/aos/1013203451",
+  "tags": [
+    "objective",
+    "gradient",
+    "correlation",
+    "clipping",
+    "residual"
+  ],
+  "title": "Greedy function approximation: A gradient boosting machine.",
+  "training_compute": "Proposed adaptation requires one training pass for moments and another for a bounded ridge fit.",
+  "useful_when": "Curator inference: a residual fit can be misaligned with the actual evaluation objective, even when it reduces squared error.",
+  "verified_on": "2026-10-01",
+  "version": 1,
+  "year": 2001
+}

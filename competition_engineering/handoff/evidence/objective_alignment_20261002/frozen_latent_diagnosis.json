@@ -1,0 +1,18 @@
+{
+  "latent_gradient_cosine_per_target": [
+    0.1829825389161092,
+    -0.4274382587457533
+  ],
+  "training_latent_gradient_norm": [
+    0.1947985859940844,
+    0.2969138949188549
+  ],
+  "eligible_targets": [],
+  "train_rows": 509952,
+  "search_rows": 108139,
+  "causal_prefix": true,
+  "reset_determinism": true,
+  "baseline_prediction_parity": true,
+  "extractor_sha256": "45e61c6f233e918752c06860e59f6441570a28e456fd1eeaaf7a8bcf1f13f2a4",
+  "decision": "A new fixed-feature readout fit requires the predeclared alignment rule; no temporal dynamics are tuned."
+}

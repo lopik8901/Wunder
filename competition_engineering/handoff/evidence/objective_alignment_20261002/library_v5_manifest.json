@@ -1,0 +1,8 @@
+{
+  "parent_sha256": "4cd585dee20cc001401a1f17b984b4b302757abf409f515adc202e38b8df083c",
+  "manifest_sha256": "2fb594f26295a036352ebcda21f59bb1727db2b4c5a9b9052537a69e2b7bdaf4",
+  "count": 28,
+  "added": [
+    "risk_variance_across_sequence_groups"
+  ]
+}

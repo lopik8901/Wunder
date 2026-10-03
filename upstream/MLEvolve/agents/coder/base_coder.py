@@ -32,7 +32,7 @@ def plan_and_code_query(
     prompt,
     retries: int = 3,
 ) -> Tuple[str, str]:
-    """Generate plan + code in one LLM call; returns (nl_text, code). On failure returns ("", raw_completion_text)."""
+    """Generate plan + code; a valid code-only reply is still executable."""
     completion_text = None
     for _ in range(retries):
         completion_text = generate(
@@ -43,7 +43,7 @@ def plan_and_code_query(
         code = extract_code(completion_text)
         nl_text = extract_text_up_to_code(completion_text)
 
-        if code and nl_text:
+        if code:
             return nl_text, code
 
         logger.debug("Extraction retry...")

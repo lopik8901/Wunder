@@ -46,6 +46,11 @@ def test_aggregation_prompt_includes_search_atlas_and_diagnostic_plan(monkeypatc
         captured["prompt"] = prompt
         return "Search observation; hypothesis; distinguishing test.", "EXPERIMENT = {'kind': 'ridge', 'hypothesis': 'test'}"
     monkeypatch.setattr(aggregation_agent, "plan_and_code_query", fake_query)
+    from connectome import research_planning
+    def fake_research_hook(agent, prompt, parent_id, stage, code_query):
+        plan, code = code_query(agent, prompt)
+        return plan, code, prompt, {"stage": stage, "parent_id": parent_id}
+    monkeypatch.setattr(research_planning, "plan_with_research", fake_research_hook)
     monkeypatch.setattr(aggregation_agent, "register_node", lambda *args, **kwargs: None)
     agent = SimpleNamespace(
         virtual_root=root, is_root=lambda node: node is root,

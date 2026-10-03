@@ -1,0 +1,123 @@
+{
+  "protocol_id": "mask_aware_v1",
+  "frozen_root_path": "competition_engineering/checkpoints/ridge1024_targetwise_v1/ridge.npz",
+  "frozen_root_sha256": "a85a753dfe36012df81c7508d18e73e7735addd02faff6d60d179d5de4b88217",
+  "search_cache": "competition_engineering/cache/gru_tune",
+  "search_cache_identity_sha256": "342012b1ad7b9a4f9d960ed3f3ce92682a92b372fc21adaa055225ce84331a25",
+  "step_edges": [
+    99,
+    500,
+    2000,
+    5000,
+    10000,
+    20000
+  ],
+  "magnitude_edges": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.5,
+    2
+  ],
+  "proxy_seed": "connectome_mask_proxy_v1_20261001",
+  "mask_semantics": "need_prediction AND deterministic Bernoulli propensity from search is_scored conditioned on frozen root magnitude and step; beta(0.5,0.5) smoothing",
+  "status": "prospectively_frozen_not_applied_to_any_candidate",
+  "search_required_counts": [
+    [
+      1573,
+      4601,
+      7446,
+      6974,
+      4047,
+      550,
+      473
+    ],
+    [
+      4606,
+      16645,
+      28527,
+      25994,
+      15801,
+      3234,
+      1193
+    ],
+    [
+      10515,
+      37417,
+      54618,
+      51859,
+      30099,
+      5765,
+      1727
+    ],
+    [
+      16209,
+      58077,
+      84029,
+      90633,
+      57682,
+      10486,
+      2884
+    ],
+    [
+      35015,
+      120598,
+      174234,
+      173677,
+      109766,
+      20836,
+      5874
+    ]
+  ],
+  "search_scored_counts": [
+    [
+      15,
+      84,
+      215,
+      721,
+      1113,
+      138,
+      48
+    ],
+    [
+      68,
+      313,
+      738,
+      2152,
+      3667,
+      935,
+      146
+    ],
+    [
+      246,
+      721,
+      1549,
+      3895,
+      6744,
+      1687,
+      265
+    ],
+    [
+      341,
+      1174,
+      2553,
+      6809,
+      12135,
+      3640,
+      823
+    ],
+    [
+      755,
+      2762,
+      5958,
+      11705,
+      24832,
+      7417,
+      1775
+    ]
+  ],
+  "search_required_total": 1273664,
+  "search_scored_total": 108139
+}

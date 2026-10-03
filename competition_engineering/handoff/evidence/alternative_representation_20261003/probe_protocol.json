@@ -1,0 +1,21 @@
+{
+  "observation": "GRU-state probes and extra nonlinear readout capacity fit training better without credible official-search gains. New disjoint data are available.",
+  "hypothesis": "Explicit bounded history of raw observations carries incremental correction information missed by the GRU representation.",
+  "mechanism": "Exact delays preserve observations; fixed dilated causal convolutions mix them nonlinearly without recurrent compression or additional optimization.",
+  "experiment": "Same512 fitting groups,128 sampled rows each, two paired sampling seeds; same128 development groups,500rows each. Mean-one abs(clipped target) residual ridge, penalty0.1 per row, same per-target WP strength grid. All augmented families128 features plus115 current core.",
+  "families": [
+    "core",
+    "instant",
+    "gru",
+    "delay",
+    "tcn"
+  ],
+  "primary": "tcn replica0; replica1 repeatability, no best-seed selection",
+  "basis": "Fixed seed20261051. Input projection112x32;4 kernel2 tanh causal convolutions width32, dilations1,4,16,64; concatenate4 layer states128, receptive field86rows. Delay uses projected input at1,4,16,64. Instant uses128 random tanh current features; GRU projected256to128. Fit-only normalization.",
+  "success": "TCN pooled gains positive in both uniform/probability populations and both128-sequence replication halves; probability95 lower>0; TCN-minus-instant and TCN-minus-GRU probability contrasts positive in both paired fits and average95 lower>0. Delay contrast is diagnostic, not mandatory.",
+  "failure": "Failed gate blocks official-search access; no strengths/architecture tuning on replication. Random-probe failure is not rejection of learned convolution.",
+  "replication_block": "replication_1",
+  "complementarity": "Freeze poor-row thresholds at development 75th percentile absolute incumbent error per target. Report error correlation, weighted residual improvement and correction/error covariance on fresh rows; simple residual correction already forms the frozen ensemble.",
+  "standalone": "Report direct ridge target prediction from normalized raw current inputs plus each alternative128 representation, omitting incumbent prediction features. This is a frozen-feature standalone probe, not a trained full architecture.",
+  "search": "After gate only, freeze one primary and run one predeclared comparison; no search-based tuning. Qualification delta>=0.0002, paired99 lower>0, each target delta>=-0.0002, callback<=76.9275378083us/row."
+}

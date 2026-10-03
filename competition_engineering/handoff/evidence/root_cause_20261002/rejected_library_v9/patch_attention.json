@@ -1,0 +1,36 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Yuqi Nie",
+    "Nam H. Nguyen",
+    "Phanwadee Sinthong",
+    "Jayant Kalagnanam"
+  ],
+  "card_id": "patch_attention",
+  "card_type": "paper",
+  "causality": "Build patches only from available past/current observations.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Patch updates and attention cache still require CPU timing.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Broad long-lag structure across multiple feature channels.",
+  "family": "attention",
+  "incremental_inference": "Build patches only from available past/current observations.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Long-term forecast benchmarks differ from online one-row prediction.",
+  "mechanism": "PatchTST segments time series into patches and shares a channel-independent transformer.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "attention",
+    "causal-adaptation-required"
+  ],
+  "title": "A Time Series is Worth 64 Words: Long-term Forecasting with Transformers",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: coarse history summaries may retain lag information at lower attention cost.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2022
+}

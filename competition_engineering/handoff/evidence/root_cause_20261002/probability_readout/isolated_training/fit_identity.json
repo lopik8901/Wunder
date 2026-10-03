@@ -1,0 +1,7 @@
+{
+  "train.py": "f8e4dd451d2b711c7dec11d32797613a718a8f0f0302f5675fc051973d6d47dc",
+  "combo.npz": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+  "mask_trees.npz": "5ba979b008645e72343fd93b355b9417de5769bf5605d3dca9fe67c8e4f698be",
+  "artifacts/models.npz": "98659c3f30c8d3870a3f916e678b1a6c4a870c87f74380d72261e5ebd79c3da3",
+  "artifacts/training.json": "a4a5b5e37133f48116ad9adda977a0dfd4d498a1758ea30a3ed41104e93e25b8"
+}

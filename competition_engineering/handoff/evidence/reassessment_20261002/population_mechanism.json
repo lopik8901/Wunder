@@ -1,0 +1,100 @@
+{
+  "models": {
+    "incumbent": {
+      "clipped_combined_delta_uniform_official": [
+        0.0,
+        0.0
+      ],
+      "unclipped_prediction_combined_delta_uniform_official": [
+        0.0,
+        0.0
+      ],
+      "within_sequence_correlation_combined_delta_uniform_official": [
+        0.0,
+        0.0
+      ],
+      "leave_one_out_population_contrast_range": [
+        0.0,
+        0.0
+      ],
+      "delete_five_largest_absolute_influences_population_contrast": 0.0,
+      "fixed_position_combined_delta_uniform_official": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "raw_t1_1024": {
+      "clipped_combined_delta_uniform_official": [
+        0.000720573370449229,
+        -0.0003538139008224528
+      ],
+      "unclipped_prediction_combined_delta_uniform_official": [
+        0.0007078491018485678,
+        -0.0003561747971657647
+      ],
+      "within_sequence_correlation_combined_delta_uniform_official": [
+        0.0004837881019933432,
+        -0.00036104480392373794
+      ],
+      "leave_one_out_population_contrast_range": [
+        -0.0011352112673549408,
+        -0.0009751345339816253
+      ],
+      "delete_five_largest_absolute_influences_population_contrast": -0.0007556749562313003,
+      "fixed_position_combined_delta_uniform_official": [
+        [
+          0.00039935935764112696,
+          0.0007459648059174318,
+          0.0010169081447098938
+        ],
+        [
+          -0.0002791919549021138,
+          -0.0006314519408734398,
+          -2.3386437836059315e-05
+        ]
+      ]
+    },
+    "raw_t1_4096": {
+      "clipped_combined_delta_uniform_official": [
+        0.0008165337103993586,
+        -0.0007043147846035325
+      ],
+      "unclipped_prediction_combined_delta_uniform_official": [
+        0.0008088053954249941,
+        -0.0006941838917893239
+      ],
+      "within_sequence_correlation_combined_delta_uniform_official": [
+        0.0005698386245999165,
+        -0.0005138128320973934
+      ],
+      "leave_one_out_population_contrast_range": [
+        -0.0016526351216321067,
+        -0.0012425428838397368
+      ],
+      "delete_five_largest_absolute_influences_population_contrast": -0.0011856206273733738,
+      "fixed_position_combined_delta_uniform_official": [
+        [
+          0.0008466417713024477,
+          0.00039280552448694994,
+          0.0012785869932975258
+        ],
+        [
+          -0.0001262142264317756,
+          -0.0017732064574469408,
+          0.00024041933657570347
+        ]
+      ]
+    }
+  },
+  "interpretation": "Unclipped and within-sequence values are diagnostic counterfactual metrics, never candidate selection scores.",
+  "protocol_sha256": "15739e0bd057d01244b09a3db865547820cc7f203bc462047e246e08b761e87a",
+  "moments_sha256": "d65e2699f8aada0f5e941ad5e20d7b69370b1f1a16f0b9ec657dd68efd5eba7c"
+}

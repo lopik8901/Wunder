@@ -1,0 +1,17 @@
+{
+  "hypothesis": "Nonlinear causal mask weighting supplies a more faithful offline training population for a t0 correction.",
+  "penalty": 1.0,
+  "tier": 1024,
+  "target": 0,
+  "training_sampling": "stride40; every fifth sequence selects strength",
+  "comparison": "Two matched coefficient fits, unweighted and nonlinear-weighted; uniform/focused training-side WP selection; no search strength grid.",
+  "launch_evidence_sha256": "76daf9e1dead918ce619c318e81b3dc10979361b67089c7a39b793f87bcfa2a3",
+  "rule": {
+    "minimum_delta": 0.0002,
+    "paired99_lower": 0.0,
+    "minimum_target_delta": -0.0002,
+    "callback_us_max": 76.92753780833335
+  },
+  "mask_classifier": "Offline weights only, no additional inference state or cost.",
+  "train_source_sha256": "8bbfe6827eab7f8e5943b96214af5b1f09b5c8390304745d6897337335ffd33e"
+}

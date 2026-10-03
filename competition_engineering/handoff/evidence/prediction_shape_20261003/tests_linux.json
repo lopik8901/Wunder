@@ -1,0 +1,23 @@
+{
+  "passed": 111,
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "files": [
+    "test_nonlinear_state_campaign.py",
+    "test_representation_campaign.py",
+    "test_frozen_latent_readout.py",
+    "test_root_cause_campaign.py",
+    "test_reassessment_campaign.py",
+    "test_mlevolve_search_history.py",
+    "test_research_foundation.py",
+    "test_research_retrieval.py",
+    "test_mlevolve_search_boundary.py",
+    "test_campaign_onnx.py",
+    "test_campaign_worker_failure.py",
+    "test_sequence_diversity.py",
+    "test_alternative_representation.py",
+    "test_causal_context_diagnostic.py",
+    "test_prediction_shape_campaign.py",
+    "test_book_side_campaign.py"
+  ],
+  "log_sha256": "54f8ac4a69b2d110e915206f6b4800b2038bc4395965283cb9cbc0d4c1f9a4ec"
+}

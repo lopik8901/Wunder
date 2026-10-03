@@ -1,0 +1,22 @@
+{
+  "hypothesis": "Frozen corrections may improve uniform populations while worsening official selected populations, or gains may be dominated by sequence noise.",
+  "models": [
+    "incumbent",
+    "raw_t0_1024",
+    "raw_t0_4096",
+    "raw_t1_1024",
+    "raw_t1_4096",
+    "historical_exploratory_point"
+  ],
+  "masks": [
+    "uniform",
+    "official",
+    "causal_proxy",
+    "random_proxy"
+  ],
+  "draws": 10000,
+  "seed": 20261006,
+  "coefficient_sha256": "7f7283699e4e9765aa3f8c8233077d32948c1ad3a63d1c7906ce90a93f32c1db",
+  "rule": "Population-specific conflict requires paired99 interval for official-minus-uniform candidate delta to exclude zero. Otherwise do not claim conflict.",
+  "decision": "No fit or selection from search labels; inspect only prospectively frozen choices and descriptive contrasts."
+}

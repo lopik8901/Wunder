@@ -1,0 +1,34 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Sepp Hochreiter",
+    "Jürgen Schmidhuber"
+  ],
+  "card_id": "lstm_memory",
+  "card_type": "paper",
+  "causality": "Use only preceding inputs and reset hidden and cell states between sequences.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Multiple gates add row-wise CPU matrix operations.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Residual persistence across long sequence lags.",
+  "family": "recurrence",
+  "incremental_inference": "Use only preceding inputs and reset hidden and cell states between sequences.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Long-memory motivation does not establish that larger recurrence is necessary here.",
+  "mechanism": "Memory cells and gates address difficult long-range gradient propagation in recurrent learning.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "recurrence",
+    "causal-adaptation-required"
+  ],
+  "title": "Long Short-Term Memory",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: a longer effective memory may explain slow residual decay.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 1997
+}

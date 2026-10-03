@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-03",
+  "session": "Ended; bootstrap must summarize and wait for user approval before experiments.",
+  "canonical_handoff": "../RESEARCH_HANDOFF.md",
+  "incumbent": {
+    "wp": 0.6588353223316641,
+    "sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+    "t0_wp": 0.6479917119604004,
+    "t1_wp": 0.6696789327029276,
+    "metric_domain": "Historical adaptively reused64-sequence official search",
+    "archive_sha256": "c8acc7153f60b7540c3b988877f30af8a1ec799d87026d09b46a9c3a37521076"
+  },
+  "awaiting_promotion": [],
+  "knowledge_version": 25,
+  "library": {
+    "version": 16,
+    "cards": 39,
+    "manifest_sha256": "dc8acabddc87fcf82f4e9655d3c40b18c44f047c7af21be436379fa8cd655383"
+  },
+  "data_registry": "data_roles.json",
+  "evidence_categories": [
+    "established_infrastructure",
+    "established_diagnostic",
+    "replicated_development",
+    "adaptive_search",
+    "weakened_specific_test",
+    "inconclusive",
+    "curator_inference",
+    "still_open"
+  ],
+  "families": [
+    {
+      "family": "Historical manual/MLEvolve",
+      "evidence_category": "adaptive_search",
+      "conclusion": "Incumbent formed by target-specific magnitude/gated ridge;82 attempts plus manual trajectory.",
+      "evidence": "evidence/autonomous_20261001/FINAL_REPORT.json"
+    },
+    {
+      "family": "Additive/diagonal bilinear temporal",
+      "evidence_category": "weakened",
+      "conclusion": "Two tested memory mechanisms do not establish gain; repaired latency/worker errors are distinct.",
+      "evidence": "evidence/autonomous_20261001/FINAL_REPORT.json"
+    },
+    {
+      "family": "Objective alignment",
+      "evidence_category": "weakened",
+      "conclusion": "60 fits/8 suites; WP selection justified, objective mismatch alone not sufficient.",
+      "evidence": "evidence/objective_alignment_20261002/final_review.json"
+    },
+    {
+      "family": "Population and gradient transport",
+      "evidence_category": "established_diagnostic",
+      "conclusion": "t1 population contrast survives counterfactuals; point gradients uncertain; mask prediction is not transport proof.",
+      "evidence": "evidence/reassessment_20261002/FINAL_REPORT.json"
+    },
+    {
+      "family": "Weight normalization/tree execution",
+      "evidence_category": "established_infrastructure",
+      "conclusion": "Mean-one penalty invariance and exact ONNX execution verified; no stronger scorer.",
+      "evidence": "evidence/root_cause_20261002/FINAL_REPORT.json"
+    },
+    {
+      "family": "Frozen GRU linear information",
+      "evidence_category": "replicated_development",
+      "conclusion": "Training-derived signal replicated beyond current features; official-score improvement not established.",
+      "evidence": "evidence/representation_20261002/FINAL_REPORT.json"
+    },
+    {
+      "family": "Consensus/disagreement/position",
+      "evidence_category": "weakened",
+      "conclusion": "Matched-amplitude comparison and latency reject claimed mechanism; exploratory search point uncertain.",
+      "evidence": "evidence/representation_20261002/FINAL_REPORT.json"
+    },
+    {
+      "family": "Nonlinear state/readout/innovation",
+      "evidence_category": "weakened",
+      "conclusion": "Fixed/learned/treshold nonlinear readouts fail incremental mechanism/official transfer.",
+      "evidence": "evidence/nonlinear_state_20261003/FINAL_REPORT.json"
+    },
+    {
+      "family": "Fitting-sequence diversity",
+      "evidence_category": "inconclusive",
+      "conclusion": "Both original-mixture and composition-balanced paired comparisons span zero.",
+      "evidence": "evidence/sequence_diversity_20261003/FINAL_REPORT.json"
+    },
+    {
+      "family": "Alternative causal architectures/rescues",
+      "evidence_category": "weakened_specific_tests",
+      "conclusion": "Five stages,1280 fresh replication sequences; all prospective gates fail. Not rejection of all architectures.",
+      "evidence": "evidence/alternative_representation_20261003/FINAL_REPORT.json"
+    },
+    {
+      "family": "Prefix context gradient transport",
+      "evidence_category": "weakened_specific_test",
+      "conclusion": "Four development error reductions negative; no replication; not noise proof.",
+      "evidence": "evidence/causal_context_20261003/FINAL_REPORT.json"
+    },
+    {
+      "family": "Prediction-only calibration",
+      "evidence_category": "weakened_specific_test",
+      "conclusion": "Historical source audit plus fresh crossfit fitting/transfer gap; no selection/development read for this branch.",
+      "evidence": "evidence/prediction_shape_20261003/FINAL_REPORT.json"
+    },
+    {
+      "family": "Semantic bid/ask features",
+      "evidence_category": "weakened_specific_test",
+      "conclusion": "Primary gate fails; apparent repeat advantage disappears after matching strengths; no replication.",
+      "evidence": "evidence/prediction_shape_20261003/book_side/development.json"
+    }
+  ],
+  "closed_without_new_evidence": [
+    "Broad objective-loss/grid tuning",
+    "Previously tested additive EMA and diagonal bilinear temporal tuning",
+    "Disagreement soft-threshold tuning without new evidence",
+    "Search-specific position gating without replicated evidence",
+    "Frozen GRU linear/nonlinear readout tuning without new mechanism evidence",
+    "Fitting-sequence count tuning without new evidence",
+    "Tuning the tested86-row temporal topology or512-row fixed polynomial memory without new mechanism evidence",
+    "Rescuing the tested temporal encoders by disjoint decoding or original-target supervision without new evidence",
+    "Tuning this prefix-context gradient predictor without new observable transport evidence",
+    "Prediction-only spline shape tuning without new transport evidence",
+    "Tuning the tested eight semantic volume-side aggregate features without new incremental signal evidence"
+  ],
+  "exploratory_only": [
+    {
+      "wp": 0.6590796311188727,
+      "paired99_delta": [
+        -0.0005840183,
+        0.0010744564
+      ],
+      "reason": "Adaptively selected point; interval crosses zero"
+    },
+    {
+      "wp": 0.6588467901506747,
+      "paired99_delta": [
+        -0.0001229887069432625,
+        0.00013893444785350104
+      ],
+      "reason": "Training-proxy-selected unweighted readout; tiny adaptive search gain, not an established improvement."
+    },
+    {
+      "wp": 0.6588825374213778,
+      "paired99_delta": [
+        -0.00028729860601496793,
+        0.000363698898501402
+      ],
+      "reason": "Historical search-selected tree strength0.25; execution repaired, not a newly discovered score improvement."
+    },
+    {
+      "wp": 0.6590721033812812,
+      "paired99_delta": [
+        -0.0008065760838449942,
+        0.0011115846961819937
+      ],
+      "reason": "Consensus failed matched-control replication and practical CPU constraint; not an incumbent."
+    }
+  ],
+  "saturation_judgment": {
+    "category": "curator_inference",
+    "statement": "Recent local-correction neighborhood appears increasingly saturated. Not a proven ceiling or exhaustion of resources; materially different causal representations remain open with measurable mechanism evidence."
+  },
+  "still_open": [
+    "Observable incremental WP signal beyond current inputs and frozen state with matched controls",
+    "Causal representation/feature mapping supported by semantics and measured transfer",
+    "Population-dependent utility versus selection noise; no reused-search adaptation",
+    "Prospective stability of selection versus strength/seed fluctuations"
+  ],
+  "constraints": {
+    "callback_practical_us_per_row": 76.92753780833335,
+    "infrastructure_cap_us_per_row": 90,
+    "cpu_vcpus": 1,
+    "ram_bytes": 16000000000,
+    "artifact_zip_bytes_max": 20000000,
+    "whole_test_seconds_max": 3600,
+    "candidate_fit_isolation": "Fail-closed Linux bubblewrap, no network, only fitting/selection data mounted"
+  },
+  "boundaries": {
+    "replication": "512 untouched, candidate development gate and freeze first; each block consumed once",
+    "protected": "No protected outcomes in research memory; separate supervisor/user authorization needed; historical exposure not assumed fresh",
+    "no_experiments_in_handoff": true,
+    "no_protected_evaluation_or_submission_in_handoff": true
+  },
+  "outstanding_technical_issues": [
+    "External dataset/weights are absent from Git and must be restored/verified",
+    "Old MLEvolve root/config differs from practical incumbent; no verified in-place journal resume",
+    "Full historical cache verification requires optional private bulk run transfer",
+    "GPU setup is optional/device-specific; all latency must be remeasured on deployment host"
+  ]
+}

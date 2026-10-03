@@ -1,0 +1,6 @@
+{
+  "library_version": 14,
+  "cards": 37,
+  "manifest_sha256": "b0fa0e52607b6bd723014157a0b4c1f7d832accf937f6c3d4f075854dcc87acc",
+  "equations": "Continuous A,B match equation2; state update uses equation4, exact ZOH at dt=1/window512. This tests only fixed memory features, not the full nonlinear LMU."
+}

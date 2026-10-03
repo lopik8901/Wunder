@@ -259,7 +259,12 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
 
     parent_node.add_expected_child_count()
 
-    if agent.acfg.use_diff_mode:
+    research_trace = None
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.research_planning import plan_with_research
+        plan, code, prompt_complete, research_trace = plan_with_research(
+            agent, prompt_complete, parent_node.id, "improve", plan_and_code_query)
+    elif agent.acfg.use_diff_mode:
         try:
             logger.info(f"Using diff improve for node {parent_node.id}")
             plan, code = _diff_improve(agent, prompt, agent.data_preview, parent_node)
@@ -272,7 +277,8 @@ def run(agent, parent_node: SearchNode) -> SearchNode:
     from_topk = getattr(parent_node, '_topk_triggered', False)
 
     new_node = SearchNode(plan=plan, code=code, parent=parent_node, stage="improve",
-                        local_best_node=parent_node.local_best_node, from_topk=from_topk)
+                        local_best_node=parent_node.local_best_node, from_topk=from_topk,
+                        connectome_research_trace=research_trace)
     register_node(agent, new_node, prompt_complete, parent_node=parent_node)
 
     if hasattr(parent_node, '_topk_triggered'):

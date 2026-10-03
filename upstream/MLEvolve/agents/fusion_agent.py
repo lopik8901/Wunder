@@ -148,7 +148,12 @@ def fuse_two_nodes(agent, source_node: SearchNode, target_node: SearchNode) -> S
     assistant_prefix = f"Let me approach this systematically.\nFirst, I'll review the dataset:\n{agent.data_preview}\nMy current solution:\nPlan: {prompt['Current Solution']['Plan']}\nCode: {prompt['Current Solution']['Code']}\nPerformance: {prompt['Current Solution']['Performance']}\nAnalysis: {prompt['Current Solution']['Analysis']}\nI'll now analyze the reference solution and selectively incorporate its best ideas."
     prompt_complete = build_chat_prompt_for_model(agent.acfg.code.model, introduction, user_prompt, assistant_prefix)
 
-    if agent.acfg.use_diff_mode:
+    research_trace = None
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.research_planning import plan_with_research
+        plan, code, prompt_complete, research_trace = plan_with_research(
+            agent, prompt_complete, source_node.id, "fusion", plan_and_code_query)
+    elif agent.acfg.use_diff_mode:
         try:
             logger.info(f"Using diff fusion for node {source_node.id} with reference {target_node.id}")
             plan, code = _diff_fusion(agent, prompt, agent.data_preview, source_node)
@@ -166,7 +171,8 @@ def fuse_two_nodes(agent, source_node: SearchNode, target_node: SearchNode) -> S
         parent=source_node,
         stage="fusion",
         local_best_node=source_node.local_best_node,
-        from_topk=from_topk
+        from_topk=from_topk,
+        connectome_research_trace=research_trace,
     )
     register_node(agent, fused_node, prompt_complete, parent_node=source_node)
 
@@ -301,7 +307,12 @@ def _fuse_with_multiple_references(
     assistant_prefix = f"Let me approach this systematically.\nFirst, I'll review the dataset:\n{agent.data_preview}\nMy current solution:\nPlan: {prompt['Current Solution']['Plan']}\nCode: {prompt['Current Solution']['Code']}\nPerformance: {prompt['Current Solution']['Performance']}\nAnalysis: {prompt['Current Solution']['Analysis']}\nI'll now analyze the reference solutions and selectively incorporate the best ideas."
     prompt_complete = build_chat_prompt_for_model(agent.acfg.code.model, introduction, user_prompt, assistant_prefix)
 
-    if agent.acfg.use_diff_mode:
+    research_trace = None
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.research_planning import plan_with_research
+        plan, code, prompt_complete, research_trace = plan_with_research(
+            agent, prompt_complete, parent_node.id, "fusion_multi", plan_and_code_query)
+    elif agent.acfg.use_diff_mode:
         try:
             logger.info(f"Using diff multi-fusion for node {parent_node.id} with {len(reference_nodes)} references")
             plan, code = _diff_multi_fusion(agent, prompt, agent.data_preview, parent_node)
@@ -319,7 +330,8 @@ def _fuse_with_multiple_references(
         parent=parent_node,
         stage="fusion",
         local_best_node=parent_node.local_best_node,
-        from_topk=from_topk
+        from_topk=from_topk,
+        connectome_research_trace=research_trace,
     )
     register_node(agent, fused_node, prompt_complete, parent_node=parent_node)
 

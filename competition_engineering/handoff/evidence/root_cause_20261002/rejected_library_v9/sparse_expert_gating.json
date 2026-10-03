@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Noam Shazeer",
+    "Azalia Mirhoseini",
+    "Krzysztof Maziarz"
+  ],
+  "card_id": "sparse_expert_gating",
+  "card_type": "paper",
+  "causality": "Gate and experts must use only current/past features.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Sparse expert count does not guarantee low CPU dispatch overhead.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Opposite residual bias or magnitude effects across fixed groups.",
+  "family": "gating",
+  "incremental_inference": "Gate and experts must use only current/past features.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "The published very-large-scale setting is far from this deployment budget.",
+  "mechanism": "A trainable gate selects a sparse subset of feed-forward experts per example.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "gating",
+    "causal-adaptation-required"
+  ],
+  "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: distinct feature regimes could merit specialized corrections.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2017
+}

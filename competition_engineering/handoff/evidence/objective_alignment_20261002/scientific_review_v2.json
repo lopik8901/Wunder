@@ -1,0 +1,77 @@
+{
+  "tier": 1024,
+  "target": 0,
+  "rows": [
+    {
+      "family": "raw_residual",
+      "wp_selected_search": 0.6587835759937168,
+      "mse_selected_search": 0.6565793903594428,
+      "score_selection_advantage": 0.0022041856342740473,
+      "delta_vs_incumbent": -5.1746337946245724e-05
+    },
+    {
+      "family": "pearson_tangent",
+      "wp_selected_search": 0.65879826135479,
+      "mse_selected_search": 0.6587599738345693,
+      "score_selection_advantage": 3.828752022072557e-05,
+      "delta_vs_incumbent": -3.706097687306009e-05
+    },
+    {
+      "family": "direct_wp",
+      "wp_selected_search": 0.6588099361560282,
+      "mse_selected_search": 0.6576353798675774,
+      "score_selection_advantage": 0.0011745562884508676,
+      "delta_vs_incumbent": -2.5386175634856123e-05
+    }
+  ],
+  "best_diagnostic_grid": "raw_residual_1.0@0.1",
+  "best_grid_delta": 1.146781450145351e-05,
+  "generalization_gaps": {
+    "raw_residual_0.01": {
+      "fit_wp_gain": 0.0034773730428402927,
+      "internal_selection_wp_gain": 2.279019202183763e-05
+    },
+    "pearson_tangent_0.01": {
+      "fit_wp_gain": 0.0036602908477871288,
+      "internal_selection_wp_gain": 0.0
+    },
+    "raw_residual_0.1": {
+      "fit_wp_gain": 0.0023513909764131258,
+      "internal_selection_wp_gain": 2.6053567927175614e-05
+    },
+    "pearson_tangent_0.1": {
+      "fit_wp_gain": 0.0030185915822177334,
+      "internal_selection_wp_gain": 0.0
+    },
+    "raw_residual_1.0": {
+      "fit_wp_gain": 0.0009611067468068835,
+      "internal_selection_wp_gain": 0.0002445104838287304
+    },
+    "pearson_tangent_1.0": {
+      "fit_wp_gain": 0.0016510314421078198,
+      "internal_selection_wp_gain": 3.0918504549948267e-06
+    },
+    "direct_wp_0.01": {
+      "fit_wp_gain": 0.003947116672965545,
+      "internal_selection_wp_gain": 0.0
+    },
+    "direct_wp_0.1": {
+      "fit_wp_gain": 0.0033745231739964465,
+      "internal_selection_wp_gain": 0.0
+    },
+    "direct_wp_1.0": {
+      "fit_wp_gain": 0.0021024431242687713,
+      "internal_selection_wp_gain": 2.4756502544631687e-06
+    }
+  },
+  "loss_score_relationship": {
+    "candidate_points": 45,
+    "fit_mse_improved_search_wp_worsened": 42,
+    "fit_wp_improved_search_wp_worsened": 42,
+    "spearman_fit_mse_improvement_vs_search_wp": -0.5479578392621871,
+    "caveat": "Descriptive correlations across dependent grid candidates; no independent statistical claim"
+  },
+  "answer": "Lower residual MSE can yield worse official WP; score-based selection mitigates the mismatch but no practically stronger correction has yet been established.",
+  "caveat": "Internal selection excludes correction-fit sequences only. The frozen incumbent was already trained and selected; this is not independent validation.",
+  "decision": "Replicate once at fixed4096 training tier because direct-WP fitting gains did not transfer to training-sequence selection."
+}

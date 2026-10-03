@@ -1,0 +1,37 @@
+{
+  "assumptions": "The paper studies classification representations in neural networks; probe quality is conditional on the representation and task.",
+  "authors": [
+    "Guillaume Alain",
+    "Yoshua Bengio"
+  ],
+  "card_id": "linear_representation_probes",
+  "card_type": "paper",
+  "causality": "Curator adaptation: only current forward GRU states are reused; no future rows, recurrent parameter updates or new memory states.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Tests retained causal information directly instead of treating a noisy point-gradient rejection as conclusive.",
+  "cpu_deployment": "Fuse readout into the existing graph and benchmark the complete callback.",
+  "curator": "Codex, primary-source review",
+  "dependencies": "NumPy for fitting; ONNX Runtime for frozen feature extraction and inference.",
+  "diagnostic_signatures": "Curator inference: compare a fixed-state readout with a matched current-feature control on separate sequence groups.",
+  "family": "frozen_representation",
+  "incremental_inference": "Curator adaptation: one matrix-vector readout on already computed hidden activations.",
+  "licensing": "Original curator paraphrase and bibliographic metadata; no paper code imported.",
+  "limitations": "It does not prove that a regression probe improves clipped weighted correlation or that training gains transport across selected populations.",
+  "mechanism": "Independently trained linear classifiers probe information available in intermediate representations without changing the underlying network.",
+  "schema_version": 1,
+  "source_locator": "Primary abstract, version4,22November2018",
+  "source_url": "https://arxiv.org/abs/1610.01644",
+  "tags": [
+    "representation",
+    "probe",
+    "hidden",
+    "linear",
+    "diagnostic"
+  ],
+  "title": "Understanding intermediate layers using linear classifier probes",
+  "training_compute": "Curator adaptation: frozen forward pass followed by fixed-penalty weighted regression and training-derived replication.",
+  "useful_when": "Curator inference: a frozen predictor compresses learned states into few outputs and current-input corrections may miss retained information.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2016
+}

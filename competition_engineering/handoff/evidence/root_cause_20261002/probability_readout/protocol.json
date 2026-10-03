@@ -1,0 +1,14 @@
+{
+  "hypothesis": "Probability-weighted t0 training and selection transfer better after removing arbitrary population truncation.",
+  "matched_control": "Capped and uncapped populations both normalized to mean-one before the same fixed ridge penalty1; otherwise identical.",
+  "selection": "Every fifth training sequence, focused official-form WP strengths [0,.05,.1,.25,.5,1]; no search selection.",
+  "training": "1024 designated training sequences, stride40, current115-feature readout, target0 only.",
+  "qualification": {
+    "minimum_delta": 0.0002,
+    "paired99_lower": 0.0,
+    "minimum_target_delta": -0.0002,
+    "cpu_us_max": 76.92753780833335
+  },
+  "launch_evidence_sha256": "8f626524d4e4e42773b86a59f0b4fc3d886ae53ee2009beff1d52bceb58f10f1",
+  "source_sha256": "f8e4dd451d2b711c7dec11d32797613a718a8f0f0302f5675fc051973d6d47dc"
+}

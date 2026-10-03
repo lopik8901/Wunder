@@ -1,0 +1,23 @@
+{
+  "microseconds_per_row": {
+    "sklearn": [
+      195.68392999999995,
+      192.0757169999998,
+      192.53439000000006
+    ],
+    "onnx": [
+      3.519741000000298,
+      3.4580394999998987,
+      3.407098499999872
+    ]
+  },
+  "median_us": {
+    "sklearn": 192.53439000000006,
+    "onnx": 3.4580394999998987
+  },
+  "rows": 2000,
+  "repeats": 3,
+  "cpu_count": 1,
+  "max_abs_parity": 6.559019394281052e-08,
+  "scope": "Correction-only API timings; separate from complete isolated callback measurements."
+}

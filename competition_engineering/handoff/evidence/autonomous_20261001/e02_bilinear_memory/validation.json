@@ -1,0 +1,9 @@
+{
+  "causal_prefix": true,
+  "sequence_reset": true,
+  "deterministic": true,
+  "warmup_and_output_contract": true,
+  "benchmark_rows": 20000,
+  "callback_us_per_row": 71.27658100017129,
+  "wall_us_per_row": 166.22357619999946
+}

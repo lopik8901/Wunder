@@ -1,0 +1,37 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Ramin Hasani",
+    "Mathias Lechner",
+    "Alexander Amini",
+    "Daniela Rus",
+    "Radu Grosu"
+  ],
+  "card_id": "liquid_time_constant",
+  "card_type": "paper",
+  "causality": "Integrate forward in time with a deterministic state reset.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Numerical solver overhead may be unacceptable for per-row CPU inference.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Sequence-specific or feature-dependent residual persistence.",
+  "family": "state_space",
+  "incremental_inference": "Integrate forward in time with a deterministic state reset.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "The paper's time-series results do not establish feasibility under this callback budget.",
+  "mechanism": "Gated first-order dynamical systems have state-dependent time constants.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "state_space",
+    "causal-adaptation-required"
+  ],
+  "title": "Liquid Time-constant Networks",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: apparent memory timescale may vary with observed regime.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2020
+}

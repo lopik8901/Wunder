@@ -53,3 +53,52 @@ def test_root_with_full_draft_slots_selects_completed_child():
     child.lock = True
     with pytest.raises(RuntimeError, match="no selectable child"):
         node_selection.select(agent, root)
+
+
+def test_root_traversal_does_not_lock_draft_when_expanding_grandchild():
+    root = SimpleNamespace(id="root", stage="root", is_terminal=False, children=[],
+                           reached_child_limit=lambda scfg: True)
+    draft = SimpleNamespace(id="draft", stage="draft", is_terminal=False, lock=False,
+                            is_buggy=False, continue_improve=False, children=[],
+                            reached_child_limit=lambda scfg: True,
+                            uct_value=lambda exploration_constant: 1)
+    descendant = SimpleNamespace(id="descendant", stage="improve", is_terminal=False,
+                                 lock=False, is_buggy=False, continue_improve=False,
+                                 children=[], reached_child_limit=lambda scfg: False,
+                                 uct_value=lambda exploration_constant: 1)
+    root.children.append(draft)
+    draft.children.append(descendant)
+    agent = SimpleNamespace(virtual_root=root, is_root=lambda node: node is root,
+        cfg=SimpleNamespace(connectome_mode=True,
+            agent=SimpleNamespace(decay=SimpleNamespace(phase_ratios=[.5, .8],
+                exploration_constant=1.414, alpha=.01, lower_bound=.5))),
+        acfg=SimpleNamespace(use_aggregation=False, steps=15),
+        scfg=SimpleNamespace(num_drafts=2, num_improves=3), current_step=6)
+    assert node_selection.select(agent, root) is descendant
+    assert draft.lock is False
+    assert node_selection.select(agent, root) is descendant
+    assert draft.lock is False
+
+
+@pytest.mark.parametrize("raises", [False, True])
+def test_selected_draft_parent_unlocks_after_expansion(raises):
+    class Journal(list):
+        @property
+        def nodes(self):
+            return self
+
+    root = SimpleNamespace(id="root", stage="root")
+    child = SimpleNamespace(id="child", stage="draft", lock=True)
+    def run_step(*args, **kwargs):
+        if raises:
+            raise RuntimeError("synthetic expansion failure")
+        return False, None
+    agent = SimpleNamespace(journal=Journal([root]), data_preview="ready",
+                            search_start_time=1, _run_single_step=run_step,
+                            virtual_root=root, branch_all_nodes={}, best_node=None)
+    if raises:
+        with pytest.raises(RuntimeError, match="synthetic"):
+            agent_search.AgentSearch.step(agent, child, lambda *args: None)
+    else:
+        assert agent_search.AgentSearch.step(agent, child, lambda *args: None) is root
+    assert child.lock is False

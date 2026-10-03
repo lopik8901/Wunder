@@ -1,0 +1,6 @@
+{
+  "campaign_protocol_sha256": "3e92a36fa610aa5c941a88d04bdd8c9ed25c4a72ff5f5a6defd5c8a41d7ef65b",
+  "prepared_manifest_sha256": "06e4c9f0fb02f7f012950d31129cc03b50955dff34f2934f60e906f906512aa7",
+  "source_sha256": "45669586a1de2b34fc595500cfe1518d88ace0590a1478b9821b70e606ecad6d",
+  "scope": "Only derived fitting and selection groups are mounted; replication and search caches absent."
+}

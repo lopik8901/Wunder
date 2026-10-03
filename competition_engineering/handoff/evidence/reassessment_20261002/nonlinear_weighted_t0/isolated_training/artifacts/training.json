@@ -1,0 +1,139 @@
+{
+  "models": {
+    "unweighted": {
+      "uniform_selection": [
+        {
+          "strength": 0.0,
+          "wp": 0.47884354218384567
+        },
+        {
+          "strength": 0.05,
+          "wp": 0.47889755594480854
+        },
+        {
+          "strength": 0.1,
+          "wp": 0.4789453716989498
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.4790512823804011
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.47908805267063337
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.4785963217721326
+        }
+      ],
+      "focused_selection": [
+        {
+          "strength": 0.0,
+          "wp": 0.5747829537759966
+        },
+        {
+          "strength": 0.05,
+          "wp": 0.5747953757848168
+        },
+        {
+          "strength": 0.1,
+          "wp": 0.5748035941431227
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.5748018745620523
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.5746902690824309
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.574042619824666
+        }
+      ]
+    },
+    "nonlinear_weighted": {
+      "uniform_selection": [
+        {
+          "strength": 0.0,
+          "wp": 0.47884354218384567
+        },
+        {
+          "strength": 0.05,
+          "wp": 0.47890974749622345
+        },
+        {
+          "strength": 0.1,
+          "wp": 0.4789618529310277
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.47902741087949274
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.4788025747514601
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.4769639350228382
+        }
+      ],
+      "focused_selection": [
+        {
+          "strength": 0.0,
+          "wp": 0.5747829537759966
+        },
+        {
+          "strength": 0.05,
+          "wp": 0.5747835227569612
+        },
+        {
+          "strength": 0.1,
+          "wp": 0.5747747619042766
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.574685051789947
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.5742908678438303
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.5725847844261516
+        }
+      ]
+    }
+  },
+  "selections": {
+    "unweighted_focused": {
+      "model": "unweighted",
+      "strength": 0.1,
+      "wp": 0.5748035941431227
+    },
+    "unweighted_uniform": {
+      "model": "unweighted",
+      "strength": 0.5,
+      "wp": 0.47908805267063337
+    },
+    "nonlinear_weighted_focused": {
+      "model": "nonlinear_weighted",
+      "strength": 0.05,
+      "wp": 0.5747835227569612
+    }
+  },
+  "fit_rows": 407862,
+  "selection_rows": 102090,
+  "penalty": 1.0,
+  "focus_quantiles": [
+    0.2,
+    0.2,
+    0.5092451190071068,
+    4.072569852785585,
+    5.0
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "baseline_parity": true,
+  "causal_prefix": true,
+  "reset_determinism": true,
+  "graph_sha256": "45e61c6f233e918752c06860e59f6441570a28e456fd1eeaaf7a8bcf1f13f2a4"
+}

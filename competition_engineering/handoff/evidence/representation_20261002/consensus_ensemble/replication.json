@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "mean": {
+      "combined_delta_uniform_probability": [
+        0.0012111254531766147,
+        0.0016081248593314834
+      ],
+      "delta_per_target_uniform_probability": [
+        [
+          0.0008889698240147625,
+          0.0015332810823384668
+        ],
+        [
+          0.001303711360445603,
+          0.0019125383582173638
+        ]
+      ],
+      "paired99_combined_uniform_probability": [
+        [
+          0.00021494100769899426,
+          0.000983686458236236
+        ],
+        [
+          0.0021822415690856164,
+          0.002260269638787015
+        ]
+      ]
+    },
+    "matched_amplitude": {
+      "combined_delta_uniform_probability": [
+        0.0009981504562665,
+        0.0012878610356512055
+      ],
+      "delta_per_target_uniform_probability": [
+        [
+          0.0007758856047345719,
+          0.001220415307798428
+        ],
+        [
+          0.0011058250523869884,
+          0.0014698970189154226
+        ]
+      ],
+      "paired99_combined_uniform_probability": [
+        [
+          0.00023149776876103744,
+          0.0007952466103663116
+        ],
+        [
+          0.0017519201723651431,
+          0.0018009791227708316
+        ]
+      ]
+    },
+    "consensus": {
+      "combined_delta_uniform_probability": [
+        0.0009350860454274412,
+        0.0011537897419003351
+      ],
+      "delta_per_target_uniform_probability": [
+        [
+          0.0007401222884071967,
+          0.0011300498024476857
+        ],
+        [
+          0.001004952484143229,
+          0.0013026269996574413
+        ]
+      ],
+      "paired99_combined_uniform_probability": [
+        [
+          0.00011187097996194579,
+          0.0006737919082645955
+        ],
+        [
+          0.001755703330186272,
+          0.0016747559918836891
+        ]
+      ]
+    }
+  },
+  "consensus_minus_amplitude_control": {
+    "combined_delta_uniform_probability": [
+      -6.306441083905878e-05,
+      -0.00013407129375087035
+    ],
+    "paired99_combined_uniform_probability": [
+      [
+        -0.0003402953727249265,
+        -0.0002817531700426895
+      ],
+      [
+        0.0002074312566581091,
+        1.308132246407314e-05
+      ]
+    ]
+  },
+  "scope": "Fresh correction-disjoint training group; no claim of independent pretrained-model evaluation.",
+  "moments_sha256": "ae163252dd44331771526e759feac1dd744e46214cc33d4af236c9a92ef82970"
+}

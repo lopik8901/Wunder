@@ -1,0 +1,306 @@
+{
+  "outcomes": {
+    "selection": {
+      "uniform": {
+        "incumbent": {
+          "wp": 0.4461733209496618,
+          "delta": 0.0,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t0_1024": {
+          "wp": 0.4459510772913405,
+          "delta": -0.00022224365832129722,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t0_4096": {
+          "wp": 0.4461843290568712,
+          "delta": 1.1008107209442564e-05,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t1_1024": {
+          "wp": 0.4465806198161089,
+          "delta": 0.00040729886644713664,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t1_4096": {
+          "wp": 0.4466833220532751,
+          "delta": 0.0005100011036133223,
+          "paired99": null,
+          "selected": true
+        },
+        "historical_exploratory_point": {
+          "wp": 0.44556279889081474,
+          "delta": -0.0006105220588470406,
+          "paired99": null,
+          "selected": false
+        }
+      },
+      "causal_proxy": {
+        "incumbent": {
+          "wp": 0.5099860123786601,
+          "delta": 0.0,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t0_1024": {
+          "wp": 0.5100295333429772,
+          "delta": 4.352096431703423e-05,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t0_4096": {
+          "wp": 0.5102779592193303,
+          "delta": 0.000291946840670132,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t1_1024": {
+          "wp": 0.5103644719610583,
+          "delta": 0.0003784595823981274,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t1_4096": {
+          "wp": 0.510503158048683,
+          "delta": 0.0005171456700228116,
+          "paired99": null,
+          "selected": true
+        },
+        "historical_exploratory_point": {
+          "wp": 0.5099529359755468,
+          "delta": -3.307640311334126e-05,
+          "paired99": null,
+          "selected": false
+        }
+      },
+      "random_proxy": {
+        "incumbent": {
+          "wp": 0.44889123629025185,
+          "delta": 0.0,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t0_1024": {
+          "wp": 0.4487948946750284,
+          "delta": -9.634161522342755e-05,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t0_4096": {
+          "wp": 0.44908646289723886,
+          "delta": 0.000195226606987009,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t1_1024": {
+          "wp": 0.4492565512434765,
+          "delta": 0.00036531495322467133,
+          "paired99": null,
+          "selected": false
+        },
+        "raw_t1_4096": {
+          "wp": 0.44939823393771705,
+          "delta": 0.0005069976474652016,
+          "paired99": null,
+          "selected": true
+        },
+        "historical_exploratory_point": {
+          "wp": 0.4486325868648786,
+          "delta": -0.0002586494253732363,
+          "paired99": null,
+          "selected": false
+        }
+      }
+    },
+    "audit": {
+      "uniform": {
+        "incumbent": {
+          "wp": 0.45849250870381253,
+          "delta": 0.0,
+          "paired99": [
+            0.0,
+            0.0
+          ],
+          "selected": false
+        },
+        "raw_t0_1024": {
+          "wp": 0.4585582441055671,
+          "delta": 6.573540175458525e-05,
+          "paired99": [
+            -0.000324088985349939,
+            0.0004495375043588739
+          ],
+          "selected": false
+        },
+        "raw_t0_4096": {
+          "wp": 0.4588330955308975,
+          "delta": 0.00034058682708498766,
+          "paired99": [
+            -8.405485266938904e-05,
+            0.0007449218426476403
+          ],
+          "selected": false
+        },
+        "raw_t1_1024": {
+          "wp": 0.4586353776253087,
+          "delta": 0.00014286892149617536,
+          "paired99": [
+            -0.0004248644358383921,
+            0.0006312215427393152
+          ],
+          "selected": false
+        },
+        "raw_t1_4096": {
+          "wp": 0.458917207190379,
+          "delta": 0.0004246984865664549,
+          "paired99": [
+            -0.00011190786282112703,
+            0.0009270128552913236
+          ],
+          "selected": true
+        },
+        "historical_exploratory_point": {
+          "wp": 0.4586287709308877,
+          "delta": 0.0001362622270751901,
+          "paired99": [
+            -0.0006224464591028614,
+            0.0008600635381438868
+          ],
+          "selected": false
+        }
+      },
+      "causal_proxy": {
+        "incumbent": {
+          "wp": 0.5251575742935439,
+          "delta": 0.0,
+          "paired99": [
+            0.0,
+            0.0
+          ],
+          "selected": false
+        },
+        "raw_t0_1024": {
+          "wp": 0.5253065736335092,
+          "delta": 0.00014899933996526116,
+          "paired99": [
+            -0.00017042362423025037,
+            0.0005076898633582833
+          ],
+          "selected": false
+        },
+        "raw_t0_4096": {
+          "wp": 0.5254654294845413,
+          "delta": 0.0003078551909974081,
+          "paired99": [
+            -6.3998457966562e-05,
+            0.0007375061014100153
+          ],
+          "selected": false
+        },
+        "raw_t1_1024": {
+          "wp": 0.52528250805928,
+          "delta": 0.0001249337657360794,
+          "paired99": [
+            -0.0001847738381830716,
+            0.0004138637507320186
+          ],
+          "selected": false
+        },
+        "raw_t1_4096": {
+          "wp": 0.5253990874721813,
+          "delta": 0.00024151317863740918,
+          "paired99": [
+            -0.00019310427073811586,
+            0.0006538559670350199
+          ],
+          "selected": true
+        },
+        "historical_exploratory_point": {
+          "wp": 0.5253416581373738,
+          "delta": 0.0001840838438298409,
+          "paired99": [
+            -0.0004343438878324979,
+            0.0008854530280975457
+          ],
+          "selected": false
+        }
+      },
+      "random_proxy": {
+        "incumbent": {
+          "wp": 0.45838732172651453,
+          "delta": 0.0,
+          "paired99": [
+            0.0,
+            0.0
+          ],
+          "selected": false
+        },
+        "raw_t0_1024": {
+          "wp": 0.4584522897762654,
+          "delta": 6.496804975086867e-05,
+          "paired99": [
+            -0.00031497487493695577,
+            0.0004540938443720925
+          ],
+          "selected": false
+        },
+        "raw_t0_4096": {
+          "wp": 0.4587272653417318,
+          "delta": 0.00033994361521727523,
+          "paired99": [
+            -6.731003627211268e-05,
+            0.0007676467549569999
+          ],
+          "selected": false
+        },
+        "raw_t1_1024": {
+          "wp": 0.4585445634948926,
+          "delta": 0.00015724176837805803,
+          "paired99": [
+            -0.000320715280889709,
+            0.0005874787117168349
+          ],
+          "selected": false
+        },
+        "raw_t1_4096": {
+          "wp": 0.4587433700281386,
+          "delta": 0.00035604830162405676,
+          "paired99": [
+            -0.00017475300701923685,
+            0.0008611293730549955
+          ],
+          "selected": true
+        },
+        "historical_exploratory_point": {
+          "wp": 0.45848932458791347,
+          "delta": 0.0001020028613989421,
+          "paired99": [
+            -0.0005995119088891221,
+            0.0008142961827629875
+          ],
+          "selected": false
+        }
+      }
+    }
+  },
+  "choices": {
+    "uniform": 4,
+    "causal_proxy": 4,
+    "random_proxy": 4
+  },
+  "sequence_count": 512,
+  "mask_row_counts": [
+    10189312,
+    1035770,
+    1036180
+  ],
+  "official_gru_preflight_seconds": 0.1319562999997288,
+  "source_sha256": "01c7f1330bc1f477cc72de291c6e7f87f9c8686e629c275575258c5392d9334d",
+  "stats_sha256": "e4071ab1130fdf07a0b287ae4295634660337acbec2651e312e23e74841757bd",
+  "protocol_sha256": "6b86d4015c70b0c1ac20555d127852084eb583725fc5187bfc935ed45175191a",
+  "boundary": "Correction-disjoint training sequences only; no official-search or protected labels used for prospective selection/audit."
+}

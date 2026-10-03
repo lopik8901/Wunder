@@ -1,0 +1,8 @@
+{
+  "mode": "Synthetic regression/model parity only; no ML competition experiment/evaluation",
+  "python": "3.12.10",
+  "platform": "Windows",
+  "passed": 219,
+  "skipped": 6,
+  "returncode": 0
+}

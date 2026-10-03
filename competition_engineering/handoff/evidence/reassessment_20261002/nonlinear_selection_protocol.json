@@ -1,0 +1,17 @@
+{
+  "observation": "t1 correction efficacy differs between official and uniform populations, surviving clipping/centering/influence checks; linear causal proxy does not reproduce it.",
+  "hypothesis": "Nonlinear current-input mask structure improves population transport beyond the frozen linear scoring predictor.",
+  "model": {
+    "family": "HistGradientBoostingClassifier",
+    "max_iter": 64,
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.1,
+    "min_samples_leaf": 40,
+    "l2_regularization": 1.0,
+    "early_stopping": false
+  },
+  "training_target": "Scoring indicator only; t0/t1 never classifier targets or features.",
+  "cross_fit": "Four fixed sequence folds, exactly1000 random required rows per sequence, same sample as prior classifier.",
+  "fit_launch_rule": "Log loss improvement>=0.02 over frozen linear predictor; for at least one target, paired99 lower of cosine improvement>0 and weighted-vs-official cosine99 lower>0. No launch from higher AUC alone.",
+  "scope": "Diagnostic mask learning on fixed search only; no new practical incumbent or adaptive uncertainty guarantee."
+}

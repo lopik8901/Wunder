@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "incumbent": 0.6588353223316641,
+  "awaiting_promotion": [],
+  "report_sha256": "e923d3787db5a825f16e3c16436e664344f5c99f940ccee3f0aacdcd75761cb3",
+  "knowledge_version": 4,
+  "next_question": "Which causal feature information predicts correction utility in the officially scored population across sequences? Compact tree execution is now feasible, but further fits need a transferable signal beyond training/proxy WP."
+}

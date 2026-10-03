@@ -1,0 +1,181 @@
+{
+  "version": "v6",
+  "manifest_sha256": "95919ac23f9188a45f57b0634ad686ef1d15bd3053a890d3be21ee35e55a7f2e",
+  "count": 29,
+  "cards": [
+    {
+      "id": "basis_residual_forecasting",
+      "mechanism": "Stacked fully connected blocks use backward and forward residual links for forecasting.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Original results concern univariate forecasts and do not transfer automatically."
+    },
+    {
+      "id": "causal_instance_normalization",
+      "mechanism": "Reversible instance normalization removes and restores instance statistics for forecasting under distribution shift.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Input normalization cannot use unseen future sequence statistics or future targets."
+    },
+    {
+      "id": "causal_self_attention",
+      "mechanism": "The Transformer uses attention in place of recurrence and convolution for sequence modeling.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Its machine-translation training advantages are not evidence of Connectome benefit."
+    },
+    {
+      "id": "classification_temperature_scaling",
+      "mechanism": "The paper studies post-hoc calibration of classification confidence and finds temperature scaling effective on its datasets.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Classification probability calibration is not the same objective as weighted Pearson regression."
+    },
+    {
+      "id": "decomposition_attention",
+      "mechanism": "Progressive decomposition and auto-correlation model recurring sub-series patterns.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Original long-horizon forecasting setup is not directly deployable here."
+    },
+    {
+      "id": "dilated_causal_convolution",
+      "mechanism": "An autoregressive network conditions each output on preceding audio samples.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Audio-generation evidence does not establish Connectome WP improvement."
+    },
+    {
+      "id": "dilated_recurrence",
+      "mechanism": "Multi-resolution recurrent skip connections shorten paths across long sequences.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "The reported long-dependency tasks differ from this competition."
+    },
+    {
+      "id": "featurewise_nonlinear",
+      "mechanism": "A learned sum of per-feature neural functions captures nonlinear univariate effects.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Featurewise additivity omits interactions unless explicitly extended."
+    },
+    {
+      "id": "frozen_recurrent_feature_readout",
+      "mechanism": "Output weights are trained as readout functions of fixed recurrent activations using linear regression.",
+      "assumptions": "The paper analyzes echo-state networks and their state properties.",
+      "limitations": "A pretrained GRU is not the paper reservoir. No echo-state theorem or improvement guarantee transfers; exact causal-prefix and state-parity checks are required."
+    },
+    {
+      "id": "functional_gradient_fitting",
+      "mechanism": "Stagewise additive function estimation is connected to steepest descent in function space and generalized beyond least-squares fitting.",
+      "assumptions": "Curator adaptation: estimate all objective moments from training rows, and test the fitted direction on fixed search evidence.",
+      "limitations": "The paper does not validate this task, clipped weighted Pearson, or the proposed single ridge gradient step. The pooled objective is nonseparable and its derivative must be independently checked."
+    },
+    {
+      "id": "gated_convolution",
+      "mechanism": "A finite-context gated convolution can model sequences while allowing parallel training.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Its language-model latency comparison is not a deployment guarantee here."
+    },
+    {
+      "id": "gated_recurrence_gru",
+      "mechanism": "GRU and LSTM gates regulate recurrent state; the paper compares gated units with simpler recurrence.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Comparable GRU and LSTM results in the paper do not imply a gain on this task."
+    },
+    {
+      "id": "generic_tcn",
+      "mechanism": "The paper evaluates a simple convolutional sequence architecture against recurrent baselines and reports longer effective memory on its benchmarks.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Past local TCN experiments here are search evidence and should not be overwritten by external benchmarks."
+    },
+    {
+      "id": "hierarchical_reservoir",
+      "mechanism": "Hierarchical echo-state reservoirs and projections are used to represent multiscale time series.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Echo-state stability and useful timescales require explicit checking."
+    },
+    {
+      "id": "importance_weighted_model_selection",
+      "mechanism": "Importance weighting adjusts cross-validation risk when input distributions differ.",
+      "assumptions": "Covariate shift keeps the conditional target distribution given inputs unchanged.",
+      "limitations": "Input drift alone does not establish this assumption. The paper does not provide a clipped Pearson guarantee."
+    },
+    {
+      "id": "linear_forecast_baseline",
+      "mechanism": "The paper tests simple one-layer linear forecasting baselines against complex transformers.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Published comparisons target long-term forecasting benchmarks, not this scoring rule."
+    },
+    {
+      "id": "liquid_time_constant",
+      "mechanism": "Gated first-order dynamical systems have state-dependent time constants.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "The paper's time-series results do not establish feasibility under this callback budget."
+    },
+    {
+      "id": "lstm_memory",
+      "mechanism": "Memory cells and gates address difficult long-range gradient propagation in recurrent learning.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Long-memory motivation does not establish that larger recurrence is necessary here."
+    },
+    {
+      "id": "nondecomposable_objective_linearization",
+      "mechanism": "Adaptive linearization enables stochastic updates for specific nondecomposable classification metrics.",
+      "assumptions": "The analyzed metrics are concave or pseudo-linear functions of true positive and negative rates.",
+      "limitations": "Its classification convergence guarantees do not apply to clipped weighted Pearson. The task derivative needs separate verification."
+    },
+    {
+      "id": "nonlinear_vector_autoregression",
+      "mechanism": "A regularized linear readout uses delayed observations and polynomial features of their joint history.",
+      "assumptions": "Paper benchmarks are low-dimensional dynamical systems; transfer to this task is unestablished.",
+      "limitations": "Full polynomial bases grow combinatorially. A featurewise EMA interaction is a restricted adaptation, not a reproduction or universality guarantee."
+    },
+    {
+      "id": "online_polynomial_memory",
+      "mechanism": "HiPPO incrementally compresses signal history using polynomial projections.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Compression quality depends on assumptions about past-time weighting."
+    },
+    {
+      "id": "patch_attention",
+      "mechanism": "PatchTST segments time series into patches and shares a channel-independent transformer.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Long-term forecast benchmarks differ from online one-row prediction."
+    },
+    {
+      "id": "residual_connections",
+      "mechanism": "Residual blocks learn adjustments relative to their inputs, easing optimization of deeper networks.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "The paper studies image classification, not causal regression correction."
+    },
+    {
+      "id": "ridge_regularization",
+      "mechanism": "Biased shrinkage stabilizes regression coefficients when predictors are nonorthogonal.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Global linear effects cannot express all conditional or long-memory errors."
+    },
+    {
+      "id": "risk_variance_across_sequence_groups",
+      "mechanism": "V-REx penalizes variance of training-domain risks to reduce sensitivity to distribution shifts.",
+      "assumptions": "Training-domain variation must represent relevant future variation.",
+      "limitations": "Prediction-mean quartiles may not be actual domains. Penalizing WP improvement variance is a curator adaptation, not a reproduction or a task guarantee."
+    },
+    {
+      "id": "selective_state_space",
+      "mechanism": "Input-dependent state-space parameters selectively propagate or forget information.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Its results are on other modalities and should not dominate simpler mechanisms."
+    },
+    {
+      "id": "sparse_expert_gating",
+      "mechanism": "A trainable gate selects a sparse subset of feed-forward experts per example.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "The published very-large-scale setting is far from this deployment budget."
+    },
+    {
+      "id": "sparse_long_attention",
+      "mechanism": "Informer introduces sparse attention and distilling for long-sequence forecasting.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Original architecture predicts future sequences in one operation, unlike this callback."
+    },
+    {
+      "id": "structured_state_space",
+      "mechanism": "S4 parameterizes state-space dynamics to model long sequences efficiently.",
+      "assumptions": "Transfer to Connectome requires an independent search-only test.",
+      "limitations": "Published long-sequence benchmark gains do not predict local WP."
+    }
+  ]
+}

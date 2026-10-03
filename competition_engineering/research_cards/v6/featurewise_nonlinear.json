@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Rishabh Agarwal",
+    "Levi Melnick",
+    "Nicholas Frosst"
+  ],
+  "card_id": "featurewise_nonlinear",
+  "card_type": "paper",
+  "causality": "Per-feature functions must depend on available features only.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Many feature networks can add substantial callback overhead.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Persistent magnitude or feature-group residual structure after linear fitting.",
+  "family": "nonlinear_correction",
+  "incremental_inference": "Per-feature functions must depend on available features only.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Featurewise additivity omits interactions unless explicitly extended.",
+  "mechanism": "A learned sum of per-feature neural functions captures nonlinear univariate effects.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/2004.13912",
+  "tags": [
+    "nonlinear_correction",
+    "causal-adaptation-required"
+  ],
+  "title": "Neural Additive Models: Interpretable Machine Learning with Neural Nets",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: nonlinear feature-residual relations may need more than linear correction.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2020
+}

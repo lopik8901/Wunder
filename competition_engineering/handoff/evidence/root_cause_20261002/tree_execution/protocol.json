@@ -1,0 +1,10 @@
+{
+  "hypothesis": "Most of the measured single-row tree cost came from Python estimator overhead rather than the compact tree mechanism.",
+  "fixed_candidate": "Historical32-tree7-leaf t0 residual, strength0.25, no refit or strength selection.",
+  "old_artifact_sha256": "d3b9a23af31b411575f6d291468e6db80d516f52e6ffd6f61ec8c3e0f7164015",
+  "old_report_sha256": "81ef9ad37cce3091b0560e196e37de1433454beb79535eb0d5d024da2b92c4f3",
+  "comparison": "Compile same leaf values and split routing to ONNX, fuse with identical incumbent, preserve all callback checks.",
+  "rule": "Actual complete callback must pass90us infrastructure gate and76.92753780833335us practical threshold; compare frozen candidate score and paired99 uncertainty.",
+  "parity": "Training sequence rowwise parity plus synthetic random and split-boundary regression tests.",
+  "scientific_limit": "Removing execution overhead does not establish a score gain or justify treating historical adaptive strength as prospective."
+}

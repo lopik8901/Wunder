@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Albert Gu",
+    "Tri Dao",
+    "Stefano Ermon"
+  ],
+  "card_id": "online_polynomial_memory",
+  "card_type": "paper",
+  "causality": "Update coefficients with current/past inputs only and clear state at reset.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "State update width sets CPU cost and memory footprint.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Residual dependence spanning both short and long fixed lags.",
+  "family": "state_space",
+  "incremental_inference": "Update coefficients with current/past inputs only and clear state at reset.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Compression quality depends on assumptions about past-time weighting.",
+  "mechanism": "HiPPO incrementally compresses signal history using polynomial projections.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/2008.07669",
+  "tags": [
+    "state_space",
+    "causal-adaptation-required"
+  ],
+  "title": "HiPPO: Recurrent Memory with Optimal Polynomial Projections",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: multi-scale error may call for compact online history summaries.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2020
+}

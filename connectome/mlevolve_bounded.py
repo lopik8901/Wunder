@@ -241,7 +241,8 @@ class BoundedInterpreter:
 
     def planning_history(self):
         """Return compact, search-only history for the next MLEvolve decision."""
-        return format_search_history(self.search_records)
+        from connectome.mlevolve_history import compact_search_history
+        return compact_search_history(self.search_records)
 
     def _parent(self, node_id):
         if self.agent is None:
@@ -333,6 +334,15 @@ class BoundedInterpreter:
                   "status": report["status"], "runtime_seconds": elapsed,
                   "failure_reason": None, "result": {},
                   "delta_vs_incumbent_tune": None, "delta_vs_parent_tune": None}
+        # Decision provenance is search-only and remains in the supervisor
+        # journal. The compact planner history intentionally does not replay
+        # card text or this trace into subsequent planning prompts.
+        if getattr(self, "agent", None) is not None:
+            for branch in self.agent.branch_all_nodes.values():
+                match = next((node for node in branch if node.id == node_id), None)
+                if match is not None:
+                    record["research_trace"] = getattr(match, "connectome_research_trace", None)
+                    break
         if report["status"] == "success":
             metric = report["primary_metric"]
             record["delta_vs_incumbent_tune"] = metric - INCUMBENT_TUNE_WP

@@ -1,0 +1,22 @@
+[
+  {
+    "experiment": "gradient_uncertainty_v2",
+    "decision": "Replace point-only directional rejection with uncertainty-aware diagnosis. Do not reopen all models from ambiguous cosines."
+  },
+  {
+    "experiment": "prospective_selection",
+    "decision": "Keep correction-disjoint training audit as a diagnostic; proxy masks do not replace official search."
+  },
+  {
+    "experiment": "search_population_audit",
+    "decision": "Follow robust t1 population contrast; t0 contrasts remain inconclusive."
+  },
+  {
+    "experiment": "population_mechanism",
+    "decision": "Rule down clipping, between-sequence effects alone, and influential-sequence explanations; examine selector representation."
+  },
+  {
+    "experiment": "nonlinear_selection",
+    "decision": "Launch fixed-penalty t0 readout only; t1 transport-improvement rule failed."
+  }
+]

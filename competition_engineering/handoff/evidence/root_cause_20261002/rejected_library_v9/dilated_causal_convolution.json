@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Aaron van den Oord",
+    "Sander Dieleman",
+    "Heiga Zen"
+  ],
+  "card_id": "dilated_causal_convolution",
+  "card_type": "paper",
+  "causality": "Apply causal left padding and stateful history buffers; never center the kernel.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Dilated history can be cached, but a naive full receptive-field pass is costly.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Several stable residual-persistence lags.",
+  "family": "convolution",
+  "incremental_inference": "Apply causal left padding and stateful history buffers; never center the kernel.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Audio-generation evidence does not establish Connectome WP improvement.",
+  "mechanism": "An autoregressive network conditions each output on preceding audio samples.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "convolution",
+    "causal-adaptation-required"
+  ],
+  "title": "WaveNet: A Generative Model for Raw Audio",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: repeated fixed-lag effects may fit a bounded causal convolution stack.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2016
+}

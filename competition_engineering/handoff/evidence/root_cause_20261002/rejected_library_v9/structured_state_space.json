@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Albert Gu",
+    "Karan Goel",
+    "Christopher Ré"
+  ],
+  "card_id": "structured_state_space",
+  "card_type": "paper",
+  "causality": "Use the recurrent causal state update, not a future-aware sequence convolution.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Kernel efficiency in training does not imply cheap one-row CPU inference.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Slow residual decay across multiple fixed lags.",
+  "family": "state_space",
+  "incremental_inference": "Use the recurrent causal state update, not a future-aware sequence convolution.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Published long-sequence benchmark gains do not predict local WP.",
+  "mechanism": "S4 parameterizes state-space dynamics to model long sequences efficiently.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "state_space",
+    "causal-adaptation-required"
+  ],
+  "title": "Efficiently Modeling Long Sequences with Structured State Spaces",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: broad lag persistence may suggest a compact dynamical state.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2021
+}

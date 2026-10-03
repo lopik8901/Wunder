@@ -1,0 +1,25 @@
+{
+  "hypothesis": "Nonlinear frozen-tree corrections may retain useful scoring-population signal even though current-row linear readouts do not.",
+  "mechanism": "Same frozen32 shallow trees; select scalar strength only on training sequences disjoint from all1024 original tree-fitting sequences.",
+  "selection": "First256 eligible sequences from pre-existing4096 training-cache order,500 random required rows/sequence,seed20261012+group. Pooled probability-weighted clipped WP.",
+  "strengths": [
+    0.0,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "search_use": "One frozen training-selected strength, no search choice.",
+  "qualification": {
+    "minimum_delta": 0.0002,
+    "paired99_lower": 0.0,
+    "minimum_target_delta": -0.0002,
+    "cpu_us_max": 76.92753780833335
+  },
+  "training_cache_sha256": "459fc16dc07c2155f6e4a62e39457f530d7de3ef478d98446dc3e2e986d816c7",
+  "tree_fit_cache_sha256": "2e96825878ccf92787cb617fcade2459338ece137d0af01ae2b9339ddd44e183",
+  "source_sha256": "3e2f95da6c36e1151ad7d782c07aed74762e431078e137348e3b0ad4dda31e81",
+  "tree_sha256": "13a6189da1d1f788907b1a917277342d8ef924d2ec7739747884de8763fdbd05",
+  "limitation": "Mask teacher used search mask indicators, never target labels; training selection is correction-disjoint, not independent of the supplied base model."
+}

@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Haoyi Zhou",
+    "Shanghang Zhang",
+    "Jieqi Peng"
+  ],
+  "card_id": "sparse_long_attention",
+  "card_type": "paper",
+  "causality": "Replace the original forecast decoder with a strictly causal callback design.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Sparse training complexity does not guarantee fast single-step CPU inference.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Long-lag residual errors not explained by compact state summaries.",
+  "family": "attention",
+  "incremental_inference": "Replace the original forecast decoder with a strictly causal callback design.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Original architecture predicts future sequences in one operation, unlike this callback.",
+  "mechanism": "Informer introduces sparse attention and distilling for long-sequence forecasting.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/2012.07436",
+  "tags": [
+    "attention",
+    "causal-adaptation-required"
+  ],
+  "title": "Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: very long input history might need a selective context mechanism.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2020
+}

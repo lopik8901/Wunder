@@ -1,0 +1,7 @@
+{
+  "historical_source": "competition_engineering/manual_spline_calibration.py",
+  "source_sha256": "daf6384c82fb476075ea208d518f9e8198520a4a009b5fcc914a69b6475b9c28",
+  "discovery": "Historical seven-knot residual spline was not indexed in accumulated knowledge. Do not claim nonlinear calibration is untested. Historical search outcomes are not accessed for tuning.",
+  "new_gate": "Before selection/development access, two complementary192-sequence crossfits on the fresh384 fitting groups must EACH show nonlinear-minus-affine combined WP>=0.0002 and paired95 lower>0 for both uniform and probability populations. Fixed curves and no strength selection in this diagnostic. Only passing this signal gate justifies reopening the bounded conditional-mean hypothesis.",
+  "no_tuning": "Failure closes the branch; no changes to knots, penalty, seed or weighting."
+}

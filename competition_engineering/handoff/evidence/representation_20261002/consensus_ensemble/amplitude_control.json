@@ -1,0 +1,22 @@
+{
+  "factors": [
+    0.8237425065524615,
+    0.7396015364582577
+  ],
+  "agreement_fraction": [
+    0.835177734375,
+    0.73628515625
+  ],
+  "rows": 512000,
+  "squared_correction_sums_mean_consensus": [
+    [
+      1664.3190728385707,
+      632.5777502002592
+    ],
+    [
+      1129.3265646791092,
+      346.02662887330894
+    ]
+  ],
+  "scope": "Fitting inputs only, no labels used in amplitude-control construction."
+}

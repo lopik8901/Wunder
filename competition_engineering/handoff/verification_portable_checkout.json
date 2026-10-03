@@ -1,0 +1,10 @@
+{
+  "mode": "Synthetic regression/model parity only; no ML competition experiment/evaluation",
+  "python": "3.12.10",
+  "platform": "Windows",
+  "passed": 218,
+  "skipped": 7,
+  "returncode": 0,
+  "checkout": "Git index checkout plus required private bundle; no datasets or historical caches copied",
+  "optional_historical_fixture_skipped": true
+}

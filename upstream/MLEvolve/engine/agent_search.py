@@ -269,12 +269,19 @@ class AgentSearch:
         if not node or node.stage == "root":
             node = node_selection.select_with_soft_switch(self)
 
-        _root, result_node = self._run_single_step(
-            node,
-            exec_callback=exec_callback,
-            execute_immediately=execute_immediately,
-            init_solution_path=init_solution_path,
-        )
+        try:
+            _root, result_node = self._run_single_step(
+                node,
+                exec_callback=exec_callback,
+                execute_immediately=execute_immediately,
+                init_solution_path=init_solution_path,
+            )
+        finally:
+            # Root selection locks a draft while it is being expanded. The
+            # completed parent must re-enter the scored tree afterwards;
+            # otherwise both draft branches become permanently inaccessible.
+            if node.stage in ("draft", "fusion_draft"):
+                node.lock = False
 
         if result_node:
             metric_value = result_node.metric.value if result_node.metric else None

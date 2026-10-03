@@ -1,0 +1,49 @@
+{
+  "status": "ok",
+  "evidence": "reused_search_evidence_not_independent_validation",
+  "manifest_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+  "query_sha256": "443a7538fc79af57002570065cfe3073c074a5966f974a64569382e2be7fe12f",
+  "cards": [
+    {
+      "rank": 1,
+      "card_id": "nonlinear_vector_autoregression",
+      "version": 1,
+      "sha256": "9a574bb1e1352301b0d7ec6928d33b175df87f5de4fdf5e21c1ca31e8dc71eb8",
+      "score": 5.5925548,
+      "family": "polynomial_memory"
+    },
+    {
+      "rank": 2,
+      "card_id": "lstm_memory",
+      "version": 1,
+      "sha256": "617e26912727ce398dea0faf3df3fa5cd0709af2ca9434c12210293c2211799a",
+      "score": 2.98184631,
+      "family": "recurrence"
+    },
+    {
+      "rank": 3,
+      "card_id": "selective_state_space",
+      "version": 1,
+      "sha256": "4e9fed5f82bdf92615077be25699ffa97b4f70b59aece28f11c12e213e7cff0a",
+      "score": 2.96122536,
+      "family": "state_space"
+    },
+    {
+      "rank": 4,
+      "card_id": "generic_tcn",
+      "version": 1,
+      "sha256": "1eff589bbed212ae8d99141fcfcb1f256759f027961e4dbe1dc72a36ad1f6342",
+      "score": 2.6914992,
+      "family": "convolution"
+    },
+    {
+      "rank": 5,
+      "card_id": "online_polynomial_memory",
+      "version": 1,
+      "sha256": "4a66ff58c86ff7c8b5aa2c5856bc211fd3de7500b0a2704cad34bc8497104605",
+      "score": 2.53607334,
+      "family": "state_space"
+    }
+  ],
+  "rendered": "[nonlinear_vector_autoregression v1; confidence=moderate] Next generation reservoir computing (http<LOCAL_PATH> Introduction, Equations 3-6; Results; Discussion). Source-supported mechanism summary: A regularized linear readout uses delayed observations and polynomial features of their joint history. Curator inference, useful when: Curator inference: test interactions between current inputs and causal history after additive lag models fail. Limits: Full polynomial bases grow combinatorially. A featurewise EMA interaction is a restricted adaptation, not a reproduction or universality guarantee. CPU/causality: Curator inference: diagonal interactions have linear feature cost, but benchmark the actual callback.; Curator adaptation: use present/past inputs only, zero state at each sequence, and never feed target residuals into online state..\n[lstm_memory v1; confidence=limited] Long Short-Term Memory (http<LOCAL_PATH> Abstract). Source-supported mechanism summary: Memory cells and gates address difficult long-range gradient propagation in recurrent learning. Curator inference, useful when: Curator inference: a longer effective memory may explain slow residual decay. Limits: Long-memory motivation does not establish that larger recurrence is necessary here. CPU/causality: Multiple gates add row-wise CPU matrix operations.; Use only preceding inputs and reset hidden and cell states between sequences..\n[selective_state_space v1; confidence=limited] Mamba: Linear-Time Sequence Modeling with Selective State Spaces (http<LOCAL_PATH> Abstract). Source-supported mechanism summary: Input-dependent state-space parameters selectively propagate or forget information. Curator inference, useful when: Curator inference: residual persistence conditional on current features may call for selective memory. Limits: Its results are on other modalities and should not dominate simpler mechanisms. CPU/causality: Specialized kernels in the paper may not map to affordable CPU callbacks.; Run a forward-only selective recurrent update and reset its state per sequence..\n[generic_tcn v1; confidence=limited] An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling (http<LOCAL_PATH> Abstract). Source-supported mechanism summary: The paper evaluates a simple convolutional sequence architecture against recurrent baselines and reports longer effective memory on its benchmarks. Curator inference, useful when: Curator inference: fixed-lag dependence may be expressible with a finite receptive field. Limits: Past local TCN experiments here are search evidence and should not be overwritten by external benchmarks. CPU/causality: Full-window recomputation may be too slow per row; measure incremental execution.; Use left-padded causal convolutions and cache only past activations..\n[online_polynomial_memory v1; confidence=limited] HiPPO: Recurrent Memory with Optimal Polynomial Projections (http<LOCAL_PATH> Abstract). Source-supported mechanism summary: HiPPO incrementally compresses signal history using polynomial projections. Curator inference, useful when: Curator inference: multi-scale error may call for compact online history summaries. Limits: Compression quality depends on assumptions about past-time weighting. CPU/causality: State update width sets CPU cost and memory footprint.; Update coefficients with current/past inputs only and clear state at reset.."
+}

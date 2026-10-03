@@ -1,0 +1,29 @@
+# Minimal CPU scientific/synthetic-regression bootstrap. Tested versions are
+# recorded in handoff/environment_versions_*.json; optional GPU is separate.
+numpy
+pandas
+scipy
+pyarrow
+onnx
+onnxruntime
+scikit-learn
+pytest
+psutil
+threadpoolctl
+tqdm
+PyYAML
+python-dotenv
+omegaconf
+dataclasses-json
+loguru
+rich
+pydantic
+requests
+httpx
+openai
+anthropic
+Jinja2
+coolname
+jsonlines
+tiktoken
+fire

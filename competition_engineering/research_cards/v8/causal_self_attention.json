@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Ashish Vaswani",
+    "Noam Shazeer",
+    "Niki Parmar"
+  ],
+  "card_id": "causal_self_attention",
+  "card_type": "paper",
+  "causality": "Mask every future position and use a past-only cache at inference.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Per-row attention over long history can be expensive on CPU.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Lagged feature-residual signal that differs by current content.",
+  "family": "attention",
+  "incremental_inference": "Mask every future position and use a past-only cache at inference.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Its machine-translation training advantages are not evidence of Connectome benefit.",
+  "mechanism": "The Transformer uses attention in place of recurrence and convolution for sequence modeling.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/1706.03762",
+  "tags": [
+    "attention",
+    "causal-adaptation-required"
+  ],
+  "title": "Attention Is All You Need",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: content-dependent relationships across a bounded past window may matter.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2017
+}

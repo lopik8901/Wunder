@@ -1,0 +1,24 @@
+{
+  "id": "e01c_additive_fused",
+  "mode": "linear",
+  "late_only": false,
+  "tier": 1024,
+  "stride": 40,
+  "penalty": 0.1,
+  "strengths": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "hypothesis": "Accumulated multiscale input state explains persistent t0 residuals; matched additive control.",
+  "support": "Gain over frozen combo with positive paired lower bound and late-t0 diagnostic improvement.",
+  "weaken": "Nonpositive gain; for bilinear, no gain over additive control.",
+  "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+  "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+  "runner_sha256": "fe921d3a710c7702fd8d5576d8f088ff9e0f5ba8addc58921c4198665ff560e8",
+  "core_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+  "exporter_sha256": "c194d44328b9cd81e0b64bd777186a1c9dedc63fe90d432946ed672455607a5b",
+  "reuse_fit": "e01b_additive_isolated",
+  "isolation": "Existing production GeneratedSandbox; training-only mount; rowwise label-free inference",
+  "rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021"
+}

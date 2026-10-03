@@ -1,0 +1,8 @@
+{
+  "status": "complete_session_checkpoint",
+  "experiments": 4,
+  "knowledge_version": 11,
+  "incumbent_wp": 0.6588353223316641,
+  "awaiting_promotion": [],
+  "next_hypothesis": "Does increasing the number of fitting sequences at a fixed sampled-row budget reduce the learned-readout generalization gap? Compare sequence diversity with within-sequence density, retaining an unused prospective replication group."
+}

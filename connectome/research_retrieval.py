@@ -1,4 +1,4 @@
-"""Deterministic, offline research retrieval; deliberately not wired to MLEvolve.
+"""Deterministic, offline, supervisor-side research retrieval.
 
 The library is supervisor-owned. Candidate workspaces must never mount it.
 """
@@ -129,7 +129,8 @@ def load_library(directory: Path) -> tuple[list[dict[str, Any]], str]:
 
 
 def retrieve(cards: list[dict[str, Any]], observation: dict[str, Any], search_query: dict[str, Any], *,
-             max_cards: int = 5, max_utf8_bytes: int = 2800) -> dict[str, Any]:
+             max_cards: int = 5, max_utf8_bytes: int = 2800,
+             hypothesis_terms: tuple[str, ...] = ()) -> dict[str, Any]:
     """BM25 plus deterministic family diversity; no family is privileged.
 
     UTF-8 is a strict byte cap, not an asserted model-token count. The caller
@@ -137,10 +138,15 @@ def retrieve(cards: list[dict[str, Any]], observation: dict[str, Any], search_qu
     """
     if type(max_cards) is not int or not 1 <= max_cards <= 5 or type(max_utf8_bytes) is not int or max_utf8_bytes < 100:
         raise ValueError("invalid retrieval budget")
+    if (not isinstance(hypothesis_terms, tuple) or len(hypothesis_terms) > 12 or
+            any(not isinstance(term, str) or not re.fullmatch(r"[a-z]{2,24}", term)
+                for term in hypothesis_terms)):
+        raise ValueError("hypothesis terms must be a small, normalized vocabulary")
     validated_query = validate_retrieval_query(search_query, observation)
     query = _observation_tokens(observation)
     query_sha256 = hashlib.sha256(json.dumps(
-        {"observation": observation, "atlas": validated_query["atlas"],
+        {"observation": observation, "hypothesis_terms": hypothesis_terms,
+         "atlas": validated_query["atlas"],
          "search_outcomes": validated_query["search_outcomes"]},
         sort_keys=True, separators=(",", ":"), allow_nan=False).encode()).hexdigest()
     validated = [validate_card(card) for card in cards]
@@ -158,11 +164,12 @@ def retrieve(cards: list[dict[str, Any]], observation: dict[str, Any], search_qu
     for card, doc in zip(validated, documents):
         tf = Counter(doc)
         score = 0.0
-        for term in set(query):
+        for term in set(query) | set(hypothesis_terms):
             if not tf[term]:
                 continue
             idf = math.log1p((len(documents) - df[term] + .5) / (df[term] + .5))
-            score += idf * tf[term] * 2.2 / (tf[term] + 1.2 * (.25 + .75 * len(doc) / mean_length))
+            weight = 1.0 if term in query else 0.5
+            score += weight * idf * tf[term] * 2.2 / (tf[term] + 1.2 * (.25 + .75 * len(doc) / mean_length))
         if score > 0:
             scores.append((score, card))
     scores.sort(key=lambda pair: (-pair[0], pair[1]["card_id"]))
@@ -175,15 +182,17 @@ def retrieve(cards: list[dict[str, Any]], observation: dict[str, Any], search_qu
         # Two cards per family is a soft exposure limit, not a quota.
         if used_families[card["family"]] >= 2:
             continue
-        excerpt = (f"[{card['card_id']} v{card['version']}] {card['title']} "
+        excerpt = (f"[{card['card_id']} v{card['version']}; confidence={card['claim_confidence']}] {card['title']} "
                    f"({card['source_url']}, {card['source_locator']}). "
-                   f"Mechanism: {card['mechanism']} Useful when: {card['useful_when']} "
+                   f"Source-supported mechanism summary: {card['mechanism']} "
+                   f"Curator inference, useful when: {card['useful_when']} "
                    f"Limits: {card['limitations']} CPU/causality: {card['cpu_deployment']}; {card['causality']}.")
         if len(("\n".join([*rendered_parts, excerpt])).encode("utf-8")) > max_utf8_bytes:
             continue
         rendered_parts.append(excerpt)
         used_families[card["family"]] += 1
-        selected.append({"card_id": card["card_id"], "version": card["version"],
+        selected.append({"rank": len(selected) + 1,
+                         "card_id": card["card_id"], "version": card["version"],
                          "sha256": card_sha256(card), "score": round(score, 8),
                          "family": card["family"]})
     rendered = "\n".join(rendered_parts)

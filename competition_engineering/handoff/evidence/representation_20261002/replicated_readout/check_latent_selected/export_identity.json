@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "fused.onnx": "af0736c1b45f132a0205de26451e9031a468ec261b58fd37e6d9928ca1e11c91",
+    "model.npz": "503afcb33f29f3a4dee35f1dd4f07a39d44260e494db8ba84a3160e4b8a50929"
+  },
+  "deployment": {
+    "fused.onnx": "af0736c1b45f132a0205de26451e9031a468ec261b58fd37e6d9928ca1e11c91",
+    "model.npz": "503afcb33f29f3a4dee35f1dd4f07a39d44260e494db8ba84a3160e4b8a50929",
+    "solution.py": "252d377e8cdee6db6f0f50efc7233bbacb1af4c0efdf4b0ea2be763820afea16"
+  },
+  "archive_sha256": "0322e6b5e3f05184b78678caff5b5e56b97857a69920e1e7798b4b170e16a883",
+  "archive_bytes": 738745
+}

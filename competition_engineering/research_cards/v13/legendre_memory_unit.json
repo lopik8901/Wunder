@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Aaron Voelker",
+    "Ivana Kaji\u0107",
+    "Chris Eliasmith"
+  ],
+  "card_id": "legendre_memory_unit",
+  "card_type": "paper",
+  "causality": "Update coefficients with current/past inputs only and clear state at reset.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Curator inference: test ordered history information with a compact stable state update if finite-lag diagnostics justify a longer-window representation.",
+  "cpu_deployment": "State update width sets CPU cost and memory footprint.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Residual dependence spanning both short and long fixed lags.",
+  "family": "state_space",
+  "incremental_inference": "Update coefficients with current/past inputs only and clear state at reset.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Orthogonal memory differs from independent EMA summaries; fixed-window and discretization assumptions need checking. No Connectome benefit is claimed.",
+  "mechanism": "A structured linear dynamical memory approximates a sliding-window signal with orthogonal polynomial coefficients.",
+  "schema_version": 1,
+  "source_locator": "Primary author publication abstract; NeurIPS2019 paper linked therein",
+  "source_url": "https://compneuro.uwaterloo.ca/publications/voelker2019lmu.html",
+  "tags": [
+    "state_space",
+    "causal-adaptation-required"
+  ],
+  "title": "Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: multi-scale error may call for compact online history summaries.",
+  "verified_on": "2026-10-03",
+  "version": 1,
+  "year": 2019
+}

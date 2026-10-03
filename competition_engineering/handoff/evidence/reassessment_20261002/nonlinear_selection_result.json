@@ -1,0 +1,66 @@
+{
+  "cross_fitted_auc": 0.8864298081995632,
+  "cross_fitted_log_loss": 0.19768606157157412,
+  "linear_log_loss": 0.24726759301302945,
+  "point_cosine_linear": [
+    0.2938368303311158,
+    0.15046790302669116
+  ],
+  "point_cosine_nonlinear": [
+    0.7029961970664595,
+    0.4779704873398264
+  ],
+  "nonlinear_cosine99": [
+    [
+      0.2391602655558906,
+      0.0640585417837401
+    ],
+    [
+      0.9082071055047992,
+      0.8731550769804927
+    ]
+  ],
+  "cosine_improvement99": [
+    [
+      0.03329943331280125,
+      -0.022263018270142296
+    ],
+    [
+      0.8618873445126267,
+      0.5123735812411342
+    ]
+  ],
+  "eligible_targets": [
+    0
+  ],
+  "training": [
+    {
+      "fold": 0,
+      "sequences": 48,
+      "rows": 48000,
+      "iterations": 64
+    },
+    {
+      "fold": 1,
+      "sequences": 48,
+      "rows": 48000,
+      "iterations": 64
+    },
+    {
+      "fold": 2,
+      "sequences": 48,
+      "rows": 48000,
+      "iterations": 64
+    },
+    {
+      "fold": 3,
+      "sequences": 48,
+      "rows": 48000,
+      "iterations": 64
+    }
+  ],
+  "classifier_sha256": "0306488a899d5b1460413e96817cd5b616fc2d8ccf11d04aeefc7f19789f637e",
+  "protocol_sha256": "c5e5b0b31c7c352c0de5b886b10a67185c57007865fcc7f7271918e5a32cf895",
+  "decision": "Fit only if prospective transport rule passes; otherwise abandon nonlinear propensity before correction fitting.",
+  "limitation": "Search is adaptively reused; passing diagnostic rule would motivate an experiment, not establish improvement."
+}

@@ -1,0 +1,57 @@
+{
+  "training": {
+    "rows": 509952,
+    "saturated_prediction_fraction": [
+      0.004559252635542169,
+      0.0006588855421686747
+    ],
+    "saturated_weight_fraction": [
+      0.008381413495008299,
+      0.0014376339705944607
+    ],
+    "weighted_target_mean": [
+      -0.4558501945897129,
+      -0.469945723159988
+    ],
+    "weighted_clipped_prediction_mean": [
+      -0.26656597294551726,
+      -0.3797186725780387
+    ],
+    "weighted_raw_prediction_mean": [
+      -0.2655840322724987,
+      -0.37992998540353734
+    ],
+    "correlation_tangent_slope": [
+      0.8452939154649537,
+      0.9670729524676228
+    ]
+  },
+  "search": {
+    "rows": 108139,
+    "saturated_prediction_fraction": [
+      0.028343150944617576,
+      0.007629069993249429
+    ],
+    "saturated_weight_fraction": [
+      0.04160584096988162,
+      0.014307328061580025
+    ],
+    "weighted_target_mean": [
+      -0.40531507069309525,
+      -0.22474338335242205
+    ],
+    "weighted_clipped_prediction_mean": [
+      -0.22590215141574344,
+      -0.1708329990707495
+    ],
+    "weighted_raw_prediction_mean": [
+      -0.21907781739999638,
+      -0.1696092326315444
+    ],
+    "correlation_tangent_slope": [
+      0.8065009759014318,
+      0.9122361901144157
+    ]
+  },
+  "interpretation": "Descriptive objective geometry only: weighted raw residual regression differs from the centered, variance-adjusted, unsaturated direction of clipped weighted correlation. A new objective requires a train-only fit and isolated search test."
+}

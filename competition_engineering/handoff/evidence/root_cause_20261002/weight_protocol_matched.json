@@ -1,0 +1,24 @@
+{
+  "observation": "Existing nonlinear weights clip probability/prior to [0.2,5], altering about one third of training rows.",
+  "hypothesis": "This truncation explains part of the discrepancy between predicted and official correction efficacy.",
+  "comparison": [
+    "official",
+    "capped",
+    "probability",
+    "uncapped_ratio"
+  ],
+  "classifier": "Previously frozen four-fold nonlinear scoring classifier, no refit and no target labels in classifier.",
+  "probability": "Use probability directly, equivalent to probability/prior within each fold; avoid artificial fold-specific prior rescaling.",
+  "fixed_models": [
+    "incumbent",
+    "raw_t0_1024",
+    "raw_t0_4096",
+    "raw_t1_1024",
+    "raw_t1_4096",
+    "historical_exploratory_point"
+  ],
+  "launch_rule": "For a target, uncapped gradient alignment has positive paired99 lower bound AND paired99 lower improvement over capped is positive. Otherwise no uncapped correction fit.",
+  "additional_diagnostics": "Paired differences in frozen-model efficacy error, target moments, effective sequence mass, cap-hit fractions.",
+  "uncertainty": "10000 shared sequence draws, seed 20261011; descriptive adaptive search only.",
+  "attribution_followup": "The first diagnostic changed both clipping and fold-prior scaling. Add an uncapped ratio with the identical fold prior to isolate clipping; freeze before collecting."
+}

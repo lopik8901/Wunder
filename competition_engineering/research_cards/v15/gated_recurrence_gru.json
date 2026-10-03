@@ -1,0 +1,36 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Junyoung Chung",
+    "Caglar Gulcehre",
+    "KyungHyun Cho",
+    "Yoshua Bengio"
+  ],
+  "card_id": "gated_recurrence_gru",
+  "card_type": "paper",
+  "causality": "Use a forward-only state and reset it at each sequence boundary.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Dense recurrent matrices are paid for on every callback row.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Long-lag residual persistence or sequence-dependent errors.",
+  "family": "recurrence",
+  "incremental_inference": "Use a forward-only state and reset it at each sequence boundary.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Comparable GRU and LSTM results in the paper do not imply a gain on this task.",
+  "mechanism": "GRU and LSTM gates regulate recurrent state; the paper compares gated units with simpler recurrence.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/1412.3555",
+  "tags": [
+    "recurrence",
+    "causal-adaptation-required"
+  ],
+  "title": "Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: persistent temporal errors may indicate inadequate learned state.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2014
+}

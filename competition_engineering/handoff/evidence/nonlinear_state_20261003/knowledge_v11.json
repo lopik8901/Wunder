@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "version": 11,
+  "evidence": "search-only; adaptive reuse disclosed",
+  "incumbent": {
+    "wp": 0.6588353223316641,
+    "sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+  },
+  "established": [
+    {
+      "lesson": "Use official clipped weighted Pearson for model and hyperparameter selection whenever feasible. Lower residual MSE does not imply higher WP.",
+      "source": "runs/objective_alignment_20261002/final_review.json"
+    },
+    {
+      "lesson": "Point-gradient cosine is unreliable at the current 64-sequence search size: median split-half agreement was 0.16 for t0 and 0.07 for t1. Include sequence uncertainty before rejecting a representation.",
+      "source": "runs/reassessment_20261002/gradient_uncertainty_v2.json"
+    },
+    {
+      "lesson": "Frozen t1 corrections improve all-required-row WP but regress officially scored WP. Their paired population contrasts exclude zero, survive unclipped prediction and within-sequence checks, and remain negative after influential-sequence deletion.",
+      "source": "runs/reassessment_20261002/population_mechanism.json"
+    },
+    {
+      "lesson": "A nonlinear causal mask predictor improved target 0 population-gradient transport over the linear predictor under a prospective uncertainty rule. This supports a bounded weighted-readout experiment, not a new incumbent.",
+      "source": "runs/reassessment_20261002/nonlinear_selection_result.json"
+    },
+    {
+      "lesson": "Nonlinear weighting improved training-side t0 gradient stability, but source-to-official-search alignment remained uncertain. Better mask prediction alone did not establish a stronger correction.",
+      "source": "runs/reassessment_20261002/training_transport.json"
+    },
+    {
+      "lesson": "Use matched weight normalization when comparing regularized weighted fits. Mean-one focus makes the fixed penalty invariant to arbitrary population-weight units.",
+      "source": "runs/root_cause_20261002/probability_readout/protocol.json"
+    },
+    {
+      "lesson": "Frozen-tree execution was limited by estimator API overhead. Same-row one-CPU timing: sklearn192.53us versus ONNX3.46us for the correction; the full causal callback passes at68.50us.",
+      "source": "runs/root_cause_20261002/tree_execution/matched_microbenchmark.json"
+    },
+    {
+      "lesson": "A probability-weighted proxy rejected the new linear t0 correction on training-side WP, retaining the incumbent. The same proxy selected a frozen-tree strength on256 correction-disjoint training sequences that did not yield a credible official-search gain.",
+      "source": "runs/root_cause_20261002/tree_training_selection/report.json"
+    },
+    {
+      "lesson": "A fitted frozen-GRU-state readout improves training-derived replication beyond current features: fixed0.25 probability-weighted combined gain0.000859, paired99[0.000234,0.001471]. Official-search gain is essentially zero with wide uncertainty. Representation information exists in development populations, but official transfer is not established.",
+      "source": "runs/representation_20261002/replicated_readout/replication.json"
+    },
+    {
+      "lesson": "The average of independently fitted frozen-state readouts replicated positive training-derived gains. A disagreement soft-threshold did not beat a matched-amplitude control on fresh replication, so disagreement is not supported as the source of utility.",
+      "source": "runs/representation_20261002/consensus_ensemble/replication.json"
+    },
+    {
+      "lesson": "Multiple disjoint training-derived groups recover frozen-state linear correction gains. Fixed joint tanh, learned tanh and shallow threshold trees do not establish a robust incremental mechanism beyond that linear signal.",
+      "source": "runs/nonlinear_state_20261003/FINAL_REPORT.json"
+    }
+  ],
+  "weakened": [
+    {
+      "hypothesis": "Objective misalignment alone is the main remaining bottleneck.",
+      "reason": "60 fits in eight suites; objective-aware selection helped, but no convincing replacement."
+    },
+    {
+      "hypothesis": "Low point-gradient alignment establishes a stable causal transfer conflict.",
+      "reason": "Bootstrap intervals span both signs and split-half gradients are unstable."
+    },
+    {
+      "hypothesis": "Clipping or a few outlier sequences explain the t1 population contrast.",
+      "reason": "Contrast survives diagnostic counterfactuals."
+    },
+    {
+      "hypothesis": "The existing linear causal proxy is a sufficient selection substitute.",
+      "reason": "Prospective training masks selected an officially inferior t1 correction; audit intervals included zero."
+    },
+    {
+      "hypothesis": "A nonlinear causal scoring predictor alone makes a fixed current-row residual readout transferable.",
+      "reason": "Weighted fit scored0.658830952; paired99 interval crosses zero. Mask-informed selection point gain was only0.0000115."
+    },
+    {
+      "hypothesis": "Population-weight truncation is the dominant remaining cause of failed correction transfer.",
+      "reason": "Removing truncation and fold-prior scaling improved t0 search-gradient alignment, but individual-component99 intervals included zero; the matched probability-weighted readout selected zero correction."
+    },
+    {
+      "hypothesis": "Compact shallow trees are intrinsically too costly for the callback budget.",
+      "reason": "Identical frozen trees pass the complete callback budget after ONNX compilation."
+    },
+    {
+      "hypothesis": "Current causal mask weighting reliably ranks corrections across representations.",
+      "reason": "On correction-disjoint training, tree strength1 improved proxy t0 WP by0.000846; official search combined delta was-0.000141 with99 interval spanning both signs."
+    },
+    {
+      "hypothesis": "Point-gradient rejection was sufficient evidence that frozen GRU states contain no useful correction information.",
+      "reason": "Actual matched fitting recovered replicated development signal; it still did not establish an official-score improvement."
+    },
+    {
+      "hypothesis": "Readout disagreement is a transferable per-row indicator for shrinking causal corrections.",
+      "reason": "Consensus trailed the amplitude-matched control on both frozen replication populations; its higher reused-search point is uncertain and above the CPU limit."
+    },
+    {
+      "hypothesis": "A fixed128-feature joint tanh basis resolves linear readout transfer limitations.",
+      "reason": "Fresh joint-minus-linear probability WP+0.000020 with95 interval crossing zero; official joint WP0.658388773, delta-0.000447, CPU80.00us."
+    },
+    {
+      "hypothesis": "Learned32-unit smooth joint readouts add a robust correction beyond frozen-state linear probes.",
+      "reason": "Optimization lowered MSE; fresh joint-minus-linear uniform gain-0.000223, proxy+0.000079; one uniform half negative and proxy below separable. Official search correctly blocked."
+    },
+    {
+      "hypothesis": "Shallow frozen-state threshold regimes add a transferable correction beyond linear state features.",
+      "reason": "160/192 splits used hidden state, but fresh state-minus-linear WP uniform-0.000047, proxy+0.000013, paired95 spans zero. No official search."
+    },
+    {
+      "hypothesis": "One-step frozen GRU state updates add robust incremental causal information to the current-state linear readout.",
+      "reason": "No official search; one-step state information did not establish incremental replicated value. Contrast: {\"combined_uniform_probability\": [3.0757547492071824e-05, 8.185344043287746e-06], \"paired95\": [[-0.00013935942508381746, -0.00017908887432707964], [0.00020769953080878724, 0.00020383317913067175]]}"
+    }
+  ],
+  "closed_branches": [
+    "Broad objective-loss/grid tuning",
+    "Previously tested additive EMA and diagonal bilinear temporal tuning",
+    "Disagreement soft-threshold tuning without new evidence",
+    "Search-specific position gating without replicated evidence"
+  ],
+  "exploratory_only": [
+    {
+      "wp": 0.6590796311188727,
+      "paired99_delta": [
+        -0.0005840183,
+        0.0010744564
+      ],
+      "reason": "Adaptively selected point; interval crosses zero"
+    },
+    {
+      "wp": 0.6588467901506747,
+      "paired99_delta": [
+        -0.0001229887069432625,
+        0.00013893444785350104
+      ],
+      "reason": "Training-proxy-selected unweighted readout; tiny adaptive search gain, not an established improvement."
+    },
+    {
+      "wp": 0.6588825374213778,
+      "paired99_delta": [
+        -0.00028729860601496793,
+        0.000363698898501402
+      ],
+      "reason": "Historical search-selected tree strength0.25; execution repaired, not a newly discovered score improvement."
+    },
+    {
+      "wp": 0.6590721033812812,
+      "paired99_delta": [
+        -0.0008065760838449942,
+        0.0011115846961819937
+      ],
+      "reason": "Consensus failed matched-control replication and practical CPU constraint; not an incumbent."
+    }
+  ],
+  "reopen_requirement": "New measured evidence and a predeclared falsifiable mechanism.",
+  "next_research_question": "Does increasing the number of fitting sequences at a fixed sampled-row budget reduce the learned-readout generalization gap? Compare sequence diversity with within-sequence density, retaining an unused prospective replication group.",
+  "status": "Four prospective model mechanisms completed at a reproducible session checkpoint; incumbent retained pending any separately qualified candidate.",
+  "previous_snapshot": {
+    "path": "runs/nonlinear_state_20261003/knowledge_v10.json",
+    "sha256": "d5be7843b7b56ba1d886a0f9359a165855f80bb0c535f54c28922f26802f5a2d"
+  }
+}

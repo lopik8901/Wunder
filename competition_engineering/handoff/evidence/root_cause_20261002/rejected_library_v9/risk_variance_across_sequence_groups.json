@@ -1,0 +1,43 @@
+{
+  "assumptions": "Training-domain variation must represent relevant future variation.",
+  "authors": [
+    "David Krueger",
+    "Ethan Caballero",
+    "Joern-Henrik Jacobsen",
+    "Amy Zhang",
+    "Jonathan Binas",
+    "Dinghuai Zhang",
+    "Remi Le Priol",
+    "Aaron Courville"
+  ],
+  "card_id": "risk_variance_across_sequence_groups",
+  "card_type": "paper",
+  "causality": "Curator adaptation: training groups may use offline sequence summaries; the deployed readout never receives group identity or future rows.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Tests cross-sequence objective stability after pooling and coarse scoring propensity alignment fail.",
+  "cpu_deployment": "Curator adaptation: reuse the verified current-row ONNX export and benchmark the actual callback.",
+  "curator": "Codex, primary publisher abstract review",
+  "dependencies": "Proposed adaptation uses NumPy/SciPy; no paper implementation is copied.",
+  "diagnostic_signatures": "Curator inference: aligned fitting gains fail across training sequences and official scoring populations.",
+  "family": "distribution_shift",
+  "incremental_inference": "Curator adaptation: same current-row correction and fixed coefficients as the pooled control.",
+  "licensing": "Original curator paraphrase and bibliographic metadata only.",
+  "limitations": "Prediction-mean quartiles may not be actual domains. Penalizing WP improvement variance is a curator adaptation, not a reproduction or a task guarantee.",
+  "mechanism": "V-REx penalizes variance of training-domain risks to reduce sensitivity to distribution shifts.",
+  "schema_version": 1,
+  "source_locator": "Publisher abstract, PMLR139:5815-5826",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "objective",
+    "groups",
+    "risk",
+    "variance",
+    "generalization"
+  ],
+  "title": "Out-of-Distribution Generalization via Risk Extrapolation (REx)",
+  "training_compute": "Curator adaptation: compute exact clipped WP derivatives in four training sequence groups and jointly optimize one regularized readout.",
+  "useful_when": "Curator inference: only after training-group objective gradients exhibit disagreement.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2021
+}

@@ -1,0 +1,36 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Chuan Guo",
+    "Geoff Pleiss",
+    "Yu Sun",
+    "Kilian Q. Weinberger"
+  ],
+  "card_id": "classification_temperature_scaling",
+  "card_type": "paper",
+  "causality": "Fit only on designated training data; inference needs only the current prediction.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "A scalar transform is cheap on CPU.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Systematic prediction-scale mismatch by target or magnitude.",
+  "family": "calibration",
+  "incremental_inference": "Fit only on designated training data; inference needs only the current prediction.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Classification probability calibration is not the same objective as weighted Pearson regression.",
+  "mechanism": "The paper studies post-hoc calibration of classification confidence and finds temperature scaling effective on its datasets.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/1706.04599",
+  "tags": [
+    "calibration",
+    "causal-adaptation-required"
+  ],
+  "title": "On Calibration of Modern Neural Networks",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: a residual scale pattern can motivate checking a low-cost output transform.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2017
+}

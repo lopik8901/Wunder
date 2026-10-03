@@ -1,0 +1,131 @@
+{
+  "training": {
+    "rows": 509952,
+    "sequences": 1024,
+    "wp": [
+      0.46062958560230066,
+      0.4635325789201443
+    ],
+    "between_sequence_covariance_fraction": [
+      0.32914711679149855,
+      0.3349084954222256
+    ],
+    "weighted_target_mean": [
+      -0.4558501945897129,
+      -0.469945723159988
+    ],
+    "weighted_prediction_mean": [
+      -0.26656597294551726,
+      -0.3797186725780387
+    ],
+    "slope": [
+      0.8452939154649537,
+      0.9670729524676228
+    ]
+  },
+  "search": {
+    "rows": 108139,
+    "sequences": 64,
+    "wp": [
+      0.6479917119603986,
+      0.6696789327029276
+    ],
+    "between_sequence_covariance_fraction": [
+      0.2207379516372498,
+      0.3064122283282733
+    ],
+    "weighted_target_mean": [
+      -0.40531507069309525,
+      -0.22474338335242205
+    ],
+    "weighted_prediction_mean": [
+      -0.22590215141574344,
+      -0.1708329990707495
+    ],
+    "slope": [
+      0.8065009759014318,
+      0.9122361901144157
+    ]
+  },
+  "gradient_cosine_per_target": [
+    0.40232905093724225,
+    -0.10627124536319507
+  ],
+  "training_vs_uniform_search_gradient_cosine": [
+    0.19668073409756734,
+    0.523729265112943
+  ],
+  "uniform_vs_scored_search_gradient_cosine": [
+    0.1347078968177881,
+    0.14084866806902738
+  ],
+  "uniform_search": {
+    "rows": 31872,
+    "sequences": 64,
+    "wp": [
+      0.49156950274776995,
+      0.4911629634845
+    ],
+    "between_sequence_covariance_fraction": [
+      0.33175406154327514,
+      0.39337178117398947
+    ],
+    "weighted_target_mean": [
+      -0.3603784865919358,
+      -0.2344396363349428
+    ],
+    "weighted_prediction_mean": [
+      -0.09706609742603274,
+      -0.17384324281514657
+    ],
+    "slope": [
+      0.7657640652102768,
+      0.844501344844765
+    ]
+  },
+  "top_input_standardized_mean_shifts": [
+    {
+      "feature": 3,
+      "shift": 0.4055847912189529
+    },
+    {
+      "feature": 107,
+      "shift": 0.3710828953112482
+    },
+    {
+      "feature": 65,
+      "shift": 0.33775729064256416
+    },
+    {
+      "feature": 70,
+      "shift": -0.31918690223967455
+    },
+    {
+      "feature": 44,
+      "shift": 0.2975380061751863
+    },
+    {
+      "feature": 56,
+      "shift": 0.2919006203156686
+    },
+    {
+      "feature": 106,
+      "shift": 0.28868726310682874
+    },
+    {
+      "feature": 108,
+      "shift": -0.2884542064243666
+    },
+    {
+      "feature": 54,
+      "shift": -0.2704326024306771
+    },
+    {
+      "feature": 58,
+      "shift": -0.2700699899275143
+    }
+  ],
+  "interpretation": "Checks whether pooled objective directions and feature populations transfer across training/search; covariate shift is not established by mean differences alone.",
+  "next_question": "If aligned fitting fails at both tiers, test whether correction gradients are stable across training sequence groups before considering shift adaptation.",
+  "boundary": "aggregate statistics from fixed training and search caches only"
+}

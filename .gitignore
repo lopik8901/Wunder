@@ -26,3 +26,16 @@ competition_engineering/environment/miopen_db/
 competition_engineering/environment/miopen_cache/
 competition_engineering/submissions/**/*.npz
 
+# Bulk research evidence stays local. Portable, audited metadata is exported
+# explicitly to competition_engineering/handoff/.
+competition_engineering/runs/
+competition_engineering/mlevolve_runs/
+competition_engineering/cache/
+competition_engineering/ledger.json
+competition_engineering/reports/
+competition_engineering/environment/
+competition_engineering/deployment/*.npz
+competition_engineering/deployment/manual_targetwise_combo_v1/
+competition_engineering/handoff_external/
+.venv-linux/
+

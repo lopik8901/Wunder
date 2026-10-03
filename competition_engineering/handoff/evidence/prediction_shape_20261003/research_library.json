@@ -1,0 +1,7 @@
+{
+  "version": 15,
+  "cards": 38,
+  "manifest_sha256": "8fb05c041e79c896aa0983ca4f53f192eec76a981e5d7fabbf92235d11a26815",
+  "reviewed_sections": "Primary introduction and Theorem2/Remark3",
+  "weighted_derivation": "Q has density w/E_P[w]. Cauchy-Schwarz: Corr_Q(Y,g(P)) <= sqrt(Var_Q(E_Q[Y|P])/Var_Q(Y)), attained by positive affine conditional mean. Approximation and transport require independent evidence."
+}

@@ -1,0 +1,86 @@
+{
+  "tanh": {
+    "pooled_gain": [
+      0.001837796120147256,
+      0.0010883011350975025
+    ],
+    "sequence_positive_fraction": [
+      0.56640625,
+      0.53125
+    ],
+    "leave_one_sequence_out_gain_range": [
+      [
+        0.001340665578356881,
+        0.0009488572828225128
+      ],
+      [
+        0.002020077134586823,
+        0.0012508087790994438
+      ]
+    ],
+    "interpretation": "Sequence fractions are descriptive; pooled WP is recomputed after deletion, never averaged from per-sequence correlations."
+  },
+  "learned32": {
+    "pooled_gain": [
+      0.000903585401691942,
+      0.0010479458023823773
+    ],
+    "sequence_positive_fraction": [
+      0.484375,
+      0.51171875
+    ],
+    "leave_one_sequence_out_gain_range": [
+      [
+        0.0007070449051017613,
+        0.0009546768167280617
+      ],
+      [
+        0.001178715363442162,
+        0.0011884176653613188
+      ]
+    ],
+    "interpretation": "Sequence fractions are descriptive; pooled WP is recomputed after deletion, never averaged from per-sequence correlations."
+  },
+  "trees": {
+    "pooled_gain": [
+      0.0018284607588464619,
+      0.0017995155672729246
+    ],
+    "sequence_positive_fraction": [
+      0.5078125,
+      0.53125
+    ],
+    "leave_one_sequence_out_gain_range": [
+      [
+        0.0016127283381249802,
+        0.001653088050782403
+      ],
+      [
+        0.002063086130919878,
+        0.0018920350628204852
+      ]
+    ],
+    "interpretation": "Sequence fractions are descriptive; pooled WP is recomputed after deletion, never averaged from per-sequence correlations."
+  },
+  "innovation": {
+    "pooled_gain": [
+      0.0024063054551744234,
+      0.002108894066842615
+    ],
+    "sequence_positive_fraction": [
+      0.5625,
+      0.578125
+    ],
+    "leave_one_sequence_out_gain_range": [
+      [
+        0.001523003706317333,
+        0.0018912083154831172
+      ],
+      [
+        0.002750213324190509,
+        0.002242038078039965
+      ]
+    ],
+    "interpretation": "Sequence fractions are descriptive; pooled WP is recomputed after deletion, never averaged from per-sequence correlations."
+  }
+}

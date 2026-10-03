@@ -1,0 +1,15 @@
+{
+  "started_unix": 1790944481.2130816,
+  "maximum_wall_seconds": 7200,
+  "incumbent_wp": 0.6588353223316641,
+  "incumbent_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+  "boundary": "Only designated training and gru_tune search caches; protected feedback excluded",
+  "rules": [
+    "Official WP for selection",
+    "No broad loss/grid or old temporal tuning without new evidence",
+    "Freeze experiment protocol before data analysis",
+    "No new incumbent from highest adaptive point",
+    "Sequence-level uncertainty; pooled official metric unchanged",
+    "Repair infrastructure with regression tests; preserve scientific negatives separately"
+  ]
+}

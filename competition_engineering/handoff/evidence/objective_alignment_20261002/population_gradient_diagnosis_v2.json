@@ -1,0 +1,183 @@
+{
+  "uniform_search_to_scored_gradient_cosine": [
+    0.04674605686443234,
+    0.20538975530716544
+  ],
+  "weighted_search_to_scored_gradient_cosine": [
+    -0.13096863505661227,
+    0.033579285295844204
+  ],
+  "uniform_training_to_scored_gradient_cosine": [
+    0.40232905093724225,
+    -0.10627124536319507
+  ],
+  "weighted_training_to_scored_gradient_cosine": [
+    0.3341858759803051,
+    -0.08427253061789325
+  ],
+  "propensity": {
+    "step_edges": [
+      99,
+      500,
+      2000,
+      5000,
+      10000,
+      20000
+    ],
+    "magnitude_edges": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1,
+      1.5,
+      2
+    ],
+    "required_counts": [
+      [
+        1773.0,
+        4370.0,
+        8259.0,
+        6282.0,
+        3821.0,
+        657.0,
+        502.0
+      ],
+      [
+        6421.0,
+        15715.0,
+        29321.0,
+        23931.0,
+        15603.0,
+        3890.0,
+        1119.0
+      ],
+      [
+        14240.0,
+        35306.0,
+        57575.0,
+        47555.0,
+        28824.0,
+        6612.0,
+        1888.0
+      ],
+      [
+        22990.0,
+        55166.0,
+        89858.0,
+        81601.0,
+        55060.0,
+        12147.0,
+        3178.0
+      ],
+      [
+        46901.0,
+        118477.0,
+        181097.0,
+        157767.0,
+        105452.0,
+        24116.0,
+        6190.0
+      ]
+    ],
+    "selected_counts": [
+      [
+        12.0,
+        59.0,
+        307.0,
+        705.0,
+        1037.0,
+        159.0,
+        55.0
+      ],
+      [
+        86.0,
+        222.0,
+        865.0,
+        2109.0,
+        3518.0,
+        1025.0,
+        194.0
+      ],
+      [
+        184.0,
+        636.0,
+        2101.0,
+        3988.0,
+        5937.0,
+        1896.0,
+        365.0
+      ],
+      [
+        328.0,
+        1012.0,
+        3043.0,
+        7015.0,
+        11091.0,
+        4018.0,
+        968.0
+      ],
+      [
+        738.0,
+        2584.0,
+        6406.0,
+        12195.0,
+        23147.0,
+        7978.0,
+        2156.0
+      ]
+    ],
+    "focus": [
+      [
+        0.2,
+        0.2,
+        0.4384676909081704,
+        1.3225207139300912,
+        3.197201051814096,
+        2.855007926165949,
+        1.2995635522994233
+      ],
+      [
+        0.2,
+        0.2,
+        0.3476530207439612,
+        1.038180960716432,
+        2.6557924884807282,
+        3.104180442787484,
+        2.0453804825271176
+      ],
+      [
+        0.2,
+        0.2123293913961921,
+        0.42989305509993864,
+        0.987817697280234,
+        2.4260895723114766,
+        3.3777449149402305,
+        2.2789140602331748
+      ],
+      [
+        0.2,
+        0.21616639946543723,
+        0.39891856615923854,
+        1.0125823437205483,
+        2.3725682449769514,
+        3.896114521297929,
+        3.5882411438930695
+      ],
+      [
+        0.2,
+        0.2569279470080177,
+        0.4166579769906619,
+        0.9104439513350898,
+        2.585340073436243,
+        3.8964624067405165,
+        4.102618962045906
+      ]
+    ],
+    "incumbent_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+    "boundary": "Aggregated search scoring indicators and frozen causal predictions only; no target values"
+  },
+  "search_gradient_scope": "All1273664 required search rows for uniform/weighted directions; all108139 officially scored rows for reference; replaces noisy stride40 diagnostic",
+  "limitation": "Coarse weighting requires within-bin selection ignorability, which is unproven. Gradient alignment is a diagnostic and not a search score improvement.",
+  "prior_negative": "Raw residual coarse propensity fitting failed in the previous campaign; a new objective-aware fit requires materially improved gradient alignment."
+}

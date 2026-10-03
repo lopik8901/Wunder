@@ -1,0 +1,3111 @@
+{
+  "utc": "2026-10-01T17:57:52.607384+00:00",
+  "status": "ended",
+  "stop_reason": "Configured two-hour wall-clock window elapsed; user requested summary. Two distinct scientific experiments completed; frozen incumbent retained.",
+  "starting_incumbent": 0.6588353223316641,
+  "prior_search_trajectory": [
+    {
+      "name": "linear_lags_10_100",
+      "report": "competition_engineering\\runs\\manual_temporal_residual_20260930\\report.json",
+      "search_wp": 0.6570753650184309,
+      "delta_vs_frozen_15_run": 0.0
+    },
+    {
+      "name": "histogram_nonlinear",
+      "report": "competition_engineering\\runs\\manual_nonlinear_residual_20260930\\targetwise_search_analysis.json",
+      "search_wp": 0.6579685667102717,
+      "delta_vs_frozen_15_run": 0.000893201691840817
+    },
+    {
+      "name": "quadratic_basis",
+      "report": "competition_engineering\\runs\\manual_quadratic_residual_20260930\\report.json",
+      "search_wp": 0.657348114982342,
+      "delta_vs_frozen_15_run": 0.00027274996391113415
+    },
+    {
+      "name": "gpu_multiscale_huber",
+      "report": "competition_engineering\\runs\\manual_gpu_multiscale_mlp_20261001\\report.json",
+      "search_wp": 0.6570753650184309,
+      "delta_vs_frozen_15_run": 0.0
+    },
+    {
+      "name": "gpu_multiscale_wp",
+      "report": "competition_engineering\\runs\\manual_gpu_multiscale_mlp_wp_20261001\\report.json",
+      "search_wp": 0.6570753650184309,
+      "delta_vs_frozen_15_run": 0.0
+    },
+    {
+      "name": "ridge4096",
+      "report": "competition_engineering\\runs\\manual_ridge4096_20261001\\report.json",
+      "search_wp": 0.6583226011976367,
+      "delta_vs_frozen_15_run": 0.0012472361792058573
+    },
+    {
+      "name": "causal_ema",
+      "report": "competition_engineering\\runs\\manual_ema_residual_20261001\\report.json",
+      "search_wp": 0.6570753650184309,
+      "delta_vs_frozen_15_run": 0.0
+    },
+    {
+      "name": "magnitude_ridge1024",
+      "report": "competition_engineering\\runs\\manual_magnitude_ridge1024_20261001\\report.json",
+      "search_wp": 0.658163572982821,
+      "delta_vs_frozen_15_run": 0.001088207964390131
+    },
+    {
+      "name": "magnitude_ridge4096",
+      "report": "competition_engineering\\runs\\manual_magnitude_ridge4096_20261001\\report.json",
+      "search_wp": 0.6585131397765058,
+      "delta_vs_frozen_15_run": 0.001437774758074939
+    },
+    {
+      "name": "gated_ridge1024",
+      "report": "competition_engineering\\runs\\manual_gated_ridge1024_20261001\\report.json",
+      "search_wp": 0.6578053173492312,
+      "delta_vs_frozen_15_run": 0.0007299523308003097
+    },
+    {
+      "name": "gated_ridge4096",
+      "report": "competition_engineering\\runs\\manual_gated_ridge4096_20261001\\report.json",
+      "search_wp": 0.6584282574352289,
+      "delta_vs_frozen_15_run": 0.001352892416798035
+    },
+    {
+      "name": "targetwise_combo",
+      "report": "competition_engineering\\runs\\manual_magnitude_ridge4096_20261001\\targetwise_combo_search.json",
+      "search_wp": 0.6588353223316641,
+      "delta_vs_frozen_15_run": 0.0017599573132331958
+    },
+    {
+      "name": "mask_propensity_weighted_ridge4096",
+      "report": "competition_engineering/runs/manual_mask_weighted_ridge4096_20261001/report.json",
+      "search_wp": 0.6577432526744718,
+      "delta_vs_frozen_15_run": 0.0006678876560408664,
+      "conclusion": "coarse search-mask propensity weighting did not beat prior 4096-sequence ridge or frozen targetwise combo; no protected evaluation"
+    },
+    {
+      "name": "combo_spline_calibration1024",
+      "report": "competition_engineering/runs/manual_spline_calibration_20261001/report.json",
+      "hypothesis": "targetwise nonlinear output calibration may correct clipping-related residual shape",
+      "search_wp": 0.6586649926982184,
+      "delta_vs_frozen_combo": -0.00017032963344565388,
+      "runtime_seconds": 63.54967310000211,
+      "conclusion": "Nonlinear output-shape correction did not improve the combo; best tested strength was small on both targets. Persistent t0 errors likely require new causal information or conditional mechanism."
+    },
+    {
+      "name": "combo_innovation_gate1024",
+      "report": "competition_engineering/runs/manual_innovation_gate1024_20261001/report.json",
+      "hypothesis": "persistent errors are conditional on recent causal prediction-change regime",
+      "search_wp": 0.6580954837764569,
+      "delta_vs_frozen_combo": -0.0007398385552072062,
+      "runtime_seconds": 64.57540800000424,
+      "implementation_repair": "cached warm-up predictions were NaN; zero-state handling fixed before any score",
+      "conclusion": "Causal prediction-change regime gating did not improve the combo. Short-lag residual persistence alone does not establish a useful global high/low innovation split."
+    },
+    {
+      "name": "combo_tiny_tree_t0_1024",
+      "report": "competition_engineering/runs/manual_tiny_tree_t0_20261001/report.json",
+      "hypothesis": "t0 residual contains nonlinear current-feature interactions missed by linear/gated ridge",
+      "search_wp": 0.6588825374213778,
+      "delta_vs_frozen_combo": 4.721508971372579e-05,
+      "paired_95ci_combined": [
+        -0.0002228343227444793,
+        0.0002908521621088968
+      ],
+      "runtime_seconds": 58.44917859999987,
+      "conclusion": "Tiny nonlinear tree gives only a 0.000047 search gain, CI crosses zero, and stronger correction worsens; retain as exploratory evidence, not a promoted winner. CPU callback cost remains unverified."
+    },
+    {
+      "name": "combo_random_fourier_features1024",
+      "report": "competition_engineering/runs/manual_random_features1024_20261001/report.json",
+      "hypothesis": "smooth nonlinear combinations of current causal features explain residual structure missed by ridge and shallow trees",
+      "search_wp": 0.6583806588724519,
+      "delta_vs_frozen_combo": -0.0004546634592121901,
+      "runtime_seconds": 50.14833679998992,
+      "conclusion": "Smooth random-feature interactions did not improve the frozen combo. Both targets selected the weakest tested correction; global nonlinear expansion alone is unsupported."
+    },
+    {
+      "name": "combo_late_t0_expert4096",
+      "report": "competition_engineering/runs/manual_late_t0_expert4096_20261001/report.json",
+      "hypothesis": "late-sequence t0 residuals need a position-specific mapping absent from the global combo",
+      "search_wp": 0.6584281010607775,
+      "delta_vs_frozen_combo": -0.0004072212708865486,
+      "runtime_seconds": 293.76812690000224,
+      "conclusion": "Late-only t0 linear correction worsened pooled search WP; a distinct late mapping of the same current features is insufficient at the tested regularization/strengths."
+    }
+  ],
+  "campaign_experiments": [
+    {
+      "id": "e01_additive_memory",
+      "report_path": "competition_engineering\\runs\\autonomous_20261001\\e01_additive_memory\\report.json",
+      "report_sha256": "61c73807f3ea09b9eb33bcdc3409340470702ded4e41bf9f55e2b83567df2589",
+      "config": {
+        "id": "e01_additive_memory",
+        "mode": "linear",
+        "tier": 1024,
+        "late_only": false,
+        "hypothesis": "Accumulated multiscale input state contributes beyond the frozen combo; control for nonlinear interaction test.",
+        "support": "Positive combined delta with paired lower bound above zero; late t0 improves without widespread sequence regressions.",
+        "weaken": "No improvement or gains disappear versus additive-memory control.",
+        "stride": 40,
+        "ridge_penalty": 0.1,
+        "strengths": [
+          0.25,
+          0.5,
+          1.0
+        ],
+        "state_alphas": [
+          0.01,
+          0.001
+        ],
+        "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+        "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+        "source_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+        "decision_rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021"
+      },
+      "training_rows": 509952,
+      "training_sequences": 1024,
+      "chosen_strength": 0.25,
+      "strength_search": {
+        "0.25": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.6471159764008785,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6583974545519031
+          },
+          "delta_per_target": [
+            -0.0008757355595220284,
+            0.0
+          ],
+          "delta_combined": -0.0004378677797609587,
+          "paired_95ci_combined": [
+            -0.0009480461603431078,
+            5.962459446723216e-05
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        },
+        "0.5": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.6458630781015604,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6577710054022441
+          },
+          "delta_per_target": [
+            -0.002128633858840101,
+            0.0
+          ],
+          "delta_combined": -0.001064316929419995,
+          "paired_95ci_combined": [
+            -0.002081605793059045,
+            -6.515065365306662e-05
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        },
+        "1.0": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.6420845576907687,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6558817451968482
+          },
+          "delta_per_target": [
+            -0.005907154269631842,
+            0.0
+          ],
+          "delta_combined": -0.002953577134815921,
+          "paired_95ci_combined": [
+            -0.0050216860467176576,
+            -0.0009361347772653484
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        }
+      },
+      "search_result": {
+        "reference": {
+          "t0": 0.6479917119604005,
+          "t1": 0.6696789327029277,
+          "weighted_pearson": 0.6588353223316641
+        },
+        "candidate": {
+          "t0": 0.6471159764008785,
+          "t1": 0.6696789327029277,
+          "weighted_pearson": 0.6583974545519031
+        },
+        "delta_per_target": [
+          -0.0008757355595220284,
+          0.0
+        ],
+        "delta_combined": -0.0004378677797609587,
+        "paired_95ci_combined": [
+          -0.0009480461603431078,
+          5.962459446723216e-05
+        ],
+        "scored_rows": 108139,
+        "sequences": 64,
+        "evidence": "reused_search_evidence_not_independent_validation",
+        "search_error_diagnostics": {
+          "schema_version": 1,
+          "evidence": "reused_search_evidence_not_independent_validation",
+          "counts": {
+            "sequences": 64,
+            "scored_rows": 108139
+          },
+          "target_performance": {
+            "t0": {
+              "n": 108139,
+              "root_wp": 0.6479917119604004,
+              "candidate_wp": 0.6471159764008787,
+              "delta_wp": -0.0008757355595216954
+            },
+            "t1": {
+              "n": 108139,
+              "root_wp": 0.6696789327029276,
+              "candidate_wp": 0.6696789327029276,
+              "delta_wp": 0.0
+            }
+          },
+          "position_buckets": {
+            "early": {
+              "t0": {
+                "n": 34852,
+                "root_wp": 0.631145275254092,
+                "candidate_wp": 0.6305895981865792,
+                "delta_wp": -0.0005556770675128053
+              },
+              "t1": {
+                "n": 34852,
+                "root_wp": 0.695400250488768,
+                "candidate_wp": 0.695400250488768,
+                "delta_wp": 0.0
+              }
+            },
+            "middle": {
+              "t0": {
+                "n": 37350,
+                "root_wp": 0.6398727205808514,
+                "candidate_wp": 0.6383939728377235,
+                "delta_wp": -0.0014787477431279505
+              },
+              "t1": {
+                "n": 37350,
+                "root_wp": 0.614430184616747,
+                "candidate_wp": 0.614430184616747,
+                "delta_wp": 0.0
+              }
+            },
+            "late": {
+              "t0": {
+                "n": 35937,
+                "root_wp": 0.6687260612395838,
+                "candidate_wp": 0.6681590693985651,
+                "delta_wp": -0.0005669918410187158
+              },
+              "t1": {
+                "n": 35937,
+                "root_wp": 0.7338430470825703,
+                "candidate_wp": 0.7338430470825703,
+                "delta_wp": 0.0
+              }
+            }
+          },
+          "target_magnitude_buckets": {
+            "t0": [
+              {
+                "n": 48047,
+                "root_wp": 0.5398421454474946,
+                "candidate_wp": 0.5408368811082075,
+                "delta_wp": 0.0009947356607128421
+              },
+              {
+                "n": 33983,
+                "root_wp": 0.6027067399996702,
+                "candidate_wp": 0.6018989512760524,
+                "delta_wp": -0.0008077887236177528
+              },
+              {
+                "n": 12321,
+                "root_wp": 0.6243925350921585,
+                "candidate_wp": 0.6233112516056911,
+                "delta_wp": -0.0010812834864674103
+              },
+              {
+                "n": 13788,
+                "root_wp": 0.7429104797051496,
+                "candidate_wp": 0.741277076047265,
+                "delta_wp": -0.0016334036578845579
+              }
+            ],
+            "t1": [
+              {
+                "n": 44277,
+                "root_wp": 0.49882791482472705,
+                "candidate_wp": 0.49882791482472705,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 37846,
+                "root_wp": 0.6172352214063762,
+                "candidate_wp": 0.6172352214063762,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 10153,
+                "root_wp": 0.7101488262296869,
+                "candidate_wp": 0.7101488262296869,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 15863,
+                "root_wp": 0.7428822558572863,
+                "candidate_wp": 0.7428822558572863,
+                "delta_wp": 0.0
+              }
+            ]
+          },
+          "root_prediction_magnitude_buckets": {
+            "t0": [
+              {
+                "n": 37029,
+                "root_wp": 0.21864895448437052,
+                "candidate_wp": 0.21288621692181753,
+                "delta_wp": -0.005762737562552994
+              },
+              {
+                "n": 32331,
+                "root_wp": 0.47212420628388213,
+                "candidate_wp": 0.47026537896973775,
+                "delta_wp": -0.0018588273141443845
+              },
+              {
+                "n": 26083,
+                "root_wp": 0.6971965248250425,
+                "candidate_wp": 0.6964125929506777,
+                "delta_wp": -0.0007839318743647627
+              },
+              {
+                "n": 12696,
+                "root_wp": 0.8683514457132442,
+                "candidate_wp": 0.868832574051007,
+                "delta_wp": 0.00048112833776281505
+              }
+            ],
+            "t1": [
+              {
+                "n": 32959,
+                "root_wp": 0.170664950888132,
+                "candidate_wp": 0.170664950888132,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 37319,
+                "root_wp": 0.48919085539270274,
+                "candidate_wp": 0.48919085539270274,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 30030,
+                "root_wp": 0.7767568861281853,
+                "candidate_wp": 0.7767568861281853,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 7831,
+                "root_wp": 0.8699643007513086,
+                "candidate_wp": 0.8699643007513086,
+                "delta_wp": 0.0
+              }
+            ]
+          },
+          "per_sequence_wp": {
+            "t0": {
+              "n_sequences": 64,
+              "candidate_better_fraction": 0.484375,
+              "root_q10_q50_q90": [
+                0.370336,
+                0.70134,
+                0.850788
+              ],
+              "candidate_q10_q50_q90": [
+                0.366741,
+                0.700656,
+                0.852263
+              ]
+            },
+            "t1": {
+              "n_sequences": 64,
+              "candidate_better_fraction": 0.0,
+              "root_q10_q50_q90": [
+                0.410946,
+                0.726769,
+                0.844196
+              ],
+              "candidate_q10_q50_q90": [
+                0.410946,
+                0.726769,
+                0.844196
+              ]
+            }
+          },
+          "residual_bias_scale": {
+            "t0": {
+              "n": 108139,
+              "root_weighted_bias": -0.179412919105511,
+              "candidate_weighted_bias": -0.14483520654034554,
+              "delta_weighted_bias": 0.03457771256516545,
+              "root_weighted_scale": 1.0182844835999343,
+              "candidate_weighted_scale": 1.0141917953011514,
+              "delta_weighted_scale": -0.004092688298782843
+            },
+            "t1": {
+              "n": 108139,
+              "root_weighted_bias": -0.05391038418219245,
+              "candidate_weighted_bias": -0.05391038418219245,
+              "delta_weighted_bias": 0.0,
+              "root_weighted_scale": 1.0311718145067719,
+              "candidate_weighted_scale": 1.0311718145067719,
+              "delta_weighted_scale": 0.0
+            }
+          },
+          "residual_persistence": {
+            "lags": [
+              1,
+              10,
+              100
+            ],
+            "t0": [
+              {
+                "lag_rows": 1,
+                "n_pairs": 79763,
+                "root_corr": 0.9818413853645325,
+                "candidate_corr": 0.9820682406425476,
+                "delta_corr": 0.00022685527801513672
+              },
+              {
+                "lag_rows": 10,
+                "n_pairs": 43392,
+                "root_corr": 0.8921336531639099,
+                "candidate_corr": 0.8929720520973206,
+                "delta_corr": 0.0008383989334106445
+              },
+              {
+                "lag_rows": 100,
+                "n_pairs": 21732,
+                "root_corr": 0.5147139430046082,
+                "candidate_corr": 0.5194249749183655,
+                "delta_corr": 0.004711031913757324
+              }
+            ],
+            "t1": [
+              {
+                "lag_rows": 1,
+                "n_pairs": 79763,
+                "root_corr": 0.9828936457633972,
+                "candidate_corr": 0.9828936457633972,
+                "delta_corr": 0.0
+              },
+              {
+                "lag_rows": 10,
+                "n_pairs": 43392,
+                "root_corr": 0.9004498720169067,
+                "candidate_corr": 0.9004498720169067,
+                "delta_corr": 0.0
+              },
+              {
+                "lag_rows": 100,
+                "n_pairs": 21732,
+                "root_corr": 0.5295965075492859,
+                "candidate_corr": 0.5295965075492859,
+                "delta_corr": 0.0
+              }
+            ]
+          },
+          "feature_residual_relationships": {
+            "lags": [
+              0,
+              1,
+              10,
+              100
+            ],
+            "groups": [
+              "position",
+              "velocity",
+              "delta_position",
+              "delta_velocity",
+              "auxiliary"
+            ],
+            "t0": [
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.05288462395201793,
+                "candidate_rms_correlation": 0.04570907717206835,
+                "delta_rms_correlation": -0.007175546779949575
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04293360078235306,
+                "candidate_rms_correlation": 0.03912896844824665,
+                "delta_rms_correlation": -0.0038046323341064114
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.03399281557988517,
+                "candidate_rms_correlation": 0.029984286410954415,
+                "delta_rms_correlation": -0.004008529168930755
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.024619041834650586,
+                "candidate_rms_correlation": 0.020947086162378007,
+                "delta_rms_correlation": -0.003671955672272579
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02992635684743484,
+                "candidate_rms_correlation": 0.02871557405641791,
+                "delta_rms_correlation": -0.0012107827910169296
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.0521045292982354,
+                "candidate_rms_correlation": 0.04512448894010043,
+                "delta_rms_correlation": -0.006980040358134966
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.042530107583742816,
+                "candidate_rms_correlation": 0.03879298110102408,
+                "delta_rms_correlation": -0.0037371264827187334
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.03320026951431785,
+                "candidate_rms_correlation": 0.029626283153769712,
+                "delta_rms_correlation": -0.0035739863605481377
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02287626274536848,
+                "candidate_rms_correlation": 0.01964609045777328,
+                "delta_rms_correlation": -0.003230172287595201
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.030388812828964364,
+                "candidate_rms_correlation": 0.029052623646540834,
+                "delta_rms_correlation": -0.0013361891824235292
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04258486248480268,
+                "candidate_rms_correlation": 0.03694142264422562,
+                "delta_rms_correlation": -0.0056434398405770594
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04105365226537433,
+                "candidate_rms_correlation": 0.03766571211781021,
+                "delta_rms_correlation": -0.0033879401475641197
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.026225839345392417,
+                "candidate_rms_correlation": 0.023031879359540833,
+                "delta_rms_correlation": -0.003193959985851584
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.01622886301915799,
+                "candidate_rms_correlation": 0.013844467143016456,
+                "delta_rms_correlation": -0.0023843958761415353
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.031060336388737685,
+                "candidate_rms_correlation": 0.02983233949142741,
+                "delta_rms_correlation": -0.0012279968973102767
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.027297437669848133,
+                "candidate_rms_correlation": 0.024963791546024527,
+                "delta_rms_correlation": -0.002333646123823606
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.038258685801874845,
+                "candidate_rms_correlation": 0.03512994465762638,
+                "delta_rms_correlation": -0.0031287411442484647
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.02181234567300398,
+                "candidate_rms_correlation": 0.019519274065671013,
+                "delta_rms_correlation": -0.002293071607332966
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.008378331192024762,
+                "candidate_rms_correlation": 0.007751014389975271,
+                "delta_rms_correlation": -0.0006273168020494903
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.031818019906300676,
+                "candidate_rms_correlation": 0.03084142303559324,
+                "delta_rms_correlation": -0.0009765968707074364
+              }
+            ],
+            "t1": [
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.021121570319386773,
+                "candidate_rms_correlation": 0.021121570319386773,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04675752133889625,
+                "candidate_rms_correlation": 0.04675752133889625,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009470024520898493,
+                "candidate_rms_correlation": 0.009470024520898493,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009741759171023085,
+                "candidate_rms_correlation": 0.009741759171023085,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02594755476961742,
+                "candidate_rms_correlation": 0.02594755476961742,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.021220177237113832,
+                "candidate_rms_correlation": 0.021220177237113832,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04621469606753266,
+                "candidate_rms_correlation": 0.04621469606753266,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009041049690244876,
+                "candidate_rms_correlation": 0.009041049690244876,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009058636814438886,
+                "candidate_rms_correlation": 0.009058636814438886,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02539154484047152,
+                "candidate_rms_correlation": 0.02539154484047152,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.018874012751235097,
+                "candidate_rms_correlation": 0.018874012751235097,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04618062031157664,
+                "candidate_rms_correlation": 0.04618062031157664,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.007946766485135112,
+                "candidate_rms_correlation": 0.007946766485135112,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.007835925457173152,
+                "candidate_rms_correlation": 0.007835925457173152,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02805859048514816,
+                "candidate_rms_correlation": 0.02805859048514816,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.02339137851049468,
+                "candidate_rms_correlation": 0.02339137851049468,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.04580662342709362,
+                "candidate_rms_correlation": 0.04580662342709362,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.013783389866803504,
+                "candidate_rms_correlation": 0.013783389866803504,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.008352455374108881,
+                "candidate_rms_correlation": 0.008352455374108881,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.0305631131009575,
+                "candidate_rms_correlation": 0.0305631131009575,
+                "delta_rms_correlation": 0.0
+              }
+            ]
+          },
+          "root_prediction_magnitude_reference": "frozen_root_abs_prediction",
+          "residual_definition": "clip(y,-2,2)-clip(prediction,-2,2); bias/scale weighted by abs(clipped target)",
+          "feature_relationship_definition": "RMS of all fixed-feature weighted correlations with residual using x[t-lag_rows]"
+        }
+      },
+      "paired_99ci_combined": [
+        -0.001159810380787002,
+        0.00016634282756143606
+      ],
+      "validation": {
+        "causal_prefix": true,
+        "reset": true,
+        "determinism": true,
+        "stream_batch_parity": true,
+        "label_mask_independence": true,
+        "finite_outputs": true,
+        "max_abs_parity": 2.384185791015625e-07,
+        "incremental_cpu_us_per_row": 19.569475000025705,
+        "cpu_scope": "Python streaming residual only; cached incumbent output, one BLAS thread, no core pinning",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "rows": 20000
+      },
+      "runtime_seconds": 106.32084380000015,
+      "artifact_sha256": "514751dd9ceb93a7a3178ce113edaaf0cd88ffbc16ec51b440ba671d653f0aab",
+      "config_sha256": "e9c9aedbcfd6257ae0692f4a60e1111890ee24f558a298e209df144e40e7ef93",
+      "retrieval_sha256": "d36ce14995ad926b82fc24dc552d0aac991684ce33be09f6de3ff5e68efbce57",
+      "status": "exploratory_search_only",
+      "interpretation": "Fixed search-incumbent rule not met; retain incumbent."
+    },
+    {
+      "id": "e01e_additive_bound_buffers",
+      "report_path": "competition_engineering\\runs\\autonomous_20261001\\e01e_additive_bound_buffers\\report.json",
+      "report_sha256": "7247d69fbec1939e908e20dbfff97ea6aca7803a9617db4da684a5ff20304842",
+      "config": {
+        "id": "e01e_additive_bound_buffers",
+        "mode": "linear",
+        "late_only": false,
+        "tier": 1024,
+        "stride": 40,
+        "penalty": 0.1,
+        "strengths": [
+          0.25,
+          0.5,
+          1.0
+        ],
+        "hypothesis": "Accumulated multiscale input state explains persistent t0 residuals; matched additive control.",
+        "support": "Gain over frozen combo with positive paired lower bound and late-t0 diagnostic improvement.",
+        "weaken": "Nonpositive gain; for bilinear, no gain over additive control.",
+        "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+        "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+        "runner_sha256": "fe921d3a710c7702fd8d5576d8f088ff9e0f5ba8addc58921c4198665ff560e8",
+        "core_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+        "exporter_sha256": "c052e25d9beb489d6e58b5cbdf056ed4846f8abd273466c0561d2b322e2282c5",
+        "reuse_fit": "e01b_additive_isolated",
+        "isolation": "Existing production GeneratedSandbox; training-only mount; rowwise label-free inference",
+        "rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021"
+      },
+      "chosen_strength": 0.25,
+      "strength_search": {
+        "0.25": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.647115976368069,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6583974545354982
+          },
+          "delta_per_target": [
+            -0.0008757355923315613,
+            0.0
+          ],
+          "delta_combined": -0.00043786779616583615,
+          "paired_95ci_combined": [
+            -0.0009480461402201462,
+            5.962461838222714e-05
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        },
+        "0.5": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.6458630780106996,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6577710053568137
+          },
+          "delta_per_target": [
+            -0.0021286339497008644,
+            0.0
+          ],
+          "delta_combined": -0.0010643169748504322,
+          "paired_95ci_combined": [
+            -0.002081606040424994,
+            -6.515099274180566e-05
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        },
+        "1.0": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.6420845578921449,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6558817452975363
+          },
+          "delta_per_target": [
+            -0.005907154068255593,
+            0.0
+          ],
+          "delta_combined": -0.0029535770341277967,
+          "paired_95ci_combined": [
+            -0.00502168587487966,
+            -0.0009361349557082394
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        }
+      },
+      "search_result": {
+        "reference": {
+          "t0": 0.6479917119604005,
+          "t1": 0.6696789327029277,
+          "weighted_pearson": 0.6588353223316641
+        },
+        "candidate": {
+          "t0": 0.647115976368069,
+          "t1": 0.6696789327029277,
+          "weighted_pearson": 0.6583974545354982
+        },
+        "delta_per_target": [
+          -0.0008757355923315613,
+          0.0
+        ],
+        "delta_combined": -0.00043786779616583615,
+        "paired_95ci_combined": [
+          -0.0009480461402201462,
+          5.962461838222714e-05
+        ],
+        "scored_rows": 108139,
+        "sequences": 64,
+        "evidence": "reused_search_evidence_not_independent_validation",
+        "search_error_diagnostics": {
+          "schema_version": 1,
+          "evidence": "reused_search_evidence_not_independent_validation",
+          "counts": {
+            "sequences": 64,
+            "scored_rows": 108139
+          },
+          "target_performance": {
+            "t0": {
+              "n": 108139,
+              "root_wp": 0.6479917119604004,
+              "candidate_wp": 0.647115976368069,
+              "delta_wp": -0.0008757355923314503
+            },
+            "t1": {
+              "n": 108139,
+              "root_wp": 0.6696789327029276,
+              "candidate_wp": 0.6696789327029276,
+              "delta_wp": 0.0
+            }
+          },
+          "position_buckets": {
+            "early": {
+              "t0": {
+                "n": 34852,
+                "root_wp": 0.631145275254092,
+                "candidate_wp": 0.6305895984852753,
+                "delta_wp": -0.0005556767688167374
+              },
+              "t1": {
+                "n": 34852,
+                "root_wp": 0.695400250488768,
+                "candidate_wp": 0.695400250488768,
+                "delta_wp": 0.0
+              }
+            },
+            "middle": {
+              "t0": {
+                "n": 37350,
+                "root_wp": 0.6398727205808514,
+                "candidate_wp": 0.6383939723308837,
+                "delta_wp": -0.001478748249967743
+              },
+              "t1": {
+                "n": 37350,
+                "root_wp": 0.614430184616747,
+                "candidate_wp": 0.614430184616747,
+                "delta_wp": 0.0
+              }
+            },
+            "late": {
+              "t0": {
+                "n": 35937,
+                "root_wp": 0.6687260612395838,
+                "candidate_wp": 0.6681590695464478,
+                "delta_wp": -0.0005669916931360097
+              },
+              "t1": {
+                "n": 35937,
+                "root_wp": 0.7338430470825703,
+                "candidate_wp": 0.7338430470825703,
+                "delta_wp": 0.0
+              }
+            }
+          },
+          "target_magnitude_buckets": {
+            "t0": [
+              {
+                "n": 48047,
+                "root_wp": 0.5398421454474946,
+                "candidate_wp": 0.5408368790404796,
+                "delta_wp": 0.0009947335929849643
+              },
+              {
+                "n": 33983,
+                "root_wp": 0.6027067399996702,
+                "candidate_wp": 0.6018989503202621,
+                "delta_wp": -0.0008077896794080885
+              },
+              {
+                "n": 12321,
+                "root_wp": 0.6243925350921585,
+                "candidate_wp": 0.6233112514395838,
+                "delta_wp": -0.0010812836525747604
+              },
+              {
+                "n": 13788,
+                "root_wp": 0.7429104797051496,
+                "candidate_wp": 0.7412770762018595,
+                "delta_wp": -0.0016334035032901095
+              }
+            ],
+            "t1": [
+              {
+                "n": 44277,
+                "root_wp": 0.49882791482472705,
+                "candidate_wp": 0.49882791482472705,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 37846,
+                "root_wp": 0.6172352214063762,
+                "candidate_wp": 0.6172352214063762,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 10153,
+                "root_wp": 0.7101488262296869,
+                "candidate_wp": 0.7101488262296869,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 15863,
+                "root_wp": 0.7428822558572863,
+                "candidate_wp": 0.7428822558572863,
+                "delta_wp": 0.0
+              }
+            ]
+          },
+          "root_prediction_magnitude_buckets": {
+            "t0": [
+              {
+                "n": 37029,
+                "root_wp": 0.21864895448437052,
+                "candidate_wp": 0.21288621779417216,
+                "delta_wp": -0.005762736690198361
+              },
+              {
+                "n": 32331,
+                "root_wp": 0.47212420628388213,
+                "candidate_wp": 0.4702653778850389,
+                "delta_wp": -0.0018588283988432153
+              },
+              {
+                "n": 26083,
+                "root_wp": 0.6971965248250425,
+                "candidate_wp": 0.6964125933798441,
+                "delta_wp": -0.0007839314451983936
+              },
+              {
+                "n": 12696,
+                "root_wp": 0.8683514457132442,
+                "candidate_wp": 0.8688325741754375,
+                "delta_wp": 0.000481128462193281
+              }
+            ],
+            "t1": [
+              {
+                "n": 32959,
+                "root_wp": 0.170664950888132,
+                "candidate_wp": 0.170664950888132,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 37319,
+                "root_wp": 0.48919085539270274,
+                "candidate_wp": 0.48919085539270274,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 30030,
+                "root_wp": 0.7767568861281853,
+                "candidate_wp": 0.7767568861281853,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 7831,
+                "root_wp": 0.8699643007513086,
+                "candidate_wp": 0.8699643007513086,
+                "delta_wp": 0.0
+              }
+            ]
+          },
+          "per_sequence_wp": {
+            "t0": {
+              "n_sequences": 64,
+              "candidate_better_fraction": 0.484375,
+              "root_q10_q50_q90": [
+                0.370336,
+                0.70134,
+                0.850788
+              ],
+              "candidate_q10_q50_q90": [
+                0.366741,
+                0.700656,
+                0.852263
+              ]
+            },
+            "t1": {
+              "n_sequences": 64,
+              "candidate_better_fraction": 0.0,
+              "root_q10_q50_q90": [
+                0.410946,
+                0.726769,
+                0.844196
+              ],
+              "candidate_q10_q50_q90": [
+                0.410946,
+                0.726769,
+                0.844196
+              ]
+            }
+          },
+          "residual_bias_scale": {
+            "t0": {
+              "n": 108139,
+              "root_weighted_bias": -0.179412919105511,
+              "candidate_weighted_bias": -0.1448352050547295,
+              "delta_weighted_bias": 0.0345777140507815,
+              "root_weighted_scale": 1.0182844835999343,
+              "candidate_weighted_scale": 1.014191795621579,
+              "delta_weighted_scale": -0.0040926879783553805
+            },
+            "t1": {
+              "n": 108139,
+              "root_weighted_bias": -0.05391038418219245,
+              "candidate_weighted_bias": -0.05391038418219245,
+              "delta_weighted_bias": 0.0,
+              "root_weighted_scale": 1.0311718145067719,
+              "candidate_weighted_scale": 1.0311718145067719,
+              "delta_weighted_scale": 0.0
+            }
+          },
+          "residual_persistence": {
+            "lags": [
+              1,
+              10,
+              100
+            ],
+            "t0": [
+              {
+                "lag_rows": 1,
+                "n_pairs": 79763,
+                "root_corr": 0.9818413853645325,
+                "candidate_corr": 0.9820682406425476,
+                "delta_corr": 0.00022685527801513672
+              },
+              {
+                "lag_rows": 10,
+                "n_pairs": 43392,
+                "root_corr": 0.8921336531639099,
+                "candidate_corr": 0.8929720520973206,
+                "delta_corr": 0.0008383989334106445
+              },
+              {
+                "lag_rows": 100,
+                "n_pairs": 21732,
+                "root_corr": 0.5147139430046082,
+                "candidate_corr": 0.5194249749183655,
+                "delta_corr": 0.004711031913757324
+              }
+            ],
+            "t1": [
+              {
+                "lag_rows": 1,
+                "n_pairs": 79763,
+                "root_corr": 0.9828936457633972,
+                "candidate_corr": 0.9828936457633972,
+                "delta_corr": 0.0
+              },
+              {
+                "lag_rows": 10,
+                "n_pairs": 43392,
+                "root_corr": 0.9004498720169067,
+                "candidate_corr": 0.9004498720169067,
+                "delta_corr": 0.0
+              },
+              {
+                "lag_rows": 100,
+                "n_pairs": 21732,
+                "root_corr": 0.5295965075492859,
+                "candidate_corr": 0.5295965075492859,
+                "delta_corr": 0.0
+              }
+            ]
+          },
+          "feature_residual_relationships": {
+            "lags": [
+              0,
+              1,
+              10,
+              100
+            ],
+            "groups": [
+              "position",
+              "velocity",
+              "delta_position",
+              "delta_velocity",
+              "auxiliary"
+            ],
+            "t0": [
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.05288462395201793,
+                "candidate_rms_correlation": 0.045709077789927374,
+                "delta_rms_correlation": -0.007175546162090554
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04293360078235306,
+                "candidate_rms_correlation": 0.039128968894715774,
+                "delta_rms_correlation": -0.003804631887637286
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.03399281557988517,
+                "candidate_rms_correlation": 0.029984286402376385,
+                "delta_rms_correlation": -0.004008529177508786
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.024619041834650586,
+                "candidate_rms_correlation": 0.02094708606607702,
+                "delta_rms_correlation": -0.003671955768573567
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02992635684743484,
+                "candidate_rms_correlation": 0.028715574624277825,
+                "delta_rms_correlation": -0.0012107822231570142
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.0521045292982354,
+                "candidate_rms_correlation": 0.045124489508108094,
+                "delta_rms_correlation": -0.006980039790127304
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.042530107583742816,
+                "candidate_rms_correlation": 0.03879298155636683,
+                "delta_rms_correlation": -0.0037371260273759838
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.03320026951431785,
+                "candidate_rms_correlation": 0.029626283122079232,
+                "delta_rms_correlation": -0.003573986392238618
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02287626274536848,
+                "candidate_rms_correlation": 0.01964609027582626,
+                "delta_rms_correlation": -0.003230172469542221
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.030388812828964364,
+                "candidate_rms_correlation": 0.029052624224664047,
+                "delta_rms_correlation": -0.0013361886043003167
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04258486248480268,
+                "candidate_rms_correlation": 0.036941423087476145,
+                "delta_rms_correlation": -0.005643439397326533
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04105365226537433,
+                "candidate_rms_correlation": 0.0376657126123707,
+                "delta_rms_correlation": -0.00338793965300363
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.026225839345392417,
+                "candidate_rms_correlation": 0.02303187968788697,
+                "delta_rms_correlation": -0.0031939596575054456
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.01622886301915799,
+                "candidate_rms_correlation": 0.01384446721269572,
+                "delta_rms_correlation": -0.002384395806462271
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.031060336388737685,
+                "candidate_rms_correlation": 0.0298323401667081,
+                "delta_rms_correlation": -0.0012279962220295843
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.027297437669848133,
+                "candidate_rms_correlation": 0.024963791895996984,
+                "delta_rms_correlation": -0.0023336457738511486
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.038258685801874845,
+                "candidate_rms_correlation": 0.035129945235347806,
+                "delta_rms_correlation": -0.0031287405665270385
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.02181234567300398,
+                "candidate_rms_correlation": 0.019519274512539007,
+                "delta_rms_correlation": -0.002293071160464972
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.008378331192024762,
+                "candidate_rms_correlation": 0.00775101448335481,
+                "delta_rms_correlation": -0.0006273167086699519
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.031818019906300676,
+                "candidate_rms_correlation": 0.030841423638672955,
+                "delta_rms_correlation": -0.0009765962676277218
+              }
+            ],
+            "t1": [
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.021121570319386773,
+                "candidate_rms_correlation": 0.021121570319386773,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04675752133889625,
+                "candidate_rms_correlation": 0.04675752133889625,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009470024520898493,
+                "candidate_rms_correlation": 0.009470024520898493,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009741759171023085,
+                "candidate_rms_correlation": 0.009741759171023085,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02594755476961742,
+                "candidate_rms_correlation": 0.02594755476961742,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.021220177237113832,
+                "candidate_rms_correlation": 0.021220177237113832,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04621469606753266,
+                "candidate_rms_correlation": 0.04621469606753266,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009041049690244876,
+                "candidate_rms_correlation": 0.009041049690244876,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009058636814438886,
+                "candidate_rms_correlation": 0.009058636814438886,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02539154484047152,
+                "candidate_rms_correlation": 0.02539154484047152,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.018874012751235097,
+                "candidate_rms_correlation": 0.018874012751235097,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04618062031157664,
+                "candidate_rms_correlation": 0.04618062031157664,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.007946766485135112,
+                "candidate_rms_correlation": 0.007946766485135112,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.007835925457173152,
+                "candidate_rms_correlation": 0.007835925457173152,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02805859048514816,
+                "candidate_rms_correlation": 0.02805859048514816,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.02339137851049468,
+                "candidate_rms_correlation": 0.02339137851049468,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.04580662342709362,
+                "candidate_rms_correlation": 0.04580662342709362,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.013783389866803504,
+                "candidate_rms_correlation": 0.013783389866803504,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.008352455374108881,
+                "candidate_rms_correlation": 0.008352455374108881,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.0305631131009575,
+                "candidate_rms_correlation": 0.0305631131009575,
+                "delta_rms_correlation": 0.0
+              }
+            ]
+          },
+          "root_prediction_magnitude_reference": "frozen_root_abs_prediction",
+          "residual_definition": "clip(y,-2,2)-clip(prediction,-2,2); bias/scale weighted by abs(clipped target)",
+          "feature_relationship_definition": "RMS of all fixed-feature weighted correlations with residual using x[t-lag_rows]"
+        }
+      },
+      "paired_99ci_combined": [
+        -0.0011598103879034395,
+        0.00016634274780787952
+      ],
+      "validation": {
+        "causal_prefix": true,
+        "sequence_reset": true,
+        "deterministic": true,
+        "warmup_and_output_contract": true,
+        "benchmark_rows": 20000,
+        "callback_us_per_row": 70.17142289999714,
+        "wall_us_per_row": 162.8447027
+      },
+      "status": "exploratory_search_only",
+      "runtime_seconds": 127.373349789,
+      "artifact_sha256": "547e35fd0b1dc61bff7c83dd66546e1f12fe123a1578161f89bb17daf9c26a0b",
+      "selected_deployment_sha256": {
+        "fused.onnx": "0a6a28e8d15aa54d5e57d00a8ed2c165b4afbfa5ac66e42a129f8f513e63bf03",
+        "model.npz": "547e35fd0b1dc61bff7c83dd66546e1f12fe123a1578161f89bb17daf9c26a0b",
+        "solution.py": "e76b095a505e14709760bd0ca2d9337faff324eb5890b2fbddf2a00b57686bed"
+      },
+      "config_sha256": "af2072afc758eb59966c3011af2de2eeaaf0b936d98ff0930e259c5cec8362e9",
+      "identity": {
+        "source_sha256": {
+          "train.py": "a09e8c3f310df0be2325aef9447a7c2b6b2ec382348d60419d73820112289495",
+          "callback.py": "e76b095a505e14709760bd0ca2d9337faff324eb5890b2fbddf2a00b57686bed",
+          "combo.npz": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+        },
+        "artifact_sha256": {
+          "fused.onnx": "5b053d7cddfd6d29ce9fb1d34af9f80adc6712db3038b32e49084cfd0fa60c44",
+          "model.npz": "547e35fd0b1dc61bff7c83dd66546e1f12fe123a1578161f89bb17daf9c26a0b"
+        },
+        "deployment_sha256": {
+          "fused.onnx": "5b053d7cddfd6d29ce9fb1d34af9f80adc6712db3038b32e49084cfd0fa60c44",
+          "model.npz": "547e35fd0b1dc61bff7c83dd66546e1f12fe123a1578161f89bb17daf9c26a0b",
+          "solution.py": "e76b095a505e14709760bd0ca2d9337faff324eb5890b2fbddf2a00b57686bed"
+        },
+        "package_sha256": "60e5c7d35305a3ce0e41ff396bbab3966f28405394be59b17ebd3606f00955cf"
+      },
+      "interpretation": "Fixed search rule not met; frozen combo retained."
+    },
+    {
+      "id": "e02_bilinear_memory",
+      "report_path": "competition_engineering\\runs\\autonomous_20261001\\e02_bilinear_memory\\report.json",
+      "report_sha256": "2f8e140763d25c180710a520d55fc527bca83432853060b7e5e924458f8c60fe",
+      "config": {
+        "id": "e02_bilinear_memory",
+        "mode": "bilinear",
+        "late_only": false,
+        "tier": 1024,
+        "stride": 40,
+        "penalty": 0.1,
+        "strengths": [
+          0.25,
+          0.5,
+          1.0
+        ],
+        "hypothesis": "Current-by-causal-history interactions explain t0 residuals missed by additive memory.",
+        "support": "Gain over frozen combo with positive paired lower bound and late-t0 diagnostic improvement.",
+        "weaken": "Nonpositive gain; for bilinear, no gain over additive control.",
+        "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+        "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+        "runner_sha256": "8eb741bd3c16371b7da680d28fc9bd11a828500ac801e68509466db7959bc853",
+        "core_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+        "exporter_sha256": "c052e25d9beb489d6e58b5cbdf056ed4846f8abd273466c0561d2b322e2282c5",
+        "reuse_fit": null,
+        "isolation": "Existing production GeneratedSandbox; training-only mount; rowwise label-free inference",
+        "rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021"
+      },
+      "chosen_strength": 0.25,
+      "strength_search": {
+        "0.25": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.6468107177827004,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.658244825242814
+          },
+          "delta_per_target": [
+            -0.0011809941777001232,
+            0.0
+          ],
+          "delta_combined": -0.0005904970888500616,
+          "paired_95ci_combined": [
+            -0.0011875040982005397,
+            -4.2596516557497585e-06
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        },
+        "0.5": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.645054550789079,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6573667417460034
+          },
+          "delta_per_target": [
+            -0.0029371611713214785,
+            0.0
+          ],
+          "delta_combined": -0.0014685805856606837,
+          "paired_95ci_combined": [
+            -0.0026726850433571024,
+            -0.00033785667491368715
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        },
+        "1.0": {
+          "reference": {
+            "t0": 0.6479917119604005,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6588353223316641
+          },
+          "candidate": {
+            "t0": 0.6394989426316541,
+            "t1": 0.6696789327029277,
+            "weighted_pearson": 0.6545889376672909
+          },
+          "delta_per_target": [
+            -0.00849276932874643,
+            0.0
+          ],
+          "delta_combined": -0.004246384664373215,
+          "paired_95ci_combined": [
+            -0.006756488277542794,
+            -0.0019991427126223836
+          ],
+          "scored_rows": 108139,
+          "sequences": 64,
+          "evidence": "reused_search_evidence_not_independent_validation"
+        }
+      },
+      "search_result": {
+        "reference": {
+          "t0": 0.6479917119604005,
+          "t1": 0.6696789327029277,
+          "weighted_pearson": 0.6588353223316641
+        },
+        "candidate": {
+          "t0": 0.6468107177827004,
+          "t1": 0.6696789327029277,
+          "weighted_pearson": 0.658244825242814
+        },
+        "delta_per_target": [
+          -0.0011809941777001232,
+          0.0
+        ],
+        "delta_combined": -0.0005904970888500616,
+        "paired_95ci_combined": [
+          -0.0011875040982005397,
+          -4.2596516557497585e-06
+        ],
+        "scored_rows": 108139,
+        "sequences": 64,
+        "evidence": "reused_search_evidence_not_independent_validation",
+        "search_error_diagnostics": {
+          "schema_version": 1,
+          "evidence": "reused_search_evidence_not_independent_validation",
+          "counts": {
+            "sequences": 64,
+            "scored_rows": 108139
+          },
+          "target_performance": {
+            "t0": {
+              "n": 108139,
+              "root_wp": 0.6479917119604004,
+              "candidate_wp": 0.6468107177827006,
+              "delta_wp": -0.00118099417769979
+            },
+            "t1": {
+              "n": 108139,
+              "root_wp": 0.6696789327029276,
+              "candidate_wp": 0.6696789327029276,
+              "delta_wp": 0.0
+            }
+          },
+          "position_buckets": {
+            "early": {
+              "t0": {
+                "n": 34852,
+                "root_wp": 0.631145275254092,
+                "candidate_wp": 0.6313293205879037,
+                "delta_wp": 0.00018404533381166654
+              },
+              "t1": {
+                "n": 34852,
+                "root_wp": 0.695400250488768,
+                "candidate_wp": 0.695400250488768,
+                "delta_wp": 0.0
+              }
+            },
+            "middle": {
+              "t0": {
+                "n": 37350,
+                "root_wp": 0.6398727205808514,
+                "candidate_wp": 0.6376982084064411,
+                "delta_wp": -0.002174512174410337
+              },
+              "t1": {
+                "n": 37350,
+                "root_wp": 0.614430184616747,
+                "candidate_wp": 0.614430184616747,
+                "delta_wp": 0.0
+              }
+            },
+            "late": {
+              "t0": {
+                "n": 35937,
+                "root_wp": 0.6687260612395838,
+                "candidate_wp": 0.6673228082536513,
+                "delta_wp": -0.0014032529859324683
+              },
+              "t1": {
+                "n": 35937,
+                "root_wp": 0.7338430470825703,
+                "candidate_wp": 0.7338430470825703,
+                "delta_wp": 0.0
+              }
+            }
+          },
+          "target_magnitude_buckets": {
+            "t0": [
+              {
+                "n": 48047,
+                "root_wp": 0.5398421454474946,
+                "candidate_wp": 0.5400506346239001,
+                "delta_wp": 0.0002084891764054797
+              },
+              {
+                "n": 33983,
+                "root_wp": 0.6027067399996702,
+                "candidate_wp": 0.6019664648248668,
+                "delta_wp": -0.0007402751748033509
+              },
+              {
+                "n": 12321,
+                "root_wp": 0.6243925350921585,
+                "candidate_wp": 0.6225951929146013,
+                "delta_wp": -0.0017973421775572263
+              },
+              {
+                "n": 13788,
+                "root_wp": 0.7429104797051496,
+                "candidate_wp": 0.7408823063106622,
+                "delta_wp": -0.0020281733944873537
+              }
+            ],
+            "t1": [
+              {
+                "n": 44277,
+                "root_wp": 0.49882791482472705,
+                "candidate_wp": 0.49882791482472705,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 37846,
+                "root_wp": 0.6172352214063762,
+                "candidate_wp": 0.6172352214063762,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 10153,
+                "root_wp": 0.7101488262296869,
+                "candidate_wp": 0.7101488262296869,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 15863,
+                "root_wp": 0.7428822558572863,
+                "candidate_wp": 0.7428822558572863,
+                "delta_wp": 0.0
+              }
+            ]
+          },
+          "root_prediction_magnitude_buckets": {
+            "t0": [
+              {
+                "n": 37029,
+                "root_wp": 0.21864895448437052,
+                "candidate_wp": 0.21012891790650307,
+                "delta_wp": -0.008520036577867457
+              },
+              {
+                "n": 32331,
+                "root_wp": 0.47212420628388213,
+                "candidate_wp": 0.46997611001071815,
+                "delta_wp": -0.0021480962731639797
+              },
+              {
+                "n": 26083,
+                "root_wp": 0.6971965248250425,
+                "candidate_wp": 0.6960077852365542,
+                "delta_wp": -0.0011887395884883079
+              },
+              {
+                "n": 12696,
+                "root_wp": 0.8683514457132442,
+                "candidate_wp": 0.8689309111054866,
+                "delta_wp": 0.0005794653922424065
+              }
+            ],
+            "t1": [
+              {
+                "n": 32959,
+                "root_wp": 0.170664950888132,
+                "candidate_wp": 0.170664950888132,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 37319,
+                "root_wp": 0.48919085539270274,
+                "candidate_wp": 0.48919085539270274,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 30030,
+                "root_wp": 0.7767568861281853,
+                "candidate_wp": 0.7767568861281853,
+                "delta_wp": 0.0
+              },
+              {
+                "n": 7831,
+                "root_wp": 0.8699643007513086,
+                "candidate_wp": 0.8699643007513086,
+                "delta_wp": 0.0
+              }
+            ]
+          },
+          "per_sequence_wp": {
+            "t0": {
+              "n_sequences": 64,
+              "candidate_better_fraction": 0.421875,
+              "root_q10_q50_q90": [
+                0.370336,
+                0.70134,
+                0.850788
+              ],
+              "candidate_q10_q50_q90": [
+                0.366107,
+                0.700552,
+                0.852841
+              ]
+            },
+            "t1": {
+              "n_sequences": 64,
+              "candidate_better_fraction": 0.0,
+              "root_q10_q50_q90": [
+                0.410946,
+                0.726769,
+                0.844196
+              ],
+              "candidate_q10_q50_q90": [
+                0.410946,
+                0.726769,
+                0.844196
+              ]
+            }
+          },
+          "residual_bias_scale": {
+            "t0": {
+              "n": 108139,
+              "root_weighted_bias": -0.179412919105511,
+              "candidate_weighted_bias": -0.14507655060442753,
+              "delta_weighted_bias": 0.03433636850108346,
+              "root_weighted_scale": 1.0182844835999343,
+              "candidate_weighted_scale": 1.014713059437207,
+              "delta_weighted_scale": -0.003571424162727377
+            },
+            "t1": {
+              "n": 108139,
+              "root_weighted_bias": -0.05391038418219245,
+              "candidate_weighted_bias": -0.05391038418219245,
+              "delta_weighted_bias": 0.0,
+              "root_weighted_scale": 1.0311718145067719,
+              "candidate_weighted_scale": 1.0311718145067719,
+              "delta_weighted_scale": 0.0
+            }
+          },
+          "residual_persistence": {
+            "lags": [
+              1,
+              10,
+              100
+            ],
+            "t0": [
+              {
+                "lag_rows": 1,
+                "n_pairs": 79763,
+                "root_corr": 0.9818413853645325,
+                "candidate_corr": 0.982081413269043,
+                "delta_corr": 0.00024002790451049805
+              },
+              {
+                "lag_rows": 10,
+                "n_pairs": 43392,
+                "root_corr": 0.8921336531639099,
+                "candidate_corr": 0.8930271863937378,
+                "delta_corr": 0.0008935332298278809
+              },
+              {
+                "lag_rows": 100,
+                "n_pairs": 21732,
+                "root_corr": 0.5147139430046082,
+                "candidate_corr": 0.5202581882476807,
+                "delta_corr": 0.00554424524307251
+              }
+            ],
+            "t1": [
+              {
+                "lag_rows": 1,
+                "n_pairs": 79763,
+                "root_corr": 0.9828936457633972,
+                "candidate_corr": 0.9828936457633972,
+                "delta_corr": 0.0
+              },
+              {
+                "lag_rows": 10,
+                "n_pairs": 43392,
+                "root_corr": 0.9004498720169067,
+                "candidate_corr": 0.9004498720169067,
+                "delta_corr": 0.0
+              },
+              {
+                "lag_rows": 100,
+                "n_pairs": 21732,
+                "root_corr": 0.5295965075492859,
+                "candidate_corr": 0.5295965075492859,
+                "delta_corr": 0.0
+              }
+            ]
+          },
+          "feature_residual_relationships": {
+            "lags": [
+              0,
+              1,
+              10,
+              100
+            ],
+            "groups": [
+              "position",
+              "velocity",
+              "delta_position",
+              "delta_velocity",
+              "auxiliary"
+            ],
+            "t0": [
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.05288462395201793,
+                "candidate_rms_correlation": 0.045331216630326285,
+                "delta_rms_correlation": -0.007553407321691644
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04293360078235306,
+                "candidate_rms_correlation": 0.04005124352707352,
+                "delta_rms_correlation": -0.0028823572552795426
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.03399281557988517,
+                "candidate_rms_correlation": 0.029863597430343707,
+                "delta_rms_correlation": -0.004129218149541463
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.024619041834650586,
+                "candidate_rms_correlation": 0.020835392261424533,
+                "delta_rms_correlation": -0.0037836495732260535
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02992635684743484,
+                "candidate_rms_correlation": 0.029622575742458277,
+                "delta_rms_correlation": -0.00030378110497656166
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.0521045292982354,
+                "candidate_rms_correlation": 0.04477802811665868,
+                "delta_rms_correlation": -0.007326501181576718
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.042530107583742816,
+                "candidate_rms_correlation": 0.039709229033607914,
+                "delta_rms_correlation": -0.002820878550134902
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.03320026951431785,
+                "candidate_rms_correlation": 0.029525587538046814,
+                "delta_rms_correlation": -0.0036746819762710353
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02287626274536848,
+                "candidate_rms_correlation": 0.019518183410129415,
+                "delta_rms_correlation": -0.0033580793352390656
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.030388812828964364,
+                "candidate_rms_correlation": 0.029951787105562483,
+                "delta_rms_correlation": -0.00043702572340188067
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04258486248480268,
+                "candidate_rms_correlation": 0.03680681944054934,
+                "delta_rms_correlation": -0.005778043044253341
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04105365226537433,
+                "candidate_rms_correlation": 0.03850885740578805,
+                "delta_rms_correlation": -0.00254479485958628
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.026225839345392417,
+                "candidate_rms_correlation": 0.023298710761614286,
+                "delta_rms_correlation": -0.002927128583778131
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.01622886301915799,
+                "candidate_rms_correlation": 0.013784252454558542,
+                "delta_rms_correlation": -0.0024446105645994486
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.031060336388737685,
+                "candidate_rms_correlation": 0.030859783834090042,
+                "delta_rms_correlation": -0.00020055255464764346
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.027297437669848133,
+                "candidate_rms_correlation": 0.02534910271542401,
+                "delta_rms_correlation": -0.0019483349544241226
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.038258685801874845,
+                "candidate_rms_correlation": 0.03588177888633182,
+                "delta_rms_correlation": -0.0023769069155430284
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.02181234567300398,
+                "candidate_rms_correlation": 0.020075718952510223,
+                "delta_rms_correlation": -0.0017366267204937565
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.008378331192024762,
+                "candidate_rms_correlation": 0.007909336802372973,
+                "delta_rms_correlation": -0.0004689943896517886
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.031818019906300676,
+                "candidate_rms_correlation": 0.03144753423280749,
+                "delta_rms_correlation": -0.00037048567349318856
+              }
+            ],
+            "t1": [
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.021121570319386773,
+                "candidate_rms_correlation": 0.021121570319386773,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04675752133889625,
+                "candidate_rms_correlation": 0.04675752133889625,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009470024520898493,
+                "candidate_rms_correlation": 0.009470024520898493,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009741759171023085,
+                "candidate_rms_correlation": 0.009741759171023085,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 0,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02594755476961742,
+                "candidate_rms_correlation": 0.02594755476961742,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.021220177237113832,
+                "candidate_rms_correlation": 0.021220177237113832,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04621469606753266,
+                "candidate_rms_correlation": 0.04621469606753266,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009041049690244876,
+                "candidate_rms_correlation": 0.009041049690244876,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.009058636814438886,
+                "candidate_rms_correlation": 0.009058636814438886,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 1,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02539154484047152,
+                "candidate_rms_correlation": 0.02539154484047152,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.018874012751235097,
+                "candidate_rms_correlation": 0.018874012751235097,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.04618062031157664,
+                "candidate_rms_correlation": 0.04618062031157664,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.007946766485135112,
+                "candidate_rms_correlation": 0.007946766485135112,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.007835925457173152,
+                "candidate_rms_correlation": 0.007835925457173152,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 10,
+                "n_rows": 108139,
+                "root_rms_correlation": 0.02805859048514816,
+                "candidate_rms_correlation": 0.02805859048514816,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.02339137851049468,
+                "candidate_rms_correlation": 0.02339137851049468,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.04580662342709362,
+                "candidate_rms_correlation": 0.04580662342709362,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_position",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.013783389866803504,
+                "candidate_rms_correlation": 0.013783389866803504,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "delta_velocity",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.008352455374108881,
+                "candidate_rms_correlation": 0.008352455374108881,
+                "delta_rms_correlation": 0.0
+              },
+              {
+                "feature_group": "auxiliary",
+                "feature_lag_rows": 100,
+                "n_rows": 108135,
+                "root_rms_correlation": 0.0305631131009575,
+                "candidate_rms_correlation": 0.0305631131009575,
+                "delta_rms_correlation": 0.0
+              }
+            ]
+          },
+          "root_prediction_magnitude_reference": "frozen_root_abs_prediction",
+          "residual_definition": "clip(y,-2,2)-clip(prediction,-2,2); bias/scale weighted by abs(clipped target)",
+          "feature_relationship_definition": "RMS of all fixed-feature weighted correlations with residual using x[t-lag_rows]"
+        }
+      },
+      "paired_99ci_combined": [
+        -0.0014276368523652666,
+        0.00011635801583417193
+      ],
+      "validation": {
+        "causal_prefix": true,
+        "sequence_reset": true,
+        "deterministic": true,
+        "warmup_and_output_contract": true,
+        "benchmark_rows": 20000,
+        "callback_us_per_row": 71.27658100017129,
+        "wall_us_per_row": 166.22357619999946
+      },
+      "status": "exploratory_search_only",
+      "runtime_seconds": 355.170422538,
+      "artifact_sha256": "979852b00e24dfe16b0ccf07dd6e224e4aa2e388bda54239b52b15d023622cae",
+      "selected_deployment_sha256": {
+        "fused.onnx": "96ed7f7461b92679f027eac6e62645831647211ce677c7c35be11ff0f5b33941",
+        "model.npz": "979852b00e24dfe16b0ccf07dd6e224e4aa2e388bda54239b52b15d023622cae",
+        "solution.py": "59b9d50f629bd8df1664052a0f21c76ccfc47e0cdf9aa62e8df6d7afebb88f93"
+      },
+      "config_sha256": "9621c31a85930e351431926f9c60cf6522a29b9b32ba1f09a0822fd8869750de",
+      "identity": {
+        "source_sha256": {
+          "train.py": "a92ce11606dd63f25abd9a79d83898752845faa80705ec5a4a29c536e57526e9",
+          "callback.py": "59b9d50f629bd8df1664052a0f21c76ccfc47e0cdf9aa62e8df6d7afebb88f93",
+          "combo.npz": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+        },
+        "artifact_sha256": {
+          "fused.onnx": "3a7747b617d8bd5d38d016277165a9cdb3be2cf8fc206bbc6fef596a018015b3",
+          "model.npz": "979852b00e24dfe16b0ccf07dd6e224e4aa2e388bda54239b52b15d023622cae"
+        },
+        "deployment_sha256": {
+          "fused.onnx": "3a7747b617d8bd5d38d016277165a9cdb3be2cf8fc206bbc6fef596a018015b3",
+          "model.npz": "979852b00e24dfe16b0ccf07dd6e224e4aa2e388bda54239b52b15d023622cae",
+          "solution.py": "59b9d50f629bd8df1664052a0f21c76ccfc47e0cdf9aa62e8df6d7afebb88f93"
+        },
+        "package_sha256": "6f77c18dff52e1fecf87ef9438ee43ec7d8f216fcfbcce2b9f9b5d496eeadaad"
+      },
+      "interpretation": "Fixed search rule not met; frozen combo retained."
+    }
+  ],
+  "event_trajectory": [
+    {
+      "config": {
+        "baseline_history": "competition_engineering/reports/manual_research_search_only_20261001.json",
+        "boundary": "Fixed training and 64-sequence search caches only. No external evaluation operation.",
+        "deduplication": "Mechanism, state representation, training tier, target and objective checked before launch.",
+        "overall_time_limit_seconds": 7200,
+        "rule": {
+          "cpu_incremental_budget_us_per_row": 25,
+          "minimum_combined_delta": 0.0002,
+          "minimum_target_delta": -0.0002,
+          "note": "Search evidence only; bootstrap intervals are descriptive, not corrected for adaptive reuse.",
+          "paired_99ci_lower_must_exceed": 0,
+          "required": [
+            "causal_prefix",
+            "reset",
+            "determinism",
+            "stream_batch_parity",
+            "label_mask_independence",
+            "finite_outputs",
+            "cpu_measurement"
+          ]
+        },
+        "source_time_limit": "competition_engineering/mlevolve_search_config.yaml agent.time_limit",
+        "started_unix": 1790836676.7003195,
+        "starting_incumbent": 0.6588353223316641,
+        "starting_incumbent_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+      },
+      "config_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "campaign_started",
+      "previous_ledger_sha256": null,
+      "utc": "2026-10-01T06:37:56.710318+00:00"
+    },
+    {
+      "added": "nonlinear_vector_autoregression",
+      "cards": 24,
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "library_expanded",
+      "manifest_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+      "previous_ledger_sha256": "f1f618579ad99b7b588a5df3b1ea91c5616f35a391ff90615fe31acaf223d932",
+      "utc": "2026-10-01T06:37:56.880355+00:00"
+    },
+    {
+      "decision_rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "hypothesis": "Accumulated multiscale input state contributes beyond the frozen combo; control for nonlinear interaction test.",
+      "id": "e01_additive_memory",
+      "kind": "experiment_planned",
+      "late_only": false,
+      "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+      "mode": "linear",
+      "previous_ledger_sha256": "f321b7a449a8845fd4a4c19792554b15067a0c0bd4619683859739ad000e7e57",
+      "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+      "ridge_penalty": 0.1,
+      "source_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+      "state_alphas": [
+        0.01,
+        0.001
+      ],
+      "strengths": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "stride": 40,
+      "support": "Positive combined delta with paired lower bound above zero; late t0 improves without widespread sequence regressions.",
+      "tier": 1024,
+      "utc": "2026-10-01T06:38:05.455090+00:00",
+      "weaken": "No improvement or gains disappear versus additive-memory control."
+    },
+    {
+      "artifact_sha256": "514751dd9ceb93a7a3178ce113edaaf0cd88ffbc16ec51b440ba671d653f0aab",
+      "delta": -0.0004378677797609587,
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "hypothesis": "Accumulated multiscale input state contributes beyond the frozen combo; control for nonlinear interaction test.",
+      "id": "e01_additive_memory",
+      "interpretation": "Fixed search-incumbent rule not met; retain incumbent.",
+      "kind": "experiment_completed",
+      "paired_95ci": [
+        -0.0009480461603431078,
+        5.962459446723216e-05
+      ],
+      "paired_99ci": [
+        -0.001159810380787002,
+        0.00016634282756143606
+      ],
+      "previous_ledger_sha256": "fd080044ec4bb95a475f9c29e42bcfb21f706f99ce5d68e14935d80976e70395",
+      "report_path": "competition_engineering\\runs\\autonomous_20261001\\e01_additive_memory\\report.json",
+      "report_sha256": "61c73807f3ea09b9eb33bcdc3409340470702ded4e41bf9f55e2b83567df2589",
+      "runtime_seconds": 106.32084380000015,
+      "score": {
+        "t0": 0.6471159764008785,
+        "t1": 0.6696789327029277,
+        "weighted_pearson": 0.6583974545519031
+      },
+      "utc": "2026-10-01T06:39:51.794237+00:00",
+      "validation": {
+        "causal_prefix": true,
+        "cpu_scope": "Python streaming residual only; cached incumbent output, one BLAS thread, no core pinning",
+        "determinism": true,
+        "finite_outputs": true,
+        "incremental_cpu_us_per_row": 19.569475000025705,
+        "label_mask_independence": true,
+        "max_abs_parity": 2.384185791015625e-07,
+        "platform": "Windows-11-10.0.26200-SP0",
+        "reset": true,
+        "rows": 20000,
+        "stream_batch_parity": true
+      }
+    },
+    {
+      "core_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "hypothesis": "Accumulated multiscale input state explains persistent t0 residuals; matched additive control.",
+      "id": "e01b_additive_isolated",
+      "isolation": "Existing production GeneratedSandbox; training-only mount; rowwise label-free inference",
+      "kind": "experiment_planned",
+      "late_only": false,
+      "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+      "mode": "linear",
+      "penalty": 0.1,
+      "previous_ledger_sha256": "4edba89d71a11d5919ba074be6f71c33e39b0feec855fe610344e9f9b6f024a2",
+      "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+      "rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021",
+      "runner_sha256": "3eb31f2b86a36158b9a5da53cea5950a6d8415448022accde313a083e23d42e3",
+      "strengths": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "stride": 40,
+      "support": "Gain over frozen combo with positive paired lower bound and late-t0 diagnostic improvement.",
+      "tier": 1024,
+      "utc": "2026-10-01T06:43:28.507568+00:00",
+      "weaken": "Nonpositive gain; for bilinear, no gain over additive control."
+    },
+    {
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "input_manifest_frozen",
+      "path": "competition_engineering\\runs\\autonomous_20261001\\input_hashes.json",
+      "previous_ledger_sha256": "17326ed36e6990322905d862641f516d1d916528213f6611cbe0dcac8c01298e",
+      "sha256": "5180d17ef82cff929c1fce5e9399cba6785494d01c59028ce2a5559f572d3738",
+      "utc": "2026-10-01T06:44:20.818710+00:00"
+    },
+    {
+      "error": "ValueError: callback throughput 134.8 us/row exceeds 90 us/row gate",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "failure_type": "implementation_or_infrastructure",
+      "id": "e01b_additive_isolated",
+      "kind": "experiment_interrupted",
+      "previous_ledger_sha256": "2f2f74f090aea7fa45f845ad87c3a7cfc20f960d98002237f3998f7891343c0b",
+      "seconds": 90.696568212,
+      "utc": "2026-10-01T06:44:58.989363+00:00"
+    },
+    {
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "id": "cpu_probe_v1",
+      "kind": "cpu_integration_probe",
+      "previous_ledger_sha256": "0215ca672019456d0a1f2301e4ff5246fb1f008df30853d671fe1934473033e8",
+      "timings": {
+        "baseline": [
+          98.39344934999743,
+          94.57753725000879,
+          95.49518775000959
+        ],
+        "linear": [
+          130.11002500000276,
+          130.8606693499975,
+          130.43779405000373
+        ]
+      },
+      "utc": "2026-10-01T06:46:50.212981+00:00"
+    },
+    {
+      "core_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "exporter_sha256": "c194d44328b9cd81e0b64bd777186a1c9dedc63fe90d432946ed672455607a5b",
+      "hypothesis": "Accumulated multiscale input state explains persistent t0 residuals; matched additive control.",
+      "id": "e01c_additive_fused",
+      "isolation": "Existing production GeneratedSandbox; training-only mount; rowwise label-free inference",
+      "kind": "experiment_planned",
+      "late_only": false,
+      "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+      "mode": "linear",
+      "penalty": 0.1,
+      "previous_ledger_sha256": "77d9ac872bf1bfd31180e3047b29e36ba789ec902e509fd1b335912a96c2310a",
+      "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+      "reuse_fit": "e01b_additive_isolated",
+      "rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021",
+      "runner_sha256": "fe921d3a710c7702fd8d5576d8f088ff9e0f5ba8addc58921c4198665ff560e8",
+      "strengths": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "stride": 40,
+      "support": "Gain over frozen combo with positive paired lower bound and late-t0 diagnostic improvement.",
+      "tier": 1024,
+      "utc": "2026-10-01T06:49:39.532266+00:00",
+      "weaken": "Nonpositive gain; for bilinear, no gain over additive control."
+    },
+    {
+      "error": "ValueError: callback throughput 91.1 us/row exceeds 90 us/row gate",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "failure_type": "implementation_or_infrastructure",
+      "id": "e01c_additive_fused",
+      "kind": "experiment_interrupted",
+      "previous_ledger_sha256": "7ca7386e572ccb045bd048b60b0d64321c81d0a42a159838eaeb6ca0aa38960c",
+      "seconds": 6.1070640119999995,
+      "utc": "2026-10-01T06:49:45.299218+00:00"
+    },
+    {
+      "core_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "exporter_sha256": "609a056e2e3c1733dad0430f608cc4a3e41d8b29d555a246b8181381c38b1786",
+      "hypothesis": "Accumulated multiscale input state explains persistent t0 residuals; matched additive control.",
+      "id": "e01d_additive_fused_coalesced",
+      "isolation": "Existing production GeneratedSandbox; training-only mount; rowwise label-free inference",
+      "kind": "experiment_planned",
+      "late_only": false,
+      "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+      "mode": "linear",
+      "penalty": 0.1,
+      "previous_ledger_sha256": "03cec16fdfa2e3281ba6bcb9bd16b41e387396d5b65a7aeae4d93be1001e27c1",
+      "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+      "reuse_fit": "e01b_additive_isolated",
+      "rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021",
+      "runner_sha256": "fe921d3a710c7702fd8d5576d8f088ff9e0f5ba8addc58921c4198665ff560e8",
+      "strengths": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "stride": 40,
+      "support": "Gain over frozen combo with positive paired lower bound and late-t0 diagnostic improvement.",
+      "tier": 1024,
+      "utc": "2026-10-01T06:51:50.084769+00:00",
+      "weaken": "Nonpositive gain; for bilinear, no gain over additive control."
+    },
+    {
+      "error": "ValueError: callback throughput 90.2 us/row exceeds 90 us/row gate",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "failure_type": "implementation_or_infrastructure",
+      "id": "e01d_additive_fused_coalesced",
+      "kind": "experiment_interrupted",
+      "previous_ledger_sha256": "73cf310c437ac8aed42a20af357592b8a800dc624baa40be6a23023a3bc32fbf",
+      "seconds": 5.9748023770000005,
+      "utc": "2026-10-01T06:51:55.829016+00:00"
+    },
+    {
+      "cpu_observation": "Frozen Python combo 94.6-98.4 us per row and residual 130.1-130.9 in current isolated process; fixed 90 us gate retained",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "engineering_repair",
+      "max_abs_train_coef_linux_vs_windows": 0.0,
+      "previous_ledger_sha256": "83019ef699a5f2d75e16ef3220056003786f64189cc938817a87eaedbb17a27e",
+      "reason": "Production isolation enforced for accepted candidate evidence; manual control requires isolated reproduction",
+      "remedy": "Fused algebraic ONNX export with float64 memory and explicit parity tests; completed fits reused, original artifacts preserved",
+      "tests": {
+        "export_and_state_tests_passed": 12,
+        "linux_production_and_retrieval_passed": 24,
+        "windows_skipped_linux_isolation": 1,
+        "windows_synthetic": 19
+      },
+      "utc": "2026-10-01T06:52:18.924845+00:00"
+    },
+    {
+      "core_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "exporter_sha256": "c052e25d9beb489d6e58b5cbdf056ed4846f8abd273466c0561d2b322e2282c5",
+      "hypothesis": "Accumulated multiscale input state explains persistent t0 residuals; matched additive control.",
+      "id": "e01e_additive_bound_buffers",
+      "isolation": "Existing production GeneratedSandbox; training-only mount; rowwise label-free inference",
+      "kind": "experiment_planned",
+      "late_only": false,
+      "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+      "mode": "linear",
+      "penalty": 0.1,
+      "previous_ledger_sha256": "038d1e9b7d909a83a89ae931a58e59577c8d1284d46620d189d7f82efa6d6216",
+      "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+      "reuse_fit": "e01b_additive_isolated",
+      "rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021",
+      "runner_sha256": "fe921d3a710c7702fd8d5576d8f088ff9e0f5ba8addc58921c4198665ff560e8",
+      "strengths": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "stride": 40,
+      "support": "Gain over frozen combo with positive paired lower bound and late-t0 diagnostic improvement.",
+      "tier": 1024,
+      "utc": "2026-10-01T06:53:36.935771+00:00",
+      "weaken": "Nonpositive gain; for bilinear, no gain over additive control."
+    },
+    {
+      "error": "RuntimeError: callback exited or returned incomplete output",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "failure_type": "implementation_or_infrastructure",
+      "id": "e01e_additive_bound_buffers",
+      "kind": "experiment_interrupted",
+      "previous_ledger_sha256": "e04f57f304a4b6246c3626de8375fbdc3acf87db9c95023682dbb29a75e66548",
+      "seconds": 64.817553512,
+      "utc": "2026-10-01T06:54:41.557874+00:00"
+    },
+    {
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "id": "e01e_additive_bound_buffers",
+      "kind": "experiment_resumed",
+      "previous_ledger_sha256": "02dd74a7b654da67058c37314ea9fa904fb943dc1dd491e7ebeb24bdffd3a90b",
+      "utc": "2026-10-01T06:57:05.600310+00:00"
+    },
+    {
+      "bug": "Inference pipe EOF discarded worker stderr and watchdog reason",
+      "checkpoints": "e01e completed sequence predictions retained and fit reused",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "engineering_repair",
+      "previous_ledger_sha256": "f4838d4cafaef329b13e1458748e1347a0c962805c8f89d24af880edf729feab",
+      "regression": "tests/test_campaign_worker_failure.py passed; export/state/retrieval/production checks 36 passed on Linux",
+      "repair": "Preserve final sandbox diagnostic through existing failure sanitizer; no scoring or isolation changes",
+      "utc": "2026-10-01T06:57:27.921223+00:00"
+    },
+    {
+      "error": "RuntimeError: callback exited or returned incomplete output; sandbox detail: bwrap: Creating new namespace failed: Resource temporarily unavailable",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "failure_type": "implementation_or_infrastructure",
+      "id": "e01e_additive_bound_buffers",
+      "kind": "experiment_interrupted",
+      "previous_ledger_sha256": "fbb52ef4f8c1ca96f7ee0c27e63214788a319b3f2540035f73f1e9f9697af9a0",
+      "seconds": 60.641150191,
+      "utc": "2026-10-01T06:58:06.257960+00:00"
+    },
+    {
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "id": "e01e_additive_bound_buffers",
+      "kind": "experiment_resumed",
+      "previous_ledger_sha256": "980a698e8cac6521beecde50fc51910670d3783d552b9e2826b9c92d4a57d3d3",
+      "utc": "2026-10-01T06:59:12.940337+00:00"
+    },
+    {
+      "bug": "Concurrent numerical supervisors exhausted the existing sandbox process/namespace resource limit",
+      "evidence": "Worker stderr: bwrap Creating new namespace failed Resource temporarily unavailable; production tests were concurrent with replay",
+      "kind": "engineering_repair",
+      "previous_ledger_sha256": "9116ed62ca63f105dff4594403ce608b8e36a074dc5505f44f16bc046d86fdef",
+      "regression": "Worker error propagation test passed on both platforms; 19 Linux production tests passed after error repair; no scoring protocol changes",
+      "repair": "Serialize sandbox jobs and set OMP/OPENBLAS/MKL/NUMEXPR supervisor threads to one before numerical imports; retain worker rlimits",
+      "utc": "2026-10-01T06:59:47.618388+00:00"
+    },
+    {
+      "caution": "High residual autocorrelation alone is not evidence of deployable information; unseen target history is unavailable",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "mechanism_review",
+      "previous_ledger_sha256": "84832028e67428a248ac3d7f4153e128ace4314be5b1f51bc28e4468b3c42954",
+      "previously_explored": [
+        "output shape calibration",
+        "global innovation gating",
+        "random nonlinear current features",
+        "late-only linear mapping",
+        "fixed-lag MLP",
+        "linear EMA memory",
+        "small current-feature tree"
+      ],
+      "unresolved": [
+        "history-dependent nonlinear interactions",
+        "causal feature location/variance drift",
+        "cross-feature temporal interactions",
+        "objective and saturation mismatch"
+      ],
+      "utc": "2026-10-01T06:59:47.623892+00:00",
+      "weakened": [
+        "generic current-feature nonlinear expansion",
+        "additive temporal state as sufficient explanation",
+        "late-position linear remapping"
+      ]
+    },
+    {
+      "artifact_sha256": "547e35fd0b1dc61bff7c83dd66546e1f12fe123a1578161f89bb17daf9c26a0b",
+      "delta": -0.00043786779616583615,
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "hypothesis": "Accumulated multiscale input state explains persistent t0 residuals; matched additive control.",
+      "id": "e01e_additive_bound_buffers",
+      "interpretation": "Fixed search rule not met; frozen combo retained.",
+      "kind": "experiment_completed",
+      "paired_95ci": [
+        -0.0009480461402201462,
+        5.962461838222714e-05
+      ],
+      "paired_99ci": [
+        -0.0011598103879034395,
+        0.00016634274780787952
+      ],
+      "previous_ledger_sha256": "e2f9ae2e6cc1832dd2a40d974c48ce64d362b8bd10609cea44d462d90e99c0ca",
+      "report_sha256": "7247d69fbec1939e908e20dbfff97ea6aca7803a9617db4da684a5ff20304842",
+      "runtime_seconds": 127.373349789,
+      "score": {
+        "t0": 0.647115976368069,
+        "t1": 0.6696789327029277,
+        "weighted_pearson": 0.6583974545354982
+      },
+      "utc": "2026-10-01T07:01:20.350906+00:00",
+      "validation": {
+        "benchmark_rows": 20000,
+        "callback_us_per_row": 70.17142289999714,
+        "causal_prefix": true,
+        "deterministic": true,
+        "sequence_reset": true,
+        "wall_us_per_row": 162.8447027,
+        "warmup_and_output_contract": true
+      }
+    },
+    {
+      "checkpoint": "64 search sequences replayed for additive control; aggregation in progress",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "engineering_validation",
+      "previous_ledger_sha256": "5d7baca0b546e7f84c90c5c23ec4cbf701ccd27d83d5f398605a0d51b9957e8c",
+      "tests": {
+        "linux_production_worker_failure_and_existing_preflight": "19 passed",
+        "supervisor_thread_regression": "passed",
+        "synthetic_export_and_state": "12 passed"
+      },
+      "utc": "2026-10-01T07:01:37.833446+00:00",
+      "validity": "No evaluator gates, scorer mathematics, search/protected data boundary, package constraints, or frozen artifacts changed"
+    },
+    {
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "expected_support": "Positive paired improvement over incumbent and control, preferably late t0 and broad sequence gains",
+      "expected_weakening": "Nonpositive correction or no improvement over additive control; do not continue minor timescale tuning",
+      "id": "e01e_additive_bound_buffers",
+      "kind": "scientific_interpretation",
+      "lesson": "Isolated full replay reproduces additive-memory control to 1.7e-11 pooled WP; current plus 100/1000-row linear state does not improve t0",
+      "next_hypothesis": "Featurewise nonlinear current-by-history interaction can improve beyond the matched additive control; fixed training tier/stride/penalty and search strength set retained",
+      "previous_ledger_sha256": "809b4c73bd1f01699df9f14070bef0e442c3506ce8e0d204825efe910fbc95ac",
+      "utc": "2026-10-01T07:02:13.006000+00:00"
+    },
+    {
+      "core_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "exporter_sha256": "c052e25d9beb489d6e58b5cbdf056ed4846f8abd273466c0561d2b322e2282c5",
+      "hypothesis": "Current-by-causal-history interactions explain t0 residuals missed by additive memory.",
+      "id": "e02_bilinear_memory",
+      "isolation": "Existing production GeneratedSandbox; training-only mount; rowwise label-free inference",
+      "kind": "experiment_planned",
+      "late_only": false,
+      "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+      "mode": "bilinear",
+      "penalty": 0.1,
+      "previous_ledger_sha256": "70483221727a45bebb0c9fa7e59d85133f269f5a14d63a9984c75d65ad1045c6",
+      "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+      "reuse_fit": null,
+      "rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021",
+      "runner_sha256": "8eb741bd3c16371b7da680d28fc9bd11a828500ac801e68509466db7959bc853",
+      "strengths": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "stride": 40,
+      "support": "Gain over frozen combo with positive paired lower bound and late-t0 diagnostic improvement.",
+      "tier": 1024,
+      "utc": "2026-10-01T07:02:40.884795+00:00",
+      "weaken": "Nonpositive gain; for bilinear, no gain over additive control."
+    },
+    {
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "engineering_validation",
+      "next": "e02 nonlinear-history interaction running in one sandbox worker",
+      "previous_ledger_sha256": "b5870ff8f9ffa10b65d82c0f9cae15b0b2bb77ced2a8b7d24a3fba416081541f",
+      "tests": "32 serialized Linux tests passed after the supervisor thread repair, including production isolation, export, reset, buffering, failure reporting and thread regression",
+      "utc": "2026-10-01T07:03:36.327640+00:00"
+    },
+    {
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "interpretation": "Descriptive objective geometry only: weighted raw residual regression differs from the centered, variance-adjusted, unsaturated direction of clipped weighted correlation. A new objective requires a train-only fit and isolated search test.",
+      "kind": "objective_geometry_diagnostic",
+      "previous_ledger_sha256": "3678cfac8aaff3116414413c072a870ce0648ec832143452485d7c383b9ad60d",
+      "search": {
+        "correlation_tangent_slope": [
+          0.8065009759014318,
+          0.9122361901144157
+        ],
+        "rows": 108139,
+        "saturated_prediction_fraction": [
+          0.028343150944617576,
+          0.007629069993249429
+        ],
+        "saturated_weight_fraction": [
+          0.04160584096988162,
+          0.014307328061580025
+        ],
+        "weighted_clipped_prediction_mean": [
+          -0.22590215141574344,
+          -0.1708329990707495
+        ],
+        "weighted_raw_prediction_mean": [
+          -0.21907781739999638,
+          -0.1696092326315444
+        ],
+        "weighted_target_mean": [
+          -0.40531507069309525,
+          -0.22474338335242205
+        ]
+      },
+      "training": {
+        "correlation_tangent_slope": [
+          0.8452939154649537,
+          0.9670729524676228
+        ],
+        "rows": 509952,
+        "saturated_prediction_fraction": [
+          0.004559252635542169,
+          0.0006588855421686747
+        ],
+        "saturated_weight_fraction": [
+          0.008381413495008299,
+          0.0014376339705944607
+        ],
+        "weighted_clipped_prediction_mean": [
+          -0.26656597294551726,
+          -0.3797186725780387
+        ],
+        "weighted_raw_prediction_mean": [
+          -0.2655840322724987,
+          -0.37992998540353734
+        ],
+        "weighted_target_mean": [
+          -0.4558501945897129,
+          -0.469945723159988
+        ]
+      },
+      "utc": "2026-10-01T07:07:21.543061+00:00"
+    },
+    {
+      "evidence": "Search t0 saturation is 2.83% of rows and 4.16% of target-weight mass, versus 0.456% and 0.838% in sampled training. Train-only correlation tangent slope is 0.845, materially different from the unit slope implicit in raw residual fitting.",
+      "kind": "pre_retrieval_diagnosis",
+      "library_gap": "Existing cards do not describe functional-gradient fitting for a non-MSE scoring objective",
+      "limitation": "This geometry does not establish a useful conditional signal; prior global output calibration failed.",
+      "previous_ledger_sha256": "020c31b483028ed6332b6f3f60d4a725de7663b24215fecc817cf05590d2a3fb",
+      "proposed_test": "Fit a centered variance-adjusted correlation-gradient direction using training-only moments and zero gradient on clipped outputs; compare with the matched additive-memory control.",
+      "question": "Could raw residual fitting be misaligned with clipped weighted correlation?",
+      "utc": "2026-10-01T07:08:27.514016+00:00"
+    },
+    {
+      "artifact_sha256": "979852b00e24dfe16b0ccf07dd6e224e4aa2e388bda54239b52b15d023622cae",
+      "delta": -0.0005904970888500616,
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "hypothesis": "Current-by-causal-history interactions explain t0 residuals missed by additive memory.",
+      "id": "e02_bilinear_memory",
+      "interpretation": "Fixed search rule not met; frozen combo retained.",
+      "kind": "experiment_completed",
+      "paired_95ci": [
+        -0.0011875040982005397,
+        -4.2596516557497585e-06
+      ],
+      "paired_99ci": [
+        -0.0014276368523652666,
+        0.00011635801583417193
+      ],
+      "previous_ledger_sha256": "da0c441063c5941a1327352477d62045818fcf9b3d736258191b30c694a3ec47",
+      "report_sha256": "2f8e140763d25c180710a520d55fc527bca83432853060b7e5e924458f8c60fe",
+      "runtime_seconds": 355.170422538,
+      "score": {
+        "t0": 0.6468107177827004,
+        "t1": 0.6696789327029277,
+        "weighted_pearson": 0.658244825242814
+      },
+      "utc": "2026-10-01T07:08:35.867129+00:00",
+      "validation": {
+        "benchmark_rows": 20000,
+        "callback_us_per_row": 71.27658100017129,
+        "causal_prefix": true,
+        "deterministic": true,
+        "sequence_reset": true,
+        "wall_us_per_row": 166.22357619999946,
+        "warmup_and_output_contract": true
+      }
+    },
+    {
+      "added": "functional_gradient_fitting",
+      "cards": 25,
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "kind": "library_expanded",
+      "manifest_sha256": "de49a8c1350a5a0ad9da7e0d741fbe2e9897971344c41cbe38e7f9acd3afd734",
+      "previous_ledger_sha256": "a2233e420c2a10c2bc0b42d7fc7f0b62e8281a8797d128557b3b2aef25887dba",
+      "utc": "2026-10-01T07:09:24.549235+00:00",
+      "version": "v3"
+    },
+    {
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "id": "e02_bilinear_memory",
+      "kind": "scientific_interpretation",
+      "lesson": "Featurewise nonlinear current-by-history correction worsened pooled search WP and late t0; do not continue minor timescale tuning on this branch.",
+      "next_question": "Train-only correlation-objective alignment, motivated by measured clipping and covariance geometry; not yet implemented or tested",
+      "previous_ledger_sha256": "4df35f91f57fe3402e56c3a37a4ae03ef26d5b9268552e9f4daf9447d996a1be",
+      "utc": "2026-10-01T17:57:51.481366+00:00"
+    },
+    {
+      "awaiting_candidates": [],
+      "distinct_scientific_experiments": 2,
+      "evidence": "reused_search_evidence_not_independent_validation",
+      "incumbent_unchanged": true,
+      "kind": "campaign_ended",
+      "note": "Interaction gap is not active compute; all candidate processes had completed before the gap",
+      "previous_ledger_sha256": "d3dbcdd17d52ed5b80e23f42edd6b6cba3f4bf421783c9701e51cbea0fe08e3c",
+      "reason": "Configured 7200-second wall-clock window has elapsed at user summary request; no new experiment launched",
+      "utc": "2026-10-01T17:57:51.486876+00:00"
+    }
+  ],
+  "experiment_statuses": {
+    "e01_additive_memory": "experiment_completed",
+    "e01b_additive_isolated": "experiment_interrupted",
+    "cpu_probe_v1": "cpu_integration_probe",
+    "e01c_additive_fused": "experiment_interrupted",
+    "e01d_additive_fused_coalesced": "experiment_interrupted",
+    "e01e_additive_bound_buffers": "scientific_interpretation",
+    "e02_bilinear_memory": "scientific_interpretation"
+  },
+  "awaiting": [],
+  "best_isolated_search_candidate": "e01e_additive_bound_buffers",
+  "reproduction_hashes": {
+    "competition_engineering\\runs\\autonomous_20261001\\campaign.json": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021",
+    "competition_engineering\\runs\\autonomous_20261001\\library_manifest.json": "7f784fb5e4ad42540dfb810a46d7d33bde7acae7a8b0e9befe352e771c94a887",
+    "competition_engineering\\runs\\autonomous_20261001\\library_manifest_v3.json": "f6b0e186e5641defd9c84286babc838d3ff6af0f8a32b447034f92064ca89a82",
+    "competition_engineering\\runs\\autonomous_20261001\\input_hashes.json": "5180d17ef82cff929c1fce5e9399cba6785494d01c59028ce2a5559f572d3738",
+    "competition_engineering\\runs\\autonomous_20261001\\ledger.jsonl": "c74e85e3238da02813529d3d9015f38b85f48f4c5d2318f2d17cec56c913bf22"
+  },
+  "evidence": "reused_search_evidence_not_independent_validation",
+  "evaluation_boundary": "Only training and designated search caches used. No protected evaluation or external result accessed."
+}

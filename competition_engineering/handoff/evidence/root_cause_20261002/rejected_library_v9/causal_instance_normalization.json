@@ -1,0 +1,38 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Taesung Kim",
+    "Jinhee Kim",
+    "Yunwon Tae",
+    "Cheonbok Park",
+    "Jang-Ho Choi",
+    "Jaegul Choo"
+  ],
+  "card_id": "causal_instance_normalization",
+  "card_type": "paper",
+  "causality": "For this callback, statistics must use a trailing window only; original full-window designs need adaptation.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Maintain incremental moments to bound CPU row cost.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Systematic input scale or bias changes across sequences.",
+  "family": "calibration",
+  "incremental_inference": "For this callback, statistics must use a trailing window only; original full-window designs need adaptation.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Input normalization cannot use unseen future sequence statistics or future targets.",
+  "mechanism": "Reversible instance normalization removes and restores instance statistics for forecasting under distribution shift.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "calibration",
+    "causal-adaptation-required"
+  ],
+  "title": "Reversible Instance Normalization for Accurate Time-Series Forecasting Against Distribution Shift",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: input-statistic drift may explain sequence-position or magnitude errors.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2022
+}

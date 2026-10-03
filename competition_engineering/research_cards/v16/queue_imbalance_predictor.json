@@ -1,0 +1,35 @@
+{
+  "assumptions": "The known side partition may retain useful asymmetry despite anonymization. Physical magnitude or ordered-level assumptions are not made.",
+  "authors": [
+    "Martin D. Gould",
+    "Julius Bonart"
+  ],
+  "card_id": "queue_imbalance_predictor",
+  "card_type": "paper",
+  "causality": "Use current inputs only; no future rows, labels, sequence identity or online target feedback.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Curator inference: test whether bounded semantic bid-minus-ask summaries add WP beyond raw inputs and frozen states, using matched bid-plus-ask controls before any architecture change.",
+  "cpu_deployment": "Full callback timing remains required if development and independent replication qualify.",
+  "curator": "Codex; primary equation and study-scope review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Replicated incremental WP for side contrast beyond shared state/current and common-mode nonlinear controls.",
+  "family": "book_side_asymmetry",
+  "incremental_inference": "Eight fixed group summaries; no added state.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Connectome feature indices are not depths and volume-like values are signed/anonymized. Actual queue imbalance cannot be reconstructed from this contract. Side-aggregate surrogate is a curator hypothesis; horizons, scoring and instruments differ.",
+  "mechanism": "The paper relates normalized best-bid/ask queue imbalance to the direction of the next mid-price move using logistic and local logistic models.",
+  "schema_version": 1,
+  "source_locator": "Section3.3 Eq7; abstract and Sections5-6 out-of-sample classifiers",
+  "source_url": "https://arxiv.org/pdf/1512.03492",
+  "tags": [
+    "order-book",
+    "side-asymmetry",
+    "surrogate-feature"
+  ],
+  "title": "Queue Imbalance as a One-Tick-Ahead Price Predictor in a Limit Order Book",
+  "training_compute": "Fixed matched linear readouts, not a new large network.",
+  "useful_when": "Current raw features and frozen state fail to capture a small semantic nonlinear side-competition basis.",
+  "verified_on": "2026-10-03",
+  "version": 1,
+  "year": 2015
+}

@@ -1,0 +1,21 @@
+{
+  "supported": [
+    "Population-dependent correction utility",
+    "WP selection over residual MSE",
+    "Cheap compact nonlinear callbacks"
+  ],
+  "weakened": [
+    "Objective or weighting tweaks alone resolve remaining performance",
+    "Point-gradient disagreement reliably rejects a representation"
+  ],
+  "inadequately_tested": [
+    "Learned frozen GRU hidden information beyond current112 inputs and two output values",
+    "Representation gains replicated across disjoint training sequence groups"
+  ],
+  "competing_explanations": [
+    "Missing causal information in current-row correction basis",
+    "Representation already exhausted by the pretrained output",
+    "Population-specific utility and finite-sequence noise"
+  ],
+  "decision": "Selection/transport is real but not established as the highest-leverage modeling bottleneck. Test a previously unfit learned representation using a minimal frozen selection/replication mechanism."
+}

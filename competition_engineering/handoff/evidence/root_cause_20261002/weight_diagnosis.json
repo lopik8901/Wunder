@@ -1,0 +1,130 @@
+{
+  "eligible_targets": [
+    0
+  ],
+  "gradient_cosine_capped": [
+    0.7029961970664592,
+    0.47797048733982705
+  ],
+  "gradient_cosine_probability": [
+    0.7863890947251599,
+    0.5308085274876463
+  ],
+  "probability_cosine99": [
+    [
+      0.39188317548321483,
+      0.075947945829196
+    ],
+    [
+      0.9315862304336943,
+      0.8926228383453226
+    ]
+  ],
+  "cosine_improvement99": [
+    [
+      0.0030018158752641065,
+      -0.04963578395139067
+    ],
+    [
+      0.18052833572749993,
+      0.1187217150951417
+    ]
+  ],
+  "incumbent_wp_official_capped_probability": [
+    0.6588353223316631,
+    0.6157978417945451,
+    0.6355893361659947
+  ],
+  "effective_sequence_mass": {
+    "official": [
+      40.27060658921431,
+      35.55212441459347
+    ],
+    "capped": [
+      52.499799991997854,
+      50.81696029023818
+    ],
+    "probability": [
+      49.75196540963812,
+      47.84912402222536
+    ]
+  },
+  "cap_hit_counts_low_high_total": [
+    398226,
+    61811,
+    1273664
+  ],
+  "models": {
+    "incumbent": {
+      "delta_official_capped_probability": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_efficacy_error_change99": [
+        0.0,
+        0.0
+      ]
+    },
+    "raw_t0_1024": {
+      "delta_official_capped_probability": [
+        -5.17462987441597e-05,
+        2.094244090034003e-05,
+        -1.8083851148764651e-06
+      ],
+      "absolute_efficacy_error_change99": [
+        -0.00012122214394447273,
+        7.997606916926407e-05
+      ]
+    },
+    "raw_t0_4096": {
+      "delta_official_capped_probability": [
+        -0.00030549412222258265,
+        5.530482265048153e-05,
+        1.874646652699763e-05
+      ],
+      "absolute_efficacy_error_change99": [
+        -0.00017211583639759832,
+        8.075811547780729e-05
+      ]
+    },
+    "raw_t1_1024": {
+      "delta_official_capped_probability": [
+        -0.0003538139008224528,
+        2.827964974949637e-05,
+        -4.301666538120141e-05
+      ],
+      "absolute_efficacy_error_change99": [
+        -0.00012873719827631136,
+        3.375245124629518e-05
+      ]
+    },
+    "raw_t1_4096": {
+      "delta_official_capped_probability": [
+        -0.0007043147846035325,
+        9.583595172613091e-05,
+        2.483556425370015e-05
+      ],
+      "absolute_efficacy_error_change99": [
+        -0.00014925473773664378,
+        2.1975931767277862e-05
+      ]
+    },
+    "historical_exploratory_point": {
+      "delta_official_capped_probability": [
+        0.00024430887394311096,
+        8.169119166712147e-05,
+        0.00011619111699823215
+      ],
+      "absolute_efficacy_error_change99": [
+        -0.00018818608215294297,
+        0.00012710495512669207
+      ]
+    }
+  },
+  "protocol_sha256": "791ea5bd9fafb41cfebb70b0886e45ab2485c6f3a7d6d195684e0812dbe9c4c7",
+  "moments_sha256": "65d2be2f37fc421f17c555f8d577b4db03c6edef0f62191357ef7b75ee2541e1",
+  "classifier_sha256": "0306488a899d5b1460413e96817cd5b616fc2d8ccf11d04aeefc7f19789f637e",
+  "scope": "Frozen conditional classifier; sequence bootstrap omits classifier-learning and adaptive-selection uncertainty.",
+  "decision": "Bounded uncapped fit justified only for eligible targets; cap removal alone is not a scientific repair."
+}

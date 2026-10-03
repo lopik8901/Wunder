@@ -1,0 +1,36 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Boris N. Oreshkin",
+    "Dmitri Carpov",
+    "Nicolas Chapados",
+    "Yoshua Bengio"
+  ],
+  "card_id": "basis_residual_forecasting",
+  "card_type": "paper",
+  "causality": "A Connectome adaptation needs an explicit causal window and incremental cache.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "A deep stack can exceed per-row CPU limits without careful deployment.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Distinct position or magnitude error patterns across sequences.",
+  "family": "residual",
+  "incremental_inference": "A Connectome adaptation needs an explicit causal window and incremental cache.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Original results concern univariate forecasts and do not transfer automatically.",
+  "mechanism": "Stacked fully connected blocks use backward and forward residual links for forecasting.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "residual",
+    "causal-adaptation-required"
+  ],
+  "title": "N-BEATS: Neural basis expansion analysis for interpretable time series forecasting",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: several separable temporal components may remain after a baseline.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2019
+}

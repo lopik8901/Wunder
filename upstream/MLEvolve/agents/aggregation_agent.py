@@ -188,7 +188,13 @@ def run(
         user_prompt += planner_history_section(agent)
     prompt_complete = build_chat_prompt_for_model(agent.acfg.code.model, introduction, user_prompt, assistant_prefix)
 
-    plan, code = plan_and_code_query(agent, prompt_complete)
+    research_trace = None
+    if getattr(agent.cfg, "connectome_mode", False):
+        from connectome.research_planning import plan_with_research
+        plan, code, prompt_complete, research_trace = plan_with_research(
+            agent, prompt_complete, agent.virtual_root.id, "aggregation", plan_and_code_query)
+    else:
+        plan, code = plan_and_code_query(agent, prompt_complete)
 
     aggregation_node = SearchNode(
         plan=plan,
@@ -196,6 +202,7 @@ def run(
         parent=agent.virtual_root,
         stage="fusion_draft",
         local_best_node=agent.virtual_root,
+        connectome_research_trace=research_trace,
     )
     register_node(agent, aggregation_node, prompt_complete, new_branch=True)
     agent.fusion_draft_count += 1

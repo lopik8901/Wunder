@@ -1,0 +1,26 @@
+{
+  "started_unix": 1790836676.7003195,
+  "overall_time_limit_seconds": 7200,
+  "source_time_limit": "competition_engineering/mlevolve_search_config.yaml agent.time_limit",
+  "starting_incumbent": 0.6588353223316641,
+  "starting_incumbent_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+  "rule": {
+    "minimum_combined_delta": 0.0002,
+    "paired_99ci_lower_must_exceed": 0,
+    "minimum_target_delta": -0.0002,
+    "required": [
+      "causal_prefix",
+      "reset",
+      "determinism",
+      "stream_batch_parity",
+      "label_mask_independence",
+      "finite_outputs",
+      "cpu_measurement"
+    ],
+    "cpu_incremental_budget_us_per_row": 25,
+    "note": "Search evidence only; bootstrap intervals are descriptive, not corrected for adaptive reuse."
+  },
+  "boundary": "Fixed training and 64-sequence search caches only. No external evaluation operation.",
+  "baseline_history": "competition_engineering/reports/manual_research_search_only_20261001.json",
+  "deduplication": "Mechanism, state representation, training tier, target and objective checked before launch."
+}

@@ -1,0 +1,34 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Arthur E. Hoerl",
+    "Robert W. Kennard"
+  ],
+  "card_id": "ridge_regularization",
+  "card_type": "paper",
+  "causality": "Use only causal feature values available at prediction time.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "A fixed linear transform is usually cheap on CPU, subject to feature count.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Strong feature-residual relationships with unstable per-sequence gains.",
+  "family": "simple_models",
+  "incremental_inference": "Use only causal feature values available at prediction time.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Global linear effects cannot express all conditional or long-memory errors.",
+  "mechanism": "Biased shrinkage stabilizes regression coefficients when predictors are nonorthogonal.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://doi.org/10.1080/00401706.1970.10488634",
+  "tags": [
+    "simple_models",
+    "causal-adaptation-required"
+  ],
+  "title": "Ridge Regression: Biased Estimation for Nonorthogonal Problems",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: correlated lagged features can make an unregularized correction unstable.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 1970
+}

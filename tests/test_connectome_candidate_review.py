@@ -93,6 +93,11 @@ def test_draft_and_debug_prompts_use_literal_contract_without_generic_mlebench_t
 
     monkeypatch.setattr(draft_agent, "plan_and_code_query", fake_plan_and_code)
     monkeypatch.setattr(debug_agent, "plan_and_code_query", fake_plan_and_code)
+    from connectome import research_planning
+    def fake_research_hook(agent, prompt, parent_id, stage, code_query):
+        plan, code = code_query(agent, prompt)
+        return plan, code, prompt, {"stage": stage, "parent_id": parent_id}
+    monkeypatch.setattr(research_planning, "plan_with_research", fake_research_hook)
     monkeypatch.setattr(draft_agent, "register_node", lambda *args, **kwargs: None)
     monkeypatch.setattr(debug_agent, "register_node", lambda *args, **kwargs: None)
     root = SearchNode(code="EXPERIMENT = {'kind': 'ridge'}", stage="root")
@@ -105,6 +110,7 @@ def test_draft_and_debug_prompts_use_literal_contract_without_generic_mlebench_t
         task_desc="Search-only Connectome task.", data_preview="No data preview.",
         virtual_root=root, use_coldstart=False, coldstart_description="None model",
         use_stepwise_generation=False, global_memory=None,
+        connectome_search_records_provider=lambda: [],
     )
     draft_agent.run(agent)
     failed = SearchNode(code="EXPERIMENT = {'kind': 'ridge'}", stage="draft", parent=root,

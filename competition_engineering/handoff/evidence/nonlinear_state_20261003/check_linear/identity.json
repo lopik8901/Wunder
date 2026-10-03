@@ -1,0 +1,17 @@
+{
+  "artifacts": {
+    "fused.onnx": "fe22f305e192dd36fecb6614f0e26d4d5ab9e585554cdc3496d9b81ae69c9f0c",
+    "model.npz": "f768e1364f1cbb1d0b0502008885afb1f1d0b8b32998d50273df3d67e44db4fc"
+  },
+  "deployment": {
+    "fused.onnx": "fe22f305e192dd36fecb6614f0e26d4d5ab9e585554cdc3496d9b81ae69c9f0c",
+    "model.npz": "f768e1364f1cbb1d0b0502008885afb1f1d0b8b32998d50273df3d67e44db4fc",
+    "solution.py": "252d377e8cdee6db6f0f50efc7233bbacb1af4c0efdf4b0ea2be763820afea16"
+  },
+  "archive_sha256": "2f43938e55bb71bdebc6f81b2ca424ab2aa32649abfd9d0e7fa441b49025bc8c",
+  "family": "linear",
+  "strengths": [
+    0.5,
+    0.25
+  ]
+}

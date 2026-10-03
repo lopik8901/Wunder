@@ -1,0 +1,10 @@
+{
+  "status": "complete_checkpoint",
+  "completed": "Frozen representation, position transport, and disagreement ensemble experiments",
+  "incumbent": {
+    "wp": 0.6588353223316641,
+    "sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+  },
+  "knowledge_version": 6,
+  "awaiting_promotion": []
+}

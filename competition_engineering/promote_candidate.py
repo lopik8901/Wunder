@@ -29,6 +29,23 @@ def _load_npz(path):
         return {name: values[name] for name in values.files}
 
 
+def _predict_manual_targetwise_combo(z, model):
+    """Vectorized equivalent of the frozen CPU callback, supervisor-side only."""
+    from competition_engineering.residual import features
+
+    base = (z["p"] * model["base_scale"].astype(np.float32)
+            + model["base_bias"].astype(np.float32)).astype(np.float32)
+    f = features({**z, "p": base}, model["mean"], model["scale"])
+    root = (base + model["root_strengths"] * (f @ model["root_coef"])).astype(np.float32)
+    magnitude = (base + model["magnitude_strengths"] * (f @ model["magnitude_coef"])).astype(np.float32)
+    high = np.max(np.abs(root), axis=1) >= 1.0
+    low_correction = f @ model["gated_coef"][0]
+    high_correction = f @ model["gated_coef"][1]
+    t1 = base[:, 1] + model["gated_strengths"][1] * np.where(
+        high, high_correction[:, 1], low_correction[:, 1])
+    return np.column_stack((magnitude[:, 0], t1)).astype(np.float32)
+
+
 def promote(search_result: Path, output: Path):
     result = json.loads(search_result.read_text(encoding="utf-8"))
     if result.get("status") != "success" or result.get("metric_domain") != "fixed development tuning sequences":
@@ -43,6 +60,10 @@ def promote(search_result: Path, output: Path):
         candidate = _load_npz(artifact / "ridge.npz")
         predict = lambda z: ridge_predict(z, candidate)
         artifact_file = artifact / "ridge.npz"
+    elif kind == "manual_targetwise_combo":
+        artifact_file = artifact / "combo.npz"
+        candidate = _load_npz(artifact_file)
+        predict = lambda z: _predict_manual_targetwise_combo(z, candidate)
     elif kind == "calibration":
         candidate = _load_npz(artifact / "calibration.npz")
         predict = lambda z: z["p"] * candidate["base_scale"] + candidate["base_bias"]
@@ -64,6 +85,12 @@ def promote(search_result: Path, output: Path):
         artifact_file = artifact / "checkpoint.pt"
     else:
         raise ValueError("unsupported candidate family")
+    if config.get("artifact_sha256") and hashlib.sha256(artifact_file.read_bytes()).hexdigest() != config["artifact_sha256"]:
+        raise ValueError("frozen candidate artifact hash changed")
+    if kind == "manual_targetwise_combo" and config.get("zip_sha256"):
+        package = ROOT / "competition_engineering/submissions/manual_targetwise_combo_v1.zip"
+        if hashlib.sha256(package.read_bytes()).hexdigest() != config["zip_sha256"]:
+            raise ValueError("frozen candidate ZIP hash changed")
     incumbent = _load_npz(INCUMBENT)
     moments = []
     with threadpool_limits(limits=1):

@@ -1,0 +1,38 @@
+{
+  "assumptions": "Ensemble members must contain meaningfully different predictive errors for disagreement to add information.",
+  "authors": [
+    "Balaji Lakshminarayanan",
+    "Alexander Pritzel",
+    "Charles Blundell"
+  ],
+  "card_id": "ensemble_disagreement",
+  "card_type": "paper",
+  "causality": "Curator adaptation: both readouts consume the existing causal current features and frozen forward states only.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Motivates testing disagreement as a falsifiable conditional correction mechanism, with an explicit matched control.",
+  "cpu_deployment": "Fuse the rule into ONNX and benchmark the full callback.",
+  "curator": "Codex, primary-source review",
+  "dependencies": "NumPy and ONNX Runtime; no author code imported.",
+  "diagnostic_signatures": "Curator inference: the disagreement-specific rule should beat a control with the same overall correction scale on a fresh sequence group.",
+  "family": "ensemble",
+  "incremental_inference": "Curator adaptation: one extra fixed matrix product and elementwise operations.",
+  "licensing": "Original curator paraphrase and bibliographic metadata; no paper code imported.",
+  "limitations": "The paper does not establish that two linear readouts of a shared frozen representation have calibrated uncertainty, nor a benefit for clipped weighted Pearson.",
+  "mechanism": "The authors use ensembles to estimate predictive uncertainty and report benchmark results for regression and classification.",
+  "schema_version": 1,
+  "source_locator": "Primary NeurIPS abstract",
+  "source_url": "https://papers.nips.cc/paper_files/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html",
+  "tags": [
+    "ensemble",
+    "disagreement",
+    "uncertainty",
+    "regression",
+    "diagnostic"
+  ],
+  "title": "Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles",
+  "training_compute": "Curator adaptation: reuse disjoint fixed readouts; evaluate the rule on an unused training-derived group.",
+  "useful_when": "Curator inference: independently fitted predictors disagree on corrections and a conservative combination can be tested against an amplitude-matched control.",
+  "verified_on": "2026-10-02",
+  "version": 1,
+  "year": 2017
+}

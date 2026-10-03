@@ -1,0 +1,24 @@
+{
+  "id": "e01_additive_memory",
+  "mode": "linear",
+  "tier": 1024,
+  "late_only": false,
+  "hypothesis": "Accumulated multiscale input state contributes beyond the frozen combo; control for nonlinear interaction test.",
+  "support": "Positive combined delta with paired lower bound above zero; late t0 improves without widespread sequence regressions.",
+  "weaken": "No improvement or gains disappear versus additive-memory control.",
+  "stride": 40,
+  "ridge_penalty": 0.1,
+  "strengths": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "state_alphas": [
+    0.01,
+    0.001
+  ],
+  "reference_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+  "library_sha256": "afa476ec31e40e74353538c0b5661f669fd2949a9aa3c0cfddf4facb1f9f7b8f",
+  "source_sha256": "69f111ba99acef0e69538090187891300dc918fb72f6ceb8ac08273b6a40a012",
+  "decision_rule_sha256": "765467201c114f60df33fdebb4e752f0a237e29aae26fb15cda96257d07b1021"
+}

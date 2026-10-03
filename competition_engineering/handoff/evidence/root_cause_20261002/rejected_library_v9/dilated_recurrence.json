@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Shiyu Chang",
+    "Yang Zhang",
+    "Wei Han"
+  ],
+  "card_id": "dilated_recurrence",
+  "card_type": "paper",
+  "causality": "Maintain only past states for each dilation and reset all rings per sequence.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Multiple state buffers and recurrent updates increase callback cost.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Residual structure at separated fixed lags.",
+  "family": "recurrence",
+  "incremental_inference": "Maintain only past states for each dilation and reset all rings per sequence.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "The reported long-dependency tasks differ from this competition.",
+  "mechanism": "Multi-resolution recurrent skip connections shorten paths across long sequences.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "recurrence",
+    "causal-adaptation-required"
+  ],
+  "title": "Dilated Recurrent Neural Networks",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: lag-specific errors may benefit from distinct temporal scales.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2017
+}

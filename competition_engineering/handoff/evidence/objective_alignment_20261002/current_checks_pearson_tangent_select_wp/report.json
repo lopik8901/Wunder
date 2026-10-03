@@ -1,0 +1,71 @@
+{
+  "selection": {
+    "model": "pearson_tangent_1.0",
+    "strength": 0.1,
+    "internal_holdout": {
+      "strength": 0.1,
+      "weighted_raw_mse": 1.3764962952062534,
+      "weighted_clipped_mse": 1.3723927642170564,
+      "wp": 0.4788466340343976,
+      "saturated_weight_fraction": 0.012422318570315838
+    }
+  },
+  "search": {
+    "reference": {
+      "t0": 0.6479917119604005,
+      "t1": 0.6696789327029277,
+      "weighted_pearson": 0.6588353223316641
+    },
+    "candidate": {
+      "t0": 0.6479175900062284,
+      "t1": 0.6696789327029277,
+      "weighted_pearson": 0.658798261354578
+    },
+    "delta_per_target": [
+      -7.412195417211276e-05,
+      0.0
+    ],
+    "delta_combined": -3.706097708611189e-05,
+    "paired_95ci_combined": [
+      -0.00011026939813867098,
+      2.768355521838152e-05
+    ],
+    "scored_rows": 108139,
+    "sequences": 64,
+    "evidence": "reused_search_evidence_not_independent_validation"
+  },
+  "paired_99ci": [
+    -0.0001364117120176453,
+    5.002268803578824e-05
+  ],
+  "callback_checks": {
+    "causal_prefix": true,
+    "sequence_reset": true,
+    "deterministic": true,
+    "warmup_and_output_contract": true,
+    "benchmark_rows": 20000,
+    "callback_us_per_row": 64.58598540000757,
+    "wall_us_per_row": 156.33843834999973,
+    "stream_batch_parity": true,
+    "label_mask_independence": true,
+    "finite_outputs": true,
+    "max_abs_parity": 2.384185791015625e-07
+  },
+  "status": "scientific_negative_or_insufficient_search_evidence",
+  "identity": {
+    "source": {
+      "callback.py": "252d377e8cdee6db6f0f50efc7233bbacb1af4c0efdf4b0ea2be763820afea16"
+    },
+    "artifacts": {
+      "fused.onnx": "04fa87037bf667eb88d36598a2c18be32f583007de57052f78d1c84e9234e97f",
+      "model.npz": "0754774b380e42848d9f5a68d19803f48381efdf29c24f9919e3409dc7fb9503"
+    },
+    "deployment": {
+      "fused.onnx": "04fa87037bf667eb88d36598a2c18be32f583007de57052f78d1c84e9234e97f",
+      "model.npz": "0754774b380e42848d9f5a68d19803f48381efdf29c24f9919e3409dc7fb9503",
+      "solution.py": "252d377e8cdee6db6f0f50efc7233bbacb1af4c0efdf4b0ea2be763820afea16"
+    },
+    "package": "c90522f7b282ccdd78f4d60c3143882f96282e5e7af7112e584794439f12e0d2"
+  },
+  "scope": "Training-row callback engineering checks and fixed search scores only; no protected evaluation"
+}

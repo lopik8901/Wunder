@@ -1,0 +1,36 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Yann N. Dauphin",
+    "Angela Fan",
+    "Michael Auli",
+    "David Grangier"
+  ],
+  "card_id": "gated_convolution",
+  "card_type": "paper",
+  "causality": "Use past-only convolution state and deterministic sequence resets.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Gate and convolution work must be benchmarked as CPU callback operations.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Feature-residual relationships that vary with recent context.",
+  "family": "convolution",
+  "incremental_inference": "Use past-only convolution state and deterministic sequence resets.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Its language-model latency comparison is not a deployment guarantee here.",
+  "mechanism": "A finite-context gated convolution can model sequences while allowing parallel training.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/1612.08083",
+  "tags": [
+    "convolution",
+    "causal-adaptation-required"
+  ],
+  "title": "Language Modeling with Gated Convolutional Networks",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: short-to-medium nonlinear lag interactions may need input-dependent gating.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2016
+}

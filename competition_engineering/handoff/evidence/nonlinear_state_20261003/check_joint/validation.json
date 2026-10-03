@@ -1,0 +1,13 @@
+{
+  "causal_prefix": true,
+  "sequence_reset": true,
+  "deterministic": true,
+  "warmup_and_output_contract": true,
+  "benchmark_rows": 20000,
+  "callback_us_per_row": 80.00127199999909,
+  "wall_us_per_row": 172.77467805000023,
+  "stream_batch_parity": true,
+  "finite_outputs": true,
+  "label_mask_independence": true,
+  "max_abs_parity": 2.384185791015625e-07
+}

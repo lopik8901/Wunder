@@ -1,0 +1,41 @@
+{
+  "reviewed_knowledge_version": 24,
+  "hypotheses": [
+    {
+      "direction": "Another temporal architecture",
+      "evidence": "Five alternatives and two rescue counterfactuals failed matched fresh replication; no measured missing temporal signal.",
+      "decision": "Do not select"
+    },
+    {
+      "direction": "More fitting sequences",
+      "evidence": "Fixed-budget and composition-controlled comparisons inconclusive.",
+      "decision": "Do not reopen"
+    },
+    {
+      "direction": "Sequence-prefix adaptation",
+      "evidence": "64-context predictor worsened all four development gradient error measures.",
+      "decision": "Do not tune"
+    },
+    {
+      "direction": "Prediction-only shape",
+      "evidence": "Historical source audit and fresh two-way crossfit do not establish shape transport.",
+      "decision": "Closed without selection/development access"
+    },
+    {
+      "direction": "Physical order-flow imbalance",
+      "evidence": "Feature index is not book depth; signed anonymized volume-like inputs do not identify physical positive queues.",
+      "decision": "Cannot reproduce primary physical quantity safely"
+    },
+    {
+      "direction": "Semantic side asymmetry",
+      "evidence": "Known bid/ask partition and primary queue-asymmetry literature motivate a small measurable current-input mechanism, with common-mode and state controls.",
+      "decision": "Select fixed bounded surrogate, test incremental WP prospectively"
+    }
+  ],
+  "primary_sources": [
+    "http<LOCAL_PATH>",
+    "http<LOCAL_PATH>",
+    "http<LOCAL_PATH>"
+  ],
+  "limitations": "Curator experiment prioritization, not evidence that selected hypothesis works. No protected outcomes or reused official-search labels consulted."
+}

@@ -1,0 +1,34 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Albert Gu",
+    "Tri Dao"
+  ],
+  "card_id": "selective_state_space",
+  "card_type": "paper",
+  "causality": "Run a forward-only selective recurrent update and reset its state per sequence.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Specialized kernels in the paper may not map to affordable CPU callbacks.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Lagged feature-residual structure with context-dependent persistence.",
+  "family": "state_space",
+  "incremental_inference": "Run a forward-only selective recurrent update and reset its state per sequence.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Its results are on other modalities and should not dominate simpler mechanisms.",
+  "mechanism": "Input-dependent state-space parameters selectively propagate or forget information.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/2312.00752",
+  "tags": [
+    "state_space",
+    "causal-adaptation-required"
+  ],
+  "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: residual persistence conditional on current features may call for selective memory.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2023
+}

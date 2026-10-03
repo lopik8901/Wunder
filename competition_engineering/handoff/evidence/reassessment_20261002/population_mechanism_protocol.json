@@ -1,0 +1,16 @@
+{
+  "observation": "Frozen t1 corrections have negative official-minus-uniform WP delta with paired99 interval excluding zero.",
+  "hypotheses": [
+    "Prediction clipping changes correction efficacy",
+    "Between-sequence shifts dominate pooled result",
+    "A few influential sequences cause conflict",
+    "Conflict localized to position"
+  ],
+  "models": [
+    "incumbent",
+    "raw_t1_1024",
+    "raw_t1_4096"
+  ],
+  "tests": "Fixed clipped/unclipped-prediction contrast, pooled/within moments, leave-one-out, delete five largest absolute contrast influences, three fixed position thirds.",
+  "decision": "Diagnostics may explain the conflict but cannot choose a correction strength, train a gating function or replace official metric."
+}

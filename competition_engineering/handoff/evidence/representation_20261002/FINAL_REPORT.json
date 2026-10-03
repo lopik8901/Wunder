@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "boundary": "search-only",
+  "incumbent": {
+    "wp": 0.6588353223316641,
+    "sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+  },
+  "library_manifest_sha256": "36c70a158942701d2295f8c74bc9f874231ce2660b302c9e20e81c3450d4a3ac",
+  "best_observed_search_candidate": {
+    "name": "consensus",
+    "wp": 0.6590721033812812,
+    "reason": "Point estimate only; does not qualify."
+  },
+  "best_credible_candidate": null,
+  "awaiting_promotion": [],
+  "candidates": {
+    "mean": {
+      "wp": 0.6588694029793609,
+      "delta": 3.40806476968325e-05,
+      "paired99": [
+        -0.001309950269091162,
+        0.0010850696904460468
+      ],
+      "cpu_us": 72.45848765001294,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    "matched_amplitude": {
+      "wp": 0.6588981888548227,
+      "delta": 6.286652315856678e-05,
+      "paired99": [
+        -0.0009662234099817984,
+        0.0008742800176409351
+      ],
+      "cpu_us": 72.39461150003308,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    "consensus": {
+      "wp": 0.6590721033812812,
+      "delta": 0.00023678104961710744,
+      "paired99": [
+        -0.0008065760838449942,
+        0.0011115846961819937
+      ],
+      "cpu_us": 77.48776975000347,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    }
+  },
+  "replication": {
+    "variants": {
+      "mean": {
+        "combined_delta_uniform_probability": [
+          0.0012111254531766147,
+          0.0016081248593314834
+        ],
+        "delta_per_target_uniform_probability": [
+          [
+            0.0008889698240147625,
+            0.0015332810823384668
+          ],
+          [
+            0.001303711360445603,
+            0.0019125383582173638
+          ]
+        ],
+        "paired99_combined_uniform_probability": [
+          [
+            0.00021494100769899426,
+            0.000983686458236236
+          ],
+          [
+            0.0021822415690856164,
+            0.002260269638787015
+          ]
+        ]
+      },
+      "matched_amplitude": {
+        "combined_delta_uniform_probability": [
+          0.0009981504562665,
+          0.0012878610356512055
+        ],
+        "delta_per_target_uniform_probability": [
+          [
+            0.0007758856047345719,
+            0.001220415307798428
+          ],
+          [
+            0.0011058250523869884,
+            0.0014698970189154226
+          ]
+        ],
+        "paired99_combined_uniform_probability": [
+          [
+            0.00023149776876103744,
+            0.0007952466103663116
+          ],
+          [
+            0.0017519201723651431,
+            0.0018009791227708316
+          ]
+        ]
+      },
+      "consensus": {
+        "combined_delta_uniform_probability": [
+          0.0009350860454274412,
+          0.0011537897419003351
+        ],
+        "delta_per_target_uniform_probability": [
+          [
+            0.0007401222884071967,
+            0.0011300498024476857
+          ],
+          [
+            0.001004952484143229,
+            0.0013026269996574413
+          ]
+        ],
+        "paired99_combined_uniform_probability": [
+          [
+            0.00011187097996194579,
+            0.0006737919082645955
+          ],
+          [
+            0.001755703330186272,
+            0.0016747559918836891
+          ]
+        ]
+      }
+    },
+    "consensus_minus_amplitude_control": {
+      "combined_delta_uniform_probability": [
+        -6.306441083905878e-05,
+        -0.00013407129375087035
+      ],
+      "paired99_combined_uniform_probability": [
+        [
+          -0.0003402953727249265,
+          -0.0002817531700426895
+        ],
+        [
+          0.0002074312566581091,
+          1.308132246407314e-05
+        ]
+      ]
+    },
+    "scope": "Fresh correction-disjoint training group; no claim of independent pretrained-model evaluation.",
+    "moments_sha256": "ae163252dd44331771526e759feac1dd744e46214cc33d4af236c9a92ef82970"
+  },
+  "decisions": [
+    "Frozen-state representation has replicated development signal but no official transfer.",
+    "Position transport was not stable enough to justify a fit.",
+    "Disagreement soft-threshold is abandoned: it lost to matched amplitude on fresh replication.",
+    "Do not tune consensus for its reused-search point estimate."
+  ],
+  "infrastructure": {
+    "tests_added": "Consensus algebra and ONNX head parity regression tests.",
+    "implementation_failure": null
+  },
+  "reproducibility_sha256": {
+    "competition_engineering/runs/representation_20261002/protocol.json": "3e92a36fa610aa5c941a88d04bdd8c9ed25c4a72ff5f5a6defd5c8a41d7ef65b",
+    "competition_engineering/runs/representation_20261002/knowledge_v5.json": "afb6f578b337ae357e843e540d0f92ebb2e3a20fff0e58fb8226f4c536f9d1e8",
+    "competition_engineering/runs/representation_20261002/knowledge_v6.json": "2a511cb4a985ade4d0198fd04574262563368b6a6fe88f6dcb34523e7e64af76",
+    "competition_engineering/runs/representation_20261002/replicated_readout/replication.json": "e448175d01bc1ab93c1a088f68589f0349e57df94182527ee131b95d6797bf98",
+    "competition_engineering/runs/representation_20261002/replicated_readout/candidate_checks.json": "cfd78a532f8f9c08a2298c26dc3828e798ca9859fd4db0e273899e7d703eedd2",
+    "competition_engineering/runs/representation_20261002/consensus_ensemble/protocol.json": "6aade6467d7929864dccc85a2aeb4e95320cf8f28d6dcef8b87308ad49987ddd",
+    "competition_engineering/runs/representation_20261002/consensus_ensemble/replication.json": "f5c2535fcbc945582966c9d7251df39f56c5fe8d8f2b3f1b29ab747bb7aaa3fd",
+    "competition_engineering/runs/representation_20261002/consensus_ensemble/candidate_checks.json": "bc09b2b86a75235a6acc198eceb43326964bcca5e5d6d0afee5146d9d39b2936",
+    "competition_engineering/runs/representation_20261002/consensus_ensemble/mechanism_comparison.json": "5430b6a3b5f61d7847c468d23e1078da58e692dc36d01efdf07f74b9cb277f9d",
+    "competition_engineering/runs/representation_20261002/library_v10_manifest.json": "7edecc6f50e9ce8309add8c2e87aecacd97c0fecd0d3b556b2c1b0c3ad9bf604",
+    "competition_engineering/runs/representation_20261002/library_v11_manifest.json": "4d783b982f9aa3ca57d4aa5d254ad241903a1414cc0254f2c48bd9a29f8c426f"
+  }
+}

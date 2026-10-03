@@ -1,0 +1,311 @@
+{
+  "population_gradients": {
+    "training_uniform": {
+      "wp": [
+        0.4591576973676037,
+        0.4642696908246787
+      ],
+      "sequences": 1024,
+      "gradient_norm": [
+        0.09250974786032952,
+        0.09721591625849998
+      ],
+      "bootstrap_noise_norm": [
+        0.061317940628546674,
+        0.07105757048284027
+      ],
+      "norm_to_noise_ratio": [
+        1.508689739284255,
+        1.3681289072777503
+      ],
+      "split_half_cosine_01_50_99": [
+        [
+          -0.05156054361376609,
+          -0.12037393270259769
+        ],
+        [
+          0.4339955346969323,
+          0.3384069143644467
+        ],
+        [
+          0.6728939831469145,
+          0.6069467520662641
+        ]
+      ]
+    },
+    "search_uniform": {
+      "wp": [
+        0.4947647341564507,
+        0.49695772504524427
+      ],
+      "sequences": 64,
+      "gradient_norm": [
+        0.25579545950036414,
+        0.2755338341095688
+      ],
+      "bootstrap_noise_norm": [
+        0.23856127566548857,
+        0.2206873266683091
+      ],
+      "norm_to_noise_ratio": [
+        1.072242168335155,
+        1.2485258590480524
+      ],
+      "split_half_cosine_01_50_99": [
+        [
+          -0.3979623076996748,
+          -0.1926078518282715
+        ],
+        [
+          0.12828520330105217,
+          0.258860444727561
+        ],
+        [
+          0.560925603215682,
+          0.5734811326005352
+        ]
+      ]
+    },
+    "search_scored": {
+      "wp": [
+        0.6479917119603986,
+        0.6696789327029276
+      ],
+      "sequences": 64,
+      "gradient_norm": [
+        0.20513577190406565,
+        0.1996737683501262
+      ],
+      "bootstrap_noise_norm": [
+        0.18352869233032273,
+        0.1906493026366246
+      ],
+      "norm_to_noise_ratio": [
+        1.1177313437991132,
+        1.0473354247232791
+      ],
+      "split_half_cosine_01_50_99": [
+        [
+          -0.3154392311964849,
+          -0.478445847469696
+        ],
+        [
+          0.15724270498453527,
+          0.07258251209676422
+        ],
+        [
+          0.49723551438328395,
+          0.33998935000806424
+        ]
+      ]
+    },
+    "search_unscored": {
+      "wp": [
+        0.4703781083299826,
+        0.4669795761724434
+      ],
+      "sequences": 64,
+      "gradient_norm": [
+        0.3001721498766845,
+        0.330308887138082
+      ],
+      "bootstrap_noise_norm": [
+        0.2710258260385917,
+        0.25104120340678693
+      ],
+      "norm_to_noise_ratio": [
+        1.1075407619417885,
+        1.3157556714020757
+      ],
+      "split_half_cosine_01_50_99": [
+        [
+          -0.3713995800824784,
+          -0.11371272926406302
+        ],
+        [
+          0.1293730332298641,
+          0.3065879231577106
+        ],
+        [
+          0.5506595491176274,
+          0.5612662933106746
+        ]
+      ]
+    },
+    "search_weighted": {
+      "wp": [
+        0.5598427363138981,
+        0.5659151202801799
+      ],
+      "sequences": 64,
+      "gradient_norm": [
+        0.18715778709674702,
+        0.18995238307350418
+      ],
+      "bootstrap_noise_norm": [
+        0.1903466026649468,
+        0.18308125506641354
+      ],
+      "norm_to_noise_ratio": [
+        0.9832473208160546,
+        1.0375304834162193
+      ],
+      "split_half_cosine_01_50_99": [
+        [
+          -0.4891675330720408,
+          -0.33667737986726953
+        ],
+        [
+          0.007499577826987081,
+          0.04101726646764923
+        ],
+        [
+          0.4302440706263808,
+          0.40445638825853397
+        ]
+      ]
+    }
+  },
+  "contrasts": {
+    "training_uniform_vs_search_scored": {
+      "point_cosine": [
+        0.43661620696061637,
+        -0.11987770254428247
+      ],
+      "paired_bootstrap_cosine99": [
+        [
+          -0.3028696157910159,
+          -0.49550285014844286
+        ],
+        [
+          0.6507033649755511,
+          0.34065021429908926
+        ]
+      ],
+      "positive_direction_fraction": [
+        0.9295,
+        0.2315
+      ]
+    },
+    "search_uniform_vs_search_scored": {
+      "point_cosine": [
+        0.04674605686443234,
+        0.20538975530716544
+      ],
+      "paired_bootstrap_cosine99": [
+        [
+          -0.4881223946274613,
+          -0.13849854731292036
+        ],
+        [
+          0.6344674273834051,
+          0.5975879252129275
+        ]
+      ],
+      "positive_direction_fraction": [
+        0.6045,
+        0.9025
+      ]
+    },
+    "search_weighted_vs_search_scored": {
+      "point_cosine": [
+        0.29383683033111535,
+        0.150467903026689
+      ],
+      "paired_bootstrap_cosine99": [
+        [
+          -0.39883163293576596,
+          -0.15541316113342002
+        ],
+        [
+          0.8122517526234733,
+          0.7029467205574095
+        ]
+      ],
+      "positive_direction_fraction": [
+        0.927,
+        0.823
+      ]
+    }
+  },
+  "same_size_training_subset_cosine_01_50_99": [
+    [
+      -0.2347651970666427,
+      -0.2096914236249671
+    ],
+    [
+      0.38715515819563434,
+      0.3410974322011709
+    ],
+    [
+      0.7526874415595098,
+      0.7054748182124535
+    ]
+  ],
+  "search_cosine_lower_tail_in_training_subset_distribution": [
+    0.5905,
+    0.0205
+  ],
+  "matched_selection_contrast": {
+    "wp": [
+      [
+        0.6020178786750027,
+        0.6076740626114296
+      ],
+      [
+        0.64416911613748,
+        0.6632242529916024
+      ]
+    ],
+    "mse": [
+      [
+        1.2257075789162117,
+        1.2242858816556856
+      ],
+      [
+        1.0750961775806662,
+        1.077173858894548
+      ]
+    ],
+    "mse_ratio": [
+      0.8771228929915582,
+      0.8798385042534446
+    ],
+    "matched_rows_per_population": [
+      106467.0,
+      105453.0
+    ]
+  },
+  "matched_selection_mse_ratio99": [
+    [
+      0.7200616866867892,
+      0.642270492876339
+    ],
+    [
+      1.037259163182007,
+      1.1605059929240873
+    ]
+  ],
+  "matched_selection_wp_delta99": [
+    [
+      -0.01689440425810406,
+      -0.03349515659481225
+    ],
+    [
+      0.11185981066955851,
+      0.14821374670657406
+    ]
+  ],
+  "training_rows": 4075734,
+  "search_required_rows": 1273664,
+  "interpretation_limits": [
+    "Sequence bootstrap is descriptive on adaptively reused search.",
+    "Observable matching tests only this representation; it does not prove full conditional target shift.",
+    "Same-size training subset reference assumes sequences exchangeable; incumbent was already trained on training data.",
+    "Gradient directions depend on feature scaling; these are not statistical guarantees or new candidate coefficients."
+  ],
+  "bootstrap_pairing": "Identical sequence counts across search populations; independent training/search resampling.",
+  "supersedes": "gradient_uncertainty.json: search population cosine intervals used unpaired draws; preserved as implementation failure, not scientific evidence.",
+  "protocol_sha256": "cac3c8988d124033700b866e6773cf37dec2c8cc1248d116d5d0a1c4ba92286d",
+  "primitives_sha256": "2a7e79d3b71d8c12d657d5e6f56a93f71d6a5795847d0bc3d0004bac04b0e905"
+}

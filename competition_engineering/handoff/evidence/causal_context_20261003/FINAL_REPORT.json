@@ -1,0 +1,77 @@
+{
+  "incumbent_wp": 0.6588353223316641,
+  "awaiting_promotion": false,
+  "official_search_passes": 0,
+  "diagnostic": {
+    "gradient_error_reduction_population_target": [
+      [
+        -0.06911025084614092,
+        -0.12976238768487333
+      ],
+      [
+        -0.16648522188288334,
+        -0.10412024086679288
+      ]
+    ],
+    "paired95": [
+      [
+        [
+          -0.18113996609769648,
+          -0.22174428865668167
+        ],
+        [
+          -0.24311227805419672,
+          -0.16753234686005794
+        ]
+      ],
+      [
+        [
+          0.020919384300231162,
+          -0.0650602751646662
+        ],
+        [
+          -0.10899125467105548,
+          -0.06218110715302143
+        ]
+      ]
+    ],
+    "development_halves": [
+      [
+        [
+          -0.06030525823184301,
+          -0.13985146682704616
+        ],
+        [
+          -0.1377732906561769,
+          -0.09850692939618101
+        ]
+      ],
+      [
+        [
+          -0.07678799930661674,
+          -0.1175494825102707
+        ],
+        [
+          -0.2038959382569047,
+          -0.10974770274414494
+        ]
+      ]
+    ],
+    "interleaved_gradient_reliability": [
+      [
+        0.8876433888595632,
+        0.8844537184778517
+      ],
+      [
+        0.6821328435896453,
+        0.6514895985113016
+      ]
+    ],
+    "development_gate_passed": false,
+    "model_sha256": "e643a19d95bb6ba487aa0b873bd265cd7837e0d931862e1e956c69c244e4c657",
+    "interpretation": "Interleaved half reliability is descriptive and may include temporal dependence. This does not estimate irreducible target noise.",
+    "decision": "Abandon prefix-context gradient predictor; no modeling/official-search experiment justified."
+  },
+  "untouched_replication_sequences": 512,
+  "ledger_prefix_sha256": "b9f7e2f73fdae3ac2731260cecb8c094b2c05720892f1710d8ff2e3ef8b4bc3e"
+}

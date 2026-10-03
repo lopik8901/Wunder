@@ -1,0 +1,9 @@
+{
+  "train.py": "3e2f95da6c36e1151ad7d782c07aed74762e431078e137348e3b0ad4dda31e81",
+  "combo.npz": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+  "mask_trees.npz": "5ba979b008645e72343fd93b355b9417de5769bf5605d3dca9fe67c8e4f698be",
+  "frozen_trees.npz": "13a6189da1d1f788907b1a917277342d8ef924d2ec7739747884de8763fdbd05",
+  "excluded_groups.npz": "406261a8c8261feb45a139d8d8f62ebc33669e9de6466051e0f0fce33e0ac6a1",
+  "artifacts/selection.json": "cba502e1e261cae697534bb416246a1d66544ae3b7a6c40101e33f32d3fa4da1",
+  "artifacts/selection_moments.npz": "486213b292cea72ec3bd8846e76054976da6e99dcb818e4cb2ccee86303d171c"
+}

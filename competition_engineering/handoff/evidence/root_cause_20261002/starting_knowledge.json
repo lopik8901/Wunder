@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "version": 3,
+  "evidence": "search-only; adaptive reuse disclosed",
+  "incumbent": {
+    "wp": 0.6588353223316641,
+    "sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+  },
+  "established": [
+    {
+      "lesson": "Use official clipped weighted Pearson for model and hyperparameter selection whenever feasible. Lower residual MSE does not imply higher WP.",
+      "source": "runs/objective_alignment_20261002/final_review.json"
+    },
+    {
+      "lesson": "Point-gradient cosine is unreliable at the current 64-sequence search size: median split-half agreement was 0.16 for t0 and 0.07 for t1. Include sequence uncertainty before rejecting a representation.",
+      "source": "runs/reassessment_20261002/gradient_uncertainty_v2.json"
+    },
+    {
+      "lesson": "Frozen t1 corrections improve all-required-row WP but regress officially scored WP. Their paired population contrasts exclude zero, survive unclipped prediction and within-sequence checks, and remain negative after influential-sequence deletion.",
+      "source": "runs/reassessment_20261002/population_mechanism.json"
+    },
+    {
+      "lesson": "A nonlinear causal mask predictor improved target 0 population-gradient transport over the linear predictor under a prospective uncertainty rule. This supports a bounded weighted-readout experiment, not a new incumbent.",
+      "source": "runs/reassessment_20261002/nonlinear_selection_result.json"
+    },
+    {
+      "lesson": "Nonlinear weighting improved training-side t0 gradient stability, but source-to-official-search alignment remained uncertain. Better mask prediction alone did not establish a stronger correction.",
+      "source": "runs/reassessment_20261002/training_transport.json"
+    }
+  ],
+  "weakened": [
+    {
+      "hypothesis": "Objective misalignment alone is the main remaining bottleneck.",
+      "reason": "60 fits in eight suites; objective-aware selection helped, but no convincing replacement."
+    },
+    {
+      "hypothesis": "Low point-gradient alignment establishes a stable causal transfer conflict.",
+      "reason": "Bootstrap intervals span both signs and split-half gradients are unstable."
+    },
+    {
+      "hypothesis": "Clipping or a few outlier sequences explain the t1 population contrast.",
+      "reason": "Contrast survives diagnostic counterfactuals."
+    },
+    {
+      "hypothesis": "The existing linear causal proxy is a sufficient selection substitute.",
+      "reason": "Prospective training masks selected an officially inferior t1 correction; audit intervals included zero."
+    },
+    {
+      "hypothesis": "A nonlinear causal scoring predictor alone makes a fixed current-row residual readout transferable.",
+      "reason": "Weighted fit scored0.658830952; paired99 interval crosses zero. Mask-informed selection point gain was only0.0000115."
+    }
+  ],
+  "closed_branches": [
+    "Broad objective-loss/grid tuning",
+    "Previously tested additive EMA and diagonal bilinear temporal tuning"
+  ],
+  "exploratory_only": [
+    {
+      "wp": 0.6590796311188727,
+      "paired99_delta": [
+        -0.0005840183,
+        0.0010744564
+      ],
+      "reason": "Adaptively selected point; interval crosses zero"
+    },
+    {
+      "wp": 0.6588467901506747,
+      "paired99_delta": [
+        -0.0001229887069432625,
+        0.00013893444785350104
+      ],
+      "reason": "Training-proxy-selected unweighted readout; tiny adaptive search gain, not an established improvement."
+    }
+  ],
+  "reopen_requirement": "New measured evidence and a predeclared falsifiable mechanism.",
+  "next_research_question": "Which training-derived causal representation or evaluation population reproduces the stable t1 selected-versus-uniform correction contrast without fitting search-target residuals?",
+  "status": "Checkpointed; no further fit met current evidence prerequisites."
+}

@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Shaojie Bai",
+    "J. Zico Kolter",
+    "Vladlen Koltun"
+  ],
+  "card_id": "generic_tcn",
+  "card_type": "paper",
+  "causality": "Use left-padded causal convolutions and cache only past activations.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Full-window recomputation may be too slow per row; measure incremental execution.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Residual persistence within a bounded lag window.",
+  "family": "convolution",
+  "incremental_inference": "Use left-padded causal convolutions and cache only past activations.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Past local TCN experiments here are search evidence and should not be overwritten by external benchmarks.",
+  "mechanism": "The paper evaluates a simple convolutional sequence architecture against recurrent baselines and reports longer effective memory on its benchmarks.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "convolution",
+    "causal-adaptation-required"
+  ],
+  "title": "An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: fixed-lag dependence may be expressible with a finite receptive field.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2018
+}

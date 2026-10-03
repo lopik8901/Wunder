@@ -1,0 +1,39 @@
+{
+  "assumptions": "Paper benchmarks are low-dimensional dynamical systems; transfer to this task is unestablished.",
+  "authors": [
+    "Daniel J. Gauthier",
+    "Erik Bollt",
+    "Aaron Griffith",
+    "Wendson A. S. Barbosa"
+  ],
+  "card_id": "nonlinear_vector_autoregression",
+  "card_type": "paper",
+  "causality": "Curator adaptation: use present/past inputs only, zero state at each sequence, and never feed target residuals into online state.",
+  "claim_confidence": "moderate",
+  "concise_relevance": "A structured alternative to generic random nonlinear features; task success requires measured search evidence.",
+  "cpu_deployment": "Curator inference: diagonal interactions have linear feature cost, but benchmark the actual callback.",
+  "curator": "Codex, primary full-text mechanism review",
+  "dependencies": "Proposed adaptation uses NumPy and SciPy; the paper does not require these implementations.",
+  "diagnostic_signatures": "Curator inference: persistent residuals with weak linear feature correlations motivate a falsifiable nonlinear-memory comparison.",
+  "family": "polynomial_memory",
+  "incremental_inference": "Curator adaptation: bounded causal state and a polynomial readout permit incremental computation.",
+  "licensing": "Metadata and original curator paraphrase; no copied implementation.",
+  "limitations": "Full polynomial bases grow combinatorially. A featurewise EMA interaction is a restricted adaptation, not a reproduction or universality guarantee.",
+  "mechanism": "A regularized linear readout uses delayed observations and polynomial features of their joint history.",
+  "schema_version": 1,
+  "source_locator": "Introduction, Equations 3-6; Results; Discussion",
+  "source_url": "https://www.nature.com/articles/s41467-021-25801-2",
+  "tags": [
+    "temporal",
+    "nonlinear",
+    "polynomial",
+    "memory",
+    "causal"
+  ],
+  "title": "Next generation reservoir computing",
+  "training_compute": "Regularized least squares fits the output weights.",
+  "useful_when": "Curator inference: test interactions between current inputs and causal history after additive lag models fail.",
+  "verified_on": "2026-10-01",
+  "version": 1,
+  "year": 2021
+}

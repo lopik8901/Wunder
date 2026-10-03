@@ -1,0 +1,36 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Ailing Zeng",
+    "Muxi Chen",
+    "Lei Zhang",
+    "Qiang Xu"
+  ],
+  "card_id": "linear_forecast_baseline",
+  "card_type": "paper",
+  "causality": "Use strictly trailing input windows for a causal adaptation.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Linear heads can be inexpensive; window extraction still has a cost.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Stable current/lagged feature-residual relationships.",
+  "family": "simple_models",
+  "incremental_inference": "Use strictly trailing input windows for a causal adaptation.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Published comparisons target long-term forecasting benchmarks, not this scoring rule.",
+  "mechanism": "The paper tests simple one-layer linear forecasting baselines against complex transformers.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "https://arxiv.org/abs/2205.13504",
+  "tags": [
+    "simple_models",
+    "causal-adaptation-required"
+  ],
+  "title": "Are Transformers Effective for Time Series Forecasting?",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: complexity should be justified by a diagnostic gain over linear corrections.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2022
+}

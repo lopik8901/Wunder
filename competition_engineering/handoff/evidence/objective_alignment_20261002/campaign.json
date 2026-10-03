@@ -1,0 +1,10 @@
+{
+  "started_unix": 1790922575.0669794,
+  "budget_seconds": 7200,
+  "incumbent": 0.6588353223316641,
+  "incumbent_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+  "boundary": "only TRAIN_1024 and fixed SEARCH; no protected evaluation",
+  "temporal_branch": "closed; current-row coefficients only",
+  "plan": "matched residual/tangent/direct-WP objectives; training-sequence holdout chooses penalty and strength; fixed search is diagnostic",
+  "source_sha256": "bc80b37d14e87968141db740e29d3aa9e6ddd21b4e1cd3972594aad06feaecfb"
+}

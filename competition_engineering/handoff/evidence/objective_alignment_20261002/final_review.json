@@ -1,0 +1,1258 @@
+{
+  "status": "search_loop_closed_no_further_materially_justified_fit",
+  "ending_reason": "The evidence justified pooled objectives, sequence-group risk variance, scoring-population diagnostics, exact-moment replications and a frozen latent-feature diagnostic. These protocols are complete; the next readout-fit prerequisites failed. Further architecture, recurrent dynamics, group-boundary, phase, penalty or propensity tuning lacks new supporting evidence.",
+  "incumbent_wp": 0.6588353223316641,
+  "incumbent_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+  "incumbent_unchanged": true,
+  "readout_fits": 60,
+  "controlled_suites": 8,
+  "selected_variants": [
+    {
+      "suite": "objective_alignment",
+      "tier": 1024,
+      "target": 0,
+      "variant": "raw_residual_select_wp",
+      "selected": {
+        "model": "raw_residual_1.0",
+        "strength": 0.5,
+        "internal_holdout": {
+          "strength": 0.5,
+          "weighted_raw_mse": 1.3591480405996106,
+          "weighted_clipped_mse": 1.356315238416753,
+          "wp": 0.4790880526677713,
+          "saturated_weight_fraction": 0.009963423945009708
+        }
+      },
+      "score": 0.6587835759940022,
+      "delta": -5.174633766191761e-05,
+      "paired99": [
+        -0.0007175300024484518,
+        0.0005808739046175889
+      ],
+      "callback_us": 65.16810475000732,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 1024,
+      "target": 0,
+      "variant": "pearson_tangent_select_wp",
+      "selected": {
+        "model": "pearson_tangent_1.0",
+        "strength": 0.1,
+        "internal_holdout": {
+          "strength": 0.1,
+          "weighted_raw_mse": 1.3764962952062534,
+          "weighted_clipped_mse": 1.3723927642170564,
+          "wp": 0.4788466340343976,
+          "saturated_weight_fraction": 0.012422318570315838
+        }
+      },
+      "score": 0.658798261354578,
+      "delta": -3.706097708611189e-05,
+      "paired99": [
+        -0.0001364117120176453,
+        5.002268803578824e-05
+      ],
+      "callback_us": 64.58598540000757,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 1024,
+      "target": 0,
+      "variant": "direct_wp_select_wp",
+      "selected": {
+        "model": "direct_wp_1.0",
+        "strength": 0.05,
+        "internal_holdout": {
+          "strength": 0.05,
+          "weighted_raw_mse": 1.376481867726595,
+          "weighted_clipped_mse": 1.3723981451932667,
+          "wp": 0.47884601783419706,
+          "saturated_weight_fraction": 0.01239424291998148
+        }
+      },
+      "score": 0.6588099361560289,
+      "delta": -2.538617563518919e-05,
+      "paired99": [
+        -9.264538007138833e-05,
+        3.474905089406427e-05
+      ],
+      "callback_us": 64.6457972499956,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 4096,
+      "target": 0,
+      "variant": "raw_residual_select_wp",
+      "selected": {
+        "model": "raw_residual_0.01",
+        "strength": 0.5,
+        "internal_holdout": {
+          "strength": 0.5,
+          "weighted_raw_mse": 1.3636992943560144,
+          "weighted_clipped_mse": 1.3618841350834998,
+          "wp": 0.46385617287987535,
+          "saturated_weight_fraction": 0.004310159012675285
+        }
+      },
+      "score": 0.658529828067838,
+      "delta": -0.00030549426382608935,
+      "paired99": [
+        -0.001004836381557832,
+        0.00031902121773427636
+      ],
+      "callback_us": 64.85605560001986,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 4096,
+      "target": 0,
+      "variant": "pearson_tangent_select_wp",
+      "selected": {
+        "model": "pearson_tangent_0.01",
+        "strength": 0.5,
+        "internal_holdout": {
+          "strength": 0.5,
+          "weighted_raw_mse": 1.4028024663193979,
+          "weighted_clipped_mse": 1.3988606786971327,
+          "wp": 0.4638715435984852,
+          "saturated_weight_fraction": 0.008992468938231468
+        }
+      },
+      "score": 0.6586863024029375,
+      "delta": -0.00014901992872662362,
+      "paired99": [
+        -0.0006388044221655697,
+        0.00028572694826333887
+      ],
+      "callback_us": 65.07160879997755,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 4096,
+      "target": 0,
+      "variant": "direct_wp_select_wp",
+      "selected": {
+        "model": "direct_wp_0.01",
+        "strength": 0.5,
+        "internal_holdout": {
+          "strength": 0.5,
+          "weighted_raw_mse": 1.393480741416698,
+          "weighted_clipped_mse": 1.3894891693759717,
+          "wp": 0.46396544692176345,
+          "saturated_weight_fraction": 0.009102428331971169
+        }
+      },
+      "score": 0.6586649588684204,
+      "delta": -0.00017036346324372786,
+      "paired99": [
+        -0.0007989466657135552,
+        0.0003861511615688239
+      ],
+      "callback_us": 63.671726400085056,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 1024,
+      "target": 1,
+      "variant": "raw_residual_select_wp",
+      "selected": {
+        "model": "raw_residual_0.01",
+        "strength": 0.25,
+        "internal_holdout": {
+          "strength": 0.25,
+          "weighted_raw_mse": 1.3092388443449636,
+          "weighted_clipped_mse": 1.3090083794726073,
+          "wp": 0.4910642223835966,
+          "saturated_weight_fraction": 0.0014366275863721967
+        }
+      },
+      "score": 0.6584815083938244,
+      "delta": -0.0003538139378397309,
+      "paired99": [
+        -0.0010072239688158587,
+        0.00022364184345649324
+      ],
+      "callback_us": 65.29567839999028,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 1024,
+      "target": 1,
+      "variant": "pearson_tangent_select_wp",
+      "selected": {
+        "model": "pearson_tangent_0.01",
+        "strength": 0.25,
+        "internal_holdout": {
+          "strength": 0.25,
+          "weighted_raw_mse": 1.313027570030523,
+          "weighted_clipped_mse": 1.3127732591742274,
+          "wp": 0.49106219350907104,
+          "saturated_weight_fraction": 0.0015597783494740725
+        }
+      },
+      "score": 0.6585231198086761,
+      "delta": -0.0003122025229880254,
+      "paired99": [
+        -0.0009437227980030552,
+        0.00024893760599593265
+      ],
+      "callback_us": 63.80558929999118,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 1024,
+      "target": 1,
+      "variant": "direct_wp_select_wp",
+      "selected": {
+        "model": "direct_wp_0.01",
+        "strength": 0.25,
+        "internal_holdout": {
+          "strength": 0.25,
+          "weighted_raw_mse": 1.311226770465654,
+          "weighted_clipped_mse": 1.3109672856856205,
+          "wp": 0.49107587956083176,
+          "saturated_weight_fraction": 0.001529392902739346
+        }
+      },
+      "score": 0.6584994111381954,
+      "delta": -0.00033591119346865206,
+      "paired99": [
+        -0.0010161384266633774,
+        0.00026991309826256393
+      ],
+      "callback_us": 64.41118324996822,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 4096,
+      "target": 1,
+      "variant": "raw_residual_select_wp",
+      "selected": {
+        "model": "raw_residual_0.01",
+        "strength": 0.5,
+        "internal_holdout": {
+          "strength": 0.5,
+          "weighted_raw_mse": 1.3450837238742999,
+          "weighted_clipped_mse": 1.3447596669572552,
+          "wp": 0.46225034154159256,
+          "saturated_weight_fraction": 0.001223087776452303
+        }
+      },
+      "score": 0.6581310074755282,
+      "delta": -0.0007043148561358681,
+      "paired99": [
+        -0.0018422669447533669,
+        0.0003233876411797859
+      ],
+      "callback_us": 65.14049080002593,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 4096,
+      "target": 1,
+      "variant": "pearson_tangent_select_wp",
+      "selected": {
+        "model": "pearson_tangent_0.01",
+        "strength": 0.5,
+        "internal_holdout": {
+          "strength": 0.5,
+          "weighted_raw_mse": 1.3494760293787496,
+          "weighted_clipped_mse": 1.3490801419032692,
+          "wp": 0.46225147545849193,
+          "saturated_weight_fraction": 0.0015621425118297338
+        }
+      },
+      "score": 0.6582243286619586,
+      "delta": -0.0006109936697055174,
+      "paired99": [
+        -0.0016872718532522616,
+        0.00035405562248660337
+      ],
+      "callback_us": 64.70787234995967,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "objective_alignment",
+      "tier": 4096,
+      "target": 1,
+      "variant": "direct_wp_select_wp",
+      "selected": {
+        "model": "direct_wp_0.01",
+        "strength": 0.5,
+        "internal_holdout": {
+          "strength": 0.5,
+          "weighted_raw_mse": 1.3461668078481734,
+          "weighted_clipped_mse": 1.3456913372417636,
+          "wp": 0.462305065079757,
+          "saturated_weight_fraction": 0.00182212027721107
+        }
+      },
+      "score": 0.6581545548952,
+      "delta": -0.0006807674364640581,
+      "paired99": [
+        -0.0018645182700441504,
+        0.0003894974942968245
+      ],
+      "callback_us": 64.48036740004355,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "group_risk_variance",
+      "tier": 1024,
+      "target": 0,
+      "variant": "group_beta0.0_select_wp",
+      "selected": {
+        "model": "group_beta0.0_ridge1.0",
+        "strength": 0.1,
+        "internal_selection": {
+          "strength": 0.1,
+          "weighted_raw_mse": 1.3763797383557315,
+          "weighted_clipped_mse": 1.3722779654127277,
+          "wp": 0.4788522367719688,
+          "saturated_weight_fraction": 0.012401262298226357
+        }
+      },
+      "score": 0.6587729923449235,
+      "delta": -6.232998674060575e-05,
+      "paired99": [
+        -0.00019447478818142682,
+        6.666681566361823e-05
+      ],
+      "callback_us": 63.909218100096155,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "group_risk_variance",
+      "tier": 1024,
+      "target": 0,
+      "variant": "group_beta100.0_select_wp",
+      "selected": {
+        "model": "group_beta100.0_ridge1.0",
+        "strength": 0.1,
+        "internal_selection": {
+          "strength": 0.1,
+          "weighted_raw_mse": 1.3763670561924388,
+          "weighted_clipped_mse": 1.3722735710113323,
+          "wp": 0.47884933837393534,
+          "saturated_weight_fraction": 0.012401262298226357
+        }
+      },
+      "score": 0.658779872812314,
+      "delta": -5.544951935010367e-05,
+      "paired99": [
+        -0.00017866778626397296,
+        6.903931134402534e-05
+      ],
+      "callback_us": 64.86955405021604,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "group_risk_variance",
+      "tier": 1024,
+      "target": 0,
+      "variant": "group_beta1000.0_select_wp",
+      "selected": {
+        "model": "group_beta1000.0_ridge1.0",
+        "strength": 0.1,
+        "internal_selection": {
+          "strength": 0.1,
+          "weighted_raw_mse": 1.3763244001854942,
+          "weighted_clipped_mse": 1.3722474283702555,
+          "wp": 0.4788504455531538,
+          "saturated_weight_fraction": 0.012385469861328602
+        }
+      },
+      "score": 0.6587927924848154,
+      "delta": -4.2529846848715636e-05,
+      "paired99": [
+        -0.00016847666622588048,
+        8.66240548717868e-05
+      ],
+      "callback_us": 64.28469495009068,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "group_risk_variance",
+      "tier": 1024,
+      "target": 1,
+      "variant": "group_beta0.0_select_wp",
+      "selected": {
+        "model": "group_beta0.0_ridge0.1",
+        "strength": 0.0,
+        "internal_selection": {
+          "strength": 0.0,
+          "weighted_raw_mse": 1.3135247125672058,
+          "weighted_clipped_mse": 1.3132693523926813,
+          "wp": 0.49085647073677596,
+          "saturated_weight_fraction": 0.0016012255800887942
+        }
+      },
+      "score": 0.6588353223316641,
+      "delta": 0.0,
+      "paired99": [
+        0.0,
+        0.0
+      ],
+      "callback_us": 64.47605709981588,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "group_risk_variance",
+      "tier": 1024,
+      "target": 1,
+      "variant": "group_beta100.0_select_wp",
+      "selected": {
+        "model": "group_beta100.0_ridge0.1",
+        "strength": 0.0,
+        "internal_selection": {
+          "strength": 0.0,
+          "weighted_raw_mse": 1.3135247125672058,
+          "weighted_clipped_mse": 1.3132693523926813,
+          "wp": 0.49085647073677596,
+          "saturated_weight_fraction": 0.0016012255800887942
+        }
+      },
+      "score": 0.6588353223316641,
+      "delta": 0.0,
+      "paired99": [
+        0.0,
+        0.0
+      ],
+      "callback_us": 64.50469249972741,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "group_risk_variance",
+      "tier": 1024,
+      "target": 1,
+      "variant": "group_beta1000.0_select_wp",
+      "selected": {
+        "model": "group_beta1000.0_ridge0.1",
+        "strength": 0.0,
+        "internal_selection": {
+          "strength": 0.0,
+          "weighted_raw_mse": 1.3135247125672058,
+          "weighted_clipped_mse": 1.3132693523926813,
+          "wp": 0.49085647073677596,
+          "saturated_weight_fraction": 0.0016012255800887942
+        }
+      },
+      "score": 0.6588353223316641,
+      "delta": 0.0,
+      "paired99": [
+        0.0,
+        0.0
+      ],
+      "callback_us": 64.5390798497317,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "exact_training_moments",
+      "tier": 1024,
+      "target": 0,
+      "variant": "raw_residual_select_wp",
+      "selected": {
+        "model": "raw_residual_1.0",
+        "strength": 0.5,
+        "internal_selection": {
+          "strength": 0.5,
+          "wp": 0.47662192382047214,
+          "weighted_raw_mse": 1.3609085928277613,
+          "weighted_clipped_mse": 1.3580344670199664
+        }
+      },
+      "score": 0.6588225519276221,
+      "delta": -1.2770404042017347e-05,
+      "paired99": [
+        -0.0006722222724350271,
+        0.0006067785364756189
+      ],
+      "callback_us": 65.42986829999933,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "exact_training_moments",
+      "tier": 1024,
+      "target": 0,
+      "variant": "pearson_tangent_select_wp",
+      "selected": {
+        "model": "pearson_tangent_1.0",
+        "strength": 0.1,
+        "internal_selection": {
+          "strength": 0.1,
+          "wp": 0.4763846295344821,
+          "weighted_raw_mse": 1.3785645439760474,
+          "weighted_clipped_mse": 1.3743557572619756
+        }
+      },
+      "score": 0.6588056162713214,
+      "delta": -2.970606034269352e-05,
+      "paired99": [
+        -0.0001240759872598332,
+        5.5179268065309026e-05
+      ],
+      "callback_us": 63.40611825001225,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "exact_training_moments",
+      "tier": 4096,
+      "target": 0,
+      "variant": "raw_residual_select_wp",
+      "selected": {
+        "model": "raw_residual_0.01",
+        "strength": 0.5,
+        "internal_selection": {
+          "strength": 0.5,
+          "wp": 0.4622524878056167,
+          "weighted_raw_mse": 1.3660418710200277,
+          "weighted_clipped_mse": 1.3643626402440567
+        }
+      },
+      "score": 0.6585693700231185,
+      "delta": -0.0002659523085455362,
+      "paired99": [
+        -0.0009653993043906009,
+        0.0003613013908506908
+      ],
+      "callback_us": 66.19228855002045,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    },
+    {
+      "suite": "exact_training_moments",
+      "tier": 4096,
+      "target": 0,
+      "variant": "pearson_tangent_select_wp",
+      "selected": {
+        "model": "pearson_tangent_0.01",
+        "strength": 0.5,
+        "internal_selection": {
+          "strength": 0.5,
+          "wp": 0.4622639441275172,
+          "weighted_raw_mse": 1.4055297642797435,
+          "weighted_clipped_mse": 1.4017017705140296
+        }
+      },
+      "score": 0.6587184272420368,
+      "delta": -0.00011689508962731132,
+      "paired99": [
+        -0.0005925071580608929,
+        0.0003018769272082804
+      ],
+      "callback_us": 66.00214364998394,
+      "status": "scientific_negative_or_insufficient_search_evidence"
+    }
+  ],
+  "best_diagnostic_point": {
+    "directory": "competition_engineering\\runs\\full_moment_objective__4096_t0_20261002",
+    "variant": "raw_residual_1.0@1.0",
+    "score": 0.6590796311188727,
+    "delta": 0.0002443087872086025
+  },
+  "awaiting_promotion": [],
+  "best_eligible_search_wp": 0.6588353223316641,
+  "conclusion": "Lower residual training loss can yield worse official WP. Objective-aware selection mitigates the mismatch, but direct objective fitting alone does not establish a transferable improvement.",
+  "important_limit": "All score evidence reuses the fixed64-sequence search. Bootstrap intervals are descriptive and uncorrected for adaptive selection; this is not independent validation.",
+  "temporal_branch": "Remained closed; no temporal coefficient fitted or timescale tuned.",
+  "next_research_question": "Does conditional target/scoring-selection drift persist within matched causal-input populations? A new fit requires training-side evidence of a stable deployable signal or materially stronger observable population alignment. Current inputs/output values, the scoring predictor and the frozen GRU-state probe did not establish that premise; search gradients must not become a fitting target.",
+  "resource_elapsed_seconds": 6203.256774663925,
+  "configured_resource_window_seconds": 7200,
+  "resource_stop": "Evidence exhausted, not a claim that credits were depleted",
+  "ledger_prefix_sha256_before_closure": "087ec1d75dd325f65db4031deb604a932bbceaa6fea8df20da1faaa1a9747e0f",
+  "diagnostics": {
+    "initial_diagnosis": {
+      "fixed_raw_ridge_strength_path": [
+        {
+          "strength": 0.0,
+          "wp": 0.6362975663455575,
+          "t0_wp": 0.6029161999881875,
+          "raw_mse_t0": 5.093222723801695,
+          "clipped_mse_t0": 2.036626536275947
+        },
+        {
+          "strength": 0.25,
+          "wp": 0.6458380407508195,
+          "t0_wp": 0.6219971487987116,
+          "raw_mse_t0": 3.5202845016498445,
+          "clipped_mse_t0": 1.745625763264516
+        },
+        {
+          "strength": 0.5,
+          "wp": 0.6532446581749314,
+          "t0_wp": 0.6368103836469352,
+          "raw_mse_t0": 2.3292121104131103,
+          "clipped_mse_t0": 1.487813315592291
+        },
+        {
+          "strength": 0.75,
+          "wp": 0.6570268216332453,
+          "t0_wp": 0.6443747105635631,
+          "raw_mse_t0": 1.5200055466214375,
+          "clipped_mse_t0": 1.2680695171732896
+        },
+        {
+          "strength": 1.0,
+          "wp": 0.6580231124329673,
+          "t0_wp": 0.646367292163007,
+          "raw_mse_t0": 1.0926648116245377,
+          "clipped_mse_t0": 1.0661895351299957
+        },
+        {
+          "strength": 1.25,
+          "wp": 0.6541539929184363,
+          "t0_wp": 0.6386290531339451,
+          "raw_mse_t0": 1.0471899047296982,
+          "clipped_mse_t0": 1.0452259367443013
+        },
+        {
+          "strength": 1.5,
+          "wp": 0.6402835036666665,
+          "t0_wp": 0.6108880746304054,
+          "raw_mse_t0": 1.3835808273686732,
+          "clipped_mse_t0": 1.3833820519099886
+        },
+        {
+          "strength": 2.0,
+          "wp": 0.2675325918187241,
+          "t0_wp": -0.1346137490654794,
+          "raw_mse_t0": 3.201960158377947,
+          "clipped_mse_t0": 3.1702687806412913
+        }
+      ],
+      "loss_wp_order_inversions": [
+        {
+          "lower_mse": {
+            "strength": 1.25,
+            "wp": 0.6541539929184363,
+            "t0_wp": 0.6386290531339451,
+            "raw_mse_t0": 1.0471899047296982,
+            "clipped_mse_t0": 1.0452259367443013
+          },
+          "higher_wp": {
+            "strength": 0.75,
+            "wp": 0.6570268216332453,
+            "t0_wp": 0.6443747105635631,
+            "raw_mse_t0": 1.5200055466214375,
+            "clipped_mse_t0": 1.2680695171732896
+          }
+        },
+        {
+          "lower_mse": {
+            "strength": 1.25,
+            "wp": 0.6541539929184363,
+            "t0_wp": 0.6386290531339451,
+            "raw_mse_t0": 1.0471899047296982,
+            "clipped_mse_t0": 1.0452259367443013
+          },
+          "higher_wp": {
+            "strength": 1.0,
+            "wp": 0.6580231124329673,
+            "t0_wp": 0.646367292163007,
+            "raw_mse_t0": 1.0926648116245377,
+            "clipped_mse_t0": 1.0661895351299957
+          }
+        },
+        {
+          "lower_mse": {
+            "strength": 1.5,
+            "wp": 0.6402835036666665,
+            "t0_wp": 0.6108880746304054,
+            "raw_mse_t0": 1.3835808273686732,
+            "clipped_mse_t0": 1.3833820519099886
+          },
+          "higher_wp": {
+            "strength": 0.25,
+            "wp": 0.6458380407508195,
+            "t0_wp": 0.6219971487987116,
+            "raw_mse_t0": 3.5202845016498445,
+            "clipped_mse_t0": 1.745625763264516
+          }
+        },
+        {
+          "lower_mse": {
+            "strength": 1.5,
+            "wp": 0.6402835036666665,
+            "t0_wp": 0.6108880746304054,
+            "raw_mse_t0": 1.3835808273686732,
+            "clipped_mse_t0": 1.3833820519099886
+          },
+          "higher_wp": {
+            "strength": 0.5,
+            "wp": 0.6532446581749314,
+            "t0_wp": 0.6368103836469352,
+            "raw_mse_t0": 2.3292121104131103,
+            "clipped_mse_t0": 1.487813315592291
+          }
+        },
+        {
+          "lower_mse": {
+            "strength": 1.5,
+            "wp": 0.6402835036666665,
+            "t0_wp": 0.6108880746304054,
+            "raw_mse_t0": 1.3835808273686732,
+            "clipped_mse_t0": 1.3833820519099886
+          },
+          "higher_wp": {
+            "strength": 0.75,
+            "wp": 0.6570268216332453,
+            "t0_wp": 0.6443747105635631,
+            "raw_mse_t0": 1.5200055466214375,
+            "clipped_mse_t0": 1.2680695171732896
+          }
+        },
+        {
+          "lower_mse": {
+            "strength": 2.0,
+            "wp": 0.2675325918187241,
+            "t0_wp": -0.1346137490654794,
+            "raw_mse_t0": 3.201960158377947,
+            "clipped_mse_t0": 3.1702687806412913
+          },
+          "higher_wp": {
+            "strength": 0.0,
+            "wp": 0.6362975663455575,
+            "t0_wp": 0.6029161999881875,
+            "raw_mse_t0": 5.093222723801695,
+            "clipped_mse_t0": 2.036626536275947
+          }
+        },
+        {
+          "lower_mse": {
+            "strength": 2.0,
+            "wp": 0.2675325918187241,
+            "t0_wp": -0.1346137490654794,
+            "raw_mse_t0": 3.201960158377947,
+            "clipped_mse_t0": 3.1702687806412913
+          },
+          "higher_wp": {
+            "strength": 0.25,
+            "wp": 0.6458380407508195,
+            "t0_wp": 0.6219971487987116,
+            "raw_mse_t0": 3.5202845016498445,
+            "clipped_mse_t0": 1.745625763264516
+          }
+        }
+      ],
+      "interpretation": "Within an existing frozen residual direction, lower search raw MSE can accompany lower WP.",
+      "limitation": "Search losses are diagnostic; this does not prove lower training loss causes search regression."
+    },
+    "transfer_diagnosis": {
+      "training": {
+        "rows": 509952,
+        "sequences": 1024,
+        "wp": [
+          0.46062958560230066,
+          0.4635325789201443
+        ],
+        "between_sequence_covariance_fraction": [
+          0.32914711679149855,
+          0.3349084954222256
+        ],
+        "weighted_target_mean": [
+          -0.4558501945897129,
+          -0.469945723159988
+        ],
+        "weighted_prediction_mean": [
+          -0.26656597294551726,
+          -0.3797186725780387
+        ],
+        "slope": [
+          0.8452939154649537,
+          0.9670729524676228
+        ]
+      },
+      "search": {
+        "rows": 108139,
+        "sequences": 64,
+        "wp": [
+          0.6479917119603986,
+          0.6696789327029276
+        ],
+        "between_sequence_covariance_fraction": [
+          0.2207379516372498,
+          0.3064122283282733
+        ],
+        "weighted_target_mean": [
+          -0.40531507069309525,
+          -0.22474338335242205
+        ],
+        "weighted_prediction_mean": [
+          -0.22590215141574344,
+          -0.1708329990707495
+        ],
+        "slope": [
+          0.8065009759014318,
+          0.9122361901144157
+        ]
+      },
+      "gradient_cosine_per_target": [
+        0.40232905093724225,
+        -0.10627124536319507
+      ],
+      "training_vs_uniform_search_gradient_cosine": [
+        0.19668073409756734,
+        0.523729265112943
+      ],
+      "uniform_vs_scored_search_gradient_cosine": [
+        0.1347078968177881,
+        0.14084866806902738
+      ],
+      "uniform_search": {
+        "rows": 31872,
+        "sequences": 64,
+        "wp": [
+          0.49156950274776995,
+          0.4911629634845
+        ],
+        "between_sequence_covariance_fraction": [
+          0.33175406154327514,
+          0.39337178117398947
+        ],
+        "weighted_target_mean": [
+          -0.3603784865919358,
+          -0.2344396363349428
+        ],
+        "weighted_prediction_mean": [
+          -0.09706609742603274,
+          -0.17384324281514657
+        ],
+        "slope": [
+          0.7657640652102768,
+          0.844501344844765
+        ]
+      },
+      "top_input_standardized_mean_shifts": [
+        {
+          "feature": 3,
+          "shift": 0.4055847912189529
+        },
+        {
+          "feature": 107,
+          "shift": 0.3710828953112482
+        },
+        {
+          "feature": 65,
+          "shift": 0.33775729064256416
+        },
+        {
+          "feature": 70,
+          "shift": -0.31918690223967455
+        },
+        {
+          "feature": 44,
+          "shift": 0.2975380061751863
+        },
+        {
+          "feature": 56,
+          "shift": 0.2919006203156686
+        },
+        {
+          "feature": 106,
+          "shift": 0.28868726310682874
+        },
+        {
+          "feature": 108,
+          "shift": -0.2884542064243666
+        },
+        {
+          "feature": 54,
+          "shift": -0.2704326024306771
+        },
+        {
+          "feature": 58,
+          "shift": -0.2700699899275143
+        }
+      ],
+      "interpretation": "Checks whether pooled objective directions and feature populations transfer across training/search; covariate shift is not established by mean differences alone.",
+      "next_question": "If aligned fitting fails at both tiers, test whether correction gradients are stable across training sequence groups before considering shift adaptation.",
+      "boundary": "aggregate statistics from fixed training and search caches only"
+    },
+    "population_gradient_diagnosis_v2": {
+      "uniform_search_to_scored_gradient_cosine": [
+        0.04674605686443234,
+        0.20538975530716544
+      ],
+      "weighted_search_to_scored_gradient_cosine": [
+        -0.13096863505661227,
+        0.033579285295844204
+      ],
+      "uniform_training_to_scored_gradient_cosine": [
+        0.40232905093724225,
+        -0.10627124536319507
+      ],
+      "weighted_training_to_scored_gradient_cosine": [
+        0.3341858759803051,
+        -0.08427253061789325
+      ],
+      "propensity": {
+        "step_edges": [
+          99,
+          500,
+          2000,
+          5000,
+          10000,
+          20000
+        ],
+        "magnitude_edges": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1,
+          1.5,
+          2
+        ],
+        "required_counts": [
+          [
+            1773.0,
+            4370.0,
+            8259.0,
+            6282.0,
+            3821.0,
+            657.0,
+            502.0
+          ],
+          [
+            6421.0,
+            15715.0,
+            29321.0,
+            23931.0,
+            15603.0,
+            3890.0,
+            1119.0
+          ],
+          [
+            14240.0,
+            35306.0,
+            57575.0,
+            47555.0,
+            28824.0,
+            6612.0,
+            1888.0
+          ],
+          [
+            22990.0,
+            55166.0,
+            89858.0,
+            81601.0,
+            55060.0,
+            12147.0,
+            3178.0
+          ],
+          [
+            46901.0,
+            118477.0,
+            181097.0,
+            157767.0,
+            105452.0,
+            24116.0,
+            6190.0
+          ]
+        ],
+        "selected_counts": [
+          [
+            12.0,
+            59.0,
+            307.0,
+            705.0,
+            1037.0,
+            159.0,
+            55.0
+          ],
+          [
+            86.0,
+            222.0,
+            865.0,
+            2109.0,
+            3518.0,
+            1025.0,
+            194.0
+          ],
+          [
+            184.0,
+            636.0,
+            2101.0,
+            3988.0,
+            5937.0,
+            1896.0,
+            365.0
+          ],
+          [
+            328.0,
+            1012.0,
+            3043.0,
+            7015.0,
+            11091.0,
+            4018.0,
+            968.0
+          ],
+          [
+            738.0,
+            2584.0,
+            6406.0,
+            12195.0,
+            23147.0,
+            7978.0,
+            2156.0
+          ]
+        ],
+        "focus": [
+          [
+            0.2,
+            0.2,
+            0.4384676909081704,
+            1.3225207139300912,
+            3.197201051814096,
+            2.855007926165949,
+            1.2995635522994233
+          ],
+          [
+            0.2,
+            0.2,
+            0.3476530207439612,
+            1.038180960716432,
+            2.6557924884807282,
+            3.104180442787484,
+            2.0453804825271176
+          ],
+          [
+            0.2,
+            0.2123293913961921,
+            0.42989305509993864,
+            0.987817697280234,
+            2.4260895723114766,
+            3.3777449149402305,
+            2.2789140602331748
+          ],
+          [
+            0.2,
+            0.21616639946543723,
+            0.39891856615923854,
+            1.0125823437205483,
+            2.3725682449769514,
+            3.896114521297929,
+            3.5882411438930695
+          ],
+          [
+            0.2,
+            0.2569279470080177,
+            0.4166579769906619,
+            0.9104439513350898,
+            2.585340073436243,
+            3.8964624067405165,
+            4.102618962045906
+          ]
+        ],
+        "incumbent_sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a",
+        "boundary": "Aggregated search scoring indicators and frozen causal predictions only; no target values"
+      },
+      "search_gradient_scope": "All1273664 required search rows for uniform/weighted directions; all108139 officially scored rows for reference; replaces noisy stride40 diagnostic",
+      "limitation": "Coarse weighting requires within-bin selection ignorability, which is unproven. Gradient alignment is a diagnostic and not a search score improvement.",
+      "prior_negative": "Raw residual coarse propensity fitting failed in the previous campaign; a new objective-aware fit requires materially improved gradient alignment."
+    },
+    "causal_population_diagnosis": {
+      "cross_fitted_auc": 0.8155263246699431,
+      "cross_fitted_log_loss": 0.24726759301302945,
+      "prior_log_loss": 0.2913649732463957,
+      "uniform_to_scored_gradient_cosine": [
+        0.04674605686443313,
+        0.2053897553071661
+      ],
+      "weighted_to_scored_gradient_cosine": [
+        0.2938368303311158,
+        0.15046790302669116
+      ],
+      "optimizer": [
+        {
+          "success": true,
+          "iterations": 19,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        },
+        {
+          "success": true,
+          "iterations": 21,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        },
+        {
+          "success": true,
+          "iterations": 18,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        },
+        {
+          "success": true,
+          "iterations": 18,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        }
+      ],
+      "eligible_targets_for_weighted_fit": [],
+      "classifier_fit_rows": 64000,
+      "diagnostic_rows": 1273664,
+      "source_sha256": "1434ee2913173cdabe22c61fdd145d37d6c61bc03b6ee4bb3d37d87408febeb8",
+      "classifier_sha256": "2ea8e9f79c5260f2b35e9e868a095edc87d4c5485210b95eaee1e6a2cc4c0f31",
+      "decision": "Proceed only for eligible targets; otherwise abandon this weighting hypothesis before fit.",
+      "caveat": "Classifiers are fitted only to scoring indicators, with sequence cross-fitting. Target gradients are adaptive search diagnostics, not independent validation."
+    },
+    "training_thinning_diagnosis": {
+      "full_rows": 20378624,
+      "full_training_wp": [
+        0.4594036540999882,
+        0.4644479529078277
+      ],
+      "phase_comparisons": [
+        {
+          "offset": 0,
+          "rows": 509952,
+          "wp": [
+            0.46062958560230066,
+            0.4635325789201443
+          ],
+          "cosine_to_full": [
+            0.9847271691737997,
+            0.9867321105804955
+          ],
+          "relative_gradient_error": [
+            0.17415490053576607,
+            0.16235979408487614
+          ]
+        },
+        {
+          "offset": 10,
+          "rows": 509952,
+          "wp": [
+            0.4593896526699984,
+            0.4636118151344862
+          ],
+          "cosine_to_full": [
+            0.9859955870272216,
+            0.9869864792290853
+          ],
+          "relative_gradient_error": [
+            0.16708774989769473,
+            0.16327966628518695
+          ]
+        },
+        {
+          "offset": 20,
+          "rows": 509952,
+          "wp": [
+            0.45871265357651575,
+            0.4655859954707081
+          ],
+          "cosine_to_full": [
+            0.9823309857303,
+            0.9843687898724334
+          ],
+          "relative_gradient_error": [
+            0.18828279434737089,
+            0.17703542606128078
+          ]
+        },
+        {
+          "offset": 30,
+          "rows": 508928,
+          "wp": [
+            0.45817233871662155,
+            0.46477576317024016
+          ],
+          "cosine_to_full": [
+            0.9761423942592884,
+            0.9862171246812306
+          ],
+          "relative_gradient_error": [
+            0.23114653193756823,
+            0.18168174060542544
+          ]
+        }
+      ],
+      "eligible_targets_for_full_moment_replication": [
+        0
+      ],
+      "decision": "Replicate exact training moments only for eligible targets; otherwise abandon row thinning as a material explanation."
+    },
+    "frozen_latent_diagnosis": {
+      "latent_gradient_cosine_per_target": [
+        0.1829825389161092,
+        -0.4274382587457533
+      ],
+      "training_latent_gradient_norm": [
+        0.1947985859940844,
+        0.2969138949188549
+      ],
+      "eligible_targets": [],
+      "train_rows": 509952,
+      "search_rows": 108139,
+      "causal_prefix": true,
+      "reset_determinism": true,
+      "baseline_prediction_parity": true,
+      "extractor_sha256": "45e61c6f233e918752c06860e59f6441570a28e456fd1eeaaf7a8bcf1f13f2a4",
+      "decision": "A new fixed-feature readout fit requires the predeclared alignment rule; no temporal dynamics are tuned."
+    }
+  },
+  "evidence_files_sha256": {
+    "competition_engineering\\runs\\objective_alignment_20261002\\campaign.json": "4a831e98a24023554657209e125e4de981a33cb74ede76d5119d3fd09e984fa9",
+    "competition_engineering\\runs\\objective_alignment_20261002\\diagnosis.json": "328a48151e34109853a31b9205ecfefbcb8a8ead0115d097645e4d2990177509",
+    "competition_engineering\\runs\\objective_alignment_20261002\\candidate_checks.json": "3814d42127e5e9366d2e76975c3dff1a4ef864a8120e7eab1f78e426a7780d22",
+    "competition_engineering\\runs\\objective_alignment_20261002\\isolated_training\\fit_identity.json": "5cec9787ad68bcb414d704026c6b366f9a6923c52e0307aaccc2b1b7798c1471",
+    "competition_engineering\\runs\\objective_alignment_4096_20261002\\campaign.json": "f05f5b46e6d0a253bf8a0797162fa519eba90406d58e4e787bbfe617d2c5f797",
+    "competition_engineering\\runs\\objective_alignment_4096_20261002\\diagnosis.json": "4132f32b400800899af87b178d66bdeb8ce02e01aaeb9a411191058aeff1e18f",
+    "competition_engineering\\runs\\objective_alignment_4096_20261002\\candidate_checks.json": "c39b8f94841540a2b52c6d122476b1b3ff3ccec57dcacf8855464e6f1f0fbcc8",
+    "competition_engineering\\runs\\objective_alignment_4096_20261002\\ledger.jsonl": "446341dd485190ce33027bb9a615eb46f41f2187d4430bf31837ad04dad2e743",
+    "competition_engineering\\runs\\objective_alignment_4096_20261002\\isolated_training\\fit_identity.json": "d29930a1e761c9f259a5df046b76969777042b953aaffd3ecdec7c0c1d74ccab",
+    "competition_engineering\\runs\\objective_alignment_t1_20261002\\campaign.json": "f5a99706fde3223fdaa936dadc72865f205aa26888d661a3e6c4fe49f7c709f9",
+    "competition_engineering\\runs\\objective_alignment_t1_20261002\\diagnosis.json": "49c9a8a55f24b3144dc6e0c40489294f6a03ab7cce58865e469102f174aad666",
+    "competition_engineering\\runs\\objective_alignment_t1_20261002\\candidate_checks.json": "3d6bd375875dd1e14b5192f4c967df720787ad0adc32b2a446355d7536796de0",
+    "competition_engineering\\runs\\objective_alignment_t1_20261002\\ledger.jsonl": "1cc907b5b770533cde6426572f3262876113097759f34b2f00bf60640de26ef9",
+    "competition_engineering\\runs\\objective_alignment_t1_20261002\\isolated_training\\fit_identity.json": "36484be99096f65625f32257e8edc5679bcc8db57e4e219e9a6c7f5690f04b71",
+    "competition_engineering\\runs\\objective_alignment_4096_t1_20261002\\campaign.json": "bb84c9e36b0133b75c7a6e6c44e2320bf0f224adbc9e1b7d317b33f0903caf10",
+    "competition_engineering\\runs\\objective_alignment_4096_t1_20261002\\diagnosis.json": "36b698d48c750c393e886fcf2d9bbb5f359539efe2930829ec047d6a6461ad89",
+    "competition_engineering\\runs\\objective_alignment_4096_t1_20261002\\candidate_checks.json": "e6679b96b87616143ca660bfb57e91316b3396c742d364adfc9ae9cbb8db4546",
+    "competition_engineering\\runs\\objective_alignment_4096_t1_20261002\\ledger.jsonl": "5dac6cbcd67c41bb7e1e469ad191b6dce95cd14778e87df4f1d61521ba1189d1",
+    "competition_engineering\\runs\\objective_alignment_4096_t1_20261002\\isolated_training\\fit_identity.json": "907c97767d7a3fcd5fdc6f2f94aed922c2ba90efdc7cc3dc2df04f19c00df896",
+    "competition_engineering\\runs\\group_objective_t0_20261002\\campaign.json": "1f46befc2ff061496f8003a839cc38a9594f75d316ddf4d88eaf5e5b549a2257",
+    "competition_engineering\\runs\\group_objective_t0_20261002\\diagnosis.json": "3098e1ff09627f52bfc5769b3d76c458318565052fb37a16e55fe494ef5c61a5",
+    "competition_engineering\\runs\\group_objective_t0_20261002\\candidate_checks.json": "07b6ac78527e80e436a451b72d58fce2e28313a2084022fdc9f5e81d626e1eb5",
+    "competition_engineering\\runs\\group_objective_t0_20261002\\ledger.jsonl": "83c7e9c00ab2033dc651f80d3b723ebcfd7005185085c57faba5c63de55fe57b",
+    "competition_engineering\\runs\\group_objective_t0_20261002\\isolated_training\\fit_identity.json": "b51dd5eed0ac7b016c5bea72a8936a096a317fa6435217fcbc7de4ae837a4344",
+    "competition_engineering\\runs\\group_objective_t1_20261002\\campaign.json": "a9dff5d12a576457c51f7f1e1ef5145d9f27dfca3a97026a4647864f394d1fdf",
+    "competition_engineering\\runs\\group_objective_t1_20261002\\diagnosis.json": "a8a6f14784cc1986eb0486fd80aa8644263774d36413c2c7df450f9bf0bd0610",
+    "competition_engineering\\runs\\group_objective_t1_20261002\\candidate_checks.json": "e5230fe75014a99dad9ffd3ae374b0e9277f04851603de662da1d46e795148de",
+    "competition_engineering\\runs\\group_objective_t1_20261002\\ledger.jsonl": "b27d8460f5ebf60fe1af00b98d76ed05655f222988c3419118e2b8608c352d80",
+    "competition_engineering\\runs\\group_objective_t1_20261002\\isolated_training\\fit_identity.json": "4ddbb2c1331c1c434bd851f3a6506ee8cd65d7f2b0b91e955cd6b7360ac2fb53",
+    "competition_engineering\\runs\\full_moment_objective_t0_20261002\\campaign.json": "ea4b5c90d48016fc16263fcad1059a56b04955035217ba286ba784b10bf16937",
+    "competition_engineering\\runs\\full_moment_objective_t0_20261002\\diagnosis.json": "2b28d3d57486ed565085ca8593f44b7c723dda7d11223dcab4408267491e17f5",
+    "competition_engineering\\runs\\full_moment_objective_t0_20261002\\candidate_checks.json": "7d54286265a04d28acdf91dbd4bb25106543ab6fb8990ba108fa7f2e0b204cc0",
+    "competition_engineering\\runs\\full_moment_objective_t0_20261002\\ledger.jsonl": "f37c56a7f7c6497f911f5aa91c2aeab556e1ccff757c15afd134286b8ee7fa7e",
+    "competition_engineering\\runs\\full_moment_objective_t0_20261002\\isolated_training\\fit_identity.json": "52710dc28a48dc5c07e33ce663857d8ec7592a14613450eba42302b5f824e454",
+    "competition_engineering\\runs\\full_moment_objective__4096_t0_20261002\\campaign.json": "b2fd528c2ebf8fa0c72f6193a0004ea3cbfc5c109dd4e8a8562dea2e3ac177ac",
+    "competition_engineering\\runs\\full_moment_objective__4096_t0_20261002\\diagnosis.json": "54a4fc6c7d43521b35f278507dca5a6aef74b8d56b1ae21a56d2d7a0d473d2fc",
+    "competition_engineering\\runs\\full_moment_objective__4096_t0_20261002\\candidate_checks.json": "06521528d10f8c1b0882456ab04def4a0eca4296c7416d3efa40b9f1bb52b14d",
+    "competition_engineering\\runs\\full_moment_objective__4096_t0_20261002\\ledger.jsonl": "05bba9f2e39debd4cf962428c6ad3a83138f4f7a2df2c267ed24aabf1b41ef12",
+    "competition_engineering\\runs\\full_moment_objective__4096_t0_20261002\\isolated_training\\fit_identity.json": "2fbd879cac871f4140a85706f075f8467736ceb427afbf719dc2d27759fa932e"
+  },
+  "engineering_checks": {
+    "variants": 22,
+    "callback_us_range": [
+      63.40611825001225,
+      66.19228855002045
+    ],
+    "max_stream_parity_error": 3.5762786865234375e-07
+  },
+  "regression_tests": {
+    "runtime": "Linux Python 3.11",
+    "passed": 41,
+    "failures": 0,
+    "warning": "Pytest cache write permission; test execution unaffected"
+  },
+  "protected_evaluation_performed": false
+}

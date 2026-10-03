@@ -1,0 +1,34 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Lei Yu"
+  ],
+  "card_id": "weighted_correlation_ratio",
+  "card_type": "paper",
+  "causality": "Curve uses only current frozen prediction; no sequence identity, labels or future at inference.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Curator derivation: under dQ proportional to abs(clippedY) times population weight dP, E_Q[clippedY|prediction] maximizes correlation over functions of prediction. A bounded spline tests approximation and transfer while an affine control isolates shape.",
+  "cpu_deployment": "A scalar transform is cheap on CPU.",
+  "curator": "Codex; primary full-paper review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Held-out nonlinear-minus-affine WP gain under both uniform and proxy populations.",
+  "family": "prediction_shape",
+  "incremental_inference": "Two fixed17-knot interpolations per row; no new recurrent state.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "The paper does not study Connectome, target-dependent sample weights, finite-sample spline transfer or clipped prediction deployment. Weighted-measure adaptation and finite-basis experiment are curator derivations; no gain is guaranteed.",
+  "mechanism": "The correlation ratio characterizes the largest Pearson correlation obtainable by transforming only one variable and connects it to conditional expectation and MMSE.",
+  "schema_version": 1,
+  "source_locator": "Introduction correlation-ratio definition; Section3.1 Theorem2 and Remark3, pages1 and4",
+  "source_url": "https://arxiv.org/pdf/1811.03918",
+  "tags": [
+    "correlation-ratio",
+    "weighted-measure",
+    "prediction-shape"
+  ],
+  "title": "On Conditional Correlations",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: a residual scale pattern can motivate checking a low-cost output transform.",
+  "verified_on": "2026-10-03",
+  "version": 1,
+  "year": 2019
+}

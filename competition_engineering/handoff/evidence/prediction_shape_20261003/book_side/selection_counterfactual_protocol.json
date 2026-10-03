@@ -1,0 +1,5 @@
+{
+  "observation": "Primary minus failed; repeat minus and controls chose different t0 strengths. Positive averaged contrasts may mix representation and selector effects.",
+  "counterfactual": "Apply the ORIGINAL selection-frozen minus_r1 strength vector to all six frozen maps on already consumed development rows. No new model, strength search, selected candidate or replication access. Also quantify selection uncertainty for the SAME fixed vector against zero on the already consumed selection population.",
+  "rule": "Report matched-strength minus-control contrasts with paired95 intervals for both fits and their mean. Diagnostic cannot change the failed primary gate."
+}

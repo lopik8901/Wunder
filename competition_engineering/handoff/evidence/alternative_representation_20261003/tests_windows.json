@@ -1,0 +1,20 @@
+{
+  "passed": 101,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "files": [
+    "test_nonlinear_state_campaign.py",
+    "test_representation_campaign.py",
+    "test_frozen_latent_readout.py",
+    "test_root_cause_campaign.py",
+    "test_reassessment_campaign.py",
+    "test_mlevolve_search_history.py",
+    "test_research_foundation.py",
+    "test_research_retrieval.py",
+    "test_mlevolve_search_boundary.py",
+    "test_campaign_onnx.py",
+    "test_campaign_worker_failure.py",
+    "test_sequence_diversity.py",
+    "test_alternative_representation.py"
+  ],
+  "log_sha256": "7c77b0c73575906cfca40c95f297361cf3f0d67163dcd970062f4724af67e0d1"
+}

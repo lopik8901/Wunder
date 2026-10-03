@@ -1,0 +1,42 @@
+{
+  "cross_fitted_auc": 0.8155263246699431,
+  "cross_fitted_log_loss": 0.24726759301302945,
+  "prior_log_loss": 0.2913649732463957,
+  "uniform_to_scored_gradient_cosine": [
+    0.04674605686443313,
+    0.2053897553071661
+  ],
+  "weighted_to_scored_gradient_cosine": [
+    0.2938368303311158,
+    0.15046790302669116
+  ],
+  "optimizer": [
+    {
+      "success": true,
+      "iterations": 19,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "success": true,
+      "iterations": 21,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "success": true,
+      "iterations": 18,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    },
+    {
+      "success": true,
+      "iterations": 18,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    }
+  ],
+  "eligible_targets_for_weighted_fit": [],
+  "classifier_fit_rows": 64000,
+  "diagnostic_rows": 1273664,
+  "source_sha256": "1434ee2913173cdabe22c61fdd145d37d6c61bc03b6ee4bb3d37d87408febeb8",
+  "classifier_sha256": "2ea8e9f79c5260f2b35e9e868a095edc87d4c5485210b95eaee1e6a2cc4c0f31",
+  "decision": "Proceed only for eligible targets; otherwise abandon this weighting hypothesis before fit.",
+  "caveat": "Classifiers are fitted only to scoring indicators, with sequence cross-fitting. Target gradients are adaptive search diagnostics, not independent validation."
+}

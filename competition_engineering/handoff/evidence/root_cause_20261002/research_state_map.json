@@ -1,0 +1,129 @@
+{
+  "strongly_supported": [
+    "Current-feature residual ridge and target-specific combinations improved historical search roots.",
+    "Official WP selection can materially outperform residual-MSE selection.",
+    "Clipping, sequence resets and all-required-row callbacks matter; fused ONNX with preallocated buffers makes current readouts feasible.",
+    "Small adaptively selected point gains do not establish generalizable improvement."
+  ],
+  "partially_supported": [
+    "More training sequences helped original ridge/magnitude/gated branches, but 4096-sequence incremental aligned fits did not reliably help.",
+    "Nonlinear t0 trees showed a tiny late-position signal, but uncertainty crossed zero and Python inference was expensive.",
+    "Scoring selection changes observable populations; causal inputs predict selection, but weighting did not align target gradients.",
+    "TCNs helped an older ridge parent modestly, but were inferior to the current combo and often marginal on CPU."
+  ],
+  "weakened": [
+    "Objective mismatch alone explains the remaining bottleneck: 60 controlled fits failed to establish replacement.",
+    "Global nonlinear expansions, output splines, innovation gates or a late-only linear map resolve current residuals.",
+    "Tested additive EMA/lag and featurewise bilinear temporal corrections improve the combo.",
+    "Coarse propensity or the tested current-input classifier makes scoring selection ignorable.",
+    "Simple fixed-GRU latent readout deserves a fit solely from point-gradient transfer."
+  ],
+  "not_adequately_tested": [
+    "Sequence-level uncertainty and dimensional noise of training/search correction-gradient alignment.",
+    "Conditional target shift after matching causal observable populations, versus random search-sequence variation.",
+    "Fresh training-derived, correction-disjoint prospective selection under scoring-like regimes.",
+    "End-to-end learned dynamics, learned cross-feature causal interactions, input normalization under shift; broad architectural sweeps are not yet justified."
+  ],
+  "systematic_errors": [
+    "Incumbent t0 WP 0.647991712 is lower than t1 0.669678933; earlier combo improvements were smallest in late t0.",
+    "Large per-sequence score variation and highly persistent clipped residuals coexist with weak current/lagged feature-residual correlations.",
+    "Training/uniform-search WP near 0.46-0.49 differs sharply from officially scored search WP near 0.66.",
+    "Training WP gains often fail to transfer; observable scoring-selection AUC is not sufficient evidence for target transport."
+  ],
+  "contradictions": [
+    "More data helped original ridge but not new corrections: marginal information, selection bias and population mismatch compete.",
+    "Persistent residuals did not yield useful temporal correction: persistence is not causal predictability.",
+    "Better loss and better training WP both sometimes worsen search WP: optimization cannot identify missing transferable information.",
+    "High scoring-selector AUC coexists with poor gradient alignment: prediction of mask is not proof of ignorability.",
+    "A low high-dimensional gradient cosine may reflect finite-sequence noise rather than a stable directional conflict."
+  ],
+  "methodological_limitations": [
+    "82 MLEvolve attempts plus many manual fits reused one 64-sequence search; bootstrap intervals do not correct adaptive selection.",
+    "Splitting already-exposed search into new halves cannot restore independence.",
+    "Correction-only internal selection is not independent validation of the already-trained/selected incumbent.",
+    "Point gradient-cosine launch rules lacked sequence-level uncertainty; quantify uncertainty before continuing their use.",
+    "Early MLEvolve history/root is stale relative to manual incumbent and newer research; dedicated persistent lessons must be visible.",
+    "CPU measurements differed with concurrency and callback representation; serialize comparable actual callbacks.",
+    "Legacy global ledger mixes protected/search feedback and is excluded from this synthesis."
+  ],
+  "mlevolve_attempts": 82,
+  "status_counts": {
+    "success": 74,
+    "error": 8
+  },
+  "routine_metric_records": 74,
+  "history_best_search_wp": 0.6570753650184309,
+  "incumbent": {
+    "wp": 0.6588353223316641,
+    "sha256": "7aa3204522ef118f664e6677f5e9a6ed5ad296b0e9466d9884906abc5b8ddb0a"
+  },
+  "reviewed_sources_sha256": {
+    "competition_engineering\\reports\\manual_research_search_only_20261001.json": "7d3f8b2edc38ca4e5dd9ef611428607f280b4b0a2f61ced91f10c0f5bb4d6f08",
+    "competition_engineering\\reports\\manual_search_loop_five_20261001.json": "5ecb47e054405b1457b8cc1ff71dacefd8e0b064821d47642269e9ff6b133895",
+    "competition_engineering\\reports\\manual_combo_search_atlas_20261001.json": "8e369dfd2e285205d3dbde916e0cac1209f2f01a04c2ff96222634e78c9051fe",
+    "competition_engineering\\runs\\autonomous_20261001\\FINAL_REPORT.json": "1b4e4bc89923cdfa8ada194b61a0b01c5e7abd0a0ddaae57e05aef72cee5673c",
+    "competition_engineering\\runs\\objective_alignment_20261002\\final_review.json": "4bedcfd580e684cad8af08de89ee38454762df506934b92a90357c7211597500",
+    "competition_engineering\\mlevolve_runs\\20260929_005447_connectome_gpu_search\\experiments\\history.jsonl": "c9dd4490da144c3d479b52b8e7e6ae0fb7b99673d62fdb69607b9880d8e5acdf",
+    "competition_engineering\\mlevolve_runs\\20260929_005856_connectome_gpu_search\\experiments\\history.jsonl": "2093c6e0238015baf8eff2013526196e6867ff783e5f45f38cba0a47c42f9c79",
+    "competition_engineering\\mlevolve_runs\\20260929_013815_connectome_gpu_search\\experiments\\history.jsonl": "c947319b222c6ad2382cb91eb3b902ffde6acc2b7ae8835ec41b386925c2f925",
+    "competition_engineering\\mlevolve_runs\\20260929_014231_connectome_gpu_search\\experiments\\history.jsonl": "ce33909e5593d619adb801cb4cbf92c801e6644d1e04e9e82655e487343f9cbe",
+    "competition_engineering\\mlevolve_runs\\20260929_234520_connectome_gpu_search\\experiments\\history.jsonl": "1e3f3e1fd2d198f8e1680299f2cacf4de8a77dd437b47b98ff8bac1a796af40c",
+    "competition_engineering\\mlevolve_runs\\20260930_002932_connectome_gpu_search\\experiments\\history.jsonl": "38a491cf703a55cffa191526c75f08e07a04193d6ce7a6b595b4fe0ef48b64b0",
+    "competition_engineering\\mlevolve_runs\\20260930_005618_connectome_gpu_search\\experiments\\history.jsonl": "93078080fd9d58b614e28643880892d075207e64b3950c54ef718d30ebc90ce6",
+    "competition_engineering\\mlevolve_runs\\20260930_012054_connectome_gpu_search\\experiments\\history.jsonl": "3de5c986b80509ac103abccf2a98c9dae6a12f16b1636fa24394501c123f5a26",
+    "competition_engineering\\mlevolve_runs\\20260930_130601_connectome_gpu_search\\experiments\\history.jsonl": "ca283aef93c3022a9d779bf7f33b6d029301b6475e054b8ed278d96f63c55b7f",
+    "competition_engineering\\mlevolve_runs\\20260930_131644_connectome_gpu_search\\experiments\\history.jsonl": "074c689c81f201561c531f5852f22f5d0c16cd98d1d7e08373a0baa226c90661",
+    "competition_engineering\\mlevolve_runs\\20260930_134047_connectome_gpu_search\\experiments\\history.jsonl": "91324f017e04b25f308545ce28b9926a1e2aa3c11d091ccbc57fedd73e06652a",
+    "competition_engineering\\mlevolve_runs\\20260930_172740_connectome_gpu_search\\experiments\\history.jsonl": "e6c321d9d29329099c0567a480a49ef6a91a9247a75e148d908d1fcafc541db4",
+    "competition_engineering\\mlevolve_runs\\20260930_190219_connectome_gpu_search\\experiments\\history.jsonl": "32b9e44330fd9769cf110fd70f410abadef18817a3d3e11465b22c28076069fe",
+    "competition_engineering\\mlevolve_runs\\20260930_191546_connectome_gpu_search\\experiments\\history.jsonl": "b57f050aac8eb5076ce681c37f11732c43a7619ef87a5a96278a15c5ce06557c",
+    "competition_engineering\\mlevolve_runs\\20260930_193625_connectome_gpu_search\\experiments\\history.jsonl": "55aea8058e35e8cbf615f2d002b76a41025a2282ce1e3a3325c3df0db41d184e",
+    "competition_engineering\\mlevolve_runs\\20260930_195943_connectome_gpu_search\\experiments\\history.jsonl": "789f01cbcfc2345fc1a8449b4e72dd14e5b7406139baf234e03a18614548cfa5"
+  },
+  "library_manifest_sha256": "95919ac23f9188a45f57b0634ad686ef1d15bd3053a890d3be21ee35e55a7f2e",
+  "first_experiment": "Diagnose sequence-level gradient uncertainty and scoring-population contrast; no new model fit or parameter sweep.",
+  "continuation_updates": {
+    "supported": [
+      "Use official clipped weighted Pearson for model and hyperparameter selection whenever feasible. Lower residual MSE does not imply higher WP.",
+      "Point-gradient cosine is unreliable at the current 64-sequence search size: median split-half agreement was 0.16 for t0 and 0.07 for t1. Include sequence uncertainty before rejecting a representation.",
+      "Frozen t1 corrections improve all-required-row WP but regress officially scored WP. Their paired population contrasts exclude zero, survive unclipped prediction and within-sequence checks, and remain negative after influential-sequence deletion.",
+      "A nonlinear causal mask predictor improved target 0 population-gradient transport over the linear predictor under a prospective uncertainty rule. This supports a bounded weighted-readout experiment, not a new incumbent.",
+      "Nonlinear weighting improved training-side t0 gradient stability, but source-to-official-search alignment remained uncertain. Better mask prediction alone did not establish a stronger correction."
+    ],
+    "weakened": [
+      {
+        "hypothesis": "Objective misalignment alone is the main remaining bottleneck.",
+        "reason": "60 fits in eight suites; objective-aware selection helped, but no convincing replacement."
+      },
+      {
+        "hypothesis": "Low point-gradient alignment establishes a stable causal transfer conflict.",
+        "reason": "Bootstrap intervals span both signs and split-half gradients are unstable."
+      },
+      {
+        "hypothesis": "Clipping or a few outlier sequences explain the t1 population contrast.",
+        "reason": "Contrast survives diagnostic counterfactuals."
+      },
+      {
+        "hypothesis": "The existing linear causal proxy is a sufficient selection substitute.",
+        "reason": "Prospective training masks selected an officially inferior t1 correction; audit intervals included zero."
+      },
+      {
+        "hypothesis": "A nonlinear causal scoring predictor alone makes a fixed current-row residual readout transferable.",
+        "reason": "Weighted fit scored0.658830952; paired99 interval crosses zero. Mask-informed selection point gain was only0.0000115."
+      }
+    ],
+    "remaining_explanations": [
+      "Clipped scoring-probability weights distort the selected population.",
+      "Observable scoring propensity does not capture conditional correction efficacy.",
+      "Python tree inference overhead prevented a fair deployable test of compact interactions.",
+      "Adaptive reuse and sequence variance limit credible detection of small improvements."
+    ],
+    "decisions": [
+      "First compare frozen capped and uncapped weights without fitting a correction.",
+      "Keep objective grids and old temporal mechanisms closed.",
+      "A matched tree execution repair may justify one training-selected compact interaction fit."
+    ],
+    "previous_final_report_sha256": "48e469c07e4b8c1b7e762e107cdc76e76ee02047f72ce6861dc7616e09f28dd3",
+    "scope": "Prior map plus completed six-diagnostic reassessment and weighted-readout evidence; no protected feedback."
+  }
+}

@@ -64,6 +64,7 @@ def run():
         interpreter = BoundedInterpreter(cfg)
         interpreter.agent = agent
         agent.connectome_search_history_provider = interpreter.planning_history
+        agent.connectome_search_records_provider = lambda: interpreter.search_records
     else:
         interpreter = Interpreter(
             cfg.workspace_dir, **OmegaConf.to_container(cfg.exec), cfg=cfg  # type: ignore

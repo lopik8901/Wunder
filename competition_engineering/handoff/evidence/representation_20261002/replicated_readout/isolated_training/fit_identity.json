@@ -1,0 +1,7 @@
+{
+  "train.py": "45669586a1de2b34fc595500cfe1518d88ace0590a1478b9821b70e606ecad6d",
+  "artifacts/models.npz": "c567e66c7502858ddbed7d91e4edcb5c90818e86f9b0e688a027e43c620bf04e",
+  "artifacts/training.json": "416a9a6c9b6787dc75b469ee6f5dd2afd7cd969d281fb58932cd69f7e98529e3",
+  "artifacts/selection_moments.npz": "909dbc2ff15457d7a96adf452eaac91d7b5c26d5ded8dba80507f7e8c3476653",
+  "artifacts/fit_grams.npz": "e3262e44f97888afc0d4cf575bdff81918a0ffcc69ffad430bdd6575aac72867"
+}

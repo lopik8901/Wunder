@@ -1,0 +1,2510 @@
+{
+  "count": 82,
+  "domain": "Dedicated search-only retrospective history; adaptively reused64-sequence search, not independent validation. Early contaminated pilot is not an uncontaminated experiment; supervisor feedback remains excluded.",
+  "records": [
+    {
+      "node_id": "6a16a5e112a84ba08695eec8c226d5f0",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Denser causal row sampling may capture short target changes missed by wider spacing; ridge regularization should control redundancy between neighboring rows.",
+      "search_scores": {
+        "WP_t0": 0.6461630351715718,
+        "WP_t1": 0.6642808033240141,
+        "combined_WP": 0.6552219192477929
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 5,
+        "ridge_penalty": 0.01,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 4076544,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "0fa65cb2405147d2bdaf5d663c2fdd08",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "With stride-5 sampling, the larger set of causal training rows may support a tenfold weaker ridge penalty, preserving useful residual coefficients and improving both targets' global WP.",
+      "search_scores": {
+        "WP_t0": 0.6460373630615254,
+        "WP_t1": 0.6636534740154604,
+        "combined_WP": 0.6548454185384929
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 5,
+        "ridge_penalty": 0.001,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 4076544,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "678ff6c8c6c64954b2434fdeb8ce2b42",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Sampling every five rows may capture brief causal responses missed by the parent ridge's temporal sampling, improving both targets' global weighted Pearson without relying on another TCN.",
+      "search_scores": {
+        "WP_t0": 0.6460373630615254,
+        "WP_t1": 0.6636534740154604,
+        "combined_WP": 0.6548454185384929
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 5,
+        "ridge_penalty": 0.001,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 4076544,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "39db4d0555264ef7a7ece938dd0a5e67",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Increasing the ridge penalty from 0.001 to 0.01 may suppress noisy coefficients from overlapping causal features and improve two-target global weighted Pearson on the fixed tuning set.",
+      "search_scores": {
+        "WP_t0": 0.6461630351715718,
+        "WP_t1": 0.6642808033240141,
+        "combined_WP": 0.6552219192477929
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 5,
+        "ridge_penalty": 0.01,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 4076544,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "22ed1961bfaa4aa380dbfca1384e4a66",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Increasing the ridge penalty from 0.01 to 0.1 may further reduce variance from correlated causal features, improving two-target global weighted Pearson on the fixed tuning set.",
+      "search_scores": {
+        "WP_t0": 0.6463085915507296,
+        "WP_t1": 0.6663151746823596,
+        "combined_WP": 0.6563118831165446
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 5,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 4076544,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "cc5a2264ba6b4540aaeaed2080bf2ccc",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Adjacent causal rows may be redundant; increasing sample stride from 5 to 10 may reduce overrepresentation of slow periods and improve two-target tuning WP.",
+      "search_scores": {
+        "WP_t0": 0.6463107299529302,
+        "WP_t1": 0.6663766371969017,
+        "combined_WP": 0.6563436835749159
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "538e760c97114ee6b928ee4439ebc9c8",
+      "status": "error",
+      "mechanism": "gpu_residual",
+      "hypothesis": "A causal TCN on the best regularized ridge pilot can learn temporal residual interactions that linear correction misses; clipped targets may stabilize its short training run.",
+      "search_scores": {},
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 2,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {},
+      "cpu_us": null
+    },
+    {
+      "node_id": "9eeaafd6ca5d4f9989f542cc4d5a0e15",
+      "status": "error",
+      "mechanism": "gpu_residual",
+      "hypothesis": "A causal TCN trained on the best measured ridge system can learn short-lived nonlinear residuals that its regularized linear features miss; clipping may stabilize those residual targets.",
+      "search_scores": {},
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 2,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {},
+      "cpu_us": null
+    },
+    {
+      "node_id": "32a2358df6224d999d3fa41d158b70a4",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Full-precision training may prevent the non-finite gradients seen with mixed precision while testing whether a causal TCN adds short-lived nonlinear corrections to the best measured ridge.",
+      "search_scores": {
+        "WP_t0": 0.6469850454436143,
+        "WP_t1": 0.6664477425407451,
+        "combined_WP": 0.6567163939921797
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 2,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 40757248,
+        "train_seconds": 125.43626620000578,
+        "loss_first80": 1.2096533074975013,
+        "loss_last80": 1.3078529931604863,
+        "updates": 10240
+      },
+      "cpu_us": 97.92122500075493
+    },
+    {
+      "node_id": "8a5bb6638bfb4bae95ac820ae1094562",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "The rising training loss in the two-epoch TCN run suggests later updates may fit residual noise; one epoch may retain useful causal corrections and improve tuning WP.",
+      "search_scores": {
+        "WP_t0": 0.6463107299529302,
+        "WP_t1": 0.6663766388746393,
+        "combined_WP": 0.6563436844137847
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 20378624,
+        "train_seconds": 63.37042089999886,
+        "loss_first80": 1.2096533074975013,
+        "loss_last80": 1.306331879645586,
+        "updates": 5120
+      },
+      "cpu_us": 98.81254000065383
+    },
+    {
+      "node_id": "51e2f66f89a24b39860faef00a5f7935",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Clipping may erase large residual corrections relevant to global WP; training the same one-epoch causal TCN on raw targets may improve on the pilot-best ridge base.",
+      "search_scores": {
+        "WP_t0": 0.6463107299529302,
+        "WP_t1": 0.6663911782544232,
+        "combined_WP": 0.6563509541036767
+      },
+      "settings": {
+        "target_mode": "raw",
+        "epochs": 1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 20378624,
+        "train_seconds": 64.19501389999641,
+        "loss_first80": 1.4711904861032963,
+        "loss_last80": 1.6290381252765656,
+        "updates": 5120
+      },
+      "cpu_us": 97.68776499986416
+    },
+    {
+      "node_id": "d1046af1365c437eba0d58f1d04206b3",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Clipping t0 as well as t1 may reduce the influence of rare large residuals and improve global WP; keep the best measured ridge training settings fixed to isolate this target-representation change.",
+      "search_scores": {
+        "WP_t0": 0.6444671721929238,
+        "WP_t1": 0.6663766371969017,
+        "combined_WP": 0.6554219046949128
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "ae085b5acd8a4ba5a2631163e682708b",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Two epochs may let a causal TCN learn useful corrections for large residuals that clipped targets suppress; compare raw-target training with the best two-epoch clipped run.",
+      "search_scores": {
+        "WP_t0": 0.6463107299529302,
+        "WP_t1": 0.6663956777631782,
+        "combined_WP": 0.6563532038580542
+      },
+      "settings": {
+        "target_mode": "raw",
+        "epochs": 2,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 40757248,
+        "train_seconds": 129.06591689999914,
+        "loss_first80": 1.4711904861032963,
+        "loss_last80": 1.629346090555191,
+        "updates": 10240
+      },
+      "cpu_us": 98.07594500016421
+    },
+    {
+      "node_id": "ec57c43f6ceb437da3dcdc3dfcd3564a",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Clipping t0 as well as t1 may reduce the influence of extreme residuals on the weaker target, improving mean global weighted Pearson under the regularization that worked best in prior pilots.",
+      "search_scores": {
+        "WP_t0": 0.6444671721929238,
+        "WP_t1": 0.6663766371969017,
+        "combined_WP": 0.6554219046949128
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "b25b7a9f99004b3398cce6ebf4dc6e38",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "A two-epoch causal TCN on the best ridge pilot may capture short-range nonlinear sequence effects left in its residuals and raise combined global WP.",
+      "search_scores": {
+        "WP_t0": 0.6463107299529302,
+        "WP_t1": 0.6663956777631782,
+        "combined_WP": 0.6563532038580542
+      },
+      "settings": {
+        "target_mode": "raw",
+        "epochs": 2,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 40757248,
+        "train_seconds": 143.66513660000055,
+        "loss_first80": 1.4711904861032963,
+        "loss_last80": 1.629346090555191,
+        "updates": 10240
+      },
+      "cpu_us": 98.67761499917833
+    },
+    {
+      "node_id": "5c5d71ea546647d39b385d7d4a954c91",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Clipped residual targets may reduce outlier-driven TCN updates, preserving the ridge pilot's t1 gain while improving the two-epoch causal correction.",
+      "search_scores": {
+        "WP_t0": 0.6469850454436143,
+        "WP_t1": 0.6664477425407451,
+        "combined_WP": 0.6567163939921797
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 2,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 40757248,
+        "train_seconds": 138.91470950000803,
+        "loss_first80": 1.2096533074975013,
+        "loss_last80": 1.3078529931604863,
+        "updates": 10240
+      },
+      "cpu_us": 96.05395000107819
+    },
+    {
+      "node_id": "c546969b01624e2cb6b1efc797c6576a",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "The second TCN epoch may fit noisy clipped residuals: loss rose across update windows. One epoch may retain the causal correction and improve tuning WP.",
+      "search_scores": {
+        "WP_t0": 0.6463107299529302,
+        "WP_t1": 0.6663766388746393,
+        "combined_WP": 0.6563436844137847
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 20378624,
+        "train_seconds": 66.01129500000388,
+        "loss_first80": 1.2096533074975013,
+        "loss_last80": 1.306331879645586,
+        "updates": 5120
+      },
+      "cpu_us": 99.32241500064265
+    },
+    {
+      "node_id": "b5a947433b9547fcb336358810ccf590",
+      "status": "error",
+      "mechanism": "unknown",
+      "hypothesis": "",
+      "search_scores": {},
+      "settings": {},
+      "signature": null,
+      "training_diagnostics": {},
+      "cpu_us": null
+    },
+    {
+      "node_id": "f0a4835d86c14b13b93c3a5c263c23a1",
+      "status": "error",
+      "mechanism": "generated",
+      "hypothesis": "Causal fast and slow state traces plus nonlinear random features may capture connectome response dynamics missed by static ridge and short residual TCNs.",
+      "search_scores": {},
+      "settings": {},
+      "signature": null,
+      "training_diagnostics": {},
+      "cpu_us": null
+    },
+    {
+      "node_id": "7b6bb9a030cc4a96819c6a8d3f0dc292",
+      "status": "error",
+      "mechanism": "unknown",
+      "hypothesis": "",
+      "search_scores": {},
+      "settings": {},
+      "signature": null,
+      "training_diagnostics": {},
+      "cpu_us": null
+    },
+    {
+      "node_id": "ea81d4ddd62b4dceba4f19714803a979",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride 20 reduces redundant training rows while preserving the target-specific gain seen with penalty 0.1 and raw t0 versus clipped t1 targets.",
+      "search_scores": {
+        "WP_t0": 0.6462278889608127,
+        "WP_t1": 0.6664824057384622,
+        "combined_WP": 0.6563551473496374
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "b8f15063024f498b8e3804754ae97439",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Test whether a third full-precision epoch improves the clipped causal TCN residual on the pilot-best ridge base.",
+      "search_scores": {
+        "WP_t0": 0.6470331460792011,
+        "WP_t1": 0.666853543046206,
+        "combined_WP": 0.6569433445627035
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 3,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 61135872,
+        "train_seconds": 186.7485366999972,
+        "loss_first80": 1.2096533074975013,
+        "loss_last80": 1.2980657085776328,
+        "updates": 15360
+      },
+      "cpu_us": 89.40460499998153
+    },
+    {
+      "node_id": "0f06173a93ea42e8b485e3b84f321d0c",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Test whether three full-precision clipped residual epochs correct the frozen incumbent ridge's distinct errors better than the pilot-best ridge base.",
+      "search_scores": {
+        "WP_t0": 0.646126265019629,
+        "WP_t1": 0.6637674635202809,
+        "combined_WP": 0.654946864269955
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 3,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 61135872,
+        "train_seconds": 192.5403273999982,
+        "loss_first80": 1.1820260390639306,
+        "loss_last80": 1.293557968363166,
+        "updates": 15360
+      },
+      "cpu_us": 85.69496500003879
+    },
+    {
+      "node_id": "ef2e0367d3af498494d1caa262230736",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Test whether a third full-precision clipped residual epoch on the GRU improves both targets beyond the previously scored two-epoch checkpoint.",
+      "search_scores": {
+        "WP_t0": 0.6397439726323781,
+        "WP_t1": 0.6596266753790385,
+        "combined_WP": 0.6496853240057083
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 3,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 61135872,
+        "train_seconds": 126.93036630000279,
+        "loss_first80": 2.5706091560423374,
+        "loss_last80": 1.3102185267955064,
+        "updates": 15360
+      },
+      "cpu_us": 76.32749000003969
+    },
+    {
+      "node_id": "bfa66b23ed38488bb20ececff61c1f89",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Use the previously scored two-epoch full-precision clipped residual TCN; the third epoch reduced search WP substantially.",
+      "search_scores": {
+        "WP_t0": 0.640757467560471,
+        "WP_t1": 0.663162518510079,
+        "combined_WP": 0.6519599930352751
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 2,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 40757248,
+        "train_seconds": 84.25462829999742,
+        "loss_first80": 2.5706091560423374,
+        "loss_last80": 1.3322450857609511,
+        "updates": 10240
+      },
+      "cpu_us": 76.40535999998974
+    },
+    {
+      "node_id": "89d91c0078d3432b94d9e3a229eaa0c6",
+      "status": "success",
+      "mechanism": "generated",
+      "hypothesis": "Test whether fast and slow causal averages of the input improve two-target ridge predictions by capturing persistent state absent from current-row features.",
+      "search_scores": {
+        "WP_t0": 0.5918048838308522,
+        "WP_t1": 0.6149150045598448,
+        "combined_WP": 0.6033599441953486
+      },
+      "settings": {},
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1018880
+      },
+      "cpu_us": 21.605787752241667
+    },
+    {
+      "node_id": "0b4b2f1287064f14bb3f0bf10f5b2e9b",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Test whether three epochs on raw residual targets improve the pilot-best ridge TCN by retaining target extremes that clipping may suppress.",
+      "search_scores": {
+        "WP_t0": 0.6463162273399761,
+        "WP_t1": 0.6664424252822695,
+        "combined_WP": 0.6563793263111228
+      },
+      "settings": {
+        "target_mode": "raw",
+        "epochs": 3,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 61135872,
+        "train_seconds": 186.88552530000015,
+        "loss_first80": 1.4711904861032963,
+        "loss_last80": 1.593880457803607,
+        "updates": 15360
+      },
+      "cpu_us": 85.5282200000147
+    },
+    {
+      "node_id": "b0cd2a40107745aa8aced66def30845a",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride 40 reduces redundant training rows and improves target-specific ridge WP, extending the small search-split gains observed from strides 5 through 20.",
+      "search_scores": {
+        "WP_t0": 0.6460785535741768,
+        "WP_t1": 0.666520206365312,
+        "combined_WP": 0.6562993799697443
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 40,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 509952,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "8c687b1d8a6b448fbdf912e7f0284bf7",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether clipping t0 and fitting raw t1 improves target-specific ridge WP at stride 20; the prior raw-t0, clipped-t1 fit may suppress useful t1 variation.",
+      "search_scores": {
+        "WP_t0": 0.6443148994562374,
+        "WP_t1": 0.6652183662777261,
+        "combined_WP": 0.6547666328669818
+      },
+      "settings": {
+        "target_mode": "t0_clipped_t1_raw",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "b865560d3cea4277b29a763a72e22634",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Test whether three raw-target residual TCN epochs recover target excursions lost to clipping when trained on the pilot-best ridge.",
+      "search_scores": {
+        "WP_t0": 0.6463162273399761,
+        "WP_t1": 0.6664424252822695,
+        "combined_WP": 0.6563793263111228
+      },
+      "settings": {
+        "target_mode": "raw",
+        "epochs": 3,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 61135872,
+        "train_seconds": 264.12542490000124,
+        "loss_first80": 1.4711904861032963,
+        "loss_last80": 1.593880457803607,
+        "updates": 15360
+      },
+      "cpu_us": 85.20187500016618
+    },
+    {
+      "node_id": "fb0b8073a1e8416bbb9a9e321c6f1a00",
+      "status": "success",
+      "mechanism": "generated",
+      "hypothesis": "Test whether quadratic current-state features improve the two-target fit beyond linear ridge and the clipped residual TCN.",
+      "search_scores": {
+        "WP_t0": 0.5531977533010056,
+        "WP_t1": 0.5649354341103435,
+        "combined_WP": 0.5590665937056746
+      },
+      "settings": {},
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 508928
+      },
+      "cpu_us": 12.534354199169684
+    },
+    {
+      "node_id": "67f5cd48928644fa9307bb80533a566c",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether downweighting the GRU contribution for t1 improves residual fitting, while retaining the strongest measured ridge penalty and target treatment.",
+      "search_scores": {
+        "WP_t0": 0.6464324250124943,
+        "WP_t1": 0.6664740093286557,
+        "combined_WP": 0.656453217170575
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.6
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "38b218831850489f982046546800010e",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether reducing the t1 GRU calibration scale from 0.6 to 0.5 improves target-specific residual fitting.",
+      "search_scores": {
+        "WP_t0": 0.64656832616375,
+        "WP_t1": 0.6665749119465246,
+        "combined_WP": 0.6565716190551374
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "c5ffea3f0db44fa0bd393c63af491f0b",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether reducing the t0 GRU calibration scale to 0.5 improves residual fitting, while retaining the t1 scale that improved the parent.",
+      "search_scores": {
+        "WP_t0": 0.6464550022805268,
+        "WP_t1": 0.6661328358622681,
+        "combined_WP": 0.6562939190713974
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.5,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "dc1df11a4be74f3b8cc9781954b3e233",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether increasing the t0 GRU calibration scale to 1.0 improves residual fitting after reducing it to 0.5 lowered search WP; retain the t1 scale and other ridge settings.",
+      "search_scores": {
+        "WP_t0": 0.6463341246211368,
+        "WP_t1": 0.6667612592232333,
+        "combined_WP": 0.6565476919221851
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          1.0,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "cac4f16b8a2e47f7a40e186efaad6f79",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raising the t0 GRU calibration scale from 1.0 to 1.25 further improves target-specific residual fitting, with t1 and ridge settings fixed.",
+      "search_scores": {
+        "WP_t0": 0.6460471989814816,
+        "WP_t1": 0.6668558319830844,
+        "combined_WP": 0.656451515482283
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          1.25,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "7a54c86e658b49408319efc789240a2d",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride 10 improves target-specific ridge residual fitting while retaining the strongest observed calibration and penalty.",
+      "search_scores": {
+        "WP_t0": 0.6466473519651592,
+        "WP_t1": 0.6664631084594167,
+        "combined_WP": 0.6565552302122879
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "4162b6436966452fb334acd1f8535ae4",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether slightly reducing the GRU contribution to t1 improves the stride-20 target-specific ridge residual fit.",
+      "search_scores": {
+        "WP_t0": 0.6462930197875144,
+        "WP_t1": 0.6664649587905908,
+        "combined_WP": 0.6563789892890526
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.7
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "e43fba81e7414698826ee90fe2227274",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "A three-epoch clipped causal residual TCN on the pilot-best ridge captures temporal errors left by the linear fit.",
+      "search_scores": {
+        "WP_t0": 0.6470331460792011,
+        "WP_t1": 0.666853543046206,
+        "combined_WP": 0.6569433445627035
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 3,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 61135872,
+        "train_seconds": 266.50393880000047,
+        "loss_first80": 1.2096533074975013,
+        "loss_last80": 1.2980657085776328,
+        "updates": 15360
+      },
+      "cpu_us": 100.21541999994952
+    },
+    {
+      "node_id": "890d3aec579e4033b17f126670434749",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride 5 improves the target-specific ridge fit with the search-favored t1 GRU scale of 0.5, while holding target treatment and penalty fixed.",
+      "search_scores": {
+        "WP_t0": 0.6466531924561687,
+        "WP_t1": 0.6664026322247448,
+        "combined_WP": 0.6565279123404568
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 5,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 4076544,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "6c3761961174470b92257e1a854fb892",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether fitting raw t1 targets retains useful extremes better than clipping t1, with the search-favored GRU scales and other ridge settings fixed.",
+      "search_scores": {
+        "WP_t0": 0.64656832616375,
+        "WP_t1": 0.6655638047813935,
+        "combined_WP": 0.6560660654725718
+      },
+      "settings": {
+        "target_mode": "raw",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "ff49ad0003324fd5a562f0fe7fcf38d8",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether reducing the t0 GRU scale to 0.65 improves its ridge correction while retaining the search-favored 0.5 scale for t1.",
+      "search_scores": {
+        "WP_t0": 0.6466827950350983,
+        "WP_t1": 0.6663346036798289,
+        "combined_WP": 0.6565086993574636
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.65,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "0b60f2146e604c9284e25e17d874e284",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Reducing the GRU contribution for both targets may combine their separate search gains while stride 10 preserves the denser ridge fit.",
+      "search_scores": {
+        "WP_t0": 0.64653784181283,
+        "WP_t1": 0.666021955848127,
+        "combined_WP": 0.6562798988304785
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.5,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "df80b4de13ab487182107d47a5c58f90",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride 40 preserves the t1 gain from a 0.5 GRU scale while reducing redundant rows in the target-specific ridge fit.",
+      "search_scores": {
+        "WP_t0": 0.6464144224278776,
+        "WP_t1": 0.6665995744178412,
+        "combined_WP": 0.6565069984228594
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 40,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 509952,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "731094e247504e518decbafc6092d1e1",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether a 0.01 penalty preserves useful residual signal when t1 GRU scale is 0.5, holding target treatment and stride fixed.",
+      "search_scores": {
+        "WP_t0": 0.6461019403153372,
+        "WP_t1": 0.6645674771594755,
+        "combined_WP": 0.6553347087374064
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.01,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "6247ec44a08e4d87a2f5618e6e998582",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether removing the t1 GRU offset improves clipped t1 residual fitting, especially in the weak middle third, while holding the search-favored ridge settings fixed.",
+      "search_scores": {
+        "WP_t0": 0.6464515850583035,
+        "WP_t1": 0.6670338252689296,
+        "combined_WP": 0.6567427051636165
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          0.0
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "92be9e6e02c140209c43c0a8f693102c",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether a positive t1 GRU offset improves clipped residual fitting, especially in the weak middle third, with the other ridge settings fixed.",
+      "search_scores": {
+        "WP_t0": 0.6462885101275093,
+        "WP_t1": 0.6674294200457082,
+        "combined_WP": 0.6568589650866088
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "319b2500453c4f2b9debb75fa243be20",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raising the t1 GRU offset from 0.1 to 0.2 further improves clipped t1 residual fitting, especially where frozen-root predictions are small.",
+      "search_scores": {
+        "WP_t0": 0.6460965576035426,
+        "WP_t1": 0.6677467740512361,
+        "combined_WP": 0.6569216658273893
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          0.2
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "4ada615399564c9ca0875096548727ce",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raising the t1 GRU offset to 0.25 further improves clipped t1 residual fitting, particularly in the weak middle third, or whether the gain has peaked.",
+      "search_scores": {
+        "WP_t0": 0.6459949094416884,
+        "WP_t1": 0.6678723978524698,
+        "combined_WP": 0.6569336536470791
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "917bb68fc93d4febaf7d98fa6edab0c1",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether a 0.65 t0 calibration scale improves t0 while retaining the t1 gain from a 0.25 calibration bias in the target-specific ridge fit.",
+      "search_scores": {
+        "WP_t0": 0.6460411613016257,
+        "WP_t1": 0.6677372852114196,
+        "combined_WP": 0.6568892232565227
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.65,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "7f5fd52861974ddb9e0bfad3a6d31fff",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether reducing the t0 GRU scale to 0.5 improves t0 WP while preserving the middle-third t1 gain associated with a 0.25 t1 bias.",
+      "search_scores": {
+        "WP_t0": 0.6459395907168134,
+        "WP_t1": 0.6673787016541601,
+        "combined_WP": 0.6566591461854867
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.5,
+          0.5
+        ],
+        "base_bias": [
+          -0.1,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "3bd1de37295f4c609dbfda0b1101d67f",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raising the t0 base bias from -0.1 to 0.0 improves t0 WP by changing the target-specific residual fit while preserving the t1 gain.",
+      "search_scores": {
+        "WP_t0": 0.6456136549860032,
+        "WP_t1": 0.6678806488848213,
+        "combined_WP": 0.6567471519354122
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.65,
+          0.5
+        ],
+        "base_bias": [
+          0.0,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "a8d9a992cb6d429983f30fb395decb7e",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether lowering the t0 GRU base bias to -0.2 improves t0 residual fitting while retaining the t1 gain from a 0.25 bias.",
+      "search_scores": {
+        "WP_t0": 0.6463267879582267,
+        "WP_t1": 0.6677321992661108,
+        "combined_WP": 0.6570294936121688
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.2,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "9d3e851c513d41a4800445e7c6da4483",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether lowering the t0 base bias from -0.20 to -0.25 improves target-specific residual fitting while retaining the t1 gain.",
+      "search_scores": {
+        "WP_t0": 0.646472476338962,
+        "WP_t1": 0.6676514290268958,
+        "combined_WP": 0.6570619526829289
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "44ff478241204ba389fc8a9c415f49b4",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raising the t1 base scale from 0.50 to 0.60 improves residual fitting, particularly in the weak middle third.",
+      "search_scores": {
+        "WP_t0": 0.6462777392597233,
+        "WP_t1": 0.6675119732706103,
+        "combined_WP": 0.6568948562651669
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.6
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "89160814148149089747a70db9815908",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether denser stride-10 sampling improves the weak middle-third t1 predictions while retaining the selected target-specific calibration.",
+      "search_scores": {
+        "WP_t0": 0.6465452276469174,
+        "WP_t1": 0.6675287618585628,
+        "combined_WP": 0.6570369947527401
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "fa0235a5b2044d67b929c9c60debaf74",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether a 0.65 t0 base scale with the selected -0.25 t0 bias improves target-specific residual fitting.",
+      "search_scores": {
+        "WP_t0": 0.6465534343352248,
+        "WP_t1": 0.6674578854994832,
+        "combined_WP": 0.6570056599173539
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.65,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "5d462e7a79034158bbfe2ce24b522d98",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Test whether two clipped epochs of a causal residual TCN on the pilot-best ridge improve the weak middle-third t1 predictions without the extra fitting of a third epoch.",
+      "search_scores": {
+        "WP_t0": 0.6469850454436143,
+        "WP_t1": 0.6664477425407451,
+        "combined_WP": 0.6567163939921797
+      },
+      "settings": {
+        "target_mode": "clipped",
+        "epochs": 2,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 40757248,
+        "train_seconds": 117.16617959999712,
+        "loss_first80": 1.2096533074975013,
+        "loss_last80": 1.3078529931604863,
+        "updates": 10240
+      },
+      "cpu_us": 85.01261499986867
+    },
+    {
+      "node_id": "0e436a092f044ac490a852033783fb98",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raw t1 targets preserve useful middle-sequence variation that clipped t1 targets suppress, holding the recent ridge settings fixed.",
+      "search_scores": {
+        "WP_t0": 0.6462278889608127,
+        "WP_t1": 0.6652183662777261,
+        "combined_WP": 0.6557231276192694
+      },
+      "settings": {
+        "target_mode": "raw",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "cce3cf7467344e6ba09f23580e936cdc",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether reducing the t1 base bias from 0.25 to 0.15 preserves the middle-sequence t1 gain while reducing the late-sequence loss under target-specific clipped training.",
+      "search_scores": {
+        "WP_t0": 0.6466536336533838,
+        "WP_t1": 0.6673662192782218,
+        "combined_WP": 0.6570099264658028
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.15
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "f08b77875b7b4f0aac7162a486cacae4",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride-40 sampling reduces redundancy in persistent t1 residuals and improves middle-sequence WP with the selected target-specific calibration.",
+      "search_scores": {
+        "WP_t0": 0.6465230823867075,
+        "WP_t1": 0.6673731716580076,
+        "combined_WP": 0.6569481270223576
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 40,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.75,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.15
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 509952,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "e0036b363875485cbd37f78817c8ea83",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether an intermediate 0.70 t0 base scale improves target-specific residual fitting without the t1 loss seen at 0.65.",
+      "search_scores": {
+        "WP_t0": 0.6465171882376535,
+        "WP_t1": 0.6675643331237651,
+        "combined_WP": 0.6570407606807093
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "353eef45bdfb43b5a6425dbb3a8e4167",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride-10 sampling improves the calibrated ridge, especially middle-third t1 WP, or whether the added persistent rows are redundant.",
+      "search_scores": {
+        "WP_t0": 0.6465895937470044,
+        "WP_t1": 0.6674421328694158,
+        "combined_WP": 0.6570158633082102
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "5304858b33b94443a7266ce5aa684efd",
+      "status": "error",
+      "mechanism": "generated",
+      "hypothesis": "Fast and slow causal input states plus nonlinear state features may recover middle-sequence t1 variation left by current-row residual fitting.",
+      "search_scores": {},
+      "settings": {},
+      "signature": null,
+      "training_diagnostics": {},
+      "cpu_us": null
+    },
+    {
+      "node_id": "6f65ce3b8685415c9afb1d6286204503",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Easing the t0 base bias from -0.25 to -0.15 may reduce the observed t0 residual bias while preserving the calibrated ridge's t1 gain.",
+      "search_scores": {
+        "WP_t0": 0.6462035382854241,
+        "WP_t1": 0.6677373050464909,
+        "combined_WP": 0.6569704216659575
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.5
+        ],
+        "base_bias": [
+          -0.15,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "99996f7d0ad74713b715f72bd665b372",
+      "status": "error",
+      "mechanism": "unknown",
+      "hypothesis": "",
+      "search_scores": {},
+      "settings": {},
+      "signature": null,
+      "training_diagnostics": {},
+      "cpu_us": null
+    },
+    {
+      "node_id": "be156682148047999d0d436ff80885b8",
+      "status": "error",
+      "mechanism": "unknown",
+      "hypothesis": "",
+      "search_scores": {},
+      "settings": {},
+      "signature": null,
+      "training_diagnostics": {},
+      "cpu_us": null
+    },
+    {
+      "node_id": "9c9cd092bf0642e289f8593265360b01",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether a modest increase in t1 base scale improves the remaining middle-sequence t1 error while preserving the gains from target-specific ridge training.",
+      "search_scores": {
+        "WP_t0": 0.6464154571778283,
+        "WP_t1": 0.6674938589441622,
+        "combined_WP": 0.6569546580609953
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.55
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "b9b1415e86db450aa533564ae8e1d314",
+      "status": "success",
+      "mechanism": "gpu_residual",
+      "hypothesis": "Test whether a third raw-target TCN epoch on the pilot-best ridge recovers middle-sequence t1 residual magnitude suppressed by clipping.",
+      "search_scores": {
+        "WP_t0": 0.6463162273399761,
+        "WP_t1": 0.6664424252822695,
+        "combined_WP": 0.6563793263111228
+      },
+      "settings": {
+        "target_mode": "raw",
+        "epochs": 3,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 61135872,
+        "train_seconds": 170.33386469999095,
+        "loss_first80": 1.4711904861032963,
+        "loss_last80": 1.593880457803607,
+        "updates": 15360
+      },
+      "cpu_us": 86.0711999994237
+    },
+    {
+      "node_id": "74d60f9229f34a2fb6bf6ff34639a2d1",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "At stride 40, test whether reducing ridge shrinkage from 0.1 to 0.01 recovers middle-sequence t1 signal that remains after the raw residual TCN.",
+      "search_scores": {
+        "WP_t0": 0.6458595853603919,
+        "WP_t1": 0.6646049832923293,
+        "combined_WP": 0.6552322843263606
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 40,
+        "ridge_penalty": 0.01,
+        "base_scale": [
+          0.75,
+          0.75
+        ],
+        "base_bias": [
+          -0.1,
+          -0.1
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 509952,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "bc4ad8de0c9149fbba09a2be39876164",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether denser stride-5 sampling improves a strongly regularized, target-specific calibrated ridge; a flat result versus stride 10 would indicate redundant training rows.",
+      "search_scores": {
+        "WP_t0": 0.646583256537782,
+        "WP_t1": 0.6673904295991152,
+        "combined_WP": 0.6569868430684487
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 5,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 4076544,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "ebbe4fef57d04c8db968818047bc7b44",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride-5 sampling supplies useful additional examples for middle-sequence t1 residual learning by holding the calibrated target-specific ridge fixed and increasing stride to 10.",
+      "search_scores": {
+        "WP_t0": 0.6465895937470044,
+        "WP_t1": 0.6674421328694158,
+        "combined_WP": 0.6570158633082102
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "b6085d2bf80340fe85665089cfa852e8",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether lowering the t1 base bias reduces its remaining negative residual bias and improves middle-sequence t1 WP while holding ridge training fixed.",
+      "search_scores": {
+        "WP_t0": 0.6467675992720788,
+        "WP_t1": 0.6671601449620261,
+        "combined_WP": 0.6569638721170525
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.15
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "0637dec8993b4ed5994652e2bc2b0416",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raising only the t1 base scale from 0.5 to 0.55 improves the remaining middle-sequence t1 error at the stronger bias and stride-10 ridge setting.",
+      "search_scores": {
+        "WP_t0": 0.6464887593446697,
+        "WP_t1": 0.6673739988658403,
+        "combined_WP": 0.6569313791052549
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.55
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "8eefa50f20574cfc81bafbd3a1cea3de",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether reducing t0 base scale to 0.65 improves residual correction while retaining the search-favored t1 scale of 0.5.",
+      "search_scores": {
+        "WP_t0": 0.6466256426420096,
+        "WP_t1": 0.6673360431287831,
+        "combined_WP": 0.6569808428853964
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 10,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.65,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 2038784,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "f9a186656b3f4867987d0179aca0b01b",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether reducing the t1 GRU base scale from 0.55 to 0.50 improves middle-sequence t1 prediction when ridge sampling and all other calibration settings are held fixed.",
+      "search_scores": {
+        "WP_t0": 0.6465171882376535,
+        "WP_t1": 0.6675643331237651,
+        "combined_WP": 0.6570407606807093
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "e1a2ebbfecf24846b653965dae78e987",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether stride-40 sampling removes redundant training rows while preserving the calibrated ridge's middle-sequence t1 gain.",
+      "search_scores": {
+        "WP_t0": 0.6463918397320296,
+        "WP_t1": 0.667561303993708,
+        "combined_WP": 0.6569765718628688
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 40,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.7,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 509952,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "5173e54bf6a9482b9018d388abb5cd1f",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether a lower t0 GRU base scale corrects the candidate's increased t0 residual bias while preserving the stride-20 ridge's t1 gain.",
+      "search_scores": {
+        "WP_t0": 0.6465772185256298,
+        "WP_t1": 0.6673260226856614,
+        "combined_WP": 0.6569516206056456
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.6,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "284ba29270bd4fb683d058e3886fa432",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raising the t0 GRU base scale to 0.8 improves t0 residual correction while preserving the stride-20 ridge's middle-position t1 gain.",
+      "search_scores": {
+        "WP_t0": 0.6464218838231636,
+        "WP_t1": 0.6677234178255924,
+        "combined_WP": 0.657072650824378
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.8,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "1721604d49c44d8facdbed119f0c3d8e",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether raising the t0 GRU base scale from 0.8 to 0.9 further improves cross-target residual correction enough to offset any t0 loss.",
+      "search_scores": {
+        "WP_t0": 0.6463098613055213,
+        "WP_t1": 0.6678340137275297,
+        "combined_WP": 0.6570719375165255
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.9,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "3ba21dbae4ca46eeb35f0b0a5bb19f77",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Test whether an intermediate t0 GRU base scale of 0.85 balances its t0 loss against the observed t1 gain better than scales 0.8 and 0.9.",
+      "search_scores": {
+        "WP_t0": 0.646367291993861,
+        "WP_t1": 0.6677834380430007,
+        "combined_WP": 0.6570753650184309
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.85,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    },
+    {
+      "node_id": "4891a517dd4f4c1aa8ece0be06af30d6",
+      "status": "success",
+      "mechanism": "ridge",
+      "hypothesis": "Calibrating the GRU base before target-specific ridge fitting captures useful t1 residual signal in middle-position rows while preserving combined WP.",
+      "search_scores": {
+        "WP_t0": 0.646367291993861,
+        "WP_t1": 0.6677834380430007,
+        "combined_WP": 0.6570753650184309
+      },
+      "settings": {
+        "target_mode": "t0_raw_t1_clipped",
+        "sample_stride": 20,
+        "ridge_penalty": 0.1,
+        "base_scale": [
+          0.85,
+          0.5
+        ],
+        "base_bias": [
+          -0.25,
+          0.25
+        ]
+      },
+      "signature": null,
+      "training_diagnostics": {
+        "training_rows": 1019904,
+        "train_seconds": null,
+        "loss_first80": null,
+        "loss_last80": null,
+        "updates": null
+      },
+      "cpu_us": null
+    }
+  ]
+}

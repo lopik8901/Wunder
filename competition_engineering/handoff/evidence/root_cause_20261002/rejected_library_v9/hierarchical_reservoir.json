@@ -1,0 +1,35 @@
+{
+  "assumptions": "Transfer to Connectome requires an independent search-only test.",
+  "authors": [
+    "Qianli Ma",
+    "Lifeng Shen",
+    "Garrison W. Cottrell"
+  ],
+  "card_id": "hierarchical_reservoir",
+  "card_type": "paper",
+  "causality": "Use input-only reservoir updates and reset all reservoir states per sequence.",
+  "claim_confidence": "limited",
+  "concise_relevance": "Possible mechanism to evaluate against the fixed search atlas; no experiment is prescribed.",
+  "cpu_deployment": "Reservoir width can dominate CPU matrix-vector time despite cheap fitting.",
+  "curator": "Codex, primary abstract review",
+  "dependencies": "Implementation-dependent; card retrieval uses only Python stdlib.",
+  "diagnostic_signatures": "Curator inference: Residual patterns at multiple timescales with limited training budget.",
+  "family": "reservoir",
+  "incremental_inference": "Use input-only reservoir updates and reset all reservoir states per sequence.",
+  "licensing": "Metadata and curator paraphrase only; verify paper license before reusing paper text.",
+  "limitations": "Echo-state stability and useful timescales require explicit checking.",
+  "mechanism": "Hierarchical echo-state reservoirs and projections are used to represent multiscale time series.",
+  "schema_version": 1,
+  "source_locator": "Abstract",
+  "source_url": "http<LOCAL_PATH>",
+  "tags": [
+    "reservoir",
+    "causal-adaptation-required"
+  ],
+  "title": "Deep-ESN: A Multiple Projection-encoding Hierarchical Reservoir Computing Framework",
+  "training_compute": "Measure on the configured training tier.",
+  "useful_when": "Curator inference: fixed random recurrent features may test a temporal hypothesis cheaply.",
+  "verified_on": "2026-09-30",
+  "version": 1,
+  "year": 2017
+}

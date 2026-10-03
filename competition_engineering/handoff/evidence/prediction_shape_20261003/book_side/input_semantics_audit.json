@@ -1,0 +1,23 @@
+{
+  "groups": [
+    4058,
+    2672,
+    3560,
+    3890,
+    2771,
+    8328,
+    5915,
+    5355
+  ],
+  "labels_read": false,
+  "negative_volume_like_fraction": 0.4961353693181818,
+  "volume_like_quantiles": [
+    -2.352693557739258,
+    -2.116003801822662,
+    0.01084398478269577,
+    2.182263135910034,
+    2.3556454181671143
+  ],
+  "contract_sha256": "08b270cbbbed40647c91e93f8a03da4dc3ee8ccea3f8938722d66e3b3be2b36c",
+  "constraint": "Bid/ask groups known; indices are identifiers, not depth ordering. Signed anonymized volume-like values are not physical positive queue sizes."
+}

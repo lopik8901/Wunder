@@ -1,7 +1,4 @@
-"""Inactive Phase 1 contracts for a future offline research retriever.
-
-No library is loaded and no planner imports this module during search.
-"""
+"""Search-only contracts for the supervisor's offline research retriever."""
 
 from __future__ import annotations
 
@@ -82,8 +79,8 @@ def build_search_query(atlas: Any, records: list[dict[str, Any]], *, last: int =
     """Copy only exact atlas fields and fixed search-domain score/status fields.
 
     Free-text hypotheses, code, paths, logs and arbitrary result dictionaries are
-    deliberately absent. A later preliminary-hypothesis channel needs its own
-    independently reviewed contract; it is not silently added here.
+    deliberately absent. The planner may pass at most twelve validated,
+    normalized hypothesis terms separately to the offline retriever.
     """
     if type(last) is not int or not 1 <= last <= 18:
         raise ValueError("search history window must be between 1 and 18")
